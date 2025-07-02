@@ -1,7 +1,174 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0V4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff; /* Pure white background */
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1024px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background-color: #ffffff;
+            /* Removed main container shadow for a flatter look */
+            border-radius: 8px; /* Slightly less rounded */
+        }
+        h1, h2, h3 {
+            color: #222; /* Darker, almost black for headings */
+        }
+        .profile-picture {
+            width: 120px; /* Slightly smaller picture */
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%; /* Circular image */
+            border: 2px solid #ccc; /* Lighter, thinner border */
+            /* Removed shadow for a flatter look */
+        }
+        .project-card {
+            background-color: #fcfcfc; /* Very subtle off-white */
+            border-radius: 8px; /* Slightly less rounded */
+            padding: 1.5rem;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04); /* Very subtle shadow */
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border: 1px solid #eee; /* Light border for definition */
+        }
+        .project-card:hover {
+            transform: translateY(-3px); /* Less pronounced lift */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Slightly more visible shadow on hover */
+        }
+        .project-image {
+            width: 100%;
+            height: 160px; /* Slightly smaller image height */
+            object-fit: cover;
+            border-radius: 6px; /* Less rounded image corners */
+            margin-bottom: 1rem;
+        }
+        .project-link {
+            color: #4a90e2; /* A more subdued blue */
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: auto;
+            display: inline-block;
+        }
+        .project-link:hover {
+            text-decoration: underline;
+        }
+        /* Minimal header styling */
+        .header-section {
+            background-color: #ffffff; /* Pure white background */
+            border-bottom: 1px solid #eee; /* Subtle bottom border */
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 0; /* No rounded corners for the header section */
+            box-shadow: none; /* No shadow */
+        }
+        .bio-text {
+            color: #444; /* Slightly lighter text color for bio */
+            font-weight: 300; /* Lighter font weight for bio */
+        }
+        .connect-links {
+            color: #666; /* Muted color for connect links */
+        }
+        .social-icon {
+            margin-right: 0.5rem; /* Space between icon and text */
+            font-size: 1.1em; /* Slightly larger icon size */
+            vertical-align: middle; /* Align icon with text */
+        }
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <div class="container">
+        <!-- Upper Part: Picture and Bio -->
+        <section class="flex flex-col md:flex-row items-center md:items-start gap-8 mb-12 p-6 header-section">
+            <!-- Picture on Left -->
+            <div class="flex-shrink-0">
+                <img src="https://media.licdn.com/dms/image/v2/C4E03AQGbzcxTYpSmQQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1623913908878?e=1756944000&v=beta&t=B37v37EY0AOKnxbQL9A5zZ22WHNC59N4i4V_OZQQJgM" alt="Your Profile Picture" class="profile-picture">
+            </div>
+            <!-- Short Bio on Right -->
+            <div class="text-center md:text-left">
+                <h1 class="text-4xl font-extrabold mb-3">Jirawat Poongam (Nick)</h1>
+                <p class="text-lg bio-text mb-4">
+                    I’m a senior analyst with a passion for applying data science to public policy and economic research. 
+                    My work focuses on leveraging advanced analytical tools—such as machine learning, natural language processing, 
+                    and satellite imagery to uncover insights that inform evidence-based policymaking. 
+                </p>
+                <p class="text-md connect-links">
+                    Connect with me:
+                    <a href="mailto:jirawatp[at]live[dot]com" class="project-link"><i class="fas fa-envelope social-icon"></i>your.email@example.com</a> |
+                    <a href="https://github.com/jpnick" target="_blank" class="project-link"><i class="fab fa-github social-icon"></i>GitHub</a> |
+                    <a href="https://linkedin.com/in/jirawatp" target="_blank" class="project-link"><i class="fab fa-linkedin social-icon"></i>LinkedIn</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Lower Part: Interest Projects -->
+        <section class="mb-8 p-6">
+            <h2 class="text-3xl font-bold text-center mb-10">My Interest Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <a href="https://github.com/jpnick/Haze" target="_blank" class="block">
+                        <img src="https://placehold.co/400x200/e0e0e0/555555?text=Satellite" alt="Project 1 Image" class="project-image">
+                        <h3 class="text-xl font-semibold mb-2">The Impact of Transboundary Haze on Lung Cancer Mortality in Thailand</h3>
+                        <p class="text-gray-700 text-sm mb-4">
+                            Using Aerosol Optical Depth (AOD) represent particulate matter (PM), found the significant correlation between long-term PM exposure and increased lung cancer mortality
+                        </p>
+                        <span class="project-link">View Project &rarr;</span>
+                    </a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <a href="https://www.example.com/project2" target="_blank" class="block">
+                        <img src="https://placehold.co/400x200/e0e0e0/555555?text=NTL" alt="Project 2 Image" class="project-image">
+                        <h3 class="text-xl font-semibold mb-2">On going NTL</h3>
+                        <p class="text-gray-700 text-sm mb-4">
+                            -
+                        </p>
+                        <span class="project-link">View Project &rarr;</span>
+                    </a>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <a href="https://www.example.com/project3" target="_blank" class="block">
+                        <img src="https://placehold.co/400x200/e0e0e0/555555?text=NLP" alt="Project 3 Image" class="project-image">
+                        <h3 class="text-xl font-semibold mb-2">On going NLP</h3>
+                        <p class="text-gray-700 text-sm mb-4">
+                            -
+                        </p>
+                        <span class="project-link">View Project &rarr;</span>
+                    </a>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <a href="https://www.example.com/project4" target="_blank" class="block">
+                        <img src="https://placehold.co/400x200/e0e0e0/555555?text=4" alt="Project 4 Image" class="project-image">
+                        <h3 class="text-xl font-semibold mb-2">-</h3>
+                        <p class="text-gray-700 text-sm mb-4">
+                            -
+                        </p>
+                        <span class="project-link">View Project &rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
