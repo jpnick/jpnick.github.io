@@ -49,7 +49,7 @@
             .main-container { margin: 0; box-shadow: none; width: 100%; max-width: 100%; }
         }
         Print Optimization for One Page */
-        @media print {
+        /* @media print {
             @page {
                 size: A4;
                 margin: 0;
@@ -67,6 +67,32 @@
             main { width: 70% !important; padding: 1.5rem !important; }
             h1 { font-size: 1.5rem !important; }
             h2 { font-size: 1rem !important; margin-bottom: 0.5rem !important; }
+            .section-spacing { margin-bottom: 1rem !important; }
+            .item-spacing { margin-bottom: 0.5rem !important; }
+        }
+                Strict Print Optimization */
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+            body { background-color: white; -webkit-print-color-adjust: exact; }
+            .no-print { display: none !important; }
+            .main-container { 
+                margin: 0 !important; 
+                box-shadow: none !important; 
+                width: 210mm !important;
+                height: 297mm !important;
+                display: flex !important;
+                flex-direction: row !important;
+            }
+            .sidebar { width: 32% !important; height: 297mm !important; padding: 1.25rem !important; }
+            main { width: 68% !important; height: 297mm !important; padding: 1.5rem !important; }
+            
+            /* Tighten typography for print */
+            h1 { font-size: 1.25rem !important; }
+            h2 { font-size: 0.875rem !important; margin-bottom: 0.5rem !important; }
+            p, li, span { font-size: 10px !important; line-height: 1.4 !important; }
             .section-spacing { margin-bottom: 1rem !important; }
             .item-spacing { margin-bottom: 0.5rem !important; }
         }
