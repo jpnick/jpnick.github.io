@@ -1,1283 +1,352 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-<meta name="author" content="ผศ.ตะวัน วรรณรัตน์">
-<meta name="author" content="ดร.อนุสรา อนุวงค์">
-<meta name="author" content="จิรวัฒน์ ภู่งาม">
-<meta name="description" content="Economics of Finance and Corporate Finance">
-
-<title>เศรษฐศาสตร์การเงินและการเงินบริษัท</title>
-<style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
-
-
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./lecture_notes.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1114119897a41d62142e24d2d32a3df0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-6402c9a596414c8e509132ee9a41ab38.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-1114119897a41d62142e24d2d32a3df0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
-  "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
-  }
-}</script>
-<style>html{ scroll-behavior: smooth; }</style>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&amp;display=swap" rel="stylesheet">
-
-
-<link rel="stylesheet" href="style.scss">
-</head>
-
-<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jirawat Poongam - CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Kanit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
         }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
-
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Financial economics</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-house-fill" role="img">
-</i> 
-<span class="menu-text">Home</span></a>
-  </li>  
-</ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://jpnick.github.io/finance/"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://drive.google.com/drive/folders/1PYPJjelQJxvsguuEk_6qM1ToLAEMmvk4?usp=sharing"> <i class="bi bi-cloud" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Syllabus</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Syllabus</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./lecture_notes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Lecture Notes</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./assignments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Assignments</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./project.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Financial Analysis Project</span></span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
+        /* Apply Kanit specifically when Thai language is active or for Thai characters */
+        body.lang-th, 
+        body.lang-th button, 
+        body.lang-th p, 
+        body.lang-th h1, 
+        body.lang-th h2, 
+        body.lang-th h3, 
+        body.lang-th span {
+            font-family: 'Kanit', sans-serif;
+        }
+
+        .sidebar {
+            background-color: #0f172a;
+        }
+        
+        [data-lang="th"] { display: none; }
+        body.lang-th [data-lang="en"] { display: none; }
+        body.lang-th [data-lang="th"] { display: block; }
+
+        .profile-photo {
+            width: 180px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5%;
+            border: 2px solid #3b82f6;
+            margin: 0 auto 1.5rem auto;
+            display: block;
+        }
+        /* Strict Print Optimization */
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+            body { background-color: white; -webkit-print-color-adjust: exact; }
+            .no-print { display: none !important; }
+            .main-container { 
+                margin: 0 !important; 
+                box-shadow: none !important; 
+                width: 210mm !important;
+                height: 297mm !important;
+                display: flex !important;
+                flex-direction: row !important;
+            }
+            .sidebar { width: 32% !important; height: 297mm !important; padding: 1.25rem !important; }
+            main { width: 68% !important; height: 297mm !important; padding: 1.5rem !important; }
+            
+            /* Tighten typography for print */
+            h1 { font-size: 1.25rem !important; }
+            h2 { font-size: 0.875rem !important; margin-bottom: 0.5rem !important; }
+            p, li, span { font-size: 10px !important; line-height: 1.4 !important; }
+            .section-spacing { margin-bottom: 1rem !important; }
+            .item-spacing { margin-bottom: 0.5rem !important; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Language Toggle & Print Actions -->
+    <div class="fixed top-4 right-4 z-50 flex gap-2 no-print">
+        <button id="langToggle" class="bg-white border border-slate-200 shadow-md px-4 py-2 rounded-full text-sm font-bold hover:bg-slate-50 transition-colors flex items-center gap-2">
+            <span data-lang="en">TH / 🇹🇭</span>
+            <span data-lang="th">EN / 🇺🇸</span>
+        </button>
+        <button onclick="window.print()" class="bg-blue-600 shadow-md text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-blue-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        </button>
     </div>
-<!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
 
-<style>
-  body.show-en .th-text { display: none !important; }
-  body.show-th .en-text { display: none !important; }
-  
-  .toggle-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-bottom: 20px;
-    margin-top: -10px;
-    font-family: ui-sans-serif, system-ui, sans-serif;
-    font-weight: bold;
-  }
-  
-  .toggle-label {
-    font-size: 1.1em;
-    user-select: none;
-    transition: color 0.3s;
-    letter-spacing: 0.5px;
-  }
-  
-  .active-lang { color: #4A5568; }
-  .inactive-lang { color: #CBD5E0; }
-  
-  /* Toggle Switch Track */
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 32px;
-    margin: 0 12px;
-  }
-  
-  /* Hide default checkbox */
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  /* Slider Track */
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: #E2E8F0;
-    transition: .4s;
-    border-radius: 34px;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
-  }
-  
-  /* Slider Thumb */
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  }
-  
-  /* When checked (TH active) */
-  input:checked + .slider {
-    background-color: #2C3E50;
-  }
-  
-  input:checked + .slider:before {
-    transform: translateX(28px);
-  }
-</style>
+    <div class="main-container max-w-5xl mx-auto my-0 md:my-10 bg-white shadow-2xl flex flex-col md:flex-row min-h-[1100px]">
+        
+        <!-- Left Sidebar -->
+        <aside class="sidebar w-full md:w-1/3 p-8 text-slate-300">
+            <div class="mb-10 text-center md:text-left">
 
-<div class="toggle-container">
-  <span class="toggle-label active-lang" id="label-en">EN</span>
-  <label class="switch">
-    <input type="checkbox" id="lang-checkbox" onchange="toggleLanguage()">
-    <span class="slider"></span>
-  </label>
-  <span class="toggle-label inactive-lang" id="label-th">TH</span>
-</div>
+                <img src="me.jpg" alt="Jirawat Poongam" class="profile-photo shadow-xl">
+                
+                <h1 class="text-3xl font-bold text-white tracking-tight mb-2" data-lang="en">Jirawat Poongam</h1>
+                <h1 class="text-3xl font-bold text-white tracking-tight mb-2" data-lang="th">จิรวัฒน์ ภู่งาม</h1>
+                <p class="text-blue-400 font-medium tracking-wide uppercase text-sm" data-lang="en">Senior Analyst & Economist</p>
+                <p class="text-blue-400 font-medium tracking-wide text-sm" data-lang="th">นักวิเคราะห์อาวุโส และ นักเศรษฐศาสตร์</p>
+            </div>
 
-<script>
-  function toggleLanguage() {
-    var body = document.body;
-    var checkbox = document.getElementById('lang-checkbox');
-    var labelEn = document.getElementById('label-en');
-    var labelTh = document.getElementById('label-th');
-    
-    if (checkbox.checked) {
-      body.classList.remove('show-en');
-      body.classList.add('show-th');
-      labelEn.classList.replace('active-lang', 'inactive-lang');
-      labelTh.classList.replace('inactive-lang', 'active-lang');
-    } else {
-      body.classList.remove('show-th');
-      body.classList.add('show-en');
-      labelTh.classList.replace('active-lang', 'inactive-lang');
-      labelEn.classList.replace('inactive-lang', 'active-lang');
-    }
-  }
-  
-  // Set default language on load
-  document.addEventListener("DOMContentLoaded", function() {
-    document.body.classList.add('show-en');
-    var checkbox = document.getElementById('lang-checkbox');
-    if (checkbox) checkbox.checked = false;
-  });
-</script>
+            <div class="space-y-8">
+                <!-- Contact Info -->
+                <section>
+                    <h2 class="text-white text-xs font-bold uppercase tracking-widest mb-4 border-b border-slate-700 pb-2">
+                        <span data-lang="en">Contact</span>
+                        <span data-lang="th">ติดต่อ</span>
+                    </h2>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            jirawat.p[at]outlook[dot]com
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-3.5 h-3.5 mr-2 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            <a href="https://linkedin.com/in/jirawatp" class="hover:text-white transition-colors">linkedin[dot]com/in/jirawatp</a>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-3.5 h-3.5 mr-2 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            <a href="https://jpnick.github.com/" class="hover:text-white transition-colors">jpnick[dot]github[dot]com</a>
+                        </li>
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">เศรษฐศาสตร์การเงินและการเงินบริษัท</h1>
-</div>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <span data-lang="en">Chiang Mai, Thailand</span>
+                            <span data-lang="th">เชียงใหม่, ประเทศไทย</span>
+                        </li>
+                    </ul>
+                </section>
 
-<div>
-  <div class="description">
-    Economics of Finance and Corporate Finance
-  </div>
-</div>
+                <!-- Licenses & Certifications -->
+                <section>
+                    <h2 class="text-white text-xs font-bold uppercase tracking-widest mb-4 border-b border-slate-700 pb-2">
+                        <span data-lang="en">Certifications</span>
+                        <span data-lang="th">ใบรับรองและวุฒิบัตร</span>
+                    </h2>
+                    <ul class="space-y-4 text-xs">
+                        <li>
+                            <p class="text-blue-400 font-bold">Data, Economics, and Development Policy</p>
+                            <p class="text-slate-400">MITx MicroMasters (2021)</p>
+                        </li>
+                        <li>
+                            <p class="text-blue-400 font-bold">IBM AI Engineering Specialization</p>
+                            <p class="text-slate-400">Coursera (2020)</p>
+                        </li>
+                        <li>
+                            <p class="text-blue-400 font-bold">TensorFlow Developer</p>
+                            <p class="text-slate-400">DeepLearning.AI (2019)</p>
+                        </li>
+                        <li>
+                            <p class="text-blue-400 font-bold">Macroeconometric Forecasting</p>
+                            <p class="text-slate-400">IMF (2018)</p>
+                        </li>
+                        <li>
+                            <p class="text-blue-400 font-bold">Financial Market Analysis</p>
+                            <p class="text-slate-400">IMF (2018)</p>
+                        </li>
+                    </ul>
+                </section>
 
+                <!-- Expertise -->
+                <section>
+                    <h2 class="text-white text-xs font-bold uppercase tracking-widest mb-4 border-b border-slate-700 pb-2">
+                        <span data-lang="en">Expertise</span>
+                        <span data-lang="th">ความเชี่ยวชาญ</span>
+                    </h2>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-800 text-[10px] px-2 py-1 rounded" data-lang="en">Policy Analysis</span>
+                        <span class="bg-slate-800 text-[10px] px-2 py-1 rounded" data-lang="th">การวิเคราะห์นโยบาย</span>
+                        <span class="bg-slate-800 text-[10px] px-2 py-1 rounded" data-lang="en">Macroeconomics</span>
+                        <span class="bg-slate-800 text-[10px] px-2 py-1 rounded" data-lang="th">เศรษฐศาสตร์มหภาค</span>
+                        <span class="bg-slate-800 text-[10px] px-2 py-1 rounded">Econometrics</span>
+                        <span class="bg-slate-800 text-[10px] px-2 py-1 rounded">AI & Machine Learning</span>
+                        <span class="bg-slate-800 text-[10px] px-2 py-1 rounded">Data Science</span>
+                        <span class="bg-slate-800 text-[10px] px-2 py-1 rounded" data-lang="en">Program Design</span>
+                        <span class="bg-slate-800 text-[10px] px-2 py-1 rounded" data-lang="th">การออกแบบโครงการ</span>
+                    </div>
+                </section>
+            </div>
+        </aside>
 
-<div class="quarto-title-meta column-page-right">
+        <!-- Main Content -->
+        <main class="w-full md:w-2/3 p-10 bg-white">
+            
+            <!-- Profile Summary -->
+            <section class="mb-10">
+                <h2 class="text-xl font-bold text-slate-800 mb-4 flex items-center">
+                    <span class="w-8 h-1 bg-blue-500 mr-3"></span>
+                    <span data-lang="en">Professional Profile</span>
+                    <span data-lang="th">ประวัติโดยย่อ</span>
+                </h2>
+                <div data-lang="en" class="text-slate-600 leading-relaxed text-sm">
+                    Senior Analyst at the Bank of Thailand with a focus on applying data science to public policy and economic research. 
+                    Expert in utilizing Econometrics, Deep Learning, and Geospatial analysis to drive evidence-based decision-making. 
+                    Proven track record of transforming diverse datasets into high-impact insights to address complex policy challenges and optimize public welfare.
+                </div>
+                <div data-lang="th" class="text-slate-600 leading-relaxed text-sm">
+                    นักวิเคราะห์อาวุโส ธนาคารแห่งประเทศไทย ที่มุ่งเน้นการประยุกต์ใช้วิทยาการข้อมูล (Data Science) เพื่อสนับสนุนนโยบายสาธารณะและงานวิจัยทางเศรษฐกิจ 
+                    เน้นใช้เครื่องมือที่หลากหลาย อาทิ เศรษฐมิติ (Econometrics) การเรียนรู้เชิงลึก (Deep Learning) และการวิเคราะห์ข้อมูลเชิงพื้นที่ (Geospatial Analysis) 
+                    มีประสบการณ์ในการจัดการ และวิเคราะห์ข้อมูลขนาดใหญ่จากหลายแหล่ง เพื่อสังเคราะห์เป็นข้อมูลเชิงลึกที่สนับสนุนการตัดสินใจเชิงนโยบายบนพื้นฐานของข้อมูลเชิงประจักษ์เพื่อประโยนชน์ต่อสาธารณะ</div>
+            </section>
 
-    <div>
-    <div class="quarto-title-meta-heading">Authors</div>
-    <div class="quarto-title-meta-contents">
-             <p>ผศ.ตะวัน วรรณรัตน์ </p>
-             <p>ดร.อนุสรา อนุวงค์ </p>
-             <p>จิรวัฒน์ ภู่งาม </p>
-          </div>
-  </div>
-    
-  
-    
-  </div>
-  
+            <!-- Experience -->
+            <section class="mb-10">
+                <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center">
+                    <span class="w-8 h-1 bg-blue-500 mr-3"></span>
+                    <span data-lang="en">Work Experience</span>
+                    <span data-lang="th">ประสบการณ์การทำงาน</span>
+                </h2>
 
+                <div class="space-y-6">
+                    <!-- Bank of Thailand -->
+                    <div class="relative pl-8 border-l-2 border-slate-100 pb-4">
+                        <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-[9px] top-1 border-4 border-white"></div>
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-bold text-slate-800 text-lg" data-lang="en">Bank of Thailand</h3>
+                            <h3 class="font-bold text-slate-800 text-lg" data-lang="th">ธนาคารแห่งประเทศไทย</h3>
+                            <span class="text-xs font-bold text-slate-400">
+                                <span data-lang="en">9 yrs</span>
+                                <span data-lang="th">9 ปี</span>
+                            </span>
+                        </div>
+                        
+                        <div class="mt-4 space-y-4">
+                            <div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="font-bold text-slate-700" data-lang="en">Senior Analyst</span>
+                                    <span class="font-bold text-slate-700" data-lang="th">นักวิเคราะห์อาวุโส</span>
+                                    <span class="text-blue-600 font-medium italic">Jun 2022 — Present</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="font-bold text-slate-700" data-lang="en">Senior Economist</span>
+                                    <span class="font-bold text-slate-700" data-lang="th">นักเศรษฐศาสตร์อาวุโส</span>
+                                    <span class="text-slate-500 italic">Jul 2020 — Jun 2022</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="font-bold text-slate-700" data-lang="en">Economist</span>
+                                    <span class="font-bold text-slate-700" data-lang="th">นักเศรษฐศาสตร์</span>
+                                    <span class="text-slate-500 italic">Jun 2017 — Jul 2020</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-</header>
+                    <!-- Department of Foreign Trade -->
+                    <div class="relative pl-8 border-l-2 border-slate-100 pb-4">
+                        <div class="absolute w-4 h-4 bg-slate-200 rounded-full -left-[9px] top-1 border-4 border-white"></div>
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-bold text-slate-800" data-lang="en">Trade Officer</h3>
+                            <h3 class="font-bold text-slate-800" data-lang="th">นักวิชาการพาณิชย์</h3>
+                            <span class="text-xs text-slate-400 italic">Feb 2017 — May 2017</span>
+                        </div>
+                        <p class="text-sm font-semibold text-slate-500" data-lang="en">Department of Foreign Trade</p>
+                        <p class="text-sm font-semibold text-slate-500" data-lang="th">กรมการค้าต่างประเทศ</p>
+                        <p class="text-xs text-slate-600 mt-1 italic">Institute for Agricultural Product Innovation (APi)</p>
+                    </div>
 
+                    <!-- TDRI -->
+                    <div class="relative pl-8 border-l-2 border-slate-100 pb-4">
+                        <div class="absolute w-4 h-4 bg-slate-200 rounded-full -left-[9px] top-1 border-4 border-white"></div>
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-bold text-slate-800" data-lang="en">Researcher</h3>
+                            <h3 class="font-bold text-slate-800" data-lang="th">นักวิจัย</h3>
+                            <span class="text-xs text-slate-400 italic">Sep 2015 — Apr 2016</span>
+                        </div>
+                        <p class="text-sm font-semibold text-slate-500" data-lang="en">Thailand Development Research Institute (TDRI)</p>
+                        <p class="text-sm font-semibold text-slate-500" data-lang="th">สถาบันวิจัยเพื่อการพัฒนาประเทศไทย (TDRI)</p>
+                        <p class="text-xs text-slate-600 mt-1">
+                            <span data-lang="en">Rice Balance Sheet: An estimation of uses of rice in Thailand.</span>
+                            <span data-lang="th">บัญชีสมดุลข้าว: การประมาณการใช้ประโยชน์ข้าวในประเทศไทย</span>
+                        </p>
+                    </div>
 
-<section id="course-meetings-times" class="level2 en-text">
-<h2 class="anchored" data-anchor-id="course-meetings-times">Course Meetings Times</h2>
-<p>Lecture: 1 session / week, 3 hours / session<br>
-Every Wednesday 16.35 - 19.20<br>
-Start: July 15th 2026<br>
-Make-up classes on Fri Jul 31st, Fri Aug 14th</p>
-</section>
-<section id="เวลาเรยน" class="level2 th-text">
-<h2 class="anchored" data-anchor-id="เวลาเรยน">เวลาเรียน</h2>
-<p>การบรรยาย: 1 ครั้ง / สัปดาห์, 3 ชั่วโมง / ครั้ง<br>
-ทุกวันพุธ เวลา 16.35 - 19.20<br>
-เริ่ม: 15 กรกฎาคม 2569<br>
-เรียนชดเชยวัน ศ 31 ก.ค. และ ศ 14 ส.ค.</p>
-</section>
-<section id="course-description" class="level2 en-text">
-<h2 class="anchored" data-anchor-id="course-description">Course Description</h2>
-<p>Roles and significance of money and credit in an economic system; financial system and financial markets; roles of interest rates in a financial system; financial decision making in modern corporations, especially start-up businesses; investment decisions and fundraising.</p>
-</section>
-<section id="คำอธบายรายวชา" class="level2 th-text">
-<h2 class="anchored" data-anchor-id="คำอธบายรายวชา">คำอธิบายรายวิชา</h2>
-<p>บทบาทและความสำคัญของเงินและสินเชื่อในระบบเศรษฐกิจ ระบบการเงินและตลาดเงิน บทบาทของอัตราดอกเบี้ยในระบบการเงิน การตัดสินใจทางการเงินในบริษัทสมัยใหม่โดยเฉพาะธุรกิจสตาร์ทอัพ การตัดสินใจลงทุนและการระดมทุน</p>
-</section>
-<section id="grading-assessment" class="level2 en-text">
-<h2 class="anchored" data-anchor-id="grading-assessment">Grading &amp; Assessment</h2>
-<p>Your final grade will be determined based on the following weightings:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 31%">
-<col style="width: 24%">
-<col style="width: 43%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Assessment Component</th>
-<th style="text-align: center;">Percentage</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>Class Participation</strong></td>
-<td style="text-align: center;">10%</td>
-<td style="text-align: left;">Attendance, active class discussion, and homework assignments.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>Financial Team Project</strong></td>
-<td style="text-align: center;">30%</td>
-<td style="text-align: left;">Group presentation analyzing a real-world financial market trend or a corporate finance case study.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>Midterm Exam</strong></td>
-<td style="text-align: center;">30%</td>
-<td style="text-align: left;">Covers Weeks 1 - 6 (Primarily Financial Markets &amp; Institutions).</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>Final Exam</strong></td>
-<td style="text-align: center;">30%</td>
-<td style="text-align: left;">Covers Weeks 8 - 14 (Primarily Corporate Finance), cumulative concepts.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>Total</strong></td>
-<td style="text-align: center;"><strong>100%</strong></td>
-<td style="text-align: left;"></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="การประเมนผล" class="level2 th-text">
-<h2 class="anchored" data-anchor-id="การประเมนผล">การประเมินผล</h2>
-<p>คะแนนของนักศึกษาจะถูกประเมินตามสัดส่วนต่อไปนี้:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 31%">
-<col style="width: 25%">
-<col style="width: 43%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">องค์ประกอบการประเมิน</th>
-<th style="text-align: center;">สัดส่วน</th>
-<th style="text-align: left;">คำอธิบาย</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>การมีส่วนร่วมในชั้นเรียนและงานที่มอบหมาย</strong></td>
-<td style="text-align: center;">10%</td>
-<td style="text-align: left;">การเข้าเรียน การอภิปรายในชั้นเรียน และการบ้าน</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>โครงงานกลุ่มทางการเงิน (Financial Team Project)</strong></td>
-<td style="text-align: center;">30%</td>
-<td style="text-align: left;">การนำเสนอกลุ่มวิเคราะห์แนวโน้มตลาดการเงินในโลกแห่งความเป็นจริงหรือกรณีศึกษาทางการเงินธุรกิจ</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>สอบกลางภาค (Midterm Exam)</strong></td>
-<td style="text-align: center;">30%</td>
-<td style="text-align: left;">ครอบคลุมเนื้อหาสัปดาห์ที่ 1 - 6 (เน้นตลาดการเงินและสถาบันการเงิน)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>สอบปลายภาค (Final Exam)</strong></td>
-<td style="text-align: center;">30%</td>
-<td style="text-align: left;">ครอบคลุมเนื้อหาสัปดาห์ที่ 8 - 14 (เน้นการเงินธุรกิจ) และแนวคิดที่เชื่อมโยงกัน</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>รวม</strong></td>
-<td style="text-align: center;"><strong>100%</strong></td>
-<td style="text-align: left;"></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="course-schedule" class="level2 en-text">
-<h2 class="anchored" data-anchor-id="course-schedule">Course Schedule</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 38%">
-<col style="width: 27%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Week</th>
-<th style="text-align: left;">Date</th>
-<th style="text-align: left;">Topic</th>
-<th style="text-align: left;">Reading</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><strong>1</strong></td>
-<td style="text-align: left;">Jul 15th</td>
-<td style="text-align: left;">Introduction to the Financial System &amp; Markets</td>
-<td style="text-align: left;"><span class="citation" data-cites="Mishkin">Mishkin (<a href="index.html#ref-Mishkin" role="doc-biblioref">2022</a>)</span> (Ch 1-2)</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>2</strong></td>
-<td style="text-align: left;">Jul 22nd</td>
-<td style="text-align: left;">Fundamentals of Financial Markets</td>
-<td style="text-align: left;"><span class="citation" data-cites="Mishkin">Mishkin (<a href="index.html#ref-Mishkin" role="doc-biblioref">2022</a>)</span> (Ch 3-5)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>3</strong></td>
-<td style="text-align: left;"><strong>Fri July 31st</strong></td>
-<td style="text-align: left;">Financial Markets: Money Markets and Capital Markets</td>
-<td style="text-align: left;"><span class="citation" data-cites="Mishkin">Mishkin (<a href="index.html#ref-Mishkin" role="doc-biblioref">2022</a>)</span> (Ch 11-13)</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>4</strong></td>
-<td style="text-align: left;">Aug 5th</td>
-<td style="text-align: left;">Fundamentals of Financial Institutions</td>
-<td style="text-align: left;"><span class="citation" data-cites="Mishkin">Mishkin (<a href="index.html#ref-Mishkin" role="doc-biblioref">2022</a>)</span> (Ch 7-8)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>5</strong></td>
-<td style="text-align: left;"><strong>Fri Aug 14th</strong></td>
-<td style="text-align: left;">Financial Institutions Industry</td>
-<td style="text-align: left;"><span class="citation" data-cites="Mishkin">Mishkin (<a href="index.html#ref-Mishkin" role="doc-biblioref">2022</a>)</span> (Ch 17-19)</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>6</strong></td>
-<td style="text-align: left;">Aug 19th</td>
-<td style="text-align: left;">Central Banks, and Monetary Policy</td>
-<td style="text-align: left;"><span class="citation" data-cites="Mishkin">Mishkin (<a href="index.html#ref-Mishkin" role="doc-biblioref">2022</a>)</span> (Ch 9-10)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>7</strong></td>
-<td style="text-align: left;">Aug 26th</td>
-<td style="text-align: left;"><strong>Midterm Examination</strong></td>
-<td style="text-align: left;"><em>Review Weeks 1-6</em></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>8</strong></td>
-<td style="text-align: left;">Sep 2nd</td>
-<td style="text-align: left;">Corporate Finance &amp; Financial Statements</td>
-<td style="text-align: left;"><span class="citation" data-cites="Brealey/Myers">Brealey, Myers, and Allen (<a href="index.html#ref-Brealey/Myers" role="doc-biblioref">2023</a>)</span> (Ch 3-4)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>9</strong></td>
-<td style="text-align: left;">Sep 9th</td>
-<td style="text-align: left;">Time Value of Money (TVM)</td>
-<td style="text-align: left;"><span class="citation" data-cites="Brealey/Myers">Brealey, Myers, and Allen (<a href="index.html#ref-Brealey/Myers" role="doc-biblioref">2023</a>)</span> (Ch 5)</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>10</strong></td>
-<td style="text-align: left;">Sep 16th</td>
-<td style="text-align: left;">Bond and Stock Valuation</td>
-<td style="text-align: left;"><span class="citation" data-cites="Brealey/Myers">Brealey, Myers, and Allen (<a href="index.html#ref-Brealey/Myers" role="doc-biblioref">2023</a>)</span> (Ch 6-7)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>11</strong></td>
-<td style="text-align: left;">Sep 23rd</td>
-<td style="text-align: left;">Capital Budgeting (NPV, IRR, Payback Period)</td>
-<td style="text-align: left;"><span class="citation" data-cites="Brealey/Myers">Brealey, Myers, and Allen (<a href="index.html#ref-Brealey/Myers" role="doc-biblioref">2023</a>)</span> (Ch 8-9)</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>12</strong></td>
-<td style="text-align: left;">Sep 30th</td>
-<td style="text-align: left;">Risk, Return, and the Cost of Capital</td>
-<td style="text-align: left;"><span class="citation" data-cites="Brealey/Myers">Brealey, Myers, and Allen (<a href="index.html#ref-Brealey/Myers" role="doc-biblioref">2023</a>)</span> (Ch 11-13)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>13</strong></td>
-<td style="text-align: left;">Oct 7th</td>
-<td style="text-align: left;">Corporate Financing</td>
-<td style="text-align: left;"><span class="citation" data-cites="Brealey/Myers">Brealey, Myers, and Allen (<a href="index.html#ref-Brealey/Myers" role="doc-biblioref">2023</a>)</span> (Ch 14)</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>14</strong></td>
-<td style="text-align: left;">Oct 14th</td>
-<td style="text-align: left;"><strong>Financial Project Presentations</strong> &amp; Course Wrap-up</td>
-<td style="text-align: left;"><em>Team Presentations</em></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>15</strong></td>
-<td style="text-align: left;">Oct 21st</td>
-<td style="text-align: left;"><strong>Final Examination</strong></td>
-<td style="text-align: left;"><em>Comprehensive</em></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="แผนการสอน" class="level2 th-text">
-<h2 class="anchored" data-anchor-id="แผนการสอน">แผนการสอน</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 38%">
-<col style="width: 27%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">สัปดาห์</th>
-<th style="text-align: left;">วันที่</th>
-<th style="text-align: left;">หัวข้อ</th>
-<th style="text-align: left;">เอกสารอ่านประกอบ</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><strong>1</strong></td>
-<td style="text-align: left;">15 ก.ค.</td>
-<td style="text-align: left;">บทนำเกี่ยวกับระบบการเงินและตลาดการเงิน</td>
-<td style="text-align: left;"><span class="citation" data-cites="Mishkin">Mishkin (<a href="index.html#ref-Mishkin" role="doc-biblioref">2022</a>)</span> (บทที่ 1-2)</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>2</strong></td>
-<td style="text-align: left;">22 ก.ค.</td>
-<td style="text-align: left;">พื้นฐานของตลาดการเงิน</td>
-<td style="text-align: left;"><span class="citation" data-cites="Mishkin">Mishkin (<a href="index.html#ref-Mishkin" role="doc-biblioref">2022</a>)</span> (บทที่ 3-5)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>3</strong></td>
-<td style="text-align: left;"><strong>ศ. 31 ก.ค.</strong></td>
-<td style="text-align: left;">ตลาดการเงิน: ตลาดเงินและตลาดทุน</td>
-<td style="text-align: left;"><span class="citation" data-cites="Mishkin">Mishkin (<a href="index.html#ref-Mishkin" role="doc-biblioref">2022</a>)</span> (บทที่ 11-13)</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>4</strong></td>
-<td style="text-align: left;">5 ส.ค.</td>
-<td style="text-align: left;">พื้นฐานของสถาบันการเงิน</td>
-<td style="text-align: left;"><span class="citation" data-cites="Mishkin">Mishkin (<a href="index.html#ref-Mishkin" role="doc-biblioref">2022</a>)</span> (บทที่ 7-8)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>5</strong></td>
-<td style="text-align: left;"><strong>ศ. 14 ส.ค.</strong></td>
-<td style="text-align: left;">อุตสาหกรรมสถาบันการเงิน</td>
-<td style="text-align: left;"><span class="citation" data-cites="Mishkin">Mishkin (<a href="index.html#ref-Mishkin" role="doc-biblioref">2022</a>)</span> (บทที่ 17-19)</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>6</strong></td>
-<td style="text-align: left;">19 ส.ค.</td>
-<td style="text-align: left;">ธนาคารกลางและนโยบายการเงิน</td>
-<td style="text-align: left;"><span class="citation" data-cites="Mishkin">Mishkin (<a href="index.html#ref-Mishkin" role="doc-biblioref">2022</a>)</span> (บทที่ 9-10)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>7</strong></td>
-<td style="text-align: left;">26 ส.ค.</td>
-<td style="text-align: left;"><strong>สอบกลางภาค</strong></td>
-<td style="text-align: left;"><em>ทบทวนเนื้อหาสัปดาห์ที่ 1-6</em></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>8</strong></td>
-<td style="text-align: left;">2 ก.ย.</td>
-<td style="text-align: left;">การเงินธุรกิจและงบการเงิน</td>
-<td style="text-align: left;"><span class="citation" data-cites="Brealey/Myers">Brealey, Myers, and Allen (<a href="index.html#ref-Brealey/Myers" role="doc-biblioref">2023</a>)</span> (บทที่ 3-4)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>9</strong></td>
-<td style="text-align: left;">9 ก.ย.</td>
-<td style="text-align: left;">มูลค่าของเงินตามเวลา (TVM)</td>
-<td style="text-align: left;"><span class="citation" data-cites="Brealey/Myers">Brealey, Myers, and Allen (<a href="index.html#ref-Brealey/Myers" role="doc-biblioref">2023</a>)</span> (บทที่ 5)</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>10</strong></td>
-<td style="text-align: left;">16 ก.ย.</td>
-<td style="text-align: left;">การประเมินมูลค่าพันธบัตรและหุ้น</td>
-<td style="text-align: left;"><span class="citation" data-cites="Brealey/Myers">Brealey, Myers, and Allen (<a href="index.html#ref-Brealey/Myers" role="doc-biblioref">2023</a>)</span> (บทที่ 6-7)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>11</strong></td>
-<td style="text-align: left;">23 ก.ย.</td>
-<td style="text-align: left;">การงบประมาณลงทุน (NPV, IRR, ระยะเวลาคืนทุน)</td>
-<td style="text-align: left;"><span class="citation" data-cites="Brealey/Myers">Brealey, Myers, and Allen (<a href="index.html#ref-Brealey/Myers" role="doc-biblioref">2023</a>)</span> (บทที่ 8-9)</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>12</strong></td>
-<td style="text-align: left;">30 ก.ย.</td>
-<td style="text-align: left;">ความเสี่ยง ผลตอบแทน และต้นทุนของเงินทุน</td>
-<td style="text-align: left;"><span class="citation" data-cites="Brealey/Myers">Brealey, Myers, and Allen (<a href="index.html#ref-Brealey/Myers" role="doc-biblioref">2023</a>)</span> (บทที่ 11-13)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>13</strong></td>
-<td style="text-align: left;">7 ต.ค.</td>
-<td style="text-align: left;">การจัดหาเงินทุนของธุรกิจ</td>
-<td style="text-align: left;"><span class="citation" data-cites="Brealey/Myers">Brealey, Myers, and Allen (<a href="index.html#ref-Brealey/Myers" role="doc-biblioref">2023</a>)</span> (บทที่ 14)</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>14</strong></td>
-<td style="text-align: left;">14 ต.ค.</td>
-<td style="text-align: left;"><strong>การนำเสนอโปรเจกต์ทางการเงิน</strong> และสรุปเนื้อหารายวิชา</td>
-<td style="text-align: left;"><em>การนำเสนอแบบกลุ่ม</em></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>15</strong></td>
-<td style="text-align: left;">21 ต.ค.</td>
-<td style="text-align: left;"><strong>สอบปลายภาค</strong></td>
-<td style="text-align: left;"><em>ครอบคลุมเนื้อหาทั้งหมด</em></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="references" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-Brealey/Myers" class="csl-entry" role="listitem">
-Brealey, Richard A., Stewart C. Myers, and Franklin Allen. 2023.
-<em>Principles of Corporate Finance</em>. 14th ed. McGraw-Hill.
-</div>
-<div id="ref-Mishkin" class="csl-entry" role="listitem">
-Mishkin, Frederic S. 2022. <em>The Economics of Money, Banking, and
-Financial Markets</em>. 13th ed. Pearson.
-</div>
-</div>
+                    <!-- House of Reps -->
+                    <div class="relative pl-8 border-l-2 border-slate-100">
+                        <div class="absolute w-4 h-4 bg-slate-200 rounded-full -left-[9px] top-1 border-4 border-white"></div>
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-bold text-slate-800" data-lang="en">Operations Assistant</h3>
+                            <h3 class="font-bold text-slate-800" data-lang="th">ผู้ช่วยฝ่ายปฏิบัติการ</h3>
+                            <span class="text-xs text-slate-400 italic">Oct 2014 — Sep 2015</span>
+                        </div>
+                        <p class="text-sm font-semibold text-slate-500" data-lang="en">Secretariat of The House of Representatives</p>
+                        <p class="text-sm font-semibold text-slate-500" data-lang="th">สำนักงานเลขาธิการสภาผู้แทนราษฎร</p>
+                    </div>
+                </div>
+            </section>
 
+            <!-- Education -->
+            <section>
+                <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center">
+                    <span class="w-8 h-1 bg-blue-500 mr-3"></span>
+                    <span data-lang="en">Education</span>
+                    <span data-lang="th">ประวัติการศึกษา</span>
+                </h2>
+                <div class="space-y-6">
+                    <!-- GRIPS -->
+                    <div>
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-bold text-slate-800" data-lang="en">Master's in Public Policy Analysis</h3>
+                            <h3 class="font-bold text-slate-800" data-lang="th">ปริญญาโท ด้านการวิเคราะห์นโยบายสาธารณะ</h3>
+                            <span class="text-xs text-blue-600 font-bold bg-blue-50 px-2 py-1 rounded">2023 — 2025</span>
+                        </div>
+                        <p class="text-sm text-slate-600 font-medium">National Graduate Institute for Policy Studies (GRIPS)</p>
+                            <p class="text-xs text-slate-500 font-medium">Japanese Government (Monbukagakusho: MEXT) Scholarship</p>
+                            <p class="text-xs text-slate-500 mt-1 italic">Policy paper: The Impact of Transboundary Haze on Lung Cancer Mortality in Thailand</p>
+                            <p class="text-xs text-slate-500 mt-1 italic">Policy paper: Geospatial Analysis of Illicit Economies in Post-2021 Myanmar Coup d'etat Using Nighttime Lights</p>
+                    </div>
+                    
+                    <!-- Thammasat Master -->
+                    <div>
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-bold text-slate-800" data-lang="en">Master of Economics</h3>
+                            <h3 class="font-bold text-slate-800" data-lang="th">ปริญญาโท เศรษฐศาสตร์มหาบัณฑิต</h3>
+                            <span class="text-xs text-slate-400 font-medium">2012 — 2015</span>
+                        </div>
+                        <p class="text-sm text-slate-600 font-medium" data-lang="en">Thammasat University</p>
+                        <p class="text-sm text-slate-600 font-medium" data-lang="th">มหาวิทยาลัยธรรมศาสตร์</p>
+                        <p class="text-xs text-slate-500 mt-1 italic">Thesis: Nowcasting Thailand's GDP using a Bridge model</p>
+                    </div>
 
-</section>
+                    <!-- Thammasat Bachelor -->
+                    <div>
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-bold text-slate-800" data-lang="en">Bachelor of Arts in Economics</h3>
+                            <h3 class="font-bold text-slate-800" data-lang="th">ปริญญาตรี เศรษฐศาสตร์บัณฑิต</h3>
+                            <span class="text-xs text-slate-400 font-medium">2008 — 2012</span>
+                        </div>
+                        <p class="text-sm text-slate-600 font-medium" data-lang="en">Thammasat University</p>
+                        <p class="text-sm text-slate-600 font-medium" data-lang="th">มหาวิทยาลัยธรรมศาสตร์</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
-        }
-      }
-      return false;
-    }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
-    }
-    const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
-        }
-        return codeEl.innerText;
-    }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
-    });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
-    }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
-          }
-        }
-      }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
-        },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
-    }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
-      });
-    }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
-          }
-        }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
-            } else {
-              container.appendChild(child.cloneNode(true));
-              break;
-            }
-          }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
-          }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
-          }
-          return note.innerHTML;
-        }
-      } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
-        }
-      }
-    }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
-        }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
-            }
-          } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
-            });
-          }
-        } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
-            if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      }, function(instance) {
-      });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
-            }
-            selectedAnnoteEl = annoteEl;
-          }
-        };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
-            }
-          });
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
-      } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
+    <footer class="text-center py-10 text-slate-400 text-xs no-print">
+        &copy; 2026 Jirawat Poongam • <span>Curriculum Vitae</span>
+    </footer>
+
+    <script>
+        const body = document.body;
+        const btn = document.getElementById('langToggle');
+        
+        btn.addEventListener('click', () => {
+            body.classList.toggle('lang-th');
+            const isThai = body.classList.contains('lang-th');
+            document.documentElement.lang = isThai ? 'th' : 'en';
         });
-      }
-    }
-  });
-  </script>
-<nav class="page-navigation column-page-right">
-  <div class="nav-page nav-page-previous">
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./lecture_notes.html" class="pagination-link" aria-label="Lecture Notes">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Lecture Notes</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
-</div> <!-- /content -->
-
-
-
-
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
-</body></html>
+    </script>
+</body>
+</html>
