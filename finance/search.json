@@ -11,144 +11,6 @@
     ]
   },
   {
-    "objectID": "index.html#test2",
-    "href": "index.html#test2",
-    "title": "เศรษฐศาสตร์การเงินและการเงินบริษัท",
-    "section": "0.1 Test2",
-    "text": "0.1 Test2\nb",
-    "crumbs": [
-      "Home",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Syllabus</span>"
-    ]
-  },
-  {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "Assignment",
-    "section": "",
-    "text": "ตัวอย่าง\nโดย Gemini - 0 คะแนน",
-    "crumbs": [
-      "Home",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Assignment</span>"
-    ]
-  },
-  {
-    "objectID": "Data_collection.html",
-    "href": "Data_collection.html",
-    "title": "Data Collection",
-    "section": "",
-    "text": "การดึงข้อมูล",
-    "crumbs": [
-      "Home",
-      "3 Part 1",
-      "Data Collection"
-    ]
-  },
-  {
-    "objectID": "Data_preprocessing.html",
-    "href": "Data_preprocessing.html",
-    "title": "Data Preprocessing",
-    "section": "",
-    "text": "การประมวลผมช้อมูล\n\nText Preprocessing and Normalization A. Tokenization\n\n\nWord Tokenization\nSentence Tokenization\nSubword Tokenization B. Stemming and Lemmatization\nStemming Algorithms (e.g., Porter Stemmer)\nLemmatization (using lexical resources) C. Stop Word Removal D. Punctuation Removal E. Case Normalization F. Regular Expressions for Text Cleaning\n\nบทที่ 2: การเตรียมข้อมูลและคุณลักษณะทางภาษา (Chapter 2: Text Preprocessing and Linguistic Features)\nการรวบรวมข้อมูลข้อความ (Text Data Collection)\nการทำความสะอาดข้อมูล (Data Cleaning)\nการแยกคำและวลี (Tokenization and Word Segmentation)\nการทำให้อยู่ในรูปปกติ (Normalization): การลดรูปคำ (Stemming) และการทำให้เป็นคำมูลฐาน (Lemmatization)\nการกำจัดคำที่ไม่มีความหมาย (Stop Word Removal)\nการสร้าง N-grams (N-gram Generation)\nการติดป้ายชนิดของคำ (Part-of-Speech Tagging)\nการระบุชื่อเฉพาะ (Named Entity Recognition - NER)",
-    "crumbs": [
-      "Home",
-      "3 Part 1",
-      "Data Preprocessing"
-    ]
-  },
-  {
-    "objectID": "Text_representation.html",
-    "href": "Text_representation.html",
-    "title": "Text Representation Techniques",
-    "section": "",
-    "text": "Text Representation Techniques A. One-Hot Encoding B. Bag-of-Words (BoW) C. Term Frequency-Inverse Document Frequency (TF-IDF) D. N-Gram Language Modeling E. Word Embeddings\n\n\nWord2Vec (Skip-gram, CBOW)\nGloVe (Global Vectors for Word Representation)\nFastText F. Pre-trained Embeddings (e.g., ELMo, BERT, GPT-x) G. Document Embeddings (e.g., Doc2Vec)\n\nบทที่ 3: การแทนข้อมูลข้อความเชิงตัวเลข (Chapter 3: Numerical Representation of Text)\nถุงคำ (Bag-of-Words - BoW)\nTF-IDF (Term Frequency-Inverse Document Frequency)\nการฝังคำ (Word Embeddings): Word2Vec, GloVe, FastText\nการฝังประโยคและเอกสาร (Sentence and Document Embeddings)\nภาพรวมของโมเดลภาษาขนาดใหญ่ (Overview of Large Language Models - LLMs)",
-    "crumbs": [
-      "Home",
-      "3 Part 1",
-      "Text Representation Techniques"
-    ]
-  },
-  {
-    "objectID": "Core_NLP.html",
-    "href": "Core_NLP.html",
-    "title": "Core NLP Tasks",
-    "section": "",
-    "text": "Core NLP Tasks (Syntax and Semantics) A. Part-of-Speech (POS) Tagging B. Named Entity Recognition (NER)\n\n\nRule-based NER\nStatistical NER (e.g., HMM, CRF)\nDeep Learning for NER C. Syntactic Parsing\nConstituency Parsing\nDependency Parsing D. Semantic Analysis\nWord Sense Disambiguation\nSemantic Role Labeling\nCoreference Resolution",
-    "crumbs": [
-      "Home",
-      "Part 2",
-      "Core NLP Tasks"
-    ]
-  },
-  {
-    "objectID": "Advanced_NLP.html",
-    "href": "Advanced_NLP.html",
-    "title": "Advanced NLP Techniques and Applications",
-    "section": "",
-    "text": "V. Advanced NLP Techniques and Applications A. Text Classification 1. Sentiment Analysis 2. Spam Detection 3. Topic Classification B. Topic Modeling 1. Latent Semantic Analysis (LSA) 2. Latent Dirichlet Allocation (LDA) C. Keyword Extraction D. Text Summarization 1. Extractive Summarization 2. Abstractive Summarization E. Machine Translation F. Natural Language Generation (NLG) G. Question Answering H. Speech Processing 1. Speech Recognition 2. Text-to-Speech (TTS) Synthesis\nบทที่ 4: การเรียนรู้ของเครื่องสำหรับ NLP (Chapter 4: Machine Learning for NLP)\nการจำแนกข้อความ (Text Classification): Naive Bayes, Support Vector Machines (SVMs)\nการจัดกลุ่มข้อความ (Text Clustering): K-Means, Hierarchical Clustering\nการลดมิติข้อมูล (Dimensionality Reduction): PCA, t-SNE\nภาพรวมของโครงข่ายประสาทเทียมเบื้องต้น (Introduction to Neural Networks for NLP)\nบทที่ 5: โครงข่ายประสาทเทียมเชิงลึกสำหรับ NLP (Chapter 5: Deep Learning for NLP)\nโครงข่ายประสาทแบบเวียนซ้ำ (Recurrent Neural Networks - RNNs): LSTM, GRU\nโครงข่ายประสาทแบบสังวัตนาการ (Convolutional Neural Networks - CNNs) สำหรับข้อความ\nโครงข่ายแบบ Transformer และความสนใจ (Transformers and Attention Mechanism)\nแบบจำลองภาษาขนาดใหญ่ (Large Language Models - LLMs) และการปรับแต่ง (Fine-tuning)",
-    "crumbs": [
-      "Home",
-      "Part 2",
-      "Advanced NLP Techniques and Applications"
-    ]
-  },
-  {
-    "objectID": "NLP_in_economics.html",
-    "href": "NLP_in_economics.html",
-    "title": "NLP Applications in Economics",
-    "section": "",
-    "text": "ส่วนที่ 2: การประยุกต์ใช้ NLP ในวิชาเศรษฐศาสตร์ (Part 2: Applications of NLP in Economics) บทที่ 6: การวิเคราะห์ความรู้สึกและทัศนคติทางเศรษฐกิจ (Chapter 6: Sentiment and Tone Analysis in Economics)\nหลักการของการวิเคราะห์ความรู้สึก (Principles of Sentiment Analysis)\nการสร้างพจนานุกรมความรู้สึกทางเศรษฐกิจ (Constructing Economic Sentiment Lexicons)\nการวิเคราะห์ความรู้สึกจากรายงานทางการเงินและข่าวสาร (Sentiment Analysis from Financial Reports and News)\nการประยุกต์ใช้ในการทำนายตลาดและการตัดสินใจลงทุน (Applications in Market Prediction and Investment Decisions)\nบทที่ 7: การวิเคราะห์ข้อมูลจากรายงานและเอกสารทางเศรษฐกิจ (Chapter 7: Analyzing Economic Reports and Documents)\nการสกัดสารสนเทศจากรายงานประจำปีและงบการเงิน (Information Extraction from Annual Reports and Financial Statements)\nการวิเคราะห์นโยบายจากเอกสารภาครัฐ (Policy Analysis from Government Documents)\nการติดตามการเปลี่ยนแปลงกฎระเบียบ (Tracking Regulatory Changes)\nการสร้างกราฟความรู้ทางเศรษฐกิจ (Building Economic Knowledge Graphs)\nบทที่ 8: การวิเคราะห์หัวข้อและแนวโน้มทางเศรษฐกิจ (Chapter 8: Topic Modeling and Economic Trends)\nหลักการของ Topic Modeling: Latent Dirichlet Allocation (LDA)\nการระบุหัวข้อที่สำคัญจากบทความวิชาการและรายงานวิจัย (Identifying Key Topics from Academic Papers and Research Reports)\nการติดตามแนวโน้มและนวัตกรรมทางเศรษฐกิจ (Tracking Economic Trends and Innovations)\nการวิเคราะห์พลวัตของหัวข้อทางเศรษฐศาสตร์ (Analyzing Dynamics of Economic Topics)\nบทที่ 9: NLP สำหรับเศรษฐมิติและการพยากรณ์ (Chapter 9: NLP for Econometrics and Forecasting)\nการรวมตัวแปรข้อความเข้ากับแบบจำลองเศรษฐมิติ (Integrating Textual Variables into Econometric Models)\nการสร้างตัวแปรเชิงคุณภาพจากข้อความ (Creating Qualitative Variables from Text)\nการพยากรณ์ตัวแปรทางเศรษฐกิจโดยใช้ข้อมูลข้อความ (Forecasting Economic Variables using Textual Data)\nกรณีศึกษา: การพยากรณ์ภาวะเงินเฟ้อ, การเติบโตทางเศรษฐกิจ (Case Studies: Inflation Forecasting, Economic Growth)\nบทที่ 10: การวิเคราะห์ข้อมูลทางสังคมและพฤติกรรมผู้บริโภค (Chapter 10: Social and Consumer Behavior Analysis)\nการวิเคราะห์ความคิดเห็นจากสื่อสังคมออนไลน์ (Analyzing Opinions from Social Media)\nการประเมินความเชื่อมั่นของผู้บริโภค (Assessing Consumer Confidence)\nการวิเคราะห์ผลตอบรับจากลูกค้า (Customer Feedback Analysis)\nการทำความเข้าใจพฤติกรรมการซื้อขาย (Understanding Trading Behaviors)\nบทที่ 11: กรณีศึกษาและการประยุกต์ใช้ขั้นสูง (Chapter 11: Advanced Case Studies and Applications)\nการสร้าง Chatbots สำหรับบริการทางการเงิน (Building Chatbots for Financial Services)\nNLP ในเศรษฐศาสตร์การเงินเชิงปริมาณ (NLP in Quantitative Finance)\nการวิเคราะห์ภาษาของธนาคารกลาง (Central Bank Language Analysis)\nข้อควรพิจารณาทางจริยธรรมและอคติใน NLP ทางเศรษฐกิจ (Ethical Considerations and Bias in Economic NLP)",
-    "crumbs": [
-      "Home",
-      "Part 2",
-      "NLP Applications in Economics"
-    ]
-  },
-  {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "Summary",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever.",
-    "crumbs": [
-      "Home",
-      "Summary"
-    ]
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "EN\n  \n    \n    \n  \n  TH",
-    "crumbs": [
-      "Home",
-      "References"
-    ]
-  },
-  {
-    "objectID": "index.html#grading-assessment-การประเมนผล",
-    "href": "index.html#grading-assessment-การประเมนผล",
-    "title": "เศรษฐศาสตร์การเงินและการเงินบริษัท",
-    "section": "0.1 3. Grading & Assessment | การประเมินผล",
-    "text": "0.1 3. Grading & Assessment | การประเมินผล\n\nYour final grade will be determined based on the following weightings:\n\n\n\n\n\n\n\n\nAssessment Component\nPercentage\nDescription\n\n\n\n\nClass Participation & Assignments\n10%\nAttendance, active class discussion, and weekly homework assignments.\n\n\nFinancial Team Project\n20%\nGroup presentation analyzing a real-world financial market trend or a corporate finance case study.\n\n\nMidterm Exam\n30%\nCovers Weeks 1 - 6 (Primarily Financial Markets & Institutions).\n\n\nFinal Exam\n40%\nCovers Weeks 8 - 14 (Primarily Corporate Finance), cumulative concepts.\n\n\nTotal\n100%\n\n\n\n\n\n\nคะแนนของนักศึกษาจะถูกประเมินตามสัดส่วนต่อไปนี้:\n\n\n\n\n\n\n\n\nองค์ประกอบการประเมิน\nสัดส่วน\nคำอธิบาย\n\n\n\n\nการมีส่วนร่วมในชั้นเรียนและงานที่มอบหมาย\n10%\nการเข้าเรียน การอภิปรายในชั้นเรียน และการบ้านประจำสัปดาห์\n\n\nโครงงานกลุ่มทางการเงิน (Financial Team Project)\n20%\nการนำเสนอกลุ่มวิเคราะห์แนวโน้มตลาดการเงินในโลกแห่งความเป็นจริงหรือกรณีศึกษาทางการเงินธุรกิจ\n\n\nสอบกลางภาค (Midterm Exam)\n30%\nครอบคลุมเนื้อหาสัปดาห์ที่ 1 - 6 (เน้นตลาดการเงินและสถาบันการเงิน)\n\n\nสอบปลายภาค (Final Exam)\n40%\nครอบคลุมเนื้อหาสัปดาห์ที่ 8 - 14 (เน้นการเงินธุรกิจ) และแนวคิดที่เชื่อมโยงกัน\n\n\nรวม\n100%",
-    "crumbs": [
-      "Home",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Syllabus</span>"
-    ]
-  },
-  {
-    "objectID": "index.html#course-schedule-แผนการสอน",
-    "href": "index.html#course-schedule-แผนการสอน",
-    "title": "เศรษฐศาสตร์การเงินและการเงินบริษัท",
-    "section": "0.2 4. Course Schedule | แผนการสอน",
-    "text": "0.2 4. Course Schedule | แผนการสอน\n\n\n\n\n\n\n\n\n\nWeek\nTopic\nReading\n\n\n\n\n1\nIntroduction to the Financial System & Markets\nMishkin (Ch 1-2)\n\n\n2\nUnderstanding Interest Rates & Their Determinants\nMishkin (Ch 3-4)\n\n\n3\nCentral Banks, Federal Reserve, and Monetary Policy\nMishkin (Ch 9-10)\n\n\n4\nMoney Markets and Capital Markets\nMishkin (Ch 11-12)\n\n\n5\nFinancial Institutions: Banks, Mutual Funds & Insurance\nMishkin (Ch 17-20)\n\n\n6\nIntroduction to Corporate Finance & Financial Statements\nBrealey/Myers (Ch 1-2)\n\n\n7\nMidterm Examination\nReview Weeks 1-6\n\n\n8\nTime Value of Money (TVM)\nBrealey/Myers (Ch 5)\n\n\n9\nBond Valuation and Interest Rate Risk\nBrealey/Myers (Ch 6)\n\n\n10\nStock Valuation\nBrealey/Myers (Ch 7)\n\n\n11\nRisk, Return, and the Cost of Capital\nBrealey/Myers (Ch 11-12)\n\n\n12\nCapital Budgeting (NPV, IRR, Payback Period)\nBrealey/Myers (Ch 8-9)\n\n\n13\nCapital Structure & Payout Policy\nBrealey/Myers (Ch 16-17)\n\n\n14\nFinancial Project Presentations & Course Wrap-up\nTeam Presentations\n\n\n15\nFinal Examination\nComprehensive\n\n\n\n\n\n\n\n\n\n\n\n\n\nสัปดาห์\nหัวข้อ\nเอกสารอ่านประกอบ\n\n\n\n\n1\nแนะนำระบบการเงินและตลาดการเงิน\nMishkin (บทที่ 1-2)\n\n\n2\nความเข้าใจเกี่ยวกับอัตราดอกเบี้ยและปัจจัยกำหนด\nMishkin (บทที่ 3-4)\n\n\n3\nธนาคารกลาง ระบบเฟด และนโยบายการเงิน\nMishkin (บทที่ 9-10)\n\n\n4\nตลาดเงินและตลาดทุน\nMishkin (บทที่ 11-12)\n\n\n5\nสถาบันการเงิน: ธนาคาร กองทุนรวม และประกันภัย\nMishkin (บทที่ 17-20)\n\n\n6\nแนะนำการเงินธุรกิจและงบการเงิน\nBrealey/Myers (บทที่ 1-2)\n\n\n7\nสอบกลางภาค (Midterm Examination)\nทบทวนเนื้อหาสัปดาห์ 1-6\n\n\n8\nมูลค่าเงินตามเวลา (Time Value of Money)\nBrealey/Myers (บทที่ 5)\n\n\n9\nการประเมินมูลค่าพันธบัตรและความเสี่ยงด้านดอกเบี้ย\nBrealey/Myers (บทที่ 6)\n\n\n10\nการประเมินมูลค่าหุ้นสามัญ (Stock Valuation)\nBrealey/Myers (บทที่ 7)\n\n\n11\nความเสี่ยง ผลตอบแทน และต้นทุนของเงินทุน\nBrealey/Myers (บทที่ 11-12)\n\n\n12\nการงบประมาณลงทุน (NPV, IRR, ระยะเวลาคืนทุน)\nBrealey/Myers (บทที่ 8-9)\n\n\n13\nโครงสร้างเงินทุนและนโยบายการจ่ายเงินปันผล\nBrealey/Myers (บทที่ 16-17)\n\n\n14\nการนำเสนอโครงงานกลุ่ม และสรุปเนื้อหารายวิชา\nนำเสนองานกลุ่ม\n\n\n15\nสอบปลายภาค (Final Examination)\nครอบคลุมเนื้อหาทั้งหมด",
-    "crumbs": [
-      "Home",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Syllabus</span>"
-    ]
-  },
-  {
     "objectID": "index.html#เวลาเรยน",
     "href": "index.html#เวลาเรยน",
     "title": "เศรษฐศาสตร์การเงินและการเงินบริษัท",
@@ -226,152 +88,47 @@
     ]
   },
   {
-    "objectID": "31_fe_introduction.html",
-    "href": "31_fe_introduction.html",
-    "title": "Introduction to Financial Economics",
+    "objectID": "index.html#references",
+    "href": "index.html#references",
+    "title": "เศรษฐศาสตร์การเงินและการเงินบริษัท",
+    "section": "References",
+    "text": "References\n\n\nBrealey, Richard A., Stewart C. Myers, and Franklin Allen. 2023.\nPrinciples of Corporate Finance. 14th ed. McGraw-Hill.\n\n\nMishkin, Frederic S. 2022. The Economics of Money, Banking, and\nFinancial Markets. 13th ed. Pearson.",
+    "crumbs": [
+      "Home",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Syllabus</span>"
+    ]
+  },
+  {
+    "objectID": "lecture_notes.html",
+    "href": "lecture_notes.html",
+    "title": "Lecture Notes",
     "section": "",
-    "text": "EN\n  \n    \n    \n  \n  TH\n\n\n\n\n\n\n\nV. Advanced NLP Techniques and Applications A. Text Classification 1. Sentiment Analysis 2. Spam Detection 3. Topic Classification B. Topic Modeling 1. Latent Semantic Analysis (LSA) 2. Latent Dirichlet Allocation (LDA) C. Keyword Extraction D. Text Summarization 1. Extractive Summarization 2. Abstractive Summarization E. Machine Translation F. Natural Language Generation (NLG) G. Question Answering H. Speech Processing 1. Speech Recognition 2. Text-to-Speech (TTS) Synthesis\nบทที่ 4: การเรียนรู้ของเครื่องสำหรับ NLP (Chapter 4: Machine Learning for NLP)\nการจำแนกข้อความ (Text Classification): Naive Bayes, Support Vector Machines (SVMs)\nการจัดกลุ่มข้อความ (Text Clustering): K-Means, Hierarchical Clustering\nการลดมิติข้อมูล (Dimensionality Reduction): PCA, t-SNE\nภาพรวมของโครงข่ายประสาทเทียมเบื้องต้น (Introduction to Neural Networks for NLP)\nบทที่ 5: โครงข่ายประสาทเทียมเชิงลึกสำหรับ NLP (Chapter 5: Deep Learning for NLP)\nโครงข่ายประสาทแบบเวียนซ้ำ (Recurrent Neural Networks - RNNs): LSTM, GRU\nโครงข่ายประสาทแบบสังวัตนาการ (Convolutional Neural Networks - CNNs) สำหรับข้อความ\nโครงข่ายแบบ Transformer และความสนใจ (Transformers and Attention Mechanism)\nแบบจำลองภาษาขนาดใหญ่ (Large Language Models - LLMs) และการปรับแต่ง (Fine-tuning)",
+    "text": "Course Schedule",
     "crumbs": [
       "Home",
-      "3  Financial economics",
-      "Introduction to Financial Economics"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Lecture Notes</span>"
     ]
   },
   {
-    "objectID": "intro.html#เวลาเรยน",
-    "href": "intro.html#เวลาเรยน",
-    "title": "Assignment",
-    "section": "เวลาเรียน",
-    "text": "เวลาเรียน\nการบรรยาย: 1 ครั้ง / สัปดาห์, 3 ชั่วโมง / ครั้ง วันพุธ 16.35 - 19.20",
-    "crumbs": [
-      "Home",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Assignment</span>"
-    ]
-  },
-  {
-    "objectID": "32_fe_interest_rates.html",
-    "href": "32_fe_interest_rates.html",
-    "title": "Data Collection",
+    "objectID": "lecture_notes.html#course-schedule",
+    "href": "lecture_notes.html#course-schedule",
+    "title": "Lecture Notes",
     "section": "",
-    "text": "การดึงข้อมูล",
+    "text": "Week\nDate\nTopic\nLecture Notes\n\n\n\n\n1\nJul 15th\nIntroduction to the Financial System & Markets\n📄 PDF   📊 Slides\n\n\n2\nJul 22nd\nFundamentals of Financial Markets\n📄 PDF   📊 Slides\n\n\n3\nAug 5th\nFinancial Markets: Money Markets and Capital Markets\n📄 PDF   📊 Slides\n\n\n4\nFri Aug 7th\nFundamentals of Financial Institutions\n📄 PDF   📊 Slides\n\n\n5\nFri Aug 14th\nFinancial Institutions Industry\n📄 PDF   📊 Slides\n\n\n6\nAug 19th\nCentral Banks, and Monetary Policy\n📄 PDF   📊 Slides\n\n\n7\nAug 26th\nMidterm Examination\nReview Weeks 1-6\n\n\n8\nSep 2nd\nCorporate Finance & Financial Statements\n📄 PDF   📊 Slides\n\n\n9\nSep 9th\nTime Value of Money (TVM)\n📄 PDF   📊 Slides\n\n\n10\nSep 16th\nBond and Stock Valuation\n📄 PDF   📊 Slides\n\n\n11\nSep 23rd\nCapital Budgeting (NPV, IRR, Payback Period)\n📄 PDF   📊 Slides\n\n\n12\nSep 30th\nRisk, Return, and the Cost of Capital\n📄 PDF   📊 Slides\n\n\n13\nOct 7th\nCorporate Financing\n📄 PDF   📊 Slides\n\n\n14\nOct 14th\nFinancial Project Presentations & Course Wrap-up\nTeam Presentations\n\n\n15\nOct 21st\nFinal Examination\nComprehensive",
     "crumbs": [
       "Home",
-      "3  Financial economics",
-      "Data Collection"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Lecture Notes</span>"
     ]
   },
   {
-    "objectID": "33_fe_cb.html",
-    "href": "33_fe_cb.html",
-    "title": "Data Preprocessing",
-    "section": "",
-    "text": "การประมวลผมช้อมูล\n\nText Preprocessing and Normalization A. Tokenization\n\n\nWord Tokenization\nSentence Tokenization\nSubword Tokenization B. Stemming and Lemmatization\nStemming Algorithms (e.g., Porter Stemmer)\nLemmatization (using lexical resources) C. Stop Word Removal D. Punctuation Removal E. Case Normalization F. Regular Expressions for Text Cleaning\n\nบทที่ 2: การเตรียมข้อมูลและคุณลักษณะทางภาษา (Chapter 2: Text Preprocessing and Linguistic Features)\nการรวบรวมข้อมูลข้อความ (Text Data Collection)\nการทำความสะอาดข้อมูล (Data Cleaning)\nการแยกคำและวลี (Tokenization and Word Segmentation)\nการทำให้อยู่ในรูปปกติ (Normalization): การลดรูปคำ (Stemming) และการทำให้เป็นคำมูลฐาน (Lemmatization)\nการกำจัดคำที่ไม่มีความหมาย (Stop Word Removal)\nการสร้าง N-grams (N-gram Generation)\nการติดป้ายชนิดของคำ (Part-of-Speech Tagging)\nการระบุชื่อเฉพาะ (Named Entity Recognition - NER)",
+    "objectID": "lecture_notes.html#แผนการสอน",
+    "href": "lecture_notes.html#แผนการสอน",
+    "title": "Lecture Notes",
+    "section": "แผนการสอน",
+    "text": "แผนการสอน\n\n\n\nสัปดาห์\nวันที่\nหัวข้อ\nเอกสารประกอบการสอน\n\n\n\n\n1\n15 ก.ค.\nบทนำเกี่ยวกับระบบการเงินและตลาดการเงิน\n📄 PDF   📊 Slides\n\n\n2\n22 ก.ค.\nพื้นฐานของตลาดการเงิน\n📄 PDF   📊 Slides\n\n\n3\n5 ส.ค.\nตลาดการเงิน: ตลาดเงินและตลาดทุน\n📄 PDF   📊 Slides\n\n\n4\nศ. 7 ส.ค.\nพื้นฐานของสถาบันการเงิน\n📄 PDF   📊 Slides\n\n\n5\nศ. 14 ส.ค.\nอุตสาหกรรมสถาบันการเงิน\n📄 PDF   📊 Slides\n\n\n6\n19 ส.ค.\nธนาคารกลางและนโยบายการเงิน\n📄 PDF   📊 Slides\n\n\n7\n26 ส.ค.\nสอบกลางภาค\nทบทวนเนื้อหาสัปดาห์ที่ 1-6\n\n\n8\n2 ก.ย.\nการเงินธุรกิจและงบการเงิน\n📄 PDF   📊 Slides\n\n\n9\n9 ก.ย.\nมูลค่าของเงินตามเวลา (TVM)\n📄 PDF   📊 Slides\n\n\n10\n16 ก.ย.\nการประเมินมูลค่าพันธบัตรและหุ้น\n📄 PDF   📊 Slides\n\n\n11\n23 ก.ย.\nการงบประมาณลงทุน (NPV, IRR, ระยะเวลาคืนทุน)\n📄 PDF   📊 Slides\n\n\n12\n30 ก.ย.\nความเสี่ยง ผลตอบแทน และต้นทุนของเงินทุน\n📄 PDF   📊 Slides\n\n\n13\n7 ต.ค.\nการจัดหาเงินทุนของธุรกิจ\n📄 PDF   📊 Slides\n\n\n14\n14 ต.ค.\nการนำเสนอโปรเจกต์ทางการเงิน และสรุปเนื้อหารายวิชา\nการนำเสนอแบบกลุ่ม\n\n\n15\n21 ต.ค.\nสอบปลายภาค\nครอบคลุมเนื้อหาทั้งหมด",
     "crumbs": [
       "Home",
-      "3  Financial economics",
-      "Data Preprocessing"
-    ]
-  },
-  {
-    "objectID": "41_cf_introduction.html",
-    "href": "41_cf_introduction.html",
-    "title": "Core NLP Tasks",
-    "section": "",
-    "text": "EN\n  \n    \n    \n  \n  TH\n\n\n\n\n\n\n\n\nCore NLP Tasks (Syntax and Semantics) A. Part-of-Speech (POS) Tagging B. Named Entity Recognition (NER)\n\n\nRule-based NER\nStatistical NER (e.g., HMM, CRF)\nDeep Learning for NER C. Syntactic Parsing\nConstituency Parsing\nDependency Parsing D. Semantic Analysis\nWord Sense Disambiguation\nSemantic Role Labeling\nCoreference Resolution",
-    "crumbs": [
-      "Home",
-      "4  Corporate finance",
-      "Core NLP Tasks"
-    ]
-  },
-  {
-    "objectID": "42_cf_tvm.html",
-    "href": "42_cf_tvm.html",
-    "title": "NLP Applications in Economics",
-    "section": "",
-    "text": "ส่วนที่ 2: การประยุกต์ใช้ NLP ในวิชาเศรษฐศาสตร์ (Part 2: Applications of NLP in Economics) บทที่ 6: การวิเคราะห์ความรู้สึกและทัศนคติทางเศรษฐกิจ (Chapter 6: Sentiment and Tone Analysis in Economics)\nหลักการของการวิเคราะห์ความรู้สึก (Principles of Sentiment Analysis)\nการสร้างพจนานุกรมความรู้สึกทางเศรษฐกิจ (Constructing Economic Sentiment Lexicons)\nการวิเคราะห์ความรู้สึกจากรายงานทางการเงินและข่าวสาร (Sentiment Analysis from Financial Reports and News)\nการประยุกต์ใช้ในการทำนายตลาดและการตัดสินใจลงทุน (Applications in Market Prediction and Investment Decisions)\nบทที่ 7: การวิเคราะห์ข้อมูลจากรายงานและเอกสารทางเศรษฐกิจ (Chapter 7: Analyzing Economic Reports and Documents)\nการสกัดสารสนเทศจากรายงานประจำปีและงบการเงิน (Information Extraction from Annual Reports and Financial Statements)\nการวิเคราะห์นโยบายจากเอกสารภาครัฐ (Policy Analysis from Government Documents)\nการติดตามการเปลี่ยนแปลงกฎระเบียบ (Tracking Regulatory Changes)\nการสร้างกราฟความรู้ทางเศรษฐกิจ (Building Economic Knowledge Graphs)\nบทที่ 8: การวิเคราะห์หัวข้อและแนวโน้มทางเศรษฐกิจ (Chapter 8: Topic Modeling and Economic Trends)\nหลักการของ Topic Modeling: Latent Dirichlet Allocation (LDA)\nการระบุหัวข้อที่สำคัญจากบทความวิชาการและรายงานวิจัย (Identifying Key Topics from Academic Papers and Research Reports)\nการติดตามแนวโน้มและนวัตกรรมทางเศรษฐกิจ (Tracking Economic Trends and Innovations)\nการวิเคราะห์พลวัตของหัวข้อทางเศรษฐศาสตร์ (Analyzing Dynamics of Economic Topics)\nบทที่ 9: NLP สำหรับเศรษฐมิติและการพยากรณ์ (Chapter 9: NLP for Econometrics and Forecasting)\nการรวมตัวแปรข้อความเข้ากับแบบจำลองเศรษฐมิติ (Integrating Textual Variables into Econometric Models)\nการสร้างตัวแปรเชิงคุณภาพจากข้อความ (Creating Qualitative Variables from Text)\nการพยากรณ์ตัวแปรทางเศรษฐกิจโดยใช้ข้อมูลข้อความ (Forecasting Economic Variables using Textual Data)\nกรณีศึกษา: การพยากรณ์ภาวะเงินเฟ้อ, การเติบโตทางเศรษฐกิจ (Case Studies: Inflation Forecasting, Economic Growth)\nบทที่ 10: การวิเคราะห์ข้อมูลทางสังคมและพฤติกรรมผู้บริโภค (Chapter 10: Social and Consumer Behavior Analysis)\nการวิเคราะห์ความคิดเห็นจากสื่อสังคมออนไลน์ (Analyzing Opinions from Social Media)\nการประเมินความเชื่อมั่นของผู้บริโภค (Assessing Consumer Confidence)\nการวิเคราะห์ผลตอบรับจากลูกค้า (Customer Feedback Analysis)\nการทำความเข้าใจพฤติกรรมการซื้อขาย (Understanding Trading Behaviors)\nบทที่ 11: กรณีศึกษาและการประยุกต์ใช้ขั้นสูง (Chapter 11: Advanced Case Studies and Applications)\nการสร้าง Chatbots สำหรับบริการทางการเงิน (Building Chatbots for Financial Services)\nNLP ในเศรษฐศาสตร์การเงินเชิงปริมาณ (NLP in Quantitative Finance)\nการวิเคราะห์ภาษาของธนาคารกลาง (Central Bank Language Analysis)\nข้อควรพิจารณาทางจริยธรรมและอคติใน NLP ทางเศรษฐกิจ (Ethical Considerations and Bias in Economic NLP)",
-    "crumbs": [
-      "Home",
-      "4  Corporate finance",
-      "NLP Applications in Economics"
-    ]
-  },
-  {
-    "objectID": "43_cf_bond.html",
-    "href": "43_cf_bond.html",
-    "title": "Text Representation Techniques",
-    "section": "",
-    "text": "Text Representation Techniques A. One-Hot Encoding B. Bag-of-Words (BoW) C. Term Frequency-Inverse Document Frequency (TF-IDF) D. N-Gram Language Modeling E. Word Embeddings\n\n\nWord2Vec (Skip-gram, CBOW)\nGloVe (Global Vectors for Word Representation)\nFastText F. Pre-trained Embeddings (e.g., ELMo, BERT, GPT-x) G. Document Embeddings (e.g., Doc2Vec)\n\nบทที่ 3: การแทนข้อมูลข้อความเชิงตัวเลข (Chapter 3: Numerical Representation of Text)\nถุงคำ (Bag-of-Words - BoW)\nTF-IDF (Term Frequency-Inverse Document Frequency)\nการฝังคำ (Word Embeddings): Word2Vec, GloVe, FastText\nการฝังประโยคและเอกสาร (Sentence and Document Embeddings)\nภาพรวมของโมเดลภาษาขนาดใหญ่ (Overview of Large Language Models - LLMs)",
-    "crumbs": [
-      "Home",
-      "4  Corporate finance",
-      "Text Representation Techniques"
-    ]
-  },
-  {
-    "objectID": "intro.html#ตวอยางการวเคราะหอตสาหกรรมและบรษทในภาคการเงน",
-    "href": "intro.html#ตวอยางการวเคราะหอตสาหกรรมและบรษทในภาคการเงน",
-    "title": "Assignment",
-    "section": "ตัวอย่างการวิเคราะห์อุตสาหกรรมและบริษัทในภาคการเงิน",
-    "text": "ตัวอย่างการวิเคราะห์อุตสาหกรรมและบริษัทในภาคการเงิน\nโดย Gemini - 0 คะแนน\n\n1. กลุ่มอุตสาหกรรมที่เลือกศึกษา: อุตสาหกรรมชิ้นส่วนอิเล็กทรอนิกส์ (Electronic Components - ETRON)\nอุตสาหกรรมชิ้นส่วนอิเล็กทรอนิกส์ในตลาดหลักทรัพย์แห่งประเทศไทย (SET) เป็นฟันเฟืองสำคัญของห่วงโซ่อุปทานเทคโนโลยีโลก (Global Tech Supply Chain) หุ้นเด่นในกลุ่มนี้ ได้แก่ DELTA, HANA, KCE และ SMT ซึ่งส่วนใหญ่เป็นผู้รับจ้างผลิต (OEM) หรือผู้ผลิตแผ่นวงจรพิมพ์ (PCB) และชิ้นส่วนสารกึ่งตัวนำ (Semiconductor) ที่ส่งออกไปยังต่างประเทศเกือบ 100%\n\n\n2. การวิเคราะห์ภาพรวมอุตสาหกรรม (Industry Analysis)\nอุตสาหกรรมชิ้นส่วนอิเล็กทรอนิกส์ในปี 2025–2026 อยู่ในจุดที่กำลังฟื้นตัวและเปลี่ยนผ่าน โดยมีประเด็นสำคัญดังนี้:\n\nแรงขับเคลื่อนหลัก (Growth Drivers): อุตสาหกรรมได้รับอานิสงส์มหาศาลจากเมกะเทรนด์โลก โดยเฉพาะการเติบโตของเทคโนโลยี AI, เครือข่าย 5G/6G, การลงทุน Data Center และการขยายตัวของยานยนต์ไฟฟ้า (EV) ซึ่งรถยนต์ EV หนึ่งคันต้องใช้ชิ้นส่วนอิเล็กทรอนิกส์และ PCB มากกว่ารถยนต์สันดาปถึง 2-3 เท่า\nความท้าทายเชิงมหภาค (Macro Headwinds): * ราคาวัตถุดิบ: ความผันผวนของราคาทองแดง (Copper) และทองคำ ซึ่งเป็นวัตถุดิบหลักในการผลิต PCB ปรับตัวสูงขึ้นจากความตึงเครียดทางภูมิรัฐศาสตร์ กดดันอัตรากำไรขั้นต้น (Gross Margin) ของผู้ผลิต\n\nอัตราแลกเปลี่ยน: เนื่องจากรายได้หลักมาจากการส่งออก (ในรูปเงินสกุล USD) การแข็งค่าของเงินบาทจึงเป็นความท้าทายสำคัญที่กดดันรายได้เมื่อแปลงกลับเป็นเงินบาท\n\nสภาพการแข่งขัน (Competitive Landscape): การแข่งขันสูงมากโดยเฉพาะจากผู้ผลิตในประเทศจีน (China Plus One) อย่างไรก็ตาม ไทยยังคงได้รับประโยชน์จากการที่ฐานการผลิตระดับโลกต้องการกระจายความเสี่ยงด้านห่วงโซ่อุปทานออกจากจีน ทำให้มีเงินลงทุนตรงจากต่างประเทศ (FDI) ไหลเข้ากลุ่มอิเล็กทรอนิกส์ในไทยอย่างต่อเนื่อง\n\n\n\n3. การวิเคราะห์บริษัท: KCE Electronics Public Company Limited (KCE)\nภาพรวมธุรกิจ: KCE เป็นผู้ผลิตและจำหน่ายแผ่นวงจรพิมพ์ (Printed Circuit Board - PCB) ระดับท็อปของโลก โดยมีรายได้หลักกว่า 70% มาจากกลุ่มอุตสาหกรรมยานยนต์ (Automotive Sector) ในตลาดยุโรปและสหรัฐอเมริกา\n\n3.1 การวิเคราะห์งบการเงิน (Financial Statement Analysis)\nการวิเคราะห์ความแข็งแกร่งทางการเงินของ KCE ผ่านอัตราส่วนทางการเงินที่สำคัญ (อ้างอิงแนวโน้มผลประกอบการช่วงปี 2025 - ต้นปี 2026):\n\n\n\n\n\n\n\n\nหมวดหมู่\nอัตราส่วนทางการเงิน (Financial Ratios)\nทิศทางและคำอธิบาย\n\n\n\n\nสภาพคล่อง\nCurrent RatioCurrent Assets / Current Liabilities\nอยู่ในเกณฑ์ดี (&gt; 1.5x)บริษัทมีสภาพคล่องหมุนเวียนที่แข็งแกร่ง มีเงินสดเพียงพอต่อการชำระหนี้ระยะสั้นและการลงทุนในเครื่องจักรใหม่\n\n\nการทำกำไร\nGross Profit Margin(Gross Profit / Revenue) * 100\nทรงตัวที่ระดับ 17% - 18%ถูกกดดันจากราคาทองแดงที่สูงขึ้นและเงินบาทแข็งค่า แต่บริษัทแก้เกมด้วยการเพิ่มสัดส่วนสินค้า High-Density Interconnect (HDI) ที่มีมาร์จิ้นสูงกว่า\n\n\nการทำกำไร\nReturn on Equity (ROE)Net Income / Total Equity\nระดับ 14% - 16%ถือว่าอยู่ในระดับที่น่าพอใจสำหรับธุรกิจภาคการผลิต สะท้อนการนำทุนของผู้ถือหุ้นไปสร้างผลตอบแทนได้อย่างมีประสิทธิภาพ\n\n\nภาระหนี้สิน\nDebt to Equity RatioTotal Liabilities / Total Equity\nต่ำกว่า 1.0xโครงสร้างเงินทุนแข็งแกร่ง หนี้สินต่อทุนต่ำ มีศักยภาพในการกู้ยืมเพื่อขยายโรงงาน (เช่น โครงการที่โรจนะ) โดยไม่กระทบ Credit Rating\n\n\n\n\n\n3.2 ความคิดเห็นต่อศักยภาพ ทิศทาง และกลยุทธ์ (Opinion & Outlook)\nจากมุมมองด้าน Corporate Finance ศักยภาพของ KCE ยังคงแข็งแกร่งในระยะยาว แม้จะเผชิญความผันผวนในระยะสั้น: 1. กลยุทธ์การบริหารต้นทุน (Cost Optimization): KCE แสดงให้เห็นถึงศักยภาพในการรับมือกับต้นทุนทองแดงที่พุ่งสูงขึ้น ด้วยการนำระบบอัตโนมัติ (Automation) มาใช้แทนแรงงานคน ซึ่งจะเห็นผลชัดเจนในการลดต้นทุน SG&A อย่างยั่งยืน 2. การปรับ Product Mix (Value Creation): การเปลี่ยนผ่านจากการผลิต PCB แบบมาตรฐาน ไปสู่แผ่นวงจรพิมพ์ชนิดพิเศษ HDI (High-Density Interconnect) ซึ่งปัจจุบันคิดเป็นราว 30% ของยอดขาย เป็นกลยุทธ์ที่ถูกต้อง เพราะสินค้ากลุ่มนี้ตอบโจทย์ระบบ Advanced Driver Assistance Systems (ADAS) ในรถยนต์รุ่นใหม่ และมีกำไรขั้นต้นที่สูงกว่า 3. วินัยทางการเงินเชิงรุก (Capital Allocation): การที่ผู้บริหารตัดสินใจชะลอแผนลงทุนสร้างโรงงานใหม่ที่โรจนะออกไปเป็นช่วงปี 2026-2027 เพื่อรอดูความชัดเจนของดีมานด์โลก สะท้อนให้เห็นถึงวินัยในการบริหารเงินทุน (Capital Expenditure) อย่างระมัดระวัง ไม่สร้างภาระหนี้เกินความจำเป็น (Over-leverage)\nสรุป: KCE เป็นหุ้นที่มีพื้นฐาน (Fundamentals) แข็งแกร่งและมีสถานะทางการเงินที่ยอดเยี่ยม (Net Cash Position) ทิศทางในอนาคตขึ้นอยู่กับความรวดเร็วในการส่งผ่านต้นทุนที่เพิ่มขึ้นไปยังลูกค้า (Price Hikes) และการฟื้นตัวของอุตสาหกรรมยานยนต์ในยุโรป หากเมกะเทรนด์ EV และ AI ยังคงดำเนินต่อไป KCE จะเป็นหนึ่งในบริษัทของไทยที่ได้รับประโยชน์สูงสุดอย่างปฏิเสธไม่ได้",
-    "crumbs": [
-      "Home",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Assignment</span>"
-    ]
-  },
-  {
-    "objectID": "intro.html#โดย-gemini---0-คะแนน",
-    "href": "intro.html#โดย-gemini---0-คะแนน",
-    "title": "Assignment",
-    "section": "โดย Gemini - 0 คะแนน",
-    "text": "โดย Gemini - 0 คะแนน\n\n1. กลุ่มอุตสาหกรรมที่เลือกศึกษา: อุตสาหกรรมชิ้นส่วนอิเล็กทรอนิกส์ (Electronic Components - ETRON)\nอุตสาหกรรมชิ้นส่วนอิเล็กทรอนิกส์ในตลาดหลักทรัพย์แห่งประเทศไทย (SET) เป็นฟันเฟืองสำคัญของห่วงโซ่อุปทานเทคโนโลยีโลก (Global Tech Supply Chain) หุ้นเด่นในกลุ่มนี้ ได้แก่ DELTA, HANA, KCE และ SMT ซึ่งส่วนใหญ่เป็นผู้รับจ้างผลิต (OEM) หรือผู้ผลิตแผ่นวงจรพิมพ์ (PCB) และชิ้นส่วนสารกึ่งตัวนำ (Semiconductor) ที่ส่งออกไปยังต่างประเทศเกือบ 100%\n\n\n2. การวิเคราะห์ภาพรวมอุตสาหกรรม (Industry Analysis)\nอุตสาหกรรมชิ้นส่วนอิเล็กทรอนิกส์ในปี 2025–2026 อยู่ในจุดที่กำลังฟื้นตัวและเปลี่ยนผ่าน โดยมีประเด็นสำคัญดังนี้:\n\nแรงขับเคลื่อนหลัก (Growth Drivers): อุตสาหกรรมได้รับอานิสงส์มหาศาลจากเมกะเทรนด์โลก โดยเฉพาะการเติบโตของเทคโนโลยี AI, เครือข่าย 5G/6G, การลงทุน Data Center และการขยายตัวของยานยนต์ไฟฟ้า (EV) ซึ่งรถยนต์ EV หนึ่งคันต้องใช้ชิ้นส่วนอิเล็กทรอนิกส์และ PCB มากกว่ารถยนต์สันดาปถึง 2-3 เท่า\nความท้าทายเชิงมหภาค (Macro Headwinds): * ราคาวัตถุดิบ: ความผันผวนของราคาทองแดง (Copper) และทองคำ ซึ่งเป็นวัตถุดิบหลักในการผลิต PCB ปรับตัวสูงขึ้นจากความตึงเครียดทางภูมิรัฐศาสตร์ กดดันอัตรากำไรขั้นต้น (Gross Margin) ของผู้ผลิต\n\nอัตราแลกเปลี่ยน: เนื่องจากรายได้หลักมาจากการส่งออก (ในรูปเงินสกุล USD) การแข็งค่าของเงินบาทจึงเป็นความท้าทายสำคัญที่กดดันรายได้เมื่อแปลงกลับเป็นเงินบาท\n\nสภาพการแข่งขัน (Competitive Landscape): การแข่งขันสูงมากโดยเฉพาะจากผู้ผลิตในประเทศจีน (China Plus One) อย่างไรก็ตาม ไทยยังคงได้รับประโยชน์จากการที่ฐานการผลิตระดับโลกต้องการกระจายความเสี่ยงด้านห่วงโซ่อุปทานออกจากจีน ทำให้มีเงินลงทุนตรงจากต่างประเทศ (FDI) ไหลเข้ากลุ่มอิเล็กทรอนิกส์ในไทยอย่างต่อเนื่อง\n\n\n\n3. การวิเคราะห์บริษัท: KCE Electronics Public Company Limited (KCE)\nภาพรวมธุรกิจ: KCE เป็นผู้ผลิตและจำหน่ายแผ่นวงจรพิมพ์ (Printed Circuit Board - PCB) ระดับท็อปของโลก โดยมีรายได้หลักกว่า 70% มาจากกลุ่มอุตสาหกรรมยานยนต์ (Automotive Sector) ในตลาดยุโรปและสหรัฐอเมริกา\n\n3.1 การวิเคราะห์งบการเงิน (Financial Statement Analysis)\nการวิเคราะห์ความแข็งแกร่งทางการเงินของ KCE ผ่านอัตราส่วนทางการเงินที่สำคัญ (อ้างอิงแนวโน้มผลประกอบการช่วงปี 2025 - ต้นปี 2026):\n\n\n\n\n\n\n\n\nหมวดหมู่\nอัตราส่วนทางการเงิน (Financial Ratios)\nทิศทางและคำอธิบาย\n\n\n\n\nสภาพคล่อง\nCurrent RatioCurrent Assets / Current Liabilities\nอยู่ในเกณฑ์ดี (&gt; 1.5x)บริษัทมีสภาพคล่องหมุนเวียนที่แข็งแกร่ง มีเงินสดเพียงพอต่อการชำระหนี้ระยะสั้นและการลงทุนในเครื่องจักรใหม่\n\n\nการทำกำไร\nGross Profit Margin(Gross Profit / Revenue) * 100\nทรงตัวที่ระดับ 17% - 18%ถูกกดดันจากราคาทองแดงที่สูงขึ้นและเงินบาทแข็งค่า แต่บริษัทแก้เกมด้วยการเพิ่มสัดส่วนสินค้า High-Density Interconnect (HDI) ที่มีมาร์จิ้นสูงกว่า\n\n\nการทำกำไร\nReturn on Equity (ROE)Net Income / Total Equity\nระดับ 14% - 16%ถือว่าอยู่ในระดับที่น่าพอใจสำหรับธุรกิจภาคการผลิต สะท้อนการนำทุนของผู้ถือหุ้นไปสร้างผลตอบแทนได้อย่างมีประสิทธิภาพ\n\n\nภาระหนี้สิน\nDebt to Equity RatioTotal Liabilities / Total Equity\nต่ำกว่า 1.0xโครงสร้างเงินทุนแข็งแกร่ง หนี้สินต่อทุนต่ำ มีศักยภาพในการกู้ยืมเพื่อขยายโรงงาน (เช่น โครงการที่โรจนะ) โดยไม่กระทบ Credit Rating\n\n\n\n\n\n3.2 ความคิดเห็นต่อศักยภาพ ทิศทาง และกลยุทธ์ (Opinion & Outlook)\nจากมุมมองด้าน Corporate Finance ศักยภาพของ KCE ยังคงแข็งแกร่งในระยะยาว แม้จะเผชิญความผันผวนในระยะสั้น: 1. กลยุทธ์การบริหารต้นทุน (Cost Optimization): KCE แสดงให้เห็นถึงศักยภาพในการรับมือกับต้นทุนทองแดงที่พุ่งสูงขึ้น ด้วยการนำระบบอัตโนมัติ (Automation) มาใช้แทนแรงงานคน ซึ่งจะเห็นผลชัดเจนในการลดต้นทุน SG&A อย่างยั่งยืน 2. การปรับ Product Mix (Value Creation): การเปลี่ยนผ่านจากการผลิต PCB แบบมาตรฐาน ไปสู่แผ่นวงจรพิมพ์ชนิดพิเศษ HDI (High-Density Interconnect) ซึ่งปัจจุบันคิดเป็นราว 30% ของยอดขาย เป็นกลยุทธ์ที่ถูกต้อง เพราะสินค้ากลุ่มนี้ตอบโจทย์ระบบ Advanced Driver Assistance Systems (ADAS) ในรถยนต์รุ่นใหม่ และมีกำไรขั้นต้นที่สูงกว่า 3. วินัยทางการเงินเชิงรุก (Capital Allocation): การที่ผู้บริหารตัดสินใจชะลอแผนลงทุนสร้างโรงงานใหม่ที่โรจนะออกไปเป็นช่วงปี 2026-2027 เพื่อรอดูความชัดเจนของดีมานด์โลก สะท้อนให้เห็นถึงวินัยในการบริหารเงินทุน (Capital Expenditure) อย่างระมัดระวัง ไม่สร้างภาระหนี้เกินความจำเป็น (Over-leverage)\nสรุป: KCE เป็นหุ้นที่มีพื้นฐาน (Fundamentals) แข็งแกร่งและมีสถานะทางการเงินที่ยอดเยี่ยม (Net Cash Position) ทิศทางในอนาคตขึ้นอยู่กับความรวดเร็วในการส่งผ่านต้นทุนที่เพิ่มขึ้นไปยังลูกค้า (Price Hikes) และการฟื้นตัวของอุตสาหกรรมยานยนต์ในยุโรป หากเมกะเทรนด์ EV และ AI ยังคงดำเนินต่อไป KCE จะเป็นหนึ่งในบริษัทของไทยที่ได้รับประโยชน์สูงสุดอย่างปฏิเสธไม่ได้",
-    "crumbs": [
-      "Home",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Assignment</span>"
-    ]
-  },
-  {
-    "objectID": "intro.html#industry-company-analysis-example",
-    "href": "intro.html#industry-company-analysis-example",
-    "title": "Assignment",
-    "section": "Industry & Company Analysis Example",
-    "text": "Industry & Company Analysis Example\nGenerated by Gemini - 0 points\n\n1. Chosen Industry: Electronic Components (ETRON)\nThe Electronic Components industry in the Stock Exchange of Thailand (SET) is a crucial cog in the global tech supply chain. Prominent stocks in this sector include DELTA, HANA, KCE, and SMT. Most are Original Equipment Manufacturers (OEMs) or producers of Printed Circuit Boards (PCBs) and semiconductors, exporting nearly 100% of their production worldwide.\n\n\n2. Industry Analysis (Overview)\nThe electronic components industry in 2025–2026 is at a point of recovery and transition, with the following key aspects:\n\nGrowth Drivers: The industry benefits massively from global megatrends, especially the rise of AI technology, 5G/6G networks, Data Center investments, and the expansion of Electric Vehicles (EVs). A single EV requires 2-3 times more electronic components and PCBs compared to an internal combustion engine (ICE) vehicle.\nMacro Headwinds: * Raw Material Prices: Volatility in the prices of copper and gold—key materials in PCB manufacturing—has trended upward due to geopolitical tensions, putting pressure on manufacturers’ gross margins.\n\nExchange Rates: Since the majority of revenue is export-driven (in USD), the appreciation of the Thai Baht presents a significant challenge, compressing revenue when converted back to the local currency.\n\nCompetitive Landscape: Competition is fierce, particularly from Chinese manufacturers (China Plus One strategy). However, Thailand continues to benefit as the global manufacturing base seeks to diversify supply chain risks away from China, leading to sustained Foreign Direct Investment (FDI) into the Thai electronics sector.\n\n\n\n3. Company Analysis: KCE Electronics Public Company Limited (KCE)\nBusiness Overview: KCE is a top-tier global manufacturer and distributor of Printed Circuit Boards (PCBs). Over 70% of its core revenue comes from the Automotive Sector in European and US markets.\n\n3.1 Financial Statement Analysis\nAnalyzing KCE’s financial strength through key financial ratios (based on performance trends from 2025 to early 2026):\n\n\n\n\n\n\n\n\nCategory\nFinancial Ratios\nTrend & Explanation\n\n\n\n\nLiquidity\nCurrent RatioCurrent Assets / Current Liabilities\nGood (&gt; 1.5x)The company maintains strong operating liquidity, with sufficient cash to meet short-term obligations and invest in new machinery.\n\n\nProfitability\nGross Profit Margin(Gross Profit / Revenue) * 100\nStable at 17% - 18%Pressured by higher copper prices and a strong Baht. However, the company counters this by increasing the proportion of High-Density Interconnect (HDI) products, which carry higher margins.\n\n\nProfitability\nReturn on Equity (ROE)Net Income / Total Equity\nAround 14% - 16%Satisfactory for the manufacturing sector, reflecting efficient use of shareholder equity to generate returns.\n\n\nLeverage\nDebt to Equity RatioTotal Liabilities / Total Equity\nBelow 1.0xStrong capital structure with low debt-to-equity. The company has the capacity to borrow for plant expansions (e.g., the Rojana project) without impacting its credit rating.\n\n\n\n\n\n3.2 Opinion, Outlook & Strategy\nFrom a Corporate Finance perspective, KCE’s potential remains strong in the long term, despite short-term volatilities: 1. Cost Optimization Strategy: KCE demonstrates the ability to cope with soaring copper costs by replacing manual labor with automation, which sustainably reduces SG&A expenses. 2. Value Creation (Product Mix): Transitioning from standard PCBs to specialized High-Density Interconnect (HDI) boards—now accounting for about 30% of sales—is the right strategy. These products cater to Advanced Driver Assistance Systems (ADAS) in modern vehicles and yield higher gross margins. 3. Proactive Capital Allocation: Management’s decision to delay the construction of the new Rojana plant to 2026-2027 to monitor global demand reflects disciplined capital expenditure management, avoiding unnecessary over-leverage.\nConclusion: KCE possesses strong fundamentals and an excellent financial standing (Net Cash Position). Its future trajectory depends on how quickly it can pass increased costs to customers (Price Hikes) and the recovery of the European automotive industry. If the EV and AI megatrends persist, KCE will undeniably be one of the prime Thai beneficiaries.",
-    "crumbs": [
-      "Home",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Assignment</span>"
-    ]
-  },
-  {
-    "objectID": "intro.html#generated-by-gemini---0-points",
-    "href": "intro.html#generated-by-gemini---0-points",
-    "title": "Assignment",
-    "section": "Generated by Gemini - 0 points",
-    "text": "Generated by Gemini - 0 points\n\n1. Chosen Industry: Electronic Components (ETRON)\nThe Electronic Components industry in the Stock Exchange of Thailand (SET) is a crucial cog in the global tech supply chain. Prominent stocks in this sector include DELTA, HANA, KCE, and SMT. Most are Original Equipment Manufacturers (OEMs) or producers of Printed Circuit Boards (PCBs) and semiconductors, exporting nearly 100% of their production worldwide.\n\n\n2. Industry Analysis (Overview)\nThe electronic components industry in 2025–2026 is at a point of recovery and transition, with the following key aspects:\n\nGrowth Drivers: The industry benefits massively from global megatrends, especially the rise of AI technology, 5G/6G networks, Data Center investments, and the expansion of Electric Vehicles (EVs). A single EV requires 2-3 times more electronic components and PCBs compared to an internal combustion engine (ICE) vehicle.\nMacro Headwinds: * Raw Material Prices: Volatility in the prices of copper and gold—key materials in PCB manufacturing—has trended upward due to geopolitical tensions, putting pressure on manufacturers’ gross margins.\n\nExchange Rates: Since the majority of revenue is export-driven (in USD), the appreciation of the Thai Baht presents a significant challenge, compressing revenue when converted back to the local currency.\n\nCompetitive Landscape: Competition is fierce, particularly from Chinese manufacturers (China Plus One strategy). However, Thailand continues to benefit as the global manufacturing base seeks to diversify supply chain risks away from China, leading to sustained Foreign Direct Investment (FDI) into the Thai electronics sector.\n\n\n\n3. Company Analysis: KCE Electronics Public Company Limited (KCE)\nBusiness Overview: KCE is a top-tier global manufacturer and distributor of Printed Circuit Boards (PCBs). Over 70% of its core revenue comes from the Automotive Sector in European and US markets.\n\n3.1 Financial Statement Analysis\nAnalyzing KCE’s financial strength through key financial ratios (based on performance trends from 2025 to early 2026):\n\n\n\n\n\n\n\n\nCategory\nFinancial Ratios\nTrend & Explanation\n\n\n\n\nLiquidity\nCurrent RatioCurrent Assets / Current Liabilities\nGood (&gt; 1.5x)The company maintains strong operating liquidity, with sufficient cash to meet short-term obligations and invest in new machinery.\n\n\nProfitability\nGross Profit Margin(Gross Profit / Revenue) * 100\nStable at 17% - 18%Pressured by higher copper prices and a strong Baht. However, the company counters this by increasing the proportion of High-Density Interconnect (HDI) products, which carry higher margins.\n\n\nProfitability\nReturn on Equity (ROE)Net Income / Total Equity\nAround 14% - 16%Satisfactory for the manufacturing sector, reflecting efficient use of shareholder equity to generate returns.\n\n\nLeverage\nDebt to Equity RatioTotal Liabilities / Total Equity\nBelow 1.0xStrong capital structure with low debt-to-equity. The company has the capacity to borrow for plant expansions (e.g., the Rojana project) without impacting its credit rating.\n\n\n\n\n\n3.2 Opinion, Outlook & Strategy\nFrom a Corporate Finance perspective, KCE’s potential remains strong in the long term, despite short-term volatilities: 1. Cost Optimization Strategy: KCE demonstrates the ability to cope with soaring copper costs by replacing manual labor with automation, which sustainably reduces SG&A expenses. 2. Value Creation (Product Mix): Transitioning from standard PCBs to specialized High-Density Interconnect (HDI) boards—now accounting for about 30% of sales—is the right strategy. These products cater to Advanced Driver Assistance Systems (ADAS) in modern vehicles and yield higher gross margins. 3. Proactive Capital Allocation: Management’s decision to delay the construction of the new Rojana plant to 2026-2027 to monitor global demand reflects disciplined capital expenditure management, avoiding unnecessary over-leverage.\nConclusion: KCE possesses strong fundamentals and an excellent financial standing (Net Cash Position). Its future trajectory depends on how quickly it can pass increased costs to customers (Price Hikes) and the recovery of the European automotive industry. If the EV and AI megatrends persist, KCE will undeniably be one of the prime Thai beneficiaries.",
-    "crumbs": [
-      "Home",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Assignment</span>"
-    ]
-  },
-  {
-    "objectID": "intro.html#ตวอยาง",
-    "href": "intro.html#ตวอยาง",
-    "title": "Assignment",
-    "section": "",
-    "text": "1. กลุ่มอุตสาหกรรมที่เลือกศึกษา: อุตสาหกรรมชิ้นส่วนอิเล็กทรอนิกส์ (Electronic Components - ETRON)\nอุตสาหกรรมชิ้นส่วนอิเล็กทรอนิกส์ในตลาดหลักทรัพย์แห่งประเทศไทย (SET) เป็นฟันเฟืองสำคัญของห่วงโซ่อุปทานเทคโนโลยีโลก (Global Tech Supply Chain) หุ้นเด่นในกลุ่มนี้ ได้แก่ DELTA, HANA, KCE และ SMT ซึ่งส่วนใหญ่เป็นผู้รับจ้างผลิต (OEM) หรือผู้ผลิตแผ่นวงจรพิมพ์ (PCB) และชิ้นส่วนสารกึ่งตัวนำ (Semiconductor) ที่ส่งออกไปยังต่างประเทศเกือบ 100%\n\n\n2. การวิเคราะห์ภาพรวมอุตสาหกรรม (Industry Analysis)\nอุตสาหกรรมชิ้นส่วนอิเล็กทรอนิกส์ในปี 2025–2026 อยู่ในจุดที่กำลังฟื้นตัวและเปลี่ยนผ่าน โดยมีประเด็นสำคัญดังนี้:\n\nแรงขับเคลื่อนหลัก (Growth Drivers): อุตสาหกรรมได้รับอานิสงส์มหาศาลจากเมกะเทรนด์โลก โดยเฉพาะการเติบโตของเทคโนโลยี AI, เครือข่าย 5G/6G, การลงทุน Data Center และการขยายตัวของยานยนต์ไฟฟ้า (EV) ซึ่งรถยนต์ EV หนึ่งคันต้องใช้ชิ้นส่วนอิเล็กทรอนิกส์และ PCB มากกว่ารถยนต์สันดาปถึง 2-3 เท่า\nความท้าทายเชิงมหภาค (Macro Headwinds): * ราคาวัตถุดิบ: ความผันผวนของราคาทองแดง (Copper) และทองคำ ซึ่งเป็นวัตถุดิบหลักในการผลิต PCB ปรับตัวสูงขึ้นจากความตึงเครียดทางภูมิรัฐศาสตร์ กดดันอัตรากำไรขั้นต้น (Gross Margin) ของผู้ผลิต\n\nอัตราแลกเปลี่ยน: เนื่องจากรายได้หลักมาจากการส่งออก (ในรูปเงินสกุล USD) การแข็งค่าของเงินบาทจึงเป็นความท้าทายสำคัญที่กดดันรายได้เมื่อแปลงกลับเป็นเงินบาท\n\nสภาพการแข่งขัน (Competitive Landscape): การแข่งขันสูงมากโดยเฉพาะจากผู้ผลิตในประเทศจีน (China Plus One) อย่างไรก็ตาม ไทยยังคงได้รับประโยชน์จากการที่ฐานการผลิตระดับโลกต้องการกระจายความเสี่ยงด้านห่วงโซ่อุปทานออกจากจีน ทำให้มีเงินลงทุนตรงจากต่างประเทศ (FDI) ไหลเข้ากลุ่มอิเล็กทรอนิกส์ในไทยอย่างต่อเนื่อง\n\n\n\n3. การวิเคราะห์บริษัท: KCE Electronics Public Company Limited (KCE)\nภาพรวมธุรกิจ: KCE เป็นผู้ผลิตและจำหน่ายแผ่นวงจรพิมพ์ (Printed Circuit Board - PCB) ระดับท็อปของโลก โดยมีรายได้หลักกว่า 70% มาจากกลุ่มอุตสาหกรรมยานยนต์ (Automotive Sector) ในตลาดยุโรปและสหรัฐอเมริกา\n\n3.1 การวิเคราะห์งบการเงิน (Financial Statement Analysis)\nการวิเคราะห์ความแข็งแกร่งทางการเงินของ KCE ผ่านอัตราส่วนทางการเงินที่สำคัญ (อ้างอิงแนวโน้มผลประกอบการช่วงปี 2025 - ต้นปี 2026):\n\n\n\n\n\n\n\n\nหมวดหมู่\nอัตราส่วนทางการเงิน (Financial Ratios)\nทิศทางและคำอธิบาย\n\n\n\n\nสภาพคล่อง\nCurrent RatioCurrent Assets / Current Liabilities\nอยู่ในเกณฑ์ดี (&gt; 1.5x)บริษัทมีสภาพคล่องหมุนเวียนที่แข็งแกร่ง มีเงินสดเพียงพอต่อการชำระหนี้ระยะสั้นและการลงทุนในเครื่องจักรใหม่\n\n\nการทำกำไร\nGross Profit Margin(Gross Profit / Revenue) * 100\nทรงตัวที่ระดับ 17% - 18%ถูกกดดันจากราคาทองแดงที่สูงขึ้นและเงินบาทแข็งค่า แต่บริษัทแก้เกมด้วยการเพิ่มสัดส่วนสินค้า High-Density Interconnect (HDI) ที่มีมาร์จิ้นสูงกว่า\n\n\nการทำกำไร\nReturn on Equity (ROE)Net Income / Total Equity\nระดับ 14% - 16%ถือว่าอยู่ในระดับที่น่าพอใจสำหรับธุรกิจภาคการผลิต สะท้อนการนำทุนของผู้ถือหุ้นไปสร้างผลตอบแทนได้อย่างมีประสิทธิภาพ\n\n\nภาระหนี้สิน\nDebt to Equity RatioTotal Liabilities / Total Equity\nต่ำกว่า 1.0xโครงสร้างเงินทุนแข็งแกร่ง หนี้สินต่อทุนต่ำ มีศักยภาพในการกู้ยืมเพื่อขยายโรงงาน (เช่น โครงการที่โรจนะ) โดยไม่กระทบ Credit Rating\n\n\n\n\n\n3.2 ความคิดเห็นต่อศักยภาพ ทิศทาง และกลยุทธ์ (Opinion & Outlook)\nจากมุมมองด้าน Corporate Finance ศักยภาพของ KCE ยังคงแข็งแกร่งในระยะยาว แม้จะเผชิญความผันผวนในระยะสั้น: 1. กลยุทธ์การบริหารต้นทุน (Cost Optimization): KCE แสดงให้เห็นถึงศักยภาพในการรับมือกับต้นทุนทองแดงที่พุ่งสูงขึ้น ด้วยการนำระบบอัตโนมัติ (Automation) มาใช้แทนแรงงานคน ซึ่งจะเห็นผลชัดเจนในการลดต้นทุน SG&A อย่างยั่งยืน 2. การปรับ Product Mix (Value Creation): การเปลี่ยนผ่านจากการผลิต PCB แบบมาตรฐาน ไปสู่แผ่นวงจรพิมพ์ชนิดพิเศษ HDI (High-Density Interconnect) ซึ่งปัจจุบันคิดเป็นราว 30% ของยอดขาย เป็นกลยุทธ์ที่ถูกต้อง เพราะสินค้ากลุ่มนี้ตอบโจทย์ระบบ Advanced Driver Assistance Systems (ADAS) ในรถยนต์รุ่นใหม่ และมีกำไรขั้นต้นที่สูงกว่า 3. วินัยทางการเงินเชิงรุก (Capital Allocation): การที่ผู้บริหารตัดสินใจชะลอแผนลงทุนสร้างโรงงานใหม่ที่โรจนะออกไปเป็นช่วงปี 2026-2027 เพื่อรอดูความชัดเจนของดีมานด์โลก สะท้อนให้เห็นถึงวินัยในการบริหารเงินทุน (Capital Expenditure) อย่างระมัดระวัง ไม่สร้างภาระหนี้เกินความจำเป็น (Over-leverage)\nสรุป: KCE เป็นหุ้นที่มีพื้นฐาน (Fundamentals) แข็งแกร่งและมีสถานะทางการเงินที่ยอดเยี่ยม (Net Cash Position) ทิศทางในอนาคตขึ้นอยู่กับความรวดเร็วในการส่งผ่านต้นทุนที่เพิ่มขึ้นไปยังลูกค้า (Price Hikes) และการฟื้นตัวของอุตสาหกรรมยานยนต์ในยุโรป หากเมกะเทรนด์ EV และ AI ยังคงดำเนินต่อไป KCE จะเป็นหนึ่งในบริษัทของไทยที่ได้รับประโยชน์สูงสุดอย่างปฏิเสธไม่ได้",
-    "crumbs": [
-      "Home",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Assignment</span>"
-    ]
-  },
-  {
-    "objectID": "intro.html#example",
-    "href": "intro.html#example",
-    "title": "Assignment",
-    "section": "Example",
-    "text": "Example\nGenerated by Gemini - 0 points\n\n1. Chosen Industry: Electronic Components (ETRON)\nThe Electronic Components industry in the Stock Exchange of Thailand (SET) is a crucial cog in the global tech supply chain. Prominent stocks in this sector include DELTA, HANA, KCE, and SMT. Most are Original Equipment Manufacturers (OEMs) or producers of Printed Circuit Boards (PCBs) and semiconductors, exporting nearly 100% of their production worldwide.\n\n\n2. Industry Analysis (Overview)\nThe electronic components industry in 2025–2026 is at a point of recovery and transition, with the following key aspects:\n\nGrowth Drivers: The industry benefits massively from global megatrends, especially the rise of AI technology, 5G/6G networks, Data Center investments, and the expansion of Electric Vehicles (EVs). A single EV requires 2-3 times more electronic components and PCBs compared to an internal combustion engine (ICE) vehicle.\nMacro Headwinds: * Raw Material Prices: Volatility in the prices of copper and gold—key materials in PCB manufacturing—has trended upward due to geopolitical tensions, putting pressure on manufacturers’ gross margins.\n\nExchange Rates: Since the majority of revenue is export-driven (in USD), the appreciation of the Thai Baht presents a significant challenge, compressing revenue when converted back to the local currency.\n\nCompetitive Landscape: Competition is fierce, particularly from Chinese manufacturers (China Plus One strategy). However, Thailand continues to benefit as the global manufacturing base seeks to diversify supply chain risks away from China, leading to sustained Foreign Direct Investment (FDI) into the Thai electronics sector.\n\n\n\n3. Company Analysis: KCE Electronics Public Company Limited (KCE)\nBusiness Overview: KCE is a top-tier global manufacturer and distributor of Printed Circuit Boards (PCBs). Over 70% of its core revenue comes from the Automotive Sector in European and US markets.\n\n3.1 Financial Statement Analysis\nAnalyzing KCE’s financial strength through key financial ratios (based on performance trends from 2025 to early 2026):\n\n\n\n\n\n\n\n\nCategory\nFinancial Ratios\nTrend & Explanation\n\n\n\n\nLiquidity\nCurrent RatioCurrent Assets / Current Liabilities\nGood (&gt; 1.5x)The company maintains strong operating liquidity, with sufficient cash to meet short-term obligations and invest in new machinery.\n\n\nProfitability\nGross Profit Margin(Gross Profit / Revenue) * 100\nStable at 17% - 18%Pressured by higher copper prices and a strong Baht. However, the company counters this by increasing the proportion of High-Density Interconnect (HDI) products, which carry higher margins.\n\n\nProfitability\nReturn on Equity (ROE)Net Income / Total Equity\nAround 14% - 16%Satisfactory for the manufacturing sector, reflecting efficient use of shareholder equity to generate returns.\n\n\nLeverage\nDebt to Equity RatioTotal Liabilities / Total Equity\nBelow 1.0xStrong capital structure with low debt-to-equity. The company has the capacity to borrow for plant expansions (e.g., the Rojana project) without impacting its credit rating.\n\n\n\n\n\n3.2 Opinion, Outlook & Strategy\nFrom a Corporate Finance perspective, KCE’s potential remains strong in the long term, despite short-term volatilities: 1. Cost Optimization Strategy: KCE demonstrates the ability to cope with soaring copper costs by replacing manual labor with automation, which sustainably reduces SG&A expenses. 2. Value Creation (Product Mix): Transitioning from standard PCBs to specialized High-Density Interconnect (HDI) boards—now accounting for about 30% of sales—is the right strategy. These products cater to Advanced Driver Assistance Systems (ADAS) in modern vehicles and yield higher gross margins. 3. Proactive Capital Allocation: Management’s decision to delay the construction of the new Rojana plant to 2026-2027 to monitor global demand reflects disciplined capital expenditure management, avoiding unnecessary over-leverage.\nConclusion: KCE possesses strong fundamentals and an excellent financial standing (Net Cash Position). Its future trajectory depends on how quickly it can pass increased costs to customers (Price Hikes) and the recovery of the European automotive industry. If the EV and AI megatrends persist, KCE will undeniably be one of the prime Thai beneficiaries.",
-    "crumbs": [
-      "Home",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Assignment</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Lecture Notes</span>"
     ]
   },
   {
@@ -383,28 +140,6 @@
     "crumbs": [
       "Home",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Assignments</span>"
-    ]
-  },
-  {
-    "objectID": "assignments.html#ตวอยาง",
-    "href": "assignments.html#ตวอยาง",
-    "title": "Assignment",
-    "section": "",
-    "text": "1. กลุ่มอุตสาหกรรมที่เลือกศึกษา: อุตสาหกรรมชิ้นส่วนอิเล็กทรอนิกส์ (Electronic Components - ETRON)\nอุตสาหกรรมชิ้นส่วนอิเล็กทรอนิกส์ในตลาดหลักทรัพย์แห่งประเทศไทย (SET) เป็นฟันเฟืองสำคัญของห่วงโซ่อุปทานเทคโนโลยีโลก (Global Tech Supply Chain) หุ้นเด่นในกลุ่มนี้ ได้แก่ DELTA, HANA, KCE และ SMT ซึ่งส่วนใหญ่เป็นผู้รับจ้างผลิต (OEM) หรือผู้ผลิตแผ่นวงจรพิมพ์ (PCB) และชิ้นส่วนสารกึ่งตัวนำ (Semiconductor) ที่ส่งออกไปยังต่างประเทศเกือบ 100%\n\n\n2. การวิเคราะห์ภาพรวมอุตสาหกรรม (Industry Analysis)\nอุตสาหกรรมชิ้นส่วนอิเล็กทรอนิกส์ในปี 2025–2026 อยู่ในจุดที่กำลังฟื้นตัวและเปลี่ยนผ่าน โดยมีประเด็นสำคัญดังนี้:\n\nแรงขับเคลื่อนหลัก (Growth Drivers): อุตสาหกรรมได้รับอานิสงส์มหาศาลจากเมกะเทรนด์โลก โดยเฉพาะการเติบโตของเทคโนโลยี AI, เครือข่าย 5G/6G, การลงทุน Data Center และการขยายตัวของยานยนต์ไฟฟ้า (EV) ซึ่งรถยนต์ EV หนึ่งคันต้องใช้ชิ้นส่วนอิเล็กทรอนิกส์และ PCB มากกว่ารถยนต์สันดาปถึง 2-3 เท่า\nความท้าทายเชิงมหภาค (Macro Headwinds): * ราคาวัตถุดิบ: ความผันผวนของราคาทองแดง (Copper) และทองคำ ซึ่งเป็นวัตถุดิบหลักในการผลิต PCB ปรับตัวสูงขึ้นจากความตึงเครียดทางภูมิรัฐศาสตร์ กดดันอัตรากำไรขั้นต้น (Gross Margin) ของผู้ผลิต\n\nอัตราแลกเปลี่ยน: เนื่องจากรายได้หลักมาจากการส่งออก (ในรูปเงินสกุล USD) การแข็งค่าของเงินบาทจึงเป็นความท้าทายสำคัญที่กดดันรายได้เมื่อแปลงกลับเป็นเงินบาท\n\nสภาพการแข่งขัน (Competitive Landscape): การแข่งขันสูงมากโดยเฉพาะจากผู้ผลิตในประเทศจีน (China Plus One) อย่างไรก็ตาม ไทยยังคงได้รับประโยชน์จากการที่ฐานการผลิตระดับโลกต้องการกระจายความเสี่ยงด้านห่วงโซ่อุปทานออกจากจีน ทำให้มีเงินลงทุนตรงจากต่างประเทศ (FDI) ไหลเข้ากลุ่มอิเล็กทรอนิกส์ในไทยอย่างต่อเนื่อง\n\n\n\n3. การวิเคราะห์บริษัท: KCE Electronics Public Company Limited (KCE)\nภาพรวมธุรกิจ: KCE เป็นผู้ผลิตและจำหน่ายแผ่นวงจรพิมพ์ (Printed Circuit Board - PCB) ระดับท็อปของโลก โดยมีรายได้หลักกว่า 70% มาจากกลุ่มอุตสาหกรรมยานยนต์ (Automotive Sector) ในตลาดยุโรปและสหรัฐอเมริกา\n\n3.1 การวิเคราะห์งบการเงิน (Financial Statement Analysis)\nการวิเคราะห์ความแข็งแกร่งทางการเงินของ KCE ผ่านอัตราส่วนทางการเงินที่สำคัญ (อ้างอิงแนวโน้มผลประกอบการช่วงปี 2025 - ต้นปี 2026):\n\n\n\n\n\n\n\n\nหมวดหมู่\nอัตราส่วนทางการเงิน (Financial Ratios)\nทิศทางและคำอธิบาย\n\n\n\n\nสภาพคล่อง\nCurrent RatioCurrent Assets / Current Liabilities\nอยู่ในเกณฑ์ดี (&gt; 1.5x)บริษัทมีสภาพคล่องหมุนเวียนที่แข็งแกร่ง มีเงินสดเพียงพอต่อการชำระหนี้ระยะสั้นและการลงทุนในเครื่องจักรใหม่\n\n\nการทำกำไร\nGross Profit Margin(Gross Profit / Revenue) * 100\nทรงตัวที่ระดับ 17% - 18%ถูกกดดันจากราคาทองแดงที่สูงขึ้นและเงินบาทแข็งค่า แต่บริษัทแก้เกมด้วยการเพิ่มสัดส่วนสินค้า High-Density Interconnect (HDI) ที่มีมาร์จิ้นสูงกว่า\n\n\nการทำกำไร\nReturn on Equity (ROE)Net Income / Total Equity\nระดับ 14% - 16%ถือว่าอยู่ในระดับที่น่าพอใจสำหรับธุรกิจภาคการผลิต สะท้อนการนำทุนของผู้ถือหุ้นไปสร้างผลตอบแทนได้อย่างมีประสิทธิภาพ\n\n\nภาระหนี้สิน\nDebt to Equity RatioTotal Liabilities / Total Equity\nต่ำกว่า 1.0xโครงสร้างเงินทุนแข็งแกร่ง หนี้สินต่อทุนต่ำ มีศักยภาพในการกู้ยืมเพื่อขยายโรงงาน (เช่น โครงการที่โรจนะ) โดยไม่กระทบ Credit Rating\n\n\n\n\n\n3.2 ความคิดเห็นต่อศักยภาพ ทิศทาง และกลยุทธ์ (Opinion & Outlook)\nจากมุมมองด้าน Corporate Finance ศักยภาพของ KCE ยังคงแข็งแกร่งในระยะยาว แม้จะเผชิญความผันผวนในระยะสั้น: 1. กลยุทธ์การบริหารต้นทุน (Cost Optimization): KCE แสดงให้เห็นถึงศักยภาพในการรับมือกับต้นทุนทองแดงที่พุ่งสูงขึ้น ด้วยการนำระบบอัตโนมัติ (Automation) มาใช้แทนแรงงานคน ซึ่งจะเห็นผลชัดเจนในการลดต้นทุน SG&A อย่างยั่งยืน 2. การปรับ Product Mix (Value Creation): การเปลี่ยนผ่านจากการผลิต PCB แบบมาตรฐาน ไปสู่แผ่นวงจรพิมพ์ชนิดพิเศษ HDI (High-Density Interconnect) ซึ่งปัจจุบันคิดเป็นราว 30% ของยอดขาย เป็นกลยุทธ์ที่ถูกต้อง เพราะสินค้ากลุ่มนี้ตอบโจทย์ระบบ Advanced Driver Assistance Systems (ADAS) ในรถยนต์รุ่นใหม่ และมีกำไรขั้นต้นที่สูงกว่า 3. วินัยทางการเงินเชิงรุก (Capital Allocation): การที่ผู้บริหารตัดสินใจชะลอแผนลงทุนสร้างโรงงานใหม่ที่โรจนะออกไปเป็นช่วงปี 2026-2027 เพื่อรอดูความชัดเจนของดีมานด์โลก สะท้อนให้เห็นถึงวินัยในการบริหารเงินทุน (Capital Expenditure) อย่างระมัดระวัง ไม่สร้างภาระหนี้เกินความจำเป็น (Over-leverage)\nสรุป: KCE เป็นหุ้นที่มีพื้นฐาน (Fundamentals) แข็งแกร่งและมีสถานะทางการเงินที่ยอดเยี่ยม (Net Cash Position) ทิศทางในอนาคตขึ้นอยู่กับความรวดเร็วในการส่งผ่านต้นทุนที่เพิ่มขึ้นไปยังลูกค้า (Price Hikes) และการฟื้นตัวของอุตสาหกรรมยานยนต์ในยุโรป หากเมกะเทรนด์ EV และ AI ยังคงดำเนินต่อไป KCE จะเป็นหนึ่งในบริษัทของไทยที่ได้รับประโยชน์สูงสุดอย่างปฏิเสธไม่ได้",
-    "crumbs": [
-      "Home",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Assignments</span>"
-    ]
-  },
-  {
-    "objectID": "assignments.html#example",
-    "href": "assignments.html#example",
-    "title": "Assignment",
-    "section": "Example",
-    "text": "Example\nGenerated by Gemini - 0 points\n\n1. Chosen Industry: Electronic Components (ETRON)\nThe Electronic Components industry in the Stock Exchange of Thailand (SET) is a crucial cog in the global tech supply chain. Prominent stocks in this sector include DELTA, HANA, KCE, and SMT. Most are Original Equipment Manufacturers (OEMs) or producers of Printed Circuit Boards (PCBs) and semiconductors, exporting nearly 100% of their production worldwide.\n\n\n2. Industry Analysis (Overview)\nThe electronic components industry in 2025–2026 is at a point of recovery and transition, with the following key aspects:\n\nGrowth Drivers: The industry benefits massively from global megatrends, especially the rise of AI technology, 5G/6G networks, Data Center investments, and the expansion of Electric Vehicles (EVs). A single EV requires 2-3 times more electronic components and PCBs compared to an internal combustion engine (ICE) vehicle.\nMacro Headwinds: * Raw Material Prices: Volatility in the prices of copper and gold—key materials in PCB manufacturing—has trended upward due to geopolitical tensions, putting pressure on manufacturers’ gross margins.\n\nExchange Rates: Since the majority of revenue is export-driven (in USD), the appreciation of the Thai Baht presents a significant challenge, compressing revenue when converted back to the local currency.\n\nCompetitive Landscape: Competition is fierce, particularly from Chinese manufacturers (China Plus One strategy). However, Thailand continues to benefit as the global manufacturing base seeks to diversify supply chain risks away from China, leading to sustained Foreign Direct Investment (FDI) into the Thai electronics sector.\n\n\n\n3. Company Analysis: KCE Electronics Public Company Limited (KCE)\nBusiness Overview: KCE is a top-tier global manufacturer and distributor of Printed Circuit Boards (PCBs). Over 70% of its core revenue comes from the Automotive Sector in European and US markets.\n\n3.1 Financial Statement Analysis\nAnalyzing KCE’s financial strength through key financial ratios (based on performance trends from 2025 to early 2026):\n\n\n\n\n\n\n\n\nCategory\nFinancial Ratios\nTrend & Explanation\n\n\n\n\nLiquidity\nCurrent RatioCurrent Assets / Current Liabilities\nGood (&gt; 1.5x)The company maintains strong operating liquidity, with sufficient cash to meet short-term obligations and invest in new machinery.\n\n\nProfitability\nGross Profit Margin(Gross Profit / Revenue) * 100\nStable at 17% - 18%Pressured by higher copper prices and a strong Baht. However, the company counters this by increasing the proportion of High-Density Interconnect (HDI) products, which carry higher margins.\n\n\nProfitability\nReturn on Equity (ROE)Net Income / Total Equity\nAround 14% - 16%Satisfactory for the manufacturing sector, reflecting efficient use of shareholder equity to generate returns.\n\n\nLeverage\nDebt to Equity RatioTotal Liabilities / Total Equity\nBelow 1.0xStrong capital structure with low debt-to-equity. The company has the capacity to borrow for plant expansions (e.g., the Rojana project) without impacting its credit rating.\n\n\n\n\n\n3.2 Opinion, Outlook & Strategy\nFrom a Corporate Finance perspective, KCE’s potential remains strong in the long term, despite short-term volatilities: 1. Cost Optimization Strategy: KCE demonstrates the ability to cope with soaring copper costs by replacing manual labor with automation, which sustainably reduces SG&A expenses. 2. Value Creation (Product Mix): Transitioning from standard PCBs to specialized High-Density Interconnect (HDI) boards—now accounting for about 30% of sales—is the right strategy. These products cater to Advanced Driver Assistance Systems (ADAS) in modern vehicles and yield higher gross margins. 3. Proactive Capital Allocation: Management’s decision to delay the construction of the new Rojana plant to 2026-2027 to monitor global demand reflects disciplined capital expenditure management, avoiding unnecessary over-leverage.\nConclusion: KCE possesses strong fundamentals and an excellent financial standing (Net Cash Position). Its future trajectory depends on how quickly it can pass increased costs to customers (Price Hikes) and the recovery of the European automotive industry. If the EV and AI megatrends persist, KCE will undeniably be one of the prime Thai beneficiaries.",
-    "crumbs": [
-      "Home",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Assignments</span>"
     ]
   },
   {
@@ -438,72 +173,6 @@
     "crumbs": [
       "Home",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Financial Analysis Project</span>"
-    ]
-  },
-  {
-    "objectID": "assignments.html#course-schedule",
-    "href": "assignments.html#course-schedule",
-    "title": "Assignments",
-    "section": "",
-    "text": "Week\nTopic\nAssignment\n\n\n\n\n1\nIntroduction to the Financial System & Markets\n\n\n\n2\nUnderstanding Interest Rates & Their Determinants\n\n\n\n3\nCentral Banks, Federal Reserve, and Monetary Policy\n\n\n\n4\nMoney Markets and Capital Markets\n\n\n\n5\nFinancial Institutions: Banks, Mutual Funds & Insurance\n\n\n\n6\nIntroduction to Corporate Finance & Financial Statements\n\n\n\n7\nMidterm Examination\n\n\n\n8\nTime Value of Money (TVM)\n\n\n\n9\nBond Valuation and Interest Rate Risk\n\n\n\n10\nStock Valuation\n\n\n\n11\nRisk, Return, and the Cost of Capital\n\n\n\n12\nCapital Budgeting (NPV, IRR, Payback Period)\n\n\n\n13\nCapital Structure & Payout Policy\n\n\n\n14\nFinancial Project Presentations & Course Wrap-up\n\n\n\n15\nFinal Examination",
-    "crumbs": [
-      "Home",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Assignments</span>"
-    ]
-  },
-  {
-    "objectID": "lecture_notes.html",
-    "href": "lecture_notes.html",
-    "title": "Lecture Notes",
-    "section": "",
-    "text": "Course Schedule",
-    "crumbs": [
-      "Home",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Lecture Notes</span>"
-    ]
-  },
-  {
-    "objectID": "index.html#course-schedule-1",
-    "href": "index.html#course-schedule-1",
-    "title": "เศรษฐศาสตร์การเงินและการเงินบริษัท",
-    "section": "Course Schedule",
-    "text": "Course Schedule\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nReading\n\n\n\n\n1\nJul 15th\nIntroduction to the Financial System & Markets\nMishkin (Ch 1-2)\n\n\n2\nJul 22nd\nFundamentals of Financial Markets\nMishkin (Ch 3-5)\n\n\n3\nAug 5th\nFinancial Markets: Money Markets and Capital Markets\nMishkin (Ch 11-13)\n\n\n4\nFri Aug 7th\nFundamentals of Financial Institutions\nMishkin (Ch 7-8)\n\n\n5\nFri Aug 14th\nFinancial Institutions Industry\nMishkin (Ch 17-19)\n\n\n6\nAug 19th\nCentral Banks, and Monetary Policy\nMishkin (Ch 9-10)\n\n\n7\nAug 26th\nMidterm Examination\nReview Weeks 1-6\n\n\n8\nSep 2nd\nCorporate Finance & Financial Statements\nBrealey/Myers (Ch 3-4)\n\n\n9\nSep 9th\nTime Value of Money (TVM)\nBrealey/Myers (Ch 5)\n\n\n10\nSep 16th\nBond and Stock Valuation\nBrealey/Myers (Ch 6-7)\n\n\n11\nSep 23rd\nCapital Budgeting (NPV, IRR, Payback Period)\nBrealey/Myers (Ch 8-9)\n\n\n12\nSep 30th\nRisk, Return, and the Cost of Capital\nBrealey/Myers (Ch 11-13)\n\n\n13\nOct 7th\nCorporate Financing\nBrealey/Myers (Ch 14)\n\n\n14\nOct 14th\nFinancial Project Presentations & Course Wrap-up\nTeam Presentations\n\n\n15\nOct 21st\nFinal Examination\nComprehensive",
-    "crumbs": [
-      "Home",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Syllabus</span>"
-    ]
-  },
-  {
-    "objectID": "lecture_notes.html#course-schedule",
-    "href": "lecture_notes.html#course-schedule",
-    "title": "Lecture Notes",
-    "section": "",
-    "text": "Week\nDate\nTopic\nLecture Notes\n\n\n\n\n1\nJul 15th\nIntroduction to the Financial System & Markets\n📄 PDF   📊 Slides\n\n\n2\nJul 22nd\nFundamentals of Financial Markets\n📄 PDF   📊 Slides\n\n\n3\nAug 5th\nFinancial Markets: Money Markets and Capital Markets\n📄 PDF   📊 Slides\n\n\n4\nFri Aug 7th\nFundamentals of Financial Institutions\n📄 PDF   📊 Slides\n\n\n5\nFri Aug 14th\nFinancial Institutions Industry\n📄 PDF   📊 Slides\n\n\n6\nAug 19th\nCentral Banks, and Monetary Policy\n📄 PDF   📊 Slides\n\n\n7\nAug 26th\nMidterm Examination\nReview Weeks 1-6\n\n\n8\nSep 2nd\nCorporate Finance & Financial Statements\n📄 PDF   📊 Slides\n\n\n9\nSep 9th\nTime Value of Money (TVM)\n📄 PDF   📊 Slides\n\n\n10\nSep 16th\nBond and Stock Valuation\n📄 PDF   📊 Slides\n\n\n11\nSep 23rd\nCapital Budgeting (NPV, IRR, Payback Period)\n📄 PDF   📊 Slides\n\n\n12\nSep 30th\nRisk, Return, and the Cost of Capital\n📄 PDF   📊 Slides\n\n\n13\nOct 7th\nCorporate Financing\n📄 PDF   📊 Slides\n\n\n14\nOct 14th\nFinancial Project Presentations & Course Wrap-up\nTeam Presentations\n\n\n15\nOct 21st\nFinal Examination\nComprehensive",
-    "crumbs": [
-      "Home",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Lecture Notes</span>"
-    ]
-  },
-  {
-    "objectID": "lecture_notes.html#แผนการสอน",
-    "href": "lecture_notes.html#แผนการสอน",
-    "title": "Lecture Notes",
-    "section": "แผนการสอน",
-    "text": "แผนการสอน\n\n\n\nสัปดาห์\nวันที่\nหัวข้อ\nเอกสารประกอบการสอน\n\n\n\n\n1\n15 ก.ค.\nบทนำเกี่ยวกับระบบการเงินและตลาดการเงิน\n📄 PDF   📊 Slides\n\n\n2\n22 ก.ค.\nพื้นฐานของตลาดการเงิน\n📄 PDF   📊 Slides\n\n\n3\n5 ส.ค.\nตลาดการเงิน: ตลาดเงินและตลาดทุน\n📄 PDF   📊 Slides\n\n\n4\nศ. 7 ส.ค.\nพื้นฐานของสถาบันการเงิน\n📄 PDF   📊 Slides\n\n\n5\nศ. 14 ส.ค.\nอุตสาหกรรมสถาบันการเงิน\n📄 PDF   📊 Slides\n\n\n6\n19 ส.ค.\nธนาคารกลางและนโยบายการเงิน\n📄 PDF   📊 Slides\n\n\n7\n26 ส.ค.\nสอบกลางภาค\nทบทวนเนื้อหาสัปดาห์ที่ 1-6\n\n\n8\n2 ก.ย.\nการเงินธุรกิจและงบการเงิน\n📄 PDF   📊 Slides\n\n\n9\n9 ก.ย.\nมูลค่าของเงินตามเวลา (TVM)\n📄 PDF   📊 Slides\n\n\n10\n16 ก.ย.\nการประเมินมูลค่าพันธบัตรและหุ้น\n📄 PDF   📊 Slides\n\n\n11\n23 ก.ย.\nการงบประมาณลงทุน (NPV, IRR, ระยะเวลาคืนทุน)\n📄 PDF   📊 Slides\n\n\n12\n30 ก.ย.\nความเสี่ยง ผลตอบแทน และต้นทุนของเงินทุน\n📄 PDF   📊 Slides\n\n\n13\n7 ต.ค.\nการจัดหาเงินทุนของธุรกิจ\n📄 PDF   📊 Slides\n\n\n14\n14 ต.ค.\nการนำเสนอโปรเจกต์ทางการเงิน และสรุปเนื้อหารายวิชา\nการนำเสนอแบบกลุ่ม\n\n\n15\n21 ต.ค.\nสอบปลายภาค\nครอบคลุมเนื้อหาทั้งหมด",
-    "crumbs": [
-      "Home",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Lecture Notes</span>"
-    ]
-  },
-  {
-    "objectID": "index.html#references",
-    "href": "index.html#references",
-    "title": "เศรษฐศาสตร์การเงินและการเงินบริษัท",
-    "section": "References",
-    "text": "References\n\n\nBrealey, Richard A., Stewart C. Myers, and Franklin Allen. 2023.\nPrinciples of Corporate Finance. 14th ed. McGraw-Hill.\n\n\nMishkin, Frederic S. 2022. The Economics of Money, Banking, and\nFinancial Markets. 13th ed. Pearson.",
-    "crumbs": [
-      "Home",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Syllabus</span>"
     ]
   }
 ]
