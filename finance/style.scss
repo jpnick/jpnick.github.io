@@ -1,0 +1,12 @@
+
+
+// Use Noto Sans Thai as base font
+$font-family-sans-serif: 'Noto Sans Thai', sans-serif;
+
+// Optional: customize font sizes, headings, etc.
+$body-font-family: $font-family-sans-serif;
+$heading-font-family: $font-family-sans-serif;
+
+@include quarto-theme(); // <- Required to apply your theme overrides
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap');
