@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -10,6 +10,9 @@
 
 <title>Lecture Notes – เศรษฐศาสตร์การเงินและการเงินบริษัท</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -39,14 +42,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1114119897a41d62142e24d2d32a3df0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-6402c9a596414c8e509132ee9a41ab38.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-1114119897a41d62142e24d2d32a3df0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2c2af196a6eca954aca661d634dea600.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-51ced31b2499421717fedb8fa4d15c93.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-2c2af196a6eca954aca661d634dea600.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -322,7 +325,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./project.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Financial Analysis Project</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Financial Market and Corporate Analysis Project</span></span></a>
   </div>
 </li>
     </ul>
@@ -336,117 +339,6 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content column-page-right" id="quarto-document-content">
 
-<style>
-  body.show-en .th-text { display: none !important; }
-  body.show-th .en-text { display: none !important; }
-  
-  .toggle-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-bottom: 20px;
-    margin-top: -10px;
-    font-family: ui-sans-serif, system-ui, sans-serif;
-    font-weight: bold;
-  }
-  
-  .toggle-label {
-    font-size: 1.1em;
-    user-select: none;
-    transition: color 0.3s;
-    letter-spacing: 0.5px;
-  }
-  
-  .active-lang { color: #4A5568; }
-  .inactive-lang { color: #CBD5E0; }
-  
-  /* Toggle Switch Track */
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 32px;
-    margin: 0 12px;
-  }
-  
-  /* Hide default checkbox */
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  /* Slider Track */
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: #E2E8F0;
-    transition: .4s;
-    border-radius: 34px;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
-  }
-  
-  /* Slider Thumb */
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  }
-  
-  /* When checked (TH active) */
-  input:checked + .slider {
-    background-color: #2C3E50;
-  }
-  
-  input:checked + .slider:before {
-    transform: translateX(28px);
-  }
-</style>
-
-<div class="toggle-container">
-  <span class="toggle-label active-lang" id="label-en">EN</span>
-  <label class="switch">
-    <input type="checkbox" id="lang-checkbox" onchange="toggleLanguage()">
-    <span class="slider"></span>
-  </label>
-  <span class="toggle-label inactive-lang" id="label-th">TH</span>
-</div>
-
-<script>
-  function toggleLanguage() {
-    var body = document.body;
-    var checkbox = document.getElementById('lang-checkbox');
-    var labelEn = document.getElementById('label-en');
-    var labelTh = document.getElementById('label-th');
-    
-    if (checkbox.checked) {
-      body.classList.remove('show-en');
-      body.classList.add('show-th');
-      labelEn.classList.replace('active-lang', 'inactive-lang');
-      labelTh.classList.replace('inactive-lang', 'active-lang');
-    } else {
-      body.classList.remove('show-th');
-      body.classList.add('show-en');
-      labelTh.classList.replace('active-lang', 'inactive-lang');
-      labelEn.classList.replace('inactive-lang', 'active-lang');
-    }
-  }
-  
-  // Set default language on load
-  document.addEventListener("DOMContentLoaded", function() {
-    document.body.classList.add('show-en');
-    var checkbox = document.getElementById('lang-checkbox');
-    if (checkbox) checkbox.checked = false;
-  });
-</script>
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -467,111 +359,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="course-schedule" class="level2 eng-text">
-<h2 class="anchored" data-anchor-id="course-schedule">Course Schedule</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: center;">Week</th>
-<th style="text-align: left;">Date</th>
-<th style="text-align: left;">Topic</th>
-<th style="text-align: left;">Lecture Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><strong>1</strong></td>
-<td style="text-align: left;">Jul 15th</td>
-<td style="text-align: left;">Introduction to the Financial System &amp; Markets</td>
-<td style="text-align: left;"><a href="#">📄 PDF</a> &nbsp; <a href="#">📊 Slides</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>2</strong></td>
-<td style="text-align: left;">Jul 22nd</td>
-<td style="text-align: left;">Fundamentals of Financial Markets</td>
-<td style="text-align: left;"><a href="#">📄 PDF</a> &nbsp; <a href="#">📊 Slides</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>3</strong></td>
-<td style="text-align: left;">Aug 5th</td>
-<td style="text-align: left;">Financial Markets: Money Markets and Capital Markets</td>
-<td style="text-align: left;"><a href="#">📄 PDF</a> &nbsp; <a href="#">📊 Slides</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>4</strong></td>
-<td style="text-align: left;">Fri Aug 7th</td>
-<td style="text-align: left;">Fundamentals of Financial Institutions</td>
-<td style="text-align: left;"><a href="#">📄 PDF</a> &nbsp; <a href="#">📊 Slides</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>5</strong></td>
-<td style="text-align: left;">Fri Aug 14th</td>
-<td style="text-align: left;">Financial Institutions Industry</td>
-<td style="text-align: left;"><a href="#">📄 PDF</a> &nbsp; <a href="#">📊 Slides</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>6</strong></td>
-<td style="text-align: left;">Aug 19th</td>
-<td style="text-align: left;">Central Banks, and Monetary Policy</td>
-<td style="text-align: left;"><a href="#">📄 PDF</a> &nbsp; <a href="#">📊 Slides</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>7</strong></td>
-<td style="text-align: left;">Aug 26th</td>
-<td style="text-align: left;"><strong>Midterm Examination</strong></td>
-<td style="text-align: left;"><em>Review Weeks 1-6</em></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>8</strong></td>
-<td style="text-align: left;">Sep 2nd</td>
-<td style="text-align: left;">Corporate Finance &amp; Financial Statements</td>
-<td style="text-align: left;"><a href="#">📄 PDF</a> &nbsp; <a href="https://docs.google.com/presentation/d/e/2PACX-1vSKYkZAGWg-vEwImaB8qrQRSnlUA0BKxRvijWN6capJ6CfY5l7tp0S7FZtut_kBFD9NuoMRW-YLY6b5/pub?start=true&amp;loop=false&amp;delayms=60000">📊 Slides</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>9</strong></td>
-<td style="text-align: left;">Sep 9th</td>
-<td style="text-align: left;">Time Value of Money (TVM)</td>
-<td style="text-align: left;"><a href="#">📄 PDF</a> &nbsp; <a href="#">📊 Slides</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>10</strong></td>
-<td style="text-align: left;">Sep 16th</td>
-<td style="text-align: left;">Bond and Stock Valuation</td>
-<td style="text-align: left;"><a href="#">📄 PDF</a> &nbsp; <a href="#">📊 Slides</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>11</strong></td>
-<td style="text-align: left;">Sep 23rd</td>
-<td style="text-align: left;">Capital Budgeting (NPV, IRR, Payback Period)</td>
-<td style="text-align: left;"><a href="#">📄 PDF</a> &nbsp; <a href="#">📊 Slides</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>12</strong></td>
-<td style="text-align: left;">Sep 30th</td>
-<td style="text-align: left;">Risk, Return, and the Cost of Capital</td>
-<td style="text-align: left;"><a href="#">📄 PDF</a> &nbsp; <a href="#">📊 Slides</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>13</strong></td>
-<td style="text-align: left;">Oct 7th</td>
-<td style="text-align: left;">Corporate Financing</td>
-<td style="text-align: left;"><a href="#">📄 PDF</a> &nbsp; <a href="#">📊 Slides</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>14</strong></td>
-<td style="text-align: left;">Oct 14th</td>
-<td style="text-align: left;"><strong>Financial Project Presentations</strong> &amp; Course Wrap-up</td>
-<td style="text-align: left;"><em>Team Presentations</em></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>15</strong></td>
-<td style="text-align: left;">Oct 21st</td>
-<td style="text-align: left;"><strong>Final Examination</strong></td>
-<td style="text-align: left;"><em>Comprehensive</em></td>
-</tr>
-</tbody>
-</table>
-</section>
 <section id="แผนการสอน" class="level2 th-text">
 <h2 class="anchored" data-anchor-id="แผนการสอน">แผนการสอน</h2>
 <table class="caption-top table">
@@ -745,13 +532,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
