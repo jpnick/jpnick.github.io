@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Interactive Portfolio</title>
+    <title>JP-NICK</title>
     
     <!-- Fonts: Inter and Kanit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -163,9 +163,6 @@
             <section id="about" class="scroll-mt-20">
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-6 tracking-tight" data-i18n="about-title">About Me</h2>
                 <div class="prose prose-lg prose-slate max-w-none text-slate-600 space-y-6">
-                    <p class="text-xl leading-relaxed text-slate-700">
-                        <span data-i18n="about-intro-1">Hello! I am</span> <span class="font-semibold text-brand-600" data-i18n="name">Your Name</span>, <span data-i18n="about-intro-2">a passionate professional based in</span> <span class="font-medium text-slate-800" data-i18n="location">Your Location</span>.
-                    </p>
                     <p class="leading-relaxed" data-i18n="about-p1">
                         Senior Analyst at the Bank of Thailand with a focus on applying data science to public policy and economic research. Expert in utilizing Econometrics, Deep Learning, and Geospatial analysis to drive evidence-based decision-making.
                     </p>
@@ -532,7 +529,7 @@
             <!-- Footer -->
             <footer class="pt-12 pb-8 border-t border-gray-200 mt-12">
                 <p class="text-center text-slate-500 text-sm">
-                    <span data-i18n="footer-text">Thank you for visiting my site! Feel free to reach out if you'd like to collaborate or just say hi.</span><br>
+                    <span data-i18n="footer-text">Thank you for visiting my site!</span><br>
                     &copy; 2026 Your Name. All rights reserved.
                 </p>
             </footer>
@@ -608,19 +605,19 @@
         // Internationalization (i18n) Logic
         const translations = {
             en: {
-                "name": "Your Name",
+                "name": "Jirawat Poongam (NICK)",
                 "subtitle": "Economist | Explorer",
                 "nav-about": "About",
                 "nav-projects": "Work & Projects",
                 "nav-teaching": "Lectures",
                 "nav-travel": "Travel Blog",
                 "about-title": "About Me",
-                "about-intro-1": "Hello! I am",
-                "about-intro-2": "a passionate professional based in",
+                "about-intro-1": "",
+                "about-intro-2": "",
                 "location": "Chaing Mai, Thailand",
                 "about-p1": "Senior Analyst at the Bank of Thailand with a focus on applying data science to public policy and economic research. Expert in utilizing Econometrics, Deep Learning, and Geospatial analysis to drive evidence-based decision-making.",
-                "about-p2": "When I'm not working, you can find me exploring new trails, reading sci-fi, or experimenting in the kitchen with new recipes.",
-                "btn-email": "Email Me",
+                "about-p2": "When I'm not working, you can find me exploring new trails.",
+                "btn-email": "Email",
                 "btn-resume": "CV",
                 "projects-title": "Work & Projects",
                 "tab-projects": "Projects",
@@ -631,36 +628,36 @@
                 "article-1-desc": "An in-depth guide on designing resilient ETL pipelines using modern open-source architecture.",
                 "article-2-desc": "Exploring active learning techniques to increase student engagement in technical subjects.",
                 "teaching-title": "Lectures & Teaching",
-                "teaching-desc": "I enjoy sharing knowledge and have had the opportunity to teach or speak at various events.",
+                "teaching-desc": "",
                 "topics-covered": "Topics Covered",
                 "link-slides": "Slides (PDF)",
                 "link-repo": "Code Repo",
                 "link-video": "Video Recording",
                 "link-notes": "Notes",
                 "travel-title": "Travel Blog",
-                "travel-desc": "Exploring the world provides new perspectives. Here are some highlights from my recent trips.",
+                "travel-desc": "",
                 "travel-tab-japan": "Japan",
                 "travel-tab-europe": "Europe",
                 "travel-tab-america": "America",
                 "travel-tab-asia": "Asia",
-                "footer-text": "Thank you for visiting my site! Feel free to reach out if you'd like to collaborate or just say hi.",
+                "footer-text": "Thank you for visiting my site!",
                 "lang-btn-text": "Switch to Thai",
                 "mobile-lang-btn": "TH"
             },
             th: {
-                "name": "นิกส์",
+                "name": "จิรวัฒน์ ภู่งาม (นิกส์)",
                 "subtitle": "เศรษฐกร | นักสำรวจ",
                 "nav-about": "เกี่ยวกับฉัน",
                 "nav-projects": "ผลงาน & โปรเจกต์",
                 "nav-teaching": "การสอน & บรรยาย",
                 "nav-travel": "บล็อกท่องเที่ยว",
                 "about-title": "เกี่ยวกับฉัน",
-                "about-intro-1": "สวัสดี! ฉันชื่อ",
-                "about-intro-2": "ทำงานสายวิชาชีพที่ขับเคลื่อนด้วยความหลงใหล ปัจจุบันอยู่ที่",
+                "about-intro-1": "",
+                "about-intro-2": "",
                 "location": "สถานที่ของคุณ",
                 "about-p1": "นักวิเคราะห์อาวุโส (Senior Analyst) ที่ธนาคารแห่งประเทศไทย มุ่งเน้นการประยุกต์ใช้วิทยาการข้อมูลกับนโยบายสาธารณะและการวิจัยทางเศรษฐกิจ เชี่ยวชาญการใช้เศรษฐมิติ การเรียนรู้เชิงลึก (Deep Learning) และการวิเคราะห์ข้อมูลเชิงพื้นที่ (Geospatial analysis) เพื่อขับเคลื่อนการตัดสินใจเชิงนโยบาย",
-                "about-p2": "เมื่อฉันไม่ได้ทำงาน คุณมักจะพบฉันออกไปสำรวจเส้นทางธรรมชาติใหม่ๆ อ่านนิยายวิทยาศาสตร์ หรือทดลองทำอาหารสูตรใหม่ๆ ในครัว",
-                "btn-email": "ส่งอีเมลหาฉัน",
+                "about-p2": "ออกไปสำรวจเส้นทางธรรมชาติใหม่ๆ เมื่อว่างงาน ",
+                "btn-email": "อีเมล",
                 "btn-resume": "CV",
                 "projects-title": "ผลงาน",
                 "tab-projects": "โปรเจกต์",
@@ -671,19 +668,19 @@
                 "article-1-desc": "คู่มือเชิงลึกเกี่ยวกับการออกแบบ ETL Pipeline ที่แข็งแกร่งโดยใช้สถาปัตยกรรมโอเพ่นซอร์สสมัยใหม่",
                 "article-2-desc": "การสำรวจเทคนิคการเรียนรู้แบบมีส่วนร่วมเพื่อเพิ่มความสนใจของนักเรียนในวิชาทางเทคนิค",
                 "teaching-title": "การสอน & บรรยาย",
-                "teaching-desc": "ฉันสนุกกับการแบ่งปันความรู้และมีโอกาสได้สอนหรือบรรยายในงานต่างๆ",
+                "teaching-desc": "",
                 "topics-covered": "หัวข้อที่ครอบคลุม",
                 "link-slides": "สไลด์ (PDF)",
                 "link-repo": "คลังโค้ด",
                 "link-video": "บันทึกวิดีโอ",
                 "link-notes": "บันทึกย่อ",
                 "travel-title": "บล็อกท่องเที่ยว",
-                "travel-desc": "การสำรวจโลกมอบมุมมองใหม่ๆ เสมอ นี่คือไฮไลท์บางส่วนจากทริปล่าสุดของฉัน",
+                "travel-desc": "",
                 "travel-tab-japan": "ญี่ปุ่น",
                 "travel-tab-europe": "ยุโรป",
                 "travel-tab-america": "อเมริกา",
                 "travel-tab-asia": "เอเชีย",
-                "footer-text": "ขอบคุณที่เยี่ยมชมเว็บไซต์ของฉัน! หากคุณต้องการร่วมงานกันหรือแค่ทักทาย อย่าลังเลที่จะติดต่อมา",
+                "footer-text": "",
                 "lang-btn-text": "Switch to English",
                 "mobile-lang-btn": "EN"
             }
