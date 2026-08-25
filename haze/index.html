@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact of Transboundary Haze - Jirawat Poongam</title>
+    
+    <!-- Fonts: Inter and Kanit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons: FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        kanit: ['Kanit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                        },
+                        haze: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            500: '#64748b',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #334155;
+            background-color: #f8fafc;
+            transition: font-family 0.3s ease;
+        }
+
+        /* Thai Font Support */
+        body.lang-th {
+            font-family: 'Kanit', sans-serif;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+
+        /* Nav active state transition */
+        .nav-link {
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-link.active {
+            background-color: #e0f2fe;
+            color: #0284c7;
+            font-weight: 600;
+            border-right: 3px solid #0284c7;
+        }
+
+        /* Fade in animation */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Haze chart hover effects */
+        .chart-line {
+            transition: stroke-width 0.2s ease, opacity 0.2s ease;
+        }
+        .chart-line:hover {
+            stroke-width: 4;
+            opacity: 1 !important;
+            stroke: #dc2626; /* Red highlight on hover */
+            cursor: pointer;
+        }
+
+        /* Thailand Map Gradient Styling */
+        .thailand-map path {
+            fill: url(#pm25Gradient);
+            stroke: #cbd5e1;
+            stroke-width: 0.5;
+            transition: fill 0.3s ease;
+        }
+        .thailand-map:hover path {
+            fill: url(#aodGradient);
+        }
+    </style>
+</head>
+<body class="antialiased flex h-screen overflow-hidden">
+
+    <!-- Mobile Header & Menu Toggle -->
+    <div class="md:hidden fixed top-0 w-full bg-white border-b border-gray-200 z-50 flex justify-between items-center p-4 shadow-sm">
+        <a href="index.html" class="flex items-center space-x-2">
+            <div class="w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center text-brand-600">
+                <i class="fas fa-home"></i>
+            </div>
+            <span class="font-bold text-lg text-slate-800 line-clamp-1" data-i18n="mobile-title">Haze Research</span>
+        </a>
+        <div class="flex items-center space-x-4">
+            <button id="mobile-lang-btn" class="text-sm font-bold text-brand-700 hover:text-brand-900 focus:outline-none px-2 py-1 bg-brand-100 rounded-md">
+                TH
+            </button>
+            <button id="mobile-menu-btn" class="text-slate-600 focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar" class="w-72 bg-white border-r border-gray-200 h-full flex flex-col fixed md:relative z-40 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out mt-14 md:mt-0 pt-4 md:pt-0 shadow-lg md:shadow-none">
+        
+        <!-- Logo and Profile section linking back to index.html -->
+        <div class="p-6 flex flex-col items-center border-b border-gray-100">
+            <a href="index.html" class="group flex flex-col items-center transition-transform hover:scale-105" title="Go to Homepage">
+                <div class="w-24 h-24 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 shadow-sm mb-4 border-4 border-white ring-2 ring-brand-50 group-hover:ring-brand-200 transition-all relative">
+                    <i class="fas fa-microscope text-3xl"></i>
+                    <div class="absolute -bottom-2 -right-2 bg-white rounded-full p-1 shadow-md border border-gray-100">
+                        <i class="fas fa-home text-slate-400 text-sm"></i>
+                    </div>
+                </div>
+                <h1 class="text-lg font-bold text-slate-800 text-center leading-tight hover:text-brand-600 transition-colors" data-i18n="name">Jirawat Poongam (NICK)</h1>
+            </a>
+            
+            <p class="text-xs text-slate-500 text-center mt-2 px-2" data-i18n="subtitle">Master of Public Policy<br>GRIPS, Tokyo (2024)</p>
+            <div class="mt-3 py-1 px-3 bg-slate-50 border border-slate-200 rounded-full text-xs text-slate-600 font-medium">
+                <i class="fas fa-user-tie mr-1 text-brand-500"></i> <span data-i18n="advisor">Advisor: Asst. Prof. Jun Goto</span>
+            </div>
+        </div>
+        
+        <nav class="flex-1 overflow-y-auto py-4">
+            <ul class="space-y-1">
+                <li>
+                    <a href="#abstract" class="nav-link block px-6 py-3 text-sm text-slate-600 hover:bg-slate-50 hover:text-brand-700">
+                        <i class="fas fa-file-alt w-6 text-center mr-2"></i> <span data-i18n="nav-abstract">Abstract & Overview</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#problem" class="nav-link block px-6 py-3 text-sm text-slate-600 hover:bg-slate-50 hover:text-brand-700">
+                        <i class="fas fa-smog w-6 text-center mr-2"></i> <span data-i18n="nav-problem">The Haze Problem</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#spatial" class="nav-link block px-6 py-3 text-sm text-slate-600 hover:bg-slate-50 hover:text-brand-700">
+                        <i class="fas fa-map-marked-alt w-6 text-center mr-2"></i> <span data-i18n="nav-spatial">Spatial Distribution</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#methodology" class="nav-link block px-6 py-3 text-sm text-slate-600 hover:bg-slate-50 hover:text-brand-700">
+                        <i class="fas fa-satellite w-6 text-center mr-2"></i> <span data-i18n="nav-methodology">Methodology & Data</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#findings" class="nav-link block px-6 py-3 text-sm text-slate-600 hover:bg-slate-50 hover:text-brand-700">
+                        <i class="fas fa-chart-line w-6 text-center mr-2"></i> <span data-i18n="nav-findings">Key Findings</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="p-4 border-t border-gray-100 flex justify-center">
+            <button id="lang-toggle-btn" class="flex items-center space-x-2 text-sm font-medium text-slate-600 hover:text-brand-700 transition-colors px-4 py-2 rounded-lg bg-slate-50 hover:bg-brand-50 w-full justify-center border border-gray-200">
+                <i class="fas fa-language text-lg"></i>
+                <span id="lang-btn-text">Switch to Thai</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Overlay for mobile sidebar -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-slate-900 bg-opacity-50 z-30 hidden md:hidden backdrop-blur-sm transition-opacity"></div>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 overflow-y-auto h-full scroll-smooth pt-16 md:pt-0 bg-haze-50" id="main-content">
+        <div class="max-w-4xl mx-auto px-6 py-12 md:px-12 md:py-16 space-y-24">
+
+            <section id="abstract" class="scroll-mt-20 fade-in">
+                <div class="mb-4 inline-flex items-center space-x-2 bg-brand-100 text-brand-800 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
+                    <i class="fas fa-book-open"></i>
+                    <span>Policy Paper</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight leading-tight" data-i18n="title">
+                    The Impact of Transboundary Haze on Lung Cancer Mortality in Thailand
+                </h2>
+                
+                <!-- SDGs Real Logos -->
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <!-- SDG 3: Good Health and Well-being -->
+                    <svg class="w-20 h-20 rounded-md shadow-sm hover:scale-105 transition-transform" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100" height="100" fill="#4C9F38"/>
+                        <text x="10" y="25" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="bold" font-size="28">3</text>
+                        <text x="35" y="15" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="bold" font-size="10">GOOD HEALTH</text>
+                        <text x="35" y="27" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="bold" font-size="10">AND WELL-BEING</text>
+                        <path d="M 15 65 L 35 65 L 45 40 L 55 80 L 65 35 L 75 60 L 95 60" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round"/>
+                        <path d="M 70 70 A 5 5 0 0 0 80 60 A 5 5 0 0 0 90 70 L 80 80 Z" fill="#FFFFFF"/>
+                    </svg>
+                    <!-- SDG 13: Climate Action -->
+                    <svg class="w-20 h-20 rounded-md shadow-sm hover:scale-105 transition-transform" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100" height="100" fill="#3F7E44"/>
+                        <text x="8" y="25" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="bold" font-size="24">13</text>
+                        <text x="35" y="15" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="bold" font-size="10">CLIMATE</text>
+                        <text x="35" y="27" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="bold" font-size="10">ACTION</text>
+                        <path d="M 15 60 C 15 40, 85 40, 85 60 C 85 80, 15 80, 15 60 Z" fill="#FFFFFF"/>
+                        <circle cx="50" cy="60" r="15" fill="#3F7E44"/>
+                        <path d="M 38 55 Q 45 45 52 50 Q 55 58 62 55 Q 65 65 55 70 Q 42 68 38 55 Z" fill="#FFFFFF"/>
+                    </svg>
+                    <!-- SDG 15: Life on Land -->
+                    <svg class="w-20 h-20 rounded-md shadow-sm hover:scale-105 transition-transform" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100" height="100" fill="#56C02B"/>
+                        <text x="8" y="25" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="bold" font-size="24">15</text>
+                        <text x="35" y="15" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="bold" font-size="10">LIFE</text>
+                        <text x="35" y="27" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="bold" font-size="10">ON LAND</text>
+                        <path d="M 30 70 L 30 60 C 20 60 20 45 35 40 C 40 30 55 35 55 45 C 65 45 60 60 50 60 L 50 70 Z" fill="#FFFFFF"/>
+                        <path d="M 60 45 Q 65 40 70 45 Q 75 40 80 45" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+                        <path d="M 65 55 Q 70 50 75 55 Q 80 50 85 55" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+                        <line x1="25" y1="75" x2="75" y2="75" stroke="#FFFFFF" stroke-width="3"/>
+                        <line x1="25" y1="82" x2="75" y2="82" stroke="#FFFFFF" stroke-width="3"/>
+                    </svg>
+                </div>
+
+                <div class="prose prose-lg prose-slate max-w-none text-slate-600 space-y-6">
+                    <p class="text-xl leading-relaxed font-medium text-slate-700" data-i18n="abstract-p1">
+                        This study investigates the long-term health impacts of exposure to PM2.5 air pollutants on lung cancer mortality. Using data from ground-based stations, Aerosol Optical Depth (AOD), and estimated PM2.5 levels, we found a significant correlation between long-term PM2.5 exposure and increased lung cancer mortality.
+                    </p>
+                    <p class="leading-relaxed" data-i18n="abstract-p2">
+                        Specifically, over a 10-year period, especially during haze seasons, each one microgram per cubic meter (µg/m³) increase in PM2.5 concentration is associated with a 0.275 percentage point rise in lung cancer mortality probability.
+                    </p>
+                    <p class="leading-relaxed" data-i18n="abstract-p3">
+                        While no conclusive evidence was found linking PM2.5 to lung cancer mortality over shorter exposure periods, such as five years, the long-term impacts underscore the urgent need for effective air quality management policies.
+                    </p>
+                    
+                    <div class="mt-8 bg-white rounded-xl shadow-sm border border-gray-200 p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div class="text-sm text-slate-500 flex-1">
+                            <strong>Keywords:</strong> Lung Cancer Mortality, Southeast Asia, Transboundary Haze, Air Quality, Particulate Matter, PM2.5, AOD
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                            <!-- Download PDF Report -->
+                            <a href="Impact of Transboundary Haze on Thailand Lung Cancer Mortality.pdf" download class="inline-flex items-center justify-center px-5 py-2.5 bg-brand-600 text-white font-semibold rounded-lg hover:bg-brand-700 transition shadow-md hover:shadow-lg text-sm">
+                                <i class="fas fa-file-pdf mr-2"></i> <span data-i18n="btn-download">Paper</span>
+                            </a>
+                            <!-- Download Slides -->
+                            <a href="Presentation_Slides.pdf" download class="inline-flex items-center justify-center px-5 py-2.5 bg-white border border-brand-200 text-brand-700 font-semibold rounded-lg hover:bg-brand-50 transition shadow-sm text-sm">
+                                <i class="fas fa-file-powerpoint mr-2 text-brand-500"></i> <span data-i18n="btn-slides">Slides</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="problem" class="scroll-mt-20 fade-in pt-8 border-t border-gray-200">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6 tracking-tight" data-i18n="problem-title">The Problem: Seasonal Haze</h2>
+                
+                <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm mb-8">
+                    <p class="text-slate-700 mb-6 text-lg" data-i18n="problem-desc">
+                        The northern part of Southeast Asia suffers from severe seasonal haze during January to April, containing harmful tiny particles (PM2.5) that severely impact health and the economy.
+                    </p>
+
+                    <!-- Custom Designed SVG Haze Pattern Chart -->
+                    <div class="mb-2 flex items-center justify-between">
+                        <h3 class="font-bold text-slate-800 text-sm uppercase tracking-wider" data-i18n="chart-title">Seasonal PM2.5 Pattern (Chiang Mai Center)</h3>
+                        <span class="text-xs bg-red-100 text-red-700 px-2 py-1 rounded font-semibold"><i class="fas fa-exclamation-triangle mr-1"></i> Danger Zone</span>
+                    </div>
+                    
+                    <div class="relative w-full aspect-[2/1] sm:aspect-[21/9] bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+                        <!-- Haze Season Highlight Background -->
+                        <div class="absolute top-0 left-[0%] w-[33.33%] h-full bg-red-500/10 border-r border-red-500/30 transition-colors group-hover:bg-red-500/20"></div>
+                        <div class="absolute top-4 left-[16.5%] -translate-x-1/2 text-xs font-bold text-red-600 uppercase tracking-widest hidden sm:block">Haze Season (Jan-Apr)</div>
+                        
+                        <svg viewBox="0 0 1000 400" preserveAspectRatio="none" class="w-full h-full p-4 overflow-visible">
+                            <!-- Grid Lines Y -->
+                            <line x1="50" y1="350" x2="980" y2="350" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4"/>
+                            <text x="40" y="355" fill="#64748b" font-size="12" text-anchor="end">0</text>
+                            
+                            <line x1="50" y1="275" x2="980" y2="275" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4"/>
+                            <text x="40" y="280" fill="#64748b" font-size="12" text-anchor="end">40</text>
+                            
+                            <line x1="50" y1="200" x2="980" y2="200" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4"/>
+                            <text x="40" y="205" fill="#64748b" font-size="12" text-anchor="end">80</text>
+                            
+                            <line x1="50" y1="125" x2="980" y2="125" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4"/>
+                            <text x="40" y="130" fill="#64748b" font-size="12" text-anchor="end">120</text>
+
+                            <!-- WHO Guideline Line -->
+                            <line x1="50" y1="312" x2="980" y2="312" stroke="#16a34a" stroke-width="2" stroke-dasharray="6"/>
+                            <text x="980" y="305" fill="#16a34a" font-size="12" font-weight="bold" text-anchor="end">WHO Guideline</text>
+
+                            <!-- Data Lines (Conceptual representation of 2011-2023) -->
+                            <path class="chart-line" d="M 50 280 C 130 250, 210 180, 290 200 C 370 290, 450 330, 530 330 C 610 335, 690 320, 770 330 C 850 310, 930 260, 980 230" fill="none" stroke="#94a3b8" stroke-width="2" opacity="0.6"/>
+                            <path class="chart-line" d="M 50 250 C 130 200, 210 120, 290 140 C 370 260, 450 340, 530 340 C 610 340, 690 330, 770 335 C 850 320, 930 270, 980 240" fill="none" stroke="#64748b" stroke-width="2.5" opacity="0.7"/>
+                            <!-- Peak Line -->
+                            <path class="chart-line" d="M 50 220 C 130 180, 210 60, 290 40 C 370 200, 450 310, 530 320 C 610 325, 690 325, 770 340 C 850 315, 930 250, 980 210" fill="none" stroke="#0ea5e9" stroke-width="3" opacity="0.9"/>
+                            
+                            <!-- X Axis Labels -->
+                            <text x="50" y="375" fill="#475569" font-size="14" text-anchor="middle">Jan</text>
+                            <text x="134" y="375" fill="#475569" font-size="14" text-anchor="middle">Feb</text>
+                            <text x="218" y="375" fill="#475569" font-size="14" font-weight="bold" text-anchor="middle">Mar</text>
+                            <text x="302" y="375" fill="#475569" font-size="14" text-anchor="middle">Apr</text>
+                            <text x="386" y="375" fill="#475569" font-size="14" text-anchor="middle">May</text>
+                            <text x="470" y="375" fill="#475569" font-size="14" text-anchor="middle">Jun</text>
+                            <text x="554" y="375" fill="#475569" font-size="14" text-anchor="middle">Jul</text>
+                            <text x="638" y="375" fill="#475569" font-size="14" text-anchor="middle">Aug</text>
+                            <text x="722" y="375" fill="#475569" font-size="14" text-anchor="middle">Sep</text>
+                            <text x="806" y="375" fill="#475569" font-size="14" text-anchor="middle">Oct</text>
+                            <text x="890" y="375" fill="#475569" font-size="14" text-anchor="middle">Nov</text>
+                            <text x="974" y="375" fill="#475569" font-size="14" text-anchor="middle">Dec</text>
+                        </svg>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-2 text-center italic" data-i18n="chart-source">Source: Recreated from Pollution Control Department Data (2011-2023)</p>
+                </div>
+            </section>
+
+            <section id="spatial" class="scroll-mt-20 fade-in pt-8 border-t border-gray-200">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                    <div>
+                        <h2 class="text-3xl font-bold text-slate-800 tracking-tight" data-i18n="spatial-title">Spatial Distribution & Data Gaps</h2>
+                        <p class="text-slate-600 mt-2 text-lg" data-i18n="spatial-desc">Mapping the concentration of pollutants reveals stark regional disparities and highlights the critical limitations of ground-level monitoring.</p>
+                    </div>
+                </div>
+
+                <div class="max-w-3xl mx-auto">
+                    <!-- Text / Limitations -->
+                    <div class="flex flex-col justify-center">
+                        <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-xl mb-6 shadow-sm">
+                            <h4 class="text-red-800 font-bold mb-3 text-lg" data-i18n="limitation-title">Limitations of Current Data</h4>
+                            <ul class="space-y-4 text-red-700 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-map-marker-alt mt-1 mr-3 text-red-500 text-lg"></i>
+                                    <span data-i18n="limitation-1">Ground stations have severely limited coverage (only 61 stations, covering 6.6% of 928 districts). Massive blind spots remain.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-clock mt-1 mr-3 text-red-500 text-lg"></i>
+                                    <span data-i18n="limitation-2">Many ground stations possess a maximum historical data period of only 10 years, restricting long-term studies.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-chart-area mt-1 mr-3 text-red-500 text-lg"></i>
+                                    <span data-i18n="limitation-3">Lung cancer mortality at the highly granular district level is available exclusively in Thailand within the studied region.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-slate-800 text-white p-6 rounded-xl shadow-md">
+                            <h4 class="font-bold mb-3 text-lg text-brand-400" data-i18n="research-q">The Core Research Question</h4>
+                            <p class="text-lg leading-relaxed italic border-l-2 border-brand-500 pl-4">
+                                "Is there a connection between lung cancer and the effects of transboundary haze in northern Southeast Asia?"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="methodology" class="scroll-mt-20 fade-in pt-8 border-t border-gray-200">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6 tracking-tight" data-i18n="methodology-title">Methodology & Satellite Data</h2>
+                <p class="text-slate-600 mb-8 text-lg" data-i18n="methodology-desc">To overcome ground station limitations, this research utilizes satellite remote sensing to estimate air quality across all districts.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                    <div class="bg-white p-6 rounded-xl border border-brand-100 shadow-sm text-center hover:shadow-md transition">
+                        <div class="w-14 h-14 bg-brand-50 text-brand-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                            <i class="fas fa-satellite"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-800 mb-2">Aerosol Optical Depth (AOD)</h4>
+                        <p class="text-sm text-slate-500">Data retrieved from NASA's MODIS satellite, capturing atmospheric transparency and particles globally.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-brand-100 shadow-sm text-center hover:shadow-md transition">
+                        <div class="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-800 mb-2">100% District Coverage</h4>
+                        <p class="text-sm text-slate-500">Unlike ground stations (6.6%), satellite AOD covers all 928 districts in Thailand, resolving spatial limitations.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-brand-100 shadow-sm text-center hover:shadow-md transition">
+                        <div class="w-14 h-14 bg-purple-50 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-800 mb-2">20-Year Historical Data</h4>
+                        <p class="text-sm text-slate-500">Access to data from 2001 to 2021, crucial for observing long-term health impacts like cancer development.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="bg-slate-50 px-6 py-4 border-b border-gray-200">
+                        <h4 class="font-bold text-slate-800" data-i18n="table-title">Table 1: Key Descriptive Statistics (Highlights)</h4>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100/50 text-slate-600 text-sm uppercase tracking-wider">
+                                    <th class="px-6 py-3 border-b font-semibold">Variable</th>
+                                    <th class="px-6 py-3 border-b font-semibold">Region (Highest)</th>
+                                    <th class="px-6 py-3 border-b font-semibold text-right">Mean Value</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm text-slate-700 divide-y divide-gray-100">
+                                <tr class="hover:bg-slate-50">
+                                    <td class="px-6 py-4 font-medium">Lung Cancer Mortality (per 100k)</td>
+                                    <td class="px-6 py-4">North</td>
+                                    <td class="px-6 py-4 text-right font-mono">30.67</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="px-6 py-4 font-medium">Particulate Matter 2.5 (µg/m³)</td>
+                                    <td class="px-6 py-4">North</td>
+                                    <td class="px-6 py-4 text-right font-mono">27.48</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="px-6 py-4 font-medium">Aerosol Optical Depth (AOD)</td>
+                                    <td class="px-6 py-4">North</td>
+                                    <td class="px-6 py-4 text-right font-mono">443.30</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="px-6 py-4 font-medium">Elevation (meters)</td>
+                                    <td class="px-6 py-4">North</td>
+                                    <td class="px-6 py-4 text-right font-mono">396.59</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="bg-slate-50 px-6 py-3 border-t border-gray-200 text-xs text-slate-500">
+                        *Note: Northern Thailand consistently shows the highest levels across pollution, mortality, and elevation metrics despite having lower-than-average tobacco consumption (19.27% vs national 20.92%).
+                    </div>
+                </div>
+            </section>
+
+            <section id="findings" class="scroll-mt-20 fade-in pt-8 border-t border-gray-200 mb-20">
+                <h2 class="text-3xl font-bold text-slate-800 mb-8 tracking-tight" data-i18n="findings-title">Key Findings & Discussion</h2>
+                
+                <div class="flex flex-col md:flex-row gap-6 mb-10">
+                    <div class="flex-1 bg-white border-t-4 border-brand-500 rounded-b-xl shadow-md p-8 relative overflow-hidden group hover:-translate-y-1 transition duration-300">
+                        <div class="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 rounded-full bg-brand-50 opacity-50 group-hover:scale-150 transition-transform duration-500"></div>
+                        <div class="text-6xl font-extrabold text-slate-900 mb-2 relative z-10">0.275<span class="text-3xl">%</span></div>
+                        <div class="text-brand-700 font-bold text-lg mb-3 relative z-10" data-i18n="finding-1-title">Rise in Mortality Probability</div>
+                        <p class="text-slate-600 text-sm leading-relaxed relative z-10" data-i18n="finding-1-desc">
+                            Associated with every 1 µg/m³ increase in PM2.5 concentration over a 10-year period, specifically driven by exposure during the Jan-Apr haze seasons.
+                        </p>
+                    </div>
+
+                    <div class="flex-1 bg-white border-t-4 border-amber-400 rounded-b-xl shadow-md p-8 relative overflow-hidden group hover:-translate-y-1 transition duration-300">
+                        <div class="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 rounded-full bg-amber-50 opacity-50 group-hover:scale-150 transition-transform duration-500"></div>
+                        <div class="text-6xl font-extrabold text-slate-900 mb-2 relative z-10">10 <span class="text-3xl">Years</span></div>
+                        <div class="text-amber-600 font-bold text-lg mb-3 relative z-10" data-i18n="finding-2-title">Minimum Exposure Required</div>
+                        <p class="text-slate-600 text-sm leading-relaxed relative z-10" data-i18n="finding-2-desc">
+                            No conclusive evidence was found linking PM2.5 to lung cancer mortality over shorter periods (e.g., 5 years), underscoring the long-term compounding danger of seasonal haze.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800 text-slate-100 rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold text-white mb-4 border-b border-slate-600 pb-4" data-i18n="policy-title"><i class="fas fa-lightbulb text-brand-400 mr-2"></i> Policy Implications</h3>
+                    <p class="mb-6 text-slate-300" data-i18n="policy-desc">
+                        The alignment between AOD-based PM2.5 estimates and ground-based measurements supports these findings. Policymakers must act on the severe health risks associated with long-term exposure:
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="flex items-start space-x-3 bg-slate-700/50 p-4 rounded-lg">
+                            <i class="fas fa-check-circle text-brand-400 mt-1"></i>
+                            <span class="text-sm" data-i18n="policy-1">Enhance air quality monitoring and regulation beyond sparse ground stations.</span>
+                        </div>
+                        <div class="flex items-start space-x-3 bg-slate-700/50 p-4 rounded-lg">
+                            <i class="fas fa-check-circle text-brand-400 mt-1"></i>
+                            <span class="text-sm" data-i18n="policy-2">Implement targeted health interventions for vulnerable populations in northern regions.</span>
+                        </div>
+                        <div class="flex items-start space-x-3 bg-slate-700/50 p-4 rounded-lg">
+                            <i class="fas fa-check-circle text-brand-400 mt-1"></i>
+                            <span class="text-sm" data-i18n="policy-3">Launch aggressive public awareness campaigns before and during the Jan-Apr haze cycle.</span>
+                        </div>
+                        <div class="flex items-start space-x-3 bg-slate-700/50 p-4 rounded-lg">
+                            <i class="fas fa-check-circle text-brand-400 mt-1"></i>
+                            <span class="text-sm" data-i18n="policy-4">Support funding for longitudinal studies exploring varied exposure timeframes.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="pt-8 pb-12 border-t border-gray-200 mt-12 text-center text-slate-500 text-sm">
+                <p class="mb-2">
+                    <span data-i18n="footer-text">Based on the research paper submitted in partial fulfillment of MPP, National Graduate Institute for Policy Studies, Tokyo (2024).</span>
+                </p>
+                <p>&copy; 2026 Jirawat Poongam. All rights reserved.</p>
+            </footer>
+
+        </div>
+    </main>
+
+    <script>
+        // Setup Intersection Observer for dynamic active state in Sidebar
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '-50px 0px -50px 0px',
+                threshold: 0.1 
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => observer.observe(section));
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function toggleMenu() {
+            const isClosed = sidebar.classList.contains('-translate-x-full');
+            if (isClosed) {
+                sidebar.classList.remove('-translate-x-full');
+                sidebarOverlay.classList.remove('hidden');
+            } else {
+                sidebar.classList.add('-translate-x-full');
+                sidebarOverlay.classList.add('hidden');
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        sidebarOverlay.addEventListener('click', toggleMenu);
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Internationalization (i18n) Logic
+        const translations = {
+            en: {
+                "mobile-title": "Haze Research",
+                "name": "Jirawat Poongam (NICK)",
+                "subtitle": "Master of Public Policy<br>GRIPS, Tokyo (2024)",
+                "advisor": "Advisor: Asst. Prof. Jun Goto",
+                "nav-abstract": "Abstract & Overview",
+                "nav-problem": "The Haze Problem",
+                "nav-spatial": "Spatial Distribution",
+                "nav-methodology": "Methodology & Data",
+                "nav-findings": "Key Findings",
+                "title": "The Impact of Transboundary Haze on Lung Cancer Mortality in Thailand",
+                "abstract-p1": "This study investigates the long-term health impacts of exposure to PM2.5 air pollutants on lung cancer mortality. Using data from ground-based stations, Aerosol Optical Depth (AOD), and estimated PM2.5 levels, we found a significant correlation between long-term PM2.5 exposure and increased lung cancer mortality.",
+                "abstract-p2": "Specifically, over a 10-year period, especially during haze seasons, each one microgram per cubic meter (µg/m³) increase in PM2.5 concentration is associated with a 0.275 percentage point rise in lung cancer mortality probability.",
+                "abstract-p3": "While no conclusive evidence was found linking PM2.5 to lung cancer mortality over shorter exposure periods, such as five years, the long-term impacts underscore the urgent need for effective air quality management policies.",
+                "btn-download": "Paper",
+                "btn-slides": "Slides",
+                "problem-title": "The Problem: Seasonal Haze",
+                "problem-desc": "The northern part of Southeast Asia suffers from severe seasonal haze during January to April, containing harmful tiny particles (PM2.5) that severely impact health and the economy.",
+                "chart-title": "Seasonal PM2.5 Pattern (Chiang Mai Center)",
+                "chart-source": "Source: Recreated from Pollution Control Department Data (2011-2023)",
+                "spatial-title": "Spatial Distribution & Data Gaps",
+                "spatial-desc": "Mapping the concentration of pollutants reveals stark regional disparities and highlights the critical limitations of ground-level monitoring.",
+                "limitation-title": "Limitations of Current Data",
+                "limitation-1": "Ground stations have severely limited coverage (only 61 stations, covering 6.6% of 928 districts). Massive blind spots remain.",
+                "limitation-2": "Many ground stations possess a maximum historical data period of only 10 years, restricting long-term studies.",
+                "limitation-3": "Lung cancer mortality at the highly granular district level is available exclusively in Thailand within the studied region.",
+                "research-q": "The Core Research Question",
+                "map-title": "Pollutant Concentration Map (Conceptual)",
+                "map-subtitle": "Higher PM2.5 / AOD concentrations clearly concentrated in the Northern region.",
+                "methodology-title": "Methodology & Satellite Data",
+                "methodology-desc": "To overcome ground station limitations, this research utilizes satellite remote sensing to estimate air quality across all districts.",
+                "table-title": "Table 1: Key Descriptive Statistics (Highlights)",
+                "findings-title": "Key Findings & Discussion",
+                "finding-1-title": "Rise in Mortality Probability",
+                "finding-1-desc": "Associated with every 1 µg/m³ increase in PM2.5 concentration over a 10-year period, specifically driven by exposure during the Jan-Apr haze seasons.",
+                "finding-2-title": "Minimum Exposure Required",
+                "finding-2-desc": "No conclusive evidence was found linking PM2.5 to lung cancer mortality over shorter periods (e.g., 5 years), underscoring the long-term compounding danger of seasonal haze.",
+                "policy-title": "<i class=\"fas fa-lightbulb text-brand-400 mr-2\"></i> Policy Implications",
+                "policy-desc": "The alignment between AOD-based PM2.5 estimates and ground-based measurements supports these findings. Policymakers must act on the severe health risks associated with long-term exposure:",
+                "policy-1": "Enhance air quality monitoring and regulation beyond sparse ground stations.",
+                "policy-2": "Implement targeted health interventions for vulnerable populations in northern regions.",
+                "policy-3": "Launch aggressive public awareness campaigns before and during the Jan-Apr haze cycle.",
+                "policy-4": "Support funding for longitudinal studies exploring varied exposure timeframes.",
+                "footer-text": "Based on the research paper submitted in partial fulfillment of MPP, National Graduate Institute for Policy Studies, Tokyo (2024).",
+                "lang-btn-text": "Switch to Thai",
+                "mobile-lang-btn": "TH"
+            },
+            th: {
+                "mobile-title": "งานวิจัยหมอกควัน",
+                "name": "จิรวัฒน์ พูนงาม (นิค)",
+                "subtitle": "ปริญญาโท นโยบายสาธารณะ<br>GRIPS, โตเกียว (2024)",
+                "advisor": "ที่ปรึกษา: ผศ. จุน โกโตะ",
+                "nav-abstract": "บทคัดย่อและภาพรวม",
+                "nav-problem": "ปัญหาหมอกควัน",
+                "nav-spatial": "การกระจายเชิงพื้นที่",
+                "nav-methodology": "ระเบียบวิธีและข้อมูล",
+                "nav-findings": "ผลการวิจัยหลัก",
+                "title": "ผลกระทบของหมอกควันข้ามแดนต่ออัตราการเสียชีวิตจากมะเร็งปอดในประเทศไทย",
+                "abstract-p1": "การศึกษานี้ตรวจสอบผลกระทบต่อสุขภาพระยะยาวจากการสัมผัสมลพิษทางอากาศ PM2.5 ต่ออัตราการเสียชีวิตจากมะเร็งปอด โดยใช้ข้อมูลจากสถานีภาคพื้นดิน, ความลึกของแสงในบรรยากาศ (AOD) และระดับ PM2.5 ที่ประเมินได้ พบความสัมพันธ์ที่มีนัยสำคัญระหว่างการสัมผัส PM2.5 ในระยะยาวและการเพิ่มขึ้นของอัตราการเสียชีวิตจากมะเร็งปอด",
+                "abstract-p2": "โดยเฉพาะอย่างยิ่งในช่วงเวลา 10 ปี โดยเฉพาะในช่วงฤดูหมอกควัน ทุกๆ 1 ไมโครกรัมต่อลูกบาศก์เมตร (µg/m³) ของ PM2.5 ที่เพิ่มขึ้น สัมพันธ์กับความน่าจะเป็นของอัตราการเสียชีวิตจากมะเร็งปอดที่เพิ่มขึ้นร้อยละ 0.275",
+                "abstract-p3": "แม้จะยังไม่พบหลักฐานที่แน่ชัดในการเชื่อมโยง PM2.5 กับมะเร็งปอดในระยะสั้น เช่น 5 ปี แต่ผลกระทบระยะยาวเน้นย้ำถึงความจำเป็นเร่งด่วนสำหรับนโยบายการจัดการคุณภาพอากาศที่มีประสิทธิภาพ",
+                "btn-download": "ดาวน์โหลดรายงาน",
+                "btn-slides": "ดาวน์โหลดสไลด์",
+                "problem-title": "ปัญหา: หมอกควันตามฤดูกาล",
+                "problem-desc": "ภาคเหนือของเอเชียตะวันออกเฉียงใต้ประสบปัญหาหมอกควันรุนแรงในช่วงเดือนมกราคมถึงเมษายน ซึ่งมีฝุ่นละอองขนาดเล็ก (PM2.5) ที่ส่งผลกระทบอย่างหนักต่อสุขภาพและเศรษฐกิจ",
+                "chart-title": "รูปแบบ PM2.5 ตามฤดูกาล (ศูนย์กลางเชียงใหม่)",
+                "chart-source": "ที่มา: สร้างขึ้นใหม่จากข้อมูลกรมควบคุมมลพิษ (2011-2023)",
+                "spatial-title": "การกระจายเชิงพื้นที่และช่องโหว่ของข้อมูล",
+                "spatial-desc": "การทำแผนที่ความเข้มข้นของมลพิษเผยให้เห็นความแตกต่างในระดับภูมิภาคอย่างชัดเจน และเน้นย้ำถึงข้อจำกัดที่สำคัญของการตรวจสอบระดับพื้นดิน",
+                "limitation-title": "ข้อจำกัดของข้อมูลในปัจจุบัน",
+                "limitation-1": "สถานีภาคพื้นดินมีความครอบคลุมที่จำกัดอย่างมาก (เพียง 61 สถานี ครอบคลุม 6.6% ของ 928 อำเภอ) ทำให้เกิดจุดบอดมหาศาล",
+                "limitation-2": "สถานีภาคพื้นดินหลายแห่งมีข้อมูลประวัติย้อนหลังสูงสุดเพียง 10 ปี ซึ่งเป็นข้อจำกัดในการศึกษาระยะยาว",
+                "limitation-3": "อัตราการเสียชีวิตจากมะเร็งปอดในระดับอำเภอที่มีความละเอียดสูงมีข้อมูลเฉพาะในประเทศไทยเท่านั้น",
+                "research-q": "คำถามการวิจัยหลัก",
+                "map-title": "แผนที่ความเข้มข้นของมลพิษ (เชิงแนวคิด)",
+                "map-subtitle": "ความเข้มข้นของ PM2.5 / AOD ที่สูงขึ้นกระจุกตัวอย่างชัดเจนในภาคเหนือ",
+                "methodology-title": "ระเบียบวิธีและข้อมูลดาวเทียม",
+                "methodology-desc": "เพื่อเอาชนะข้อจำกัดของสถานีภาคพื้นดิน งานวิจัยนี้ใช้การสำรวจระยะไกลผ่านดาวเทียมเพื่อประเมินคุณภาพอากาศในทุกพื้นที่",
+                "table-title": "ตารางที่ 1: สถิติเชิงพรรณนา (จุดเด่น)",
+                "findings-title": "ผลการวิจัยและการอภิปราย",
+                "finding-1-title": "ความน่าจะเป็นของการเสียชีวิตที่เพิ่มขึ้น",
+                "finding-1-desc": "มีความสัมพันธ์กับการเพิ่มขึ้นของ PM2.5 ทุกๆ 1 µg/m³ ในช่วง 10 ปี โดยเฉพาะการสัมผัสในช่วงฤดูหมอกควัน (ม.ค.-เม.ย.)",
+                "finding-2-title": "ระยะเวลาสัมผัสขั้นต่ำ",
+                "finding-2-desc": "ไม่พบความเชื่อมโยงที่แน่ชัดระหว่าง PM2.5 กับมะเร็งปอดในช่วงที่สั้นกว่า (เช่น 5 ปี) ซึ่งตอกย้ำถึงอันตรายสะสมระยะยาวของหมอกควันตามฤดูกาล",
+                "policy-title": "<i class=\"fas fa-lightbulb text-brand-400 mr-2\"></i> นัยเชิงนโยบาย",
+                "policy-desc": "ความสอดคล้องระหว่าง AOD และสถานีภาคพื้นดินสนับสนุนผลการวิจัยนี้ ผู้กำหนดนโยบายต้องตระหนักถึงความเสี่ยง:",
+                "policy-1": "ยกระดับการตรวจสอบและควบคุมคุณภาพอากาศให้ครอบคลุมมากกว่าสถานีภาคพื้นดิน",
+                "policy-2": "ดำเนินการแทรกแซงด้านสุขภาพที่ตรงจุดสำหรับกลุ่มเปราะบางในภาคเหนือ",
+                "policy-3": "รณรงค์สร้างความตระหนักรู้แก่ประชาชนก่อนและระหว่างวงจรหมอกควัน ม.ค.-เม.ย.",
+                "policy-4": "สนับสนุนทุนวิจัยระยะยาวเพื่อสำรวจกรอบเวลาการสัมผัสที่หลากหลาย",
+                "footer-text": "อ้างอิงจากรายงานวิจัย ปริญญาโท นโยบายสาธารณะ, National Graduate Institute for Policy Studies, โตเกียว (2024)",
+                "lang-btn-text": "Switch to English",
+                "mobile-lang-btn": "EN"
+            }
+        };
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'th' : 'en';
+            
+            // Toggle body class for font family
+            if (currentLang === 'th') {
+                document.body.classList.add('lang-th');
+            } else {
+                document.body.classList.remove('lang-th');
+            }
+
+            // Update texts based on data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    element.innerHTML = translations[currentLang][key];
+                }
+            });
+
+            // Update button texts specifically
+            const langBtnText = document.getElementById('lang-btn-text');
+            if(langBtnText) langBtnText.textContent = translations[currentLang]['lang-btn-text'];
+            
+            const mobileLangBtn = document.getElementById('mobile-lang-btn');
+            if(mobileLangBtn) mobileLangBtn.textContent = translations[currentLang]['mobile-lang-btn'];
+        }
+
+        document.getElementById('lang-toggle-btn').addEventListener('click', toggleLanguage);
+        document.getElementById('mobile-lang-btn').addEventListener('click', toggleLanguage);
+
+    </script>
+</body>
+</html>
