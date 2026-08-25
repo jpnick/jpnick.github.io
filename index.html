@@ -1,352 +1,755 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jirawat Poongam - CV</title>
+    <title>Your Name - Interactive Portfolio</title>
+    
+    <!-- Fonts: Inter and Kanit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons: FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Kanit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        kanit: ['Kanit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            color: #334155;
             background-color: #f8fafc;
-            color: #1e293b;
+            transition: font-family 0.3s ease;
         }
-        
-        /* Apply Kanit specifically when Thai language is active or for Thai characters */
-        body.lang-th, 
-        body.lang-th button, 
-        body.lang-th p, 
-        body.lang-th h1, 
-        body.lang-th h2, 
-        body.lang-th h3, 
-        body.lang-th span {
+
+        /* Thai Font Support */
+        body.lang-th {
             font-family: 'Kanit', sans-serif;
         }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
 
-        .sidebar {
-            background-color: #0f172a;
+        /* Nav active state transition */
+        .nav-link {
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-link.active {
+            background-color: #e0f2fe;
+            color: #0284c7;
+            font-weight: 600;
+            border-right: 3px solid #0284c7;
+        }
+
+        /* Tab active state */
+        .tab-btn.active {
+            border-bottom-color: #0ea5e9;
+            color: #0ea5e9;
         }
         
-        [data-lang="th"] { display: none; }
-        body.lang-th [data-lang="en"] { display: none; }
-        body.lang-th [data-lang="th"] { display: block; }
-
-        .profile-photo {
-            width: 180px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 5%;
-            border: 2px solid #3b82f6;
-            margin: 0 auto 1.5rem auto;
-            display: block;
+        /* Fade in animation for tabs */
+        .fade-in {
+            animation: fadeIn 0.3s ease-in;
         }
-        /* Strict Print Optimization */
-        @media print {
-            @page {
-                size: A4;
-                margin: 0;
-            }
-            body { background-color: white; -webkit-print-color-adjust: exact; }
-            .no-print { display: none !important; }
-            .main-container { 
-                margin: 0 !important; 
-                box-shadow: none !important; 
-                width: 210mm !important;
-                height: 297mm !important;
-                display: flex !important;
-                flex-direction: row !important;
-            }
-            .sidebar { width: 32% !important; height: 297mm !important; padding: 1.25rem !important; }
-            main { width: 68% !important; height: 297mm !important; padding: 1.5rem !important; }
-            
-            /* Tighten typography for print */
-            h1 { font-size: 1.25rem !important; }
-            h2 { font-size: 0.875rem !important; margin-bottom: 0.5rem !important; }
-            p, li, span { font-size: 10px !important; line-height: 1.4 !important; }
-            .section-spacing { margin-bottom: 1rem !important; }
-            .item-spacing { margin-bottom: 0.5rem !important; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased flex h-screen overflow-hidden">
 
-    <!-- Language Toggle & Print Actions -->
-    <div class="fixed top-4 right-4 z-50 flex gap-2 no-print">
-        <button id="langToggle" class="bg-white border border-slate-200 shadow-md px-4 py-2 rounded-full text-sm font-bold hover:bg-slate-50 transition-colors flex items-center gap-2">
-            <span data-lang="en">TH / 🇹🇭</span>
-            <span data-lang="th">EN / 🇺🇸</span>
-        </button>
-        <button onclick="window.print()" class="bg-blue-600 shadow-md text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-blue-700 transition-colors">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
-        </button>
+    <!-- Mobile Header & Menu Toggle -->
+    <div class="md:hidden fixed top-0 w-full bg-white border-b border-gray-200 z-50 flex justify-between items-center p-4">
+        <span class="font-bold text-lg text-slate-800" data-i18n="name">Your Name</span>
+        <div class="flex items-center space-x-4">
+            <button id="mobile-lang-btn" class="text-sm font-medium text-brand-600 hover:text-brand-800 focus:outline-none px-2 py-1 bg-brand-50 rounded-md">
+                TH
+            </button>
+            <button id="mobile-menu-btn" class="text-slate-600 focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
     </div>
 
-    <div class="main-container max-w-5xl mx-auto my-0 md:my-10 bg-white shadow-2xl flex flex-col md:flex-row min-h-[1100px]">
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar" class="w-64 bg-white border-r border-gray-200 h-full flex flex-col fixed md:relative z-40 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out mt-14 md:mt-0 pt-4 md:pt-0">
+        <div class="p-8 flex flex-col items-center border-b border-gray-100">
+            <img src="me.jpg" onerror="this.src='https://placehold.co/400x400/0ea5e9/ffffff?text=JP'" alt="Profile" class="w-32 h-32 rounded-full object-cover shadow-md mb-4 border-4 border-brand-50">
+            <h1 class="text-xl font-bold text-slate-800 text-center" data-i18n="name">Your Name</h1>
+            <p class="text-sm text-slate-500 text-center mt-1" data-i18n="subtitle">Economist | Explorer</p>
+        </div>
         
-        <!-- Left Sidebar -->
-        <aside class="sidebar w-full md:w-1/3 p-8 text-slate-300">
-            <div class="mb-10 text-center md:text-left">
+        <nav class="flex-1 overflow-y-auto py-4">
+            <ul class="space-y-1">
+                <li>
+                    <a href="#about" class="nav-link block px-8 py-3 text-slate-600 hover:bg-slate-50 hover:text-brand-600">
+                        <i class="fas fa-user w-6 text-center mr-2"></i> <span data-i18n="nav-about">About</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#projects" class="nav-link block px-8 py-3 text-slate-600 hover:bg-slate-50 hover:text-brand-600">
+                        <i class="fas fa-briefcase w-6 text-center mr-2"></i> <span data-i18n="nav-projects">Work & Projects</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#teaching" class="nav-link block px-8 py-3 text-slate-600 hover:bg-slate-50 hover:text-brand-600">
+                        <i class="fas fa-chalkboard-teacher w-6 text-center mr-2"></i> <span data-i18n="nav-teaching">Lectures</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#travel" class="nav-link block px-8 py-3 text-slate-600 hover:bg-slate-50 hover:text-brand-600">
+                        <i class="fas fa-globe-americas w-6 text-center mr-2"></i> <span data-i18n="nav-travel">Travel Blog</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="p-4 border-t border-gray-100 flex justify-center border-b">
+            <button id="lang-toggle-btn" class="flex items-center space-x-2 text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors px-4 py-2 rounded-lg bg-slate-50 hover:bg-brand-50 w-full justify-center">
+                <i class="fas fa-language text-lg"></i>
+                <span id="lang-btn-text">Switch to Thai</span>
+            </button>
+        </div>
 
-                <img src="me.jpg" alt="Jirawat Poongam" class="profile-photo shadow-xl">
-                
-                <h1 class="text-3xl font-bold text-white tracking-tight mb-2" data-lang="en">Jirawat Poongam</h1>
-                <h1 class="text-3xl font-bold text-white tracking-tight mb-2" data-lang="th">จิรวัฒน์ ภู่งาม</h1>
-                <p class="text-blue-400 font-medium tracking-wide uppercase text-sm" data-lang="en">Senior Analyst & Economist</p>
-                <p class="text-blue-400 font-medium tracking-wide text-sm" data-lang="th">นักวิเคราะห์อาวุโส และ นักเศรษฐศาสตร์</p>
-            </div>
+        <div class="p-6 border-t border-gray-100 flex justify-center space-x-6">
+            <a href="https://linkedin.com/in/jirawatp" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-brand-500 transition"><i class="fab fa-linkedin text-xl"></i></a>
+            <a href="https://github.com/jpnick" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-gray-800 transition"><i class="fab fa-github text-xl"></i></a>
+        </div>
+    </aside>
 
-            <div class="space-y-8">
-                <!-- Contact Info -->
-                <section>
-                    <h2 class="text-white text-xs font-bold uppercase tracking-widest mb-4 border-b border-slate-700 pb-2">
-                        <span data-lang="en">Contact</span>
-                        <span data-lang="th">ติดต่อ</span>
-                    </h2>
-                    <ul class="space-y-3 text-sm">
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            jirawat.p[at]outlook[dot]com
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-3.5 h-3.5 mr-2 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                            <a href="https://linkedin.com/in/jirawatp" class="hover:text-white transition-colors">linkedin[dot]com/in/jirawatp</a>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-3.5 h-3.5 mr-2 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                            <a href="https://jpnick.github.com/" class="hover:text-white transition-colors">jpnick[dot]github[dot]com</a>
-                        </li>
+    <!-- Overlay for mobile sidebar -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-slate-900 bg-opacity-50 z-30 hidden md:hidden"></div>
 
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                            <span data-lang="en">Chiang Mai, Thailand</span>
-                            <span data-lang="th">เชียงใหม่, ประเทศไทย</span>
-                        </li>
-                    </ul>
-                </section>
+    <!-- Main Content Area -->
+    <main class="flex-1 overflow-y-auto h-full scroll-smooth pt-16 md:pt-0" id="main-content">
+        <div class="max-w-4xl mx-auto px-6 py-12 md:px-12 md:py-20 space-y-24">
 
-                <!-- Licenses & Certifications -->
-                <section>
-                    <h2 class="text-white text-xs font-bold uppercase tracking-widest mb-4 border-b border-slate-700 pb-2">
-                        <span data-lang="en">Certifications</span>
-                        <span data-lang="th">ใบรับรองและวุฒิบัตร</span>
-                    </h2>
-                    <ul class="space-y-4 text-xs">
-                        <li>
-                            <p class="text-blue-400 font-bold">Data, Economics, and Development Policy</p>
-                            <p class="text-slate-400">MITx MicroMasters (2021)</p>
-                        </li>
-                        <li>
-                            <p class="text-blue-400 font-bold">IBM AI Engineering Specialization</p>
-                            <p class="text-slate-400">Coursera (2020)</p>
-                        </li>
-                        <li>
-                            <p class="text-blue-400 font-bold">TensorFlow Developer</p>
-                            <p class="text-slate-400">DeepLearning.AI (2019)</p>
-                        </li>
-                        <li>
-                            <p class="text-blue-400 font-bold">Macroeconometric Forecasting</p>
-                            <p class="text-slate-400">IMF (2018)</p>
-                        </li>
-                        <li>
-                            <p class="text-blue-400 font-bold">Financial Market Analysis</p>
-                            <p class="text-slate-400">IMF (2018)</p>
-                        </li>
-                    </ul>
-                </section>
-
-                <!-- Expertise -->
-                <section>
-                    <h2 class="text-white text-xs font-bold uppercase tracking-widest mb-4 border-b border-slate-700 pb-2">
-                        <span data-lang="en">Expertise</span>
-                        <span data-lang="th">ความเชี่ยวชาญ</span>
-                    </h2>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-slate-800 text-[10px] px-2 py-1 rounded" data-lang="en">Policy Analysis</span>
-                        <span class="bg-slate-800 text-[10px] px-2 py-1 rounded" data-lang="th">การวิเคราะห์นโยบาย</span>
-                        <span class="bg-slate-800 text-[10px] px-2 py-1 rounded" data-lang="en">Macroeconomics</span>
-                        <span class="bg-slate-800 text-[10px] px-2 py-1 rounded" data-lang="th">เศรษฐศาสตร์มหภาค</span>
-                        <span class="bg-slate-800 text-[10px] px-2 py-1 rounded">Econometrics</span>
-                        <span class="bg-slate-800 text-[10px] px-2 py-1 rounded">AI & Machine Learning</span>
-                        <span class="bg-slate-800 text-[10px] px-2 py-1 rounded">Data Science</span>
-                        <span class="bg-slate-800 text-[10px] px-2 py-1 rounded" data-lang="en">Program Design</span>
-                        <span class="bg-slate-800 text-[10px] px-2 py-1 rounded" data-lang="th">การออกแบบโครงการ</span>
-                    </div>
-                </section>
-            </div>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="w-full md:w-2/3 p-10 bg-white">
-            
-            <!-- Profile Summary -->
-            <section class="mb-10">
-                <h2 class="text-xl font-bold text-slate-800 mb-4 flex items-center">
-                    <span class="w-8 h-1 bg-blue-500 mr-3"></span>
-                    <span data-lang="en">Professional Profile</span>
-                    <span data-lang="th">ประวัติโดยย่อ</span>
-                </h2>
-                <div data-lang="en" class="text-slate-600 leading-relaxed text-sm">
-                    Senior Analyst at the Bank of Thailand with a focus on applying data science to public policy and economic research. 
-                    Expert in utilizing Econometrics, Deep Learning, and Geospatial analysis to drive evidence-based decision-making. 
-                    Proven track record of transforming diverse datasets into high-impact insights to address complex policy challenges and optimize public welfare.
-                </div>
-                <div data-lang="th" class="text-slate-600 leading-relaxed text-sm">
-                    นักวิเคราะห์อาวุโส ธนาคารแห่งประเทศไทย ที่มุ่งเน้นการประยุกต์ใช้วิทยาการข้อมูล (Data Science) เพื่อสนับสนุนนโยบายสาธารณะและงานวิจัยทางเศรษฐกิจ 
-                    เน้นใช้เครื่องมือที่หลากหลาย อาทิ เศรษฐมิติ (Econometrics) การเรียนรู้เชิงลึก (Deep Learning) และการวิเคราะห์ข้อมูลเชิงพื้นที่ (Geospatial Analysis) 
-                    มีประสบการณ์ในการจัดการ และวิเคราะห์ข้อมูลขนาดใหญ่จากหลายแหล่ง เพื่อสังเคราะห์เป็นข้อมูลเชิงลึกที่สนับสนุนการตัดสินใจเชิงนโยบายบนพื้นฐานของข้อมูลเชิงประจักษ์เพื่อประโยนชน์ต่อสาธารณะ</div>
-            </section>
-
-            <!-- Experience -->
-            <section class="mb-10">
-                <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center">
-                    <span class="w-8 h-1 bg-blue-500 mr-3"></span>
-                    <span data-lang="en">Work Experience</span>
-                    <span data-lang="th">ประสบการณ์การทำงาน</span>
-                </h2>
-
-                <div class="space-y-6">
-                    <!-- Bank of Thailand -->
-                    <div class="relative pl-8 border-l-2 border-slate-100 pb-4">
-                        <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-[9px] top-1 border-4 border-white"></div>
-                        <div class="flex justify-between items-baseline mb-1">
-                            <h3 class="font-bold text-slate-800 text-lg" data-lang="en">Bank of Thailand</h3>
-                            <h3 class="font-bold text-slate-800 text-lg" data-lang="th">ธนาคารแห่งประเทศไทย</h3>
-                            <span class="text-xs font-bold text-slate-400">
-                                <span data-lang="en">9 yrs</span>
-                                <span data-lang="th">9 ปี</span>
-                            </span>
-                        </div>
-                        
-                        <div class="mt-4 space-y-4">
-                            <div>
-                                <div class="flex justify-between text-sm">
-                                    <span class="font-bold text-slate-700" data-lang="en">Senior Analyst</span>
-                                    <span class="font-bold text-slate-700" data-lang="th">นักวิเคราะห์อาวุโส</span>
-                                    <span class="text-blue-600 font-medium italic">Jun 2022 — Present</span>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between text-sm">
-                                    <span class="font-bold text-slate-700" data-lang="en">Senior Economist</span>
-                                    <span class="font-bold text-slate-700" data-lang="th">นักเศรษฐศาสตร์อาวุโส</span>
-                                    <span class="text-slate-500 italic">Jul 2020 — Jun 2022</span>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between text-sm">
-                                    <span class="font-bold text-slate-700" data-lang="en">Economist</span>
-                                    <span class="font-bold text-slate-700" data-lang="th">นักเศรษฐศาสตร์</span>
-                                    <span class="text-slate-500 italic">Jun 2017 — Jul 2020</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Department of Foreign Trade -->
-                    <div class="relative pl-8 border-l-2 border-slate-100 pb-4">
-                        <div class="absolute w-4 h-4 bg-slate-200 rounded-full -left-[9px] top-1 border-4 border-white"></div>
-                        <div class="flex justify-between items-baseline mb-1">
-                            <h3 class="font-bold text-slate-800" data-lang="en">Trade Officer</h3>
-                            <h3 class="font-bold text-slate-800" data-lang="th">นักวิชาการพาณิชย์</h3>
-                            <span class="text-xs text-slate-400 italic">Feb 2017 — May 2017</span>
-                        </div>
-                        <p class="text-sm font-semibold text-slate-500" data-lang="en">Department of Foreign Trade</p>
-                        <p class="text-sm font-semibold text-slate-500" data-lang="th">กรมการค้าต่างประเทศ</p>
-                        <p class="text-xs text-slate-600 mt-1 italic">Institute for Agricultural Product Innovation (APi)</p>
-                    </div>
-
-                    <!-- TDRI -->
-                    <div class="relative pl-8 border-l-2 border-slate-100 pb-4">
-                        <div class="absolute w-4 h-4 bg-slate-200 rounded-full -left-[9px] top-1 border-4 border-white"></div>
-                        <div class="flex justify-between items-baseline mb-1">
-                            <h3 class="font-bold text-slate-800" data-lang="en">Researcher</h3>
-                            <h3 class="font-bold text-slate-800" data-lang="th">นักวิจัย</h3>
-                            <span class="text-xs text-slate-400 italic">Sep 2015 — Apr 2016</span>
-                        </div>
-                        <p class="text-sm font-semibold text-slate-500" data-lang="en">Thailand Development Research Institute (TDRI)</p>
-                        <p class="text-sm font-semibold text-slate-500" data-lang="th">สถาบันวิจัยเพื่อการพัฒนาประเทศไทย (TDRI)</p>
-                        <p class="text-xs text-slate-600 mt-1">
-                            <span data-lang="en">Rice Balance Sheet: An estimation of uses of rice in Thailand.</span>
-                            <span data-lang="th">บัญชีสมดุลข้าว: การประมาณการใช้ประโยชน์ข้าวในประเทศไทย</span>
-                        </p>
-                    </div>
-
-                    <!-- House of Reps -->
-                    <div class="relative pl-8 border-l-2 border-slate-100">
-                        <div class="absolute w-4 h-4 bg-slate-200 rounded-full -left-[9px] top-1 border-4 border-white"></div>
-                        <div class="flex justify-between items-baseline mb-1">
-                            <h3 class="font-bold text-slate-800" data-lang="en">Operations Assistant</h3>
-                            <h3 class="font-bold text-slate-800" data-lang="th">ผู้ช่วยฝ่ายปฏิบัติการ</h3>
-                            <span class="text-xs text-slate-400 italic">Oct 2014 — Sep 2015</span>
-                        </div>
-                        <p class="text-sm font-semibold text-slate-500" data-lang="en">Secretariat of The House of Representatives</p>
-                        <p class="text-sm font-semibold text-slate-500" data-lang="th">สำนักงานเลขาธิการสภาผู้แทนราษฎร</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Education -->
-            <section>
-                <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center">
-                    <span class="w-8 h-1 bg-blue-500 mr-3"></span>
-                    <span data-lang="en">Education</span>
-                    <span data-lang="th">ประวัติการศึกษา</span>
-                </h2>
-                <div class="space-y-6">
-                    <!-- GRIPS -->
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1">
-                            <h3 class="font-bold text-slate-800" data-lang="en">Master's in Public Policy Analysis</h3>
-                            <h3 class="font-bold text-slate-800" data-lang="th">ปริญญาโท ด้านการวิเคราะห์นโยบายสาธารณะ</h3>
-                            <span class="text-xs text-blue-600 font-bold bg-blue-50 px-2 py-1 rounded">2023 — 2025</span>
-                        </div>
-                        <p class="text-sm text-slate-600 font-medium">National Graduate Institute for Policy Studies (GRIPS)</p>
-                            <p class="text-xs text-slate-500 font-medium">Japanese Government (Monbukagakusho: MEXT) Scholarship</p>
-                            <p class="text-xs text-slate-500 mt-1 italic">Policy paper: The Impact of Transboundary Haze on Lung Cancer Mortality in Thailand</p>
-                            <p class="text-xs text-slate-500 mt-1 italic">Policy paper: Geospatial Analysis of Illicit Economies in Post-2021 Myanmar Coup d'etat Using Nighttime Lights</p>
-                    </div>
+            <section id="about" class="scroll-mt-20">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-6 tracking-tight" data-i18n="about-title">About Me</h2>
+                <div class="prose prose-lg prose-slate max-w-none text-slate-600 space-y-6">
+                    <p class="text-xl leading-relaxed text-slate-700">
+                        <span data-i18n="about-intro-1">Hello! I am</span> <span class="font-semibold text-brand-600" data-i18n="name">Your Name</span>, <span data-i18n="about-intro-2">a passionate professional based in</span> <span class="font-medium text-slate-800" data-i18n="location">Your Location</span>.
+                    </p>
+                    <p class="leading-relaxed" data-i18n="about-p1">
+                        Senior Analyst at the Bank of Thailand with a focus on applying data science to public policy and economic research. Expert in utilizing Econometrics, Deep Learning, and Geospatial analysis to drive evidence-based decision-making.
+                    </p>
+                    <p class="leading-relaxed" data-i18n="about-p2">
+                        When I'm not working, you can find me exploring new trails, reading sci-fi, or experimenting in the kitchen with new recipes.
+                    </p>
                     
-                    <!-- Thammasat Master -->
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1">
-                            <h3 class="font-bold text-slate-800" data-lang="en">Master of Economics</h3>
-                            <h3 class="font-bold text-slate-800" data-lang="th">ปริญญาโท เศรษฐศาสตร์มหาบัณฑิต</h3>
-                            <span class="text-xs text-slate-400 font-medium">2012 — 2015</span>
-                        </div>
-                        <p class="text-sm text-slate-600 font-medium" data-lang="en">Thammasat University</p>
-                        <p class="text-sm text-slate-600 font-medium" data-lang="th">มหาวิทยาลัยธรรมศาสตร์</p>
-                        <p class="text-xs text-slate-500 mt-1 italic">Thesis: Nowcasting Thailand's GDP using a Bridge model</p>
-                    </div>
-
-                    <!-- Thammasat Bachelor -->
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1">
-                            <h3 class="font-bold text-slate-800" data-lang="en">Bachelor of Arts in Economics</h3>
-                            <h3 class="font-bold text-slate-800" data-lang="th">ปริญญาตรี เศรษฐศาสตร์บัณฑิต</h3>
-                            <span class="text-xs text-slate-400 font-medium">2008 — 2012</span>
-                        </div>
-                        <p class="text-sm text-slate-600 font-medium" data-lang="en">Thammasat University</p>
-                        <p class="text-sm text-slate-600 font-medium" data-lang="th">มหาวิทยาลัยธรรมศาสตร์</p>
+                    <div class="mt-8 bg-white rounded-xl shadow-sm border border-gray-200 p-6 flex flex-wrap gap-4">
+                        <a href="mailto:jirawat.p@outlook.com" class="inline-flex items-center px-4 py-2 bg-brand-50 text-brand-700 rounded-lg hover:bg-brand-100 transition">
+                            <i class="fas fa-envelope mr-2"></i> <span data-i18n="btn-email">Email Me</span>
+                        </a>
+                        <a href="cv.html" class="inline-flex items-center px-4 py-2 border border-gray-300 text-slate-700 rounded-lg hover:bg-gray-50 transition">
+                            <i class="fas fa-file-alt mr-2"></i> <span data-i18n="btn-resume">Download Resume</span>
+                        </a>
                     </div>
                 </div>
             </section>
-        </main>
-    </div>
 
-    <footer class="text-center py-10 text-slate-400 text-xs no-print">
-        &copy; 2026 Jirawat Poongam • <span>Curriculum Vitae</span>
-    </footer>
+            <section id="projects" class="scroll-mt-20">
+                <h2 class="text-3xl font-bold text-slate-800 mb-8 tracking-tight" data-i18n="projects-title">Work & Projects</h2>
+                
+                <!-- Custom Tab Navigation -->
+                <div class="border-b border-gray-200 mb-8 overflow-x-auto">
+                    <nav class="-mb-px flex space-x-6 md:space-x-8" aria-label="Tabs">
+                        <button onclick="switchTab('pubs-tab')" id="btn-pubs-tab" class="tab-btn active border-brand-500 text-brand-600 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm md:text-base">
+                            <span data-i18n="tab-pubs">Publications / Reports</span>
+                        </button>
+                        <button onclick="switchTab('articles-tab')" id="btn-articles-tab" class="tab-btn border-transparent text-slate-500 hover:text-slate-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm md:text-base">
+                            <span data-i18n="tab-articles">Articles</span>
+                        </button>
+                        <button onclick="switchTab('featured-tab')" id="btn-featured-tab" class="tab-btn border-transparent text-slate-500 hover:text-slate-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm md:text-base">
+                            <span data-i18n="tab-projects">Projects</span>
+                        </button>
+                    </nav>
+                </div>
+
+                <!-- Tab Contents -->
+                <div id="featured-tab" class="tab-content hidden fade-in">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Project Card 1 -->
+                        <div class="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col h-full md:col-span-2 lg:col-span-1">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-bold text-slate-800"><a href="#" class="hover:text-brand-600">Provincial public data</a></h3>
+                                <span class="bg-green-100 text-green-700 text-xs font-semibold px-2.5 py-0.5 rounded animate-pulse">In Progress</span>
+                            </div>
+                            <p class="text-sm font-medium text-brand-600 mb-3"><i class="fas fa-database mr-1"></i> Data Engineering & Analysis</p>
+                            <p class="text-slate-600 text-sm mb-6 flex-grow">
+                                A comprehensive data pipeline initiative to collect, clean, and visualize provincial-level public data for accessible economic and demographic insights.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span class="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded border border-blue-100">Python</span>
+                                <span class="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded border border-blue-100">Pandas</span>
+                                <span class="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded border border-blue-100">Geospatial</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="pubs-tab" class="tab-content block fade-in">
+                    <div class="bg-white rounded-xl border border-gray-200 p-0 overflow-hidden">
+                        <ul class="divide-y divide-gray-200">
+                            <li class="p-6 hover:bg-slate-50 transition">
+                                <a href="https://jpnick.github.io/myanmar/" target="_blank" rel="noopener noreferrer" class="block group">
+                                    <div class="flex items-start justify-between">
+                                        <h4 class="text-lg font-bold text-slate-800 group-hover:text-brand-600 transition mb-1">
+                                            Mapping Myanmar's Post-Coup Illicit Economies via Nighttime Lights
+                                        </h4>
+                                        <i class="fas fa-external-link-alt text-slate-400 group-hover:text-brand-600 text-xs ml-2 mt-1"></i>
+                                    </div>
+                                    <p class="text-sm text-brand-600 font-medium mb-2"><i class="fas fa-satellite mr-1"></i> Research & Remote Sensing</p>
+                                    <p class="text-slate-600 text-sm">An empirical study mapping changes in Myanmar's post-coup illicit economic activities using nighttime lights satellite imagery.</p>
+                                </a>
+                            </li>
+                            <li class="p-6 hover:bg-slate-50 transition">
+                                <a href="https://jpnick.github.io/haze/" target="_blank" rel="noopener noreferrer" class="block group">
+                                    <div class="flex items-start justify-between">
+                                        <h4 class="text-lg font-bold text-slate-800 group-hover:text-brand-600 transition mb-1">
+                                            The Impact of Transboundary Haze on Lung Cancer Mortality in Thailand
+                                        </h4>
+                                        <i class="fas fa-external-link-alt text-slate-400 group-hover:text-brand-600 text-xs ml-2 mt-1"></i>
+                                    </div>
+                                    <p class="text-sm text-brand-600 font-medium mb-2"><i class="fas fa-smog mr-1"></i> Environmental Economics & Public Health</p>
+                                    <p class="text-slate-600 text-sm">An econometric analysis examining the public health consequences and long-term lung cancer mortality costs driven by transboundary air pollution across Thai provinces.</p>
+                                </a>
+                            </li>
+                            <li class="p-6 hover:bg-slate-50 transition">
+                                <a href="https://digital.library.tu.ac.th/tu_dc/frontend/Info/item/dc:93819" target="_blank" rel="noopener noreferrer" class="block group">
+                                    <div class="flex items-start justify-between">
+                                        <h4 class="text-lg font-bold text-slate-800 group-hover:text-brand-600 transition mb-1" data-i18n="pub-3-title">
+                                            Nowcasting Thailand's GDP using Bridge Equation
+                                        </h4>
+                                        <i class="fas fa-external-link-alt text-slate-400 group-hover:text-brand-600 text-xs ml-2 mt-1"></i>
+                                    </div>
+                                    <p class="text-sm text-brand-600 font-medium mb-2"><i class="fas fa-chart-line mr-1"></i> Macroeconometrics & Forecasting</p>
+                                    <p class="text-slate-600 text-sm">A study on short-term forecasting of Thailand's Gross Domestic Product (GDP) using Bridge models with monthly indicator variables.</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Articles Tab -->
+                <div id="articles-tab" class="tab-content hidden fade-in">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Article 1 -->
+                        <div class="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="text-xs font-semibold uppercase tracking-wider text-brand-600 bg-brand-50 px-2.5 py-1 rounded">BOT Data Viz Art</span>
+                                <span class="text-xs text-slate-400">Oct 2020</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-800 mb-2 hover:text-brand-600 transition">
+                                <a href="https://thaipublica.org/2020/10/bot-data-viz-art03-corporate-convergence/" target="_blank" rel="noopener noreferrer">
+                                    โครงการ BOT Data Viz Art สื่อสารแบบใหม่: “Corporate Convergence” เปิดภาพโครงสร้างธุรกิจไทย "กระจุก-กระจาย" รายภูมิภาค
+                                </a>
+                            </h3>
+                            <p class="text-slate-500 text-xs mb-4">ThaiPublica</p>
+                            <div class="flex items-center justify-between text-xs text-slate-500 pt-4 border-t border-gray-100 mt-auto">
+                                <span class="text-slate-400"><i class="fas fa-newspaper mr-1"></i> Article</span>
+                                <a href="https://thaipublica.org/2020/10/bot-data-viz-art03-corporate-convergence/" target="_blank" rel="noopener noreferrer" class="text-brand-600 font-medium hover:underline flex items-center">
+                                    <span data-i18n="read-more">Read More</span> <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Article 2 -->
+                        <div class="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="text-xs font-semibold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded">Public Policy</span>
+                                <span class="text-xs text-slate-400">Sep 2021</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-800 mb-2 hover:text-brand-600 transition">
+                                <a href="https://www.bot.or.th/th/research-and-publications/articles-and-publications/articles/regional-articles/reg-article-2021-09.html" target="_blank" rel="noopener noreferrer">
+                                    ลดความเหลื่อมล้ำบ้านเกิดด้วย Hometown Tax
+                                </a>
+                            </h3>
+                            <p class="text-slate-500 text-xs mb-4">Bank of Thailand</p>
+                            <div class="flex items-center justify-between text-xs text-slate-500 pt-4 border-t border-gray-100 mt-auto">
+                                <span class="text-slate-400"><i class="fas fa-newspaper mr-1"></i> Article</span>
+                                <a href="https://www.bot.or.th/th/research-and-publications/articles-and-publications/articles/regional-articles/reg-article-2021-09.html" target="_blank" rel="noopener noreferrer" class="text-brand-600 font-medium hover:underline flex items-center">
+                                    <span data-i18n="read-more">Read More</span> <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Article 3 -->
+                        <div class="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="text-xs font-semibold uppercase tracking-wider text-purple-600 bg-purple-50 px-2.5 py-1 rounded">Regional Economics</span>
+                                <span class="text-xs text-slate-400">Oct 2023</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-800 mb-2 hover:text-brand-600 transition">
+                                <a href="https://www.bot.or.th/th/research-and-publications/articles-and-publications/articles/regional-articles/reg-article-2023-10-09.html" target="_blank" rel="noopener noreferrer">
+                                    URBANIZATION การขยายตัวของเมืองในภูมิภาค
+                                </a>
+                            </h3>
+                            <p class="text-slate-500 text-xs mb-4">Bank of Thailand</p>
+                            <div class="flex items-center justify-between text-xs text-slate-500 pt-4 border-t border-gray-100 mt-auto">
+                                <span class="text-slate-400"><i class="fas fa-newspaper mr-1"></i> Article</span>
+                                <a href="https://www.bot.or.th/th/research-and-publications/articles-and-publications/articles/regional-articles/reg-article-2023-10-09.html" target="_blank" rel="noopener noreferrer" class="text-brand-600 font-medium hover:underline flex items-center">
+                                    <span data-i18n="read-more">Read More</span> <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Article 4 -->
+                        <div class="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="text-xs font-semibold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded">Economics & Education</span>
+                                <span class="text-xs text-slate-400">Mar 2026</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-800 mb-2 hover:text-brand-600 transition">
+                                <a href="https://www.econ.cmu.ac.th/th/event-news/a1235d1a-439e-4ad6-ba58-e52052b02b8f" target="_blank" rel="noopener noreferrer">
+                                    Macro Holiday 2026: “π (Pi) Day – Inflation Beyond the Classroom”
+                                </a>
+                            </h3>
+                            <p class="text-slate-500 text-xs mb-4">Faculty of Economics, Chiang Mai University</p>
+                            <div class="flex items-center justify-between text-xs text-slate-500 pt-4 border-t border-gray-100 mt-auto">
+                                <span class="text-slate-400"><i class="fas fa-newspaper mr-1"></i> Article</span>
+                                <a href="https://www.econ.cmu.ac.th/th/event-news/a1235d1a-439e-4ad6-ba58-e52052b02b8f" target="_blank" rel="noopener noreferrer" class="text-brand-600 font-medium hover:underline flex items-center">
+                                    <span data-i18n="read-more">Read More</span> <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Article 5 -->
+                        <div class="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col h-full md:col-span-2">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="text-xs font-semibold uppercase tracking-wider text-sky-600 bg-sky-50 px-2.5 py-1 rounded">Trade & Commerce</span>
+                                <span class="text-xs text-slate-400">Apr 2026</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-800 mb-2 hover:text-brand-600 transition">
+                                <a href="https://thaipublica.org/2026/04/setthakittiddin16-northern-border-trade-shifting-balance/" target="_blank" rel="noopener noreferrer">
+                                    การค้าชายแดนภาคเหนือกำลังเปลี่ยนสมดุล
+                                </a>
+                            </h3>
+                            <p class="text-slate-500 text-xs mb-4">ThaiPublica</p>
+                            <div class="flex items-center justify-between text-xs text-slate-500 pt-4 border-t border-gray-100 mt-auto">
+                                <span class="text-slate-400"><i class="fas fa-newspaper mr-1"></i> Article</span>
+                                <a href="https://thaipublica.org/2026/04/setthakittiddin16-northern-border-trade-shifting-balance/" target="_blank" rel="noopener noreferrer" class="text-brand-600 font-medium hover:underline flex items-center">
+                                    <span data-i18n="read-more">Read More</span> <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lectures & Teaching Section -->
+            <section id="teaching" class="scroll-mt-20">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4 tracking-tight" data-i18n="teaching-title">Lectures & Teaching</h2>
+                <p class="text-slate-600 mb-8 text-lg" data-i18n="teaching-desc">I enjoy sharing knowledge and have had the opportunity to teach or speak at various events.</p>
+                
+                <div class="space-y-6">
+                    <div class="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-lg transition-all duration-300">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                            <div>
+                                <span class="inline-block bg-purple-50 text-purple-700 text-xs font-semibold px-2.5 py-1 rounded mb-2">
+                                    <i class="fas fa-university mr-1"></i> Faculty of Arts, Silpakorn University
+                                </span>
+                                <h3 class="text-xl font-bold text-slate-800 hover:text-brand-600 transition mb-2">
+                                    <a href="https://jpnick.github.io/finance/" target="_blank" rel="noopener noreferrer">
+                                        Economics of Finance and Corporate Finance
+                                    </a>
+                                </h3>
+                                <p class="text-slate-600 text-sm">
+                                    Course materials, lecture notes, and topics covering financial economics, asset valuation, capital structure, and corporate finance decision-making.
+                                </p>
+                            </div>
+                            <div class="shrink-0">
+                                <a href="https://jpnick.github.io/finance/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-brand-50 text-brand-700 rounded-lg hover:bg-brand-100 font-medium text-sm transition">
+                                    <i class="fas fa-external-link-alt mr-2"></i> View Course
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="travel" class="scroll-mt-20">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4 tracking-tight" data-i18n="travel-title">Travel Blog</h2>
+                <p class="text-slate-600 mb-8 text-lg" data-i18n="travel-desc">Exploring the world provides new perspectives. Here are some highlights from my recent trips.</p>
+                
+                <!-- Travel Subsections / Country Navigation Filter -->
+                <div class="border-b border-gray-200 mb-8 overflow-x-auto">
+                    <nav class="-mb-px flex space-x-4 md:space-x-8" aria-label="Travel Regions">
+                        <button onclick="filterTravel('japan')" id="btn-travel-japan" class="travel-tab-btn active border-brand-500 text-brand-600 whitespace-nowrap py-3 px-1 border-b-2 font-medium text-sm md:text-base transition-all">
+                            <i class="fas fa-torii-gate mr-1.5"></i><span data-i18n="travel-tab-japan">Japan</span>
+                        </button>
+                        <button onclick="filterTravel('europe')" id="btn-travel-europe" class="travel-tab-btn border-transparent text-slate-500 hover:text-slate-700 hover:border-gray-300 whitespace-nowrap py-3 px-1 border-b-2 font-medium text-sm md:text-base transition-all">
+                            <i class="fas fa-landmark mr-1.5"></i><span data-i18n="travel-tab-europe">Europe</span>
+                        </button>
+                        <button onclick="filterTravel('america')" id="btn-travel-america" class="travel-tab-btn border-transparent text-slate-500 hover:text-slate-700 hover:border-gray-300 whitespace-nowrap py-3 px-1 border-b-2 font-medium text-sm md:text-base transition-all">
+                            <i class="fas fa-mountain mr-1.5"></i><span data-i18n="travel-tab-america">America</span>
+                        </button>
+                        <button onclick="filterTravel('asia')" id="btn-travel-asia" class="travel-tab-btn border-transparent text-slate-500 hover:text-slate-700 hover:border-gray-300 whitespace-nowrap py-3 px-1 border-b-2 font-medium text-sm md:text-base transition-all">
+                            <i class="fas fa-synagogue mr-1.5"></i><span data-i18n="travel-tab-asia">Asia</span>
+                        </button>
+                    </nav>
+                </div>
+
+                <div class="space-y-12" id="travel-posts-container">
+                    <!-- Blog Post - Japan -->
+                    <article class="travel-post group fade-in" data-region="japan">
+                        <div class="flex flex-col md:flex-row gap-6 items-start">
+                            <div class="w-full md:w-1/3 shrink-0 overflow-hidden rounded-xl">
+                                <img src="https://placehold.co/600x400/94a3b8/ffffff?text=Kyoto+Japan" alt="Kyoto" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="w-full md:w-2/3">
+                                <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded tracking-wider uppercase"><i class="fas fa-map-marker-alt mr-1"></i> Kyoto, Japan</span>
+                                <h3 class="text-2xl font-bold text-slate-800 mt-2 mb-2 group-hover:text-brand-600 transition">Autumn in the Historic Capital</h3>
+                                <p class="text-xs text-slate-400 mb-4 font-mono"><i class="far fa-calendar-alt mr-1"></i> Visited: November 2025</p>
+                                
+                                <p class="text-slate-600 mb-4">
+                                    Visiting the Fushimi Inari Shrine early in the morning before the crowds arrived was a surreal experience. The hike up the mountain offered beautiful views. Trying authentic matcha and local street food at the Nishiki Market was definitely a culinary highlight.
+                                </p>
+                                
+                                <blockquote class="border-l-4 border-brand-400 bg-brand-50 p-4 rounded-r-lg text-brand-900 text-sm italic">
+                                    "There is a palpable sense of peace walking through paths that have been tread upon for centuries."
+                                </blockquote>
+                            </div>
+                        </div>
+                    </article>
+
+                    <hr class="travel-divider border-gray-100" data-region="japan">
+
+                    <!-- Blog Post - Europe -->
+                    <article class="travel-post group fade-in" data-region="europe">
+                    <hr class="travel-divider border-gray-100 hidden" data-region="japan">
+
+                    <!-- Blog Post - Europe -->
+                    <article class="travel-post group fade-in hidden" data-region="europe">
+                        <div class="flex flex-col md:flex-row gap-6 items-start">
+                            <div class="w-full md:w-1/3 shrink-0 overflow-hidden rounded-xl">
+                                <img src="https://placehold.co/600x400/0ea5e9/ffffff?text=Central+Europe" alt="Central Europe" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="w-full md:w-2/3">
+                                <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded tracking-wider uppercase"><i class="fas fa-map-marker-alt mr-1"></i> Central Europe</span>
+                                <h3 class="text-2xl font-bold text-slate-800 mt-2 mb-2 group-hover:text-brand-600 transition">From Budapest to the Matterhorn</h3>
+                                <p class="text-xs text-slate-400 mb-4 font-mono"><i class="far fa-calendar-alt mr-1"></i> Visited: August 2025</p>
+                                
+                                <p class="text-slate-600 mb-4">
+                                    A memorable journey stretching from the historic thermal baths and stunning architecture of Budapest, through the heart of Europe, culminating in the breathtaking alpine vistas beneath the iconic Matterhorn in Zermatt.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <hr class="travel-divider border-gray-100 hidden" data-region="europe">
+
+                    <!-- Blog Post - America -->
+                    <article class="travel-post group fade-in hidden" data-region="america">
+                        <div class="flex flex-col md:flex-row gap-6 items-start">
+                            <div class="w-full md:w-1/3 shrink-0 overflow-hidden rounded-xl">
+                                <img src="https://placehold.co/600x400/64748b/ffffff?text=Hawaii" alt="Hawaii" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="w-full md:w-2/3">
+                                <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded tracking-wider uppercase"><i class="fas fa-map-marker-alt mr-1"></i> Hawaii, USA</span>
+                                <h3 class="text-2xl font-bold text-slate-800 mt-2 mb-2 group-hover:text-brand-600 transition">Aloha Spirit and Volcanic Landscapes</h3>
+                                <p class="text-xs text-slate-400 mb-4 font-mono"><i class="far fa-calendar-alt mr-1"></i> Visited: January 2024</p>
+                                
+                                <p class="text-slate-600 mb-4">
+                                    Our journey to Hawaii was a breathtaking exploration of contrasts. From the moment we landed, the warm embrace of the "Aloha spirit" was palpable—a genuine hospitality deeply rooted in native culture. We spent our days navigating the diverse microclimates of the islands, venturing from lush, cascading waterfalls to the stark, lunar-like landscapes of Hawaiʻi Volcanoes National Park.
+                                </p>
+                                <p class="text-slate-600 mb-4">
+                                    Standing near the smoking caldera of Kīlauea and feeling the raw, geological power of the earth was a humbling experience that puts human existence into perspective.
+                                </p>
+                                
+                                <blockquote class="border-l-4 border-brand-400 bg-brand-50 p-4 rounded-r-lg text-brand-900 text-sm italic">
+                                    "The Aloha spirit isn't just a greeting; it's a way of living in harmony with people and the powerful land that shapes them."
+                                </blockquote>
+                            </div>
+                        </div>
+                    </article>
+
+                    <hr class="travel-divider border-gray-100 hidden" data-region="america">
+
+                    <!-- Blog Post - Asia -->
+                    <article class="travel-post group fade-in hidden" data-region="asia">
+                        <div class="flex flex-col md:flex-row gap-6 items-start">
+                            <div class="w-full md:w-1/3 shrink-0 overflow-hidden rounded-xl">
+                                <img src="https://placehold.co/600x400/0284c7/ffffff?text=Beijing" alt="Beijing" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="w-full md:w-2/3">
+                                <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded tracking-wider uppercase"><i class="fas fa-map-marker-alt mr-1"></i> Beijing, China</span>
+                                <h3 class="text-2xl font-bold text-slate-800 mt-2 mb-2 group-hover:text-brand-600 transition">Ancient History in a Modern Metropolis</h3>
+                                <p class="text-xs text-slate-400 mb-4 font-mono"><i class="far fa-calendar-alt mr-1"></i> Visited: November 2024</p>
+                                
+                                <p class="text-slate-600 mb-4">
+                                    Beijing offers a dizzying blend of ancient history and rapid modernization. Standing at the center of the city, the Forbidden City proved to be an architectural marvel of staggering proportions. Wandering through its endless courtyards and intricate wooden pavilions felt like stepping back into the Ming and Qing dynasties.
+                                </p>
+                                <p class="text-slate-600 mb-4">
+                                    Equally unforgettable was the hike along the Mutianyu section of the Great Wall. Tracing the stone pathways as they snaked across the jagged ridges of the mountains in the crisp autumn air was a bucket-list moment that photos simply cannot do justice.
+                                </p>
+                                
+                                <blockquote class="border-l-4 border-brand-400 bg-brand-50 p-4 rounded-r-lg text-brand-900 text-sm italic">
+                                    "To climb the Great Wall is to feel the immense weight of centuries of history beneath your feet."
+                                </blockquote>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="pt-12 pb-8 border-t border-gray-200 mt-12">
+                <p class="text-center text-slate-500 text-sm">
+                    <span data-i18n="footer-text">Thank you for visiting my site! Feel free to reach out if you'd like to collaborate or just say hi.</span><br>
+                    &copy; 2026 Your Name. All rights reserved.
+                </p>
+            </footer>
+
+        </div>
+    </main>
 
     <script>
-        const body = document.body;
-        const btn = document.getElementById('langToggle');
-        
-        btn.addEventListener('click', () => {
-            body.classList.toggle('lang-th');
-            const isThai = body.classList.contains('lang-th');
-            document.documentElement.lang = isThai ? 'th' : 'en';
+        // Tab Switching Logic for Projects Section
+        function switchTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('block');
+            });
+            
+            // Remove active state from all tab buttons
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('active', 'border-brand-500', 'text-brand-600');
+                el.classList.add('border-transparent', 'text-slate-500');
+            });
+
+            // Show selected tab content
+            const targetContent = document.getElementById(tabId);
+            if (targetContent) {
+                targetContent.classList.remove('hidden');
+                targetContent.classList.add('block');
+            }
+
+            // Set active state on clicked button
+            const targetBtn = document.getElementById('btn-' + tabId);
+            if (targetBtn) {
+                targetBtn.classList.remove('border-transparent', 'text-slate-500');
+                targetBtn.classList.add('active', 'border-brand-500', 'text-brand-600');
+            }
+        }
+
+        // Initialize first tab as active explicitly on load just to be safe
+        window.addEventListener('DOMContentLoaded', () => {
+            switchTab('pubs-tab');
+            filterTravel('japan');
         });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function toggleMenu() {
+            const isClosed = sidebar.classList.contains('-translate-x-full');
+            if (isClosed) {
+                sidebar.classList.remove('-translate-x-full');
+                sidebarOverlay.classList.remove('hidden');
+            } else {
+                sidebar.classList.add('-translate-x-full');
+                sidebarOverlay.classList.add('hidden');
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        sidebarOverlay.addEventListener('click', toggleMenu);
+        
+        // Close menu when a link is clicked on mobile
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768) { // md breakpoint
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Internationalization (i18n) Logic
+        const translations = {
+            en: {
+                "name": "Your Name",
+                "subtitle": "Economist | Explorer",
+                "nav-about": "About",
+                "nav-projects": "Work & Projects",
+                "nav-teaching": "Lectures",
+                "nav-travel": "Travel Blog",
+                "about-title": "About Me",
+                "about-intro-1": "Hello! I am",
+                "about-intro-2": "a passionate professional based in",
+                "location": "Chaing Mai, Thailand",
+                "about-p1": "Senior Analyst at the Bank of Thailand with a focus on applying data science to public policy and economic research. Expert in utilizing Econometrics, Deep Learning, and Geospatial analysis to drive evidence-based decision-making.",
+                "about-p2": "When I'm not working, you can find me exploring new trails, reading sci-fi, or experimenting in the kitchen with new recipes.",
+                "btn-email": "Email Me",
+                "btn-resume": "CV",
+                "projects-title": "Work & Projects",
+                "tab-projects": "Projects",
+                "tab-pubs": "Reports",
+                "tab-articles": "Articles",
+                "pub-3-title": "Nowcasting Thailand's GDP using Bridge Equation",
+                "read-more": "Read More",
+                "article-1-desc": "An in-depth guide on designing resilient ETL pipelines using modern open-source architecture.",
+                "article-2-desc": "Exploring active learning techniques to increase student engagement in technical subjects.",
+                "teaching-title": "Lectures & Teaching",
+                "teaching-desc": "I enjoy sharing knowledge and have had the opportunity to teach or speak at various events.",
+                "topics-covered": "Topics Covered",
+                "link-slides": "Slides (PDF)",
+                "link-repo": "Code Repo",
+                "link-video": "Video Recording",
+                "link-notes": "Notes",
+                "travel-title": "Travel Blog",
+                "travel-desc": "Exploring the world provides new perspectives. Here are some highlights from my recent trips.",
+                "travel-tab-japan": "Japan",
+                "travel-tab-europe": "Europe",
+                "travel-tab-america": "America",
+                "travel-tab-asia": "Asia",
+                "footer-text": "Thank you for visiting my site! Feel free to reach out if you'd like to collaborate or just say hi.",
+                "lang-btn-text": "Switch to Thai",
+                "mobile-lang-btn": "TH"
+            },
+            th: {
+                "name": "นิกส์",
+                "subtitle": "เศรษฐกร | นักสำรวจ",
+                "nav-about": "เกี่ยวกับฉัน",
+                "nav-projects": "ผลงาน & โปรเจกต์",
+                "nav-teaching": "การสอน & บรรยาย",
+                "nav-travel": "บล็อกท่องเที่ยว",
+                "about-title": "เกี่ยวกับฉัน",
+                "about-intro-1": "สวัสดี! ฉันชื่อ",
+                "about-intro-2": "ทำงานสายวิชาชีพที่ขับเคลื่อนด้วยความหลงใหล ปัจจุบันอยู่ที่",
+                "location": "สถานที่ของคุณ",
+                "about-p1": "นักวิเคราะห์อาวุโส (Senior Analyst) ที่ธนาคารแห่งประเทศไทย มุ่งเน้นการประยุกต์ใช้วิทยาการข้อมูลกับนโยบายสาธารณะและการวิจัยทางเศรษฐกิจ เชี่ยวชาญการใช้เศรษฐมิติ การเรียนรู้เชิงลึก (Deep Learning) และการวิเคราะห์ข้อมูลเชิงพื้นที่ (Geospatial analysis) เพื่อขับเคลื่อนการตัดสินใจเชิงนโยบาย",
+                "about-p2": "เมื่อฉันไม่ได้ทำงาน คุณมักจะพบฉันออกไปสำรวจเส้นทางธรรมชาติใหม่ๆ อ่านนิยายวิทยาศาสตร์ หรือทดลองทำอาหารสูตรใหม่ๆ ในครัว",
+                "btn-email": "ส่งอีเมลหาฉัน",
+                "btn-resume": "CV",
+                "projects-title": "ผลงาน",
+                "tab-projects": "โปรเจกต์",
+                "tab-pubs": "รายงาน",
+                "tab-articles": "บทความ",
+                "pub-3-title": "การพยากรณ์ผลิตภัณฑ์มวลรวมภายในประเทศของไทยในระยะสั้นด้วยแบบจำลอง Bridge",
+                "read-more": "อ่านเพิ่มเติม",
+                "article-1-desc": "คู่มือเชิงลึกเกี่ยวกับการออกแบบ ETL Pipeline ที่แข็งแกร่งโดยใช้สถาปัตยกรรมโอเพ่นซอร์สสมัยใหม่",
+                "article-2-desc": "การสำรวจเทคนิคการเรียนรู้แบบมีส่วนร่วมเพื่อเพิ่มความสนใจของนักเรียนในวิชาทางเทคนิค",
+                "teaching-title": "การสอน & บรรยาย",
+                "teaching-desc": "ฉันสนุกกับการแบ่งปันความรู้และมีโอกาสได้สอนหรือบรรยายในงานต่างๆ",
+                "topics-covered": "หัวข้อที่ครอบคลุม",
+                "link-slides": "สไลด์ (PDF)",
+                "link-repo": "คลังโค้ด",
+                "link-video": "บันทึกวิดีโอ",
+                "link-notes": "บันทึกย่อ",
+                "travel-title": "บล็อกท่องเที่ยว",
+                "travel-desc": "การสำรวจโลกมอบมุมมองใหม่ๆ เสมอ นี่คือไฮไลท์บางส่วนจากทริปล่าสุดของฉัน",
+                "travel-tab-japan": "ญี่ปุ่น",
+                "travel-tab-europe": "ยุโรป",
+                "travel-tab-america": "อเมริกา",
+                "travel-tab-asia": "เอเชีย",
+                "footer-text": "ขอบคุณที่เยี่ยมชมเว็บไซต์ของฉัน! หากคุณต้องการร่วมงานกันหรือแค่ทักทาย อย่าลังเลที่จะติดต่อมา",
+                "lang-btn-text": "Switch to English",
+                "mobile-lang-btn": "EN"
+            }
+        };
+
+        // Filter Travel Posts by Region
+        function filterTravel(region) {
+            document.querySelectorAll('.travel-tab-btn').forEach(btn => {
+                btn.classList.remove('active', 'border-brand-500', 'text-brand-600');
+                btn.classList.add('border-transparent', 'text-slate-500');
+            });
+
+            const activeBtn = document.getElementById('btn-travel-' + region);
+            if (activeBtn) {
+                activeBtn.classList.remove('border-transparent', 'text-slate-500');
+                activeBtn.classList.add('active', 'border-brand-500', 'text-brand-600');
+            }
+
+            const posts = document.querySelectorAll('.travel-post');
+            const dividers = document.querySelectorAll('.travel-divider');
+
+            posts.forEach(post => {
+                if (post.getAttribute('data-region') === region) {
+                    post.classList.remove('hidden');
+                } else {
+                    post.classList.add('hidden');
+                }
+            });
+
+            dividers.forEach(div => {
+                div.classList.add('hidden'); // Always hide dividers when viewing a single region
+            });
+        }
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'th' : 'en';
+            
+            // Toggle body class for font family
+            if (currentLang === 'th') {
+                document.body.classList.add('lang-th');
+            } else {
+                document.body.classList.remove('lang-th');
+            }
+
+            // Update texts based on data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    // Use innerHTML to preserve bold tags in translations
+                    element.innerHTML = translations[currentLang][key];
+                }
+            });
+
+            // Update button texts specifically
+            const langBtnText = document.getElementById('lang-btn-text');
+            if(langBtnText) langBtnText.textContent = translations[currentLang]['lang-btn-text'];
+            
+            const mobileLangBtn = document.getElementById('mobile-lang-btn');
+            if(mobileLangBtn) mobileLangBtn.textContent = translations[currentLang]['mobile-lang-btn'];
+        }
+
+        document.getElementById('lang-toggle-btn').addEventListener('click', toggleLanguage);
+        document.getElementById('mobile-lang-btn').addEventListener('click', toggleLanguage);
+
     </script>
 </body>
 </html>
