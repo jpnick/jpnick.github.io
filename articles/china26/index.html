@@ -315,6 +315,39 @@ figure figcaption b{color:var(--ink);font-weight:500}
 .toc ol{margin:0 0 0 1.15em;columns:2;column-gap:28px}
 @media(max-width:640px){.toc ol{columns:1}}
 .toc a{color:var(--ink-soft);text-decoration:none}.toc a:hover{color:var(--red)}
+
+/* ===== CITATION LINKS ===== */
+a.refl{display:inline;font-size:.86em;font-weight:500;color:var(--blue);
+  text-decoration:none;white-space:nowrap;padding:0 1px}
+a.refl:hover{text-decoration:underline;color:var(--red)}
+.src a.refl,.bnote a.refl,.sccap a.refl{color:var(--green)}
+
+/* ===== BIBLIOGRAPHY ===== */
+.biblist{counter-reset:bib;margin:10px 0 0;padding:0;list-style:none}
+.biblist li{counter-increment:bib;position:relative;padding:11px 0 11px 42px;
+  border-bottom:1px solid rgba(255,255,255,.1);font-size:13.5px;line-height:1.7;color:#cdd8ce}
+.biblist li:last-child{border-bottom:none}
+.biblist li::before{content:"[" counter(bib) "]";position:absolute;left:0;top:11px;
+  font-size:12.5px;font-weight:600;color:var(--gold-soft)}
+.biblist li:target{background:rgba(217,184,105,.12);border-radius:8px;
+  padding-left:48px;padding-right:10px}
+.biblist li:target::before{left:8px}
+.biblist .bt{color:#fff;font-style:italic}
+.biblist a{color:#8fd0a6;text-decoration:none;word-break:break-all;font-size:12.5px}
+.biblist a:hover{text-decoration:underline}
+.bibhead{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-soft);
+  font-weight:600;margin:18px 0 4px;display:block}
+.bibhead:first-of-type{margin-top:6px}
+
+/* ===== LANGUAGE TOGGLE ===== */
+.navwrap{display:flex;align-items:center;gap:14px}
+.langtog{display:inline-flex;background:var(--paper-2);border:1px solid var(--line);
+  border-radius:30px;padding:3px;gap:2px;flex:0 0 auto}
+.langtog button{border:none;background:transparent;font-family:inherit;font-size:12.5px;
+  font-weight:600;color:var(--ink-soft);padding:6px 14px;border-radius:24px;
+  cursor:pointer;transition:all .22s}
+.langtog button.on{background:var(--ink);color:#fff}
+
 </style>
 </head>
 <body>
@@ -322,10 +355,16 @@ figure figcaption b{color:var(--ink);font-weight:500}
 
 <div class="topbar">
   <div class="topbar-inner">
-    <div class="brand"><span class="dot"></span> รายงานศึกษาดูงาน &middot; จีน 2569</div>
-    <nav class="nav">
-      <a href="#s1">บทเรียนสำคัญ</a><a href="#s2">ความมั่นคงอาหาร</a><a href="#s3">ผลลัพธ์จากพื้นที่จริง</a><a href="#s4">ไทย-จีน</a><a href="#s5">ข้อคิด</a>
-    </nav>
+    <div class="brand"><span class="dot"></span> <span data-k="brand">รายงานศึกษาดูงาน &middot; จีน 2569</span></div>
+    <div class="navwrap">
+      <nav class="nav">
+        <a href="#s1" data-k="nav1">บทเรียนสำคัญ</a><a href="#s2" data-k="nav2">ความมั่นคงอาหาร</a><a href="#s3" data-k="nav3">ผลลัพธ์จากพื้นที่จริง</a><a href="#s4" data-k="nav4">ไทย-จีน</a><a href="#s5" data-k="nav5">ข้อคิด</a>
+      </nav>
+      <div class="langtog" id="langtog">
+        <button data-lang="th" class="on">ไทย</button>
+        <button data-lang="en">EN</button>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -374,14 +413,14 @@ figure figcaption b{color:var(--ink);font-weight:500}
     </g>
   </svg>
   <div class="hero-inner">
-    <span class="eyebrow">การศึกษาดูงาน &middot; 6&ndash;28 กรกฎาคม 2569</span>
-    <h1>การพัฒนาชนบทและเกษตรสมัยใหม่</h1>
-    <p class="lede">บทเรียนจากปักกิ่ง ยุ่นเฉิง และเหอเฝย &mdash; หนึ่งเดือนบนเส้นทางจากเมืองหลวงสู่หมู่บ้านต้นแบบ ถอดรหัสว่าเหตุใดจีนจึงวางชนบทและการเกษตรไว้ที่ศูนย์กลางของยุทธศาสตร์ชาติ</p>
+    <span class="eyebrow" data-k="hero.eyebrow">การศึกษาดูงาน &middot; 6&ndash;28 กรกฎาคม 2569</span>
+    <h1 data-k="hero.h1">การพัฒนาชนบทและเกษตรสมัยใหม่</h1>
+    <p class="lede" data-k="hero.lede">บทเรียนจากปักกิ่ง ยุ่นเฉิง และเหอเฝย &mdash; หนึ่งเดือนบนเส้นทางจากเมืองหลวงสู่หมู่บ้านต้นแบบ ถอดรหัสว่าเหตุใดจีนจึงวางชนบทและการเกษตรไว้ที่ศูนย์กลางของยุทธศาสตร์ชาติ</p>
     <div class="hero-meta">
-      <div class="m"><b class="count" data-to="21">21</b><span>วัน</span></div>
-      <div class="m"><b class="count" data-to="3">3</b><span>มณฑล</span></div>
-      <div class="m"><b class="count" data-to="16">16</b><span>หลักสูตร</span></div>
-      <div class="m"><b class="count" data-to="14">14</b><span>จุดดูงาน</span></div>
+      <div class="m"><b class="count" data-to="21">21</b><span data-k="hm1">วัน</span></div>
+      <div class="m"><b class="count" data-to="3">3</b><span data-k="hm2">มณฑล</span></div>
+      <div class="m"><b class="count" data-to="16">16</b><span data-k="hm3">หลักสูตร</span></div>
+      <div class="m"><b class="count" data-to="14">14</b><span data-k="hm4">จุดดูงาน</span></div>
     </div>
   </div>
 </header>
@@ -389,54 +428,57 @@ figure figcaption b{color:var(--ink);font-weight:500}
 <div class="toc reveal">
   <h4></h4>
   <ol>
-    <li><a href="#s1">บทเรียนสำคัญจากจีน</a></li>
-    <li><a href="#s2">ความมั่นคงทางอาหารและแผน 5 ปี</a></li>
-    <li><a href="#s3">ผลลัพธ์จากแผนสู่พื้นที่จริง</a></li>
-    <li><a href="#s4">การค้าไทย-จีน</a></li>
-    <li><a href="#s5">ข้อคิดและข้อสังเกต</a></li>
+    <li><a href="#s1" data-k="toc1">บทเรียนสำคัญจากจีน</a></li>
+    <li><a href="#s2" data-k="toc2">ความมั่นคงทางอาหารและแผน 5 ปี</a></li>
+    <li><a href="#s3" data-k="toc3">ผลลัพธ์จากแผนสู่พื้นที่จริง</a></li>
+    <li><a href="#s4" data-k="toc4">การค้าไทย-จีน</a></li>
+    <li><a href="#s5" data-k="toc5">ข้อคิดและข้อสังเกต</a></li>
   </ol>
 </div>
 
 <!-- SECTION 1 -->
 <section class="section" id="s1">
   <div class="wrap-wide reveal">
-    <span class="kicker">ส่วนที่ 1 &middot; Key Takeaways</span>
-    <h2><span class="num">01</span> บทเรียนสำคัญจากจีน</h2>
-    <p class="sub">ความสำเร็จของจีนแยกเป็นสองแกนที่เกื้อกูลกัน &mdash; <b>&ldquo;ยกระดับภาคเกษตร&rdquo;</b> ที่ทำให้ผลผลิตกลายเป็นมูลค่า และ <b>&ldquo;ฟื้นฟูชนบท&rdquo;</b> ที่ทำให้ชุมชนน่าอยู่และมีชีวิต คลิกแต่ละหัวข้อเพื่อดูตัวอย่างประกอบ</p>
+    <span class="kicker" data-k="s1.k">ส่วนที่ 1 &middot; Key Takeaways</span>
+    <h2><span class="num">01</span> <span data-k="s1.h">บทเรียนสำคัญจากจีน</span></h2>
+    <p class="sub" data-k="s1.sub">การ<b>&ldquo;ยกระดับภาคเกษตร&rdquo;</b> ที่เพิ่มประสิทธิภาพการผลิตและสร้างมูลค่าเพิ่มให้กับสินค้า และ <b>&ldquo;ฟื้นฟูชนบท&rdquo;</b> ที่ทำให้ชุมชนน่าอยู่น่าเที่ยว สร้างงานและสร้างรายได้ให้กับคนในพื้นที่ &mdash; เป็นความสำเร็จสองด้านที่ส่งเสริมกัน</p>
     <div class="groups">
       <div class="group agri">
-        <div class="ghead"><span class="gicon">&#127806;</span><span class="glabel">แกนที่ 1 &middot; Agricultural Upgrading</span><h3>ยกระดับภาคเกษตร</h3></div>
+        <div class="ghead"><span class="gicon">&#127806;</span><span class="glabel">&middot; Agricultural Upgrading</span><h3 data-k="s1.g1">ยกระดับภาคเกษตร</h3></div>
         <div class="gbody">
           <div class="acc">
-            <button class="acc-head"><span class="an">1</span><span class="atitle">วิสัยทัศน์ระดับชาติ สู่นโยบายและงานวิจัย</span><span class="chev">&#8964;</span></button>
-            <div class="acc-body"><div class="inner"><span class="ex">ตัวอย่างประกอบ</span><ul>
-              <li>มองเกษตรเป็น <b>ความมั่นคงแห่งชาติ</b> ยกความมั่นคงทางอาหารเป็นเป้าหมายผูกพัน</li>
-              <li>นโยบาย <b>ชัดเจนและต่อเนื่อง</b> &ldquo;ซันหนง&rdquo; เป็นวาระชาติกว่า 20 ปี</li>
-              <li><b>งานวิจัยใช้จริง</b> สูตร &ldquo;พื้นที่ + ภาครัฐ + มหาวิทยาลัย&rdquo;</li></ul></div></div>
+            <button class="acc-head"><span class="an">1</span><span class="atitle" data-k="s1.a1t">วิสัยทัศน์ระดับชาติ สู่นโยบายและงานวิจัย</span><span class="chev">&#8964;</span></button>
+            <div class="acc-body"><div class="inner" data-k="s1.a1b"><span class="ex"></span><ul>
+              <span class="chip">เกษตรกร</span><span class="chip">เกษตรกรรม</span><span class="chip">ชนบท</span><ul style="margin-top:8px"></ul>
+              <li><b>&ldquo;ซันหนง&rdquo; </b> &mdash;  เป็นวาระชาติกว่า 20 ปี</li>
+              <li><b>เกษตรคือความมั่นคง</b> &mdash; ความมั่นคงทางอาหารเป็นเป้าหมาย</li>
+              <li><b>งานวิจัยใช้จริง</b>  &mdash; สูตร &ldquo;พื้นที่ + ภาครัฐ + มหาวิทยาลัย&rdquo;</li></ul></div></div>
           </div>
           <div class="acc">
-            <button class="acc-head"><span class="an">2</span><span class="atitle">สร้างมูลค่าเพิ่มตลอดห่วงโซ่ครบวงจร</span><span class="chev">&#8964;</span></button>
-            <div class="acc-body"><div class="inner"><span class="ex">ตัวอย่างประกอบ</span>
+            <button class="acc-head"><span class="an">2</span><span class="atitle" data-k="s1.a2t">สร้างมูลค่าเพิ่มตลอดห่วงโซ่ครบวงจร</span><span class="chev">&#8964;</span></button>
+            <div class="acc-body"><div class="inner" data-k="s1.a2b"><span class="ex"></span>
               <span class="chip">ต้นน้ำ</span><span class="chip">กลางน้ำ</span><span class="chip">ปลายน้ำ</span><ul style="margin-top:8px">
               <li><b>ต้นน้ำ</b> &mdash; เกษตรโรงเรือน เครื่องจักร เกษตรสีเขียว และ AI</li>
-              <li><b>กลางน้ำ</b> &mdash; แปรรูป ชา น้ำผลไม้ NFC ไวน์ โดยรัฐร่วมลงทุน</li>
+              <li><b>กลางน้ำ</b> &mdash; เกษตรแปรรูป ชา น้ำผลไม้ NFC ไวน์</li>
               <li><b>ปลายน้ำ</b> &mdash; ส่งออก ห่วงโซ่อุปทาน และแพลตฟอร์มดิจิทัล</li></ul></div></div>
           </div>
         </div>
       </div>
       <div class="group rural">
-        <div class="ghead"><span class="gicon">&#127969;</span><span class="glabel">แกนที่ 2 &middot; Rural Revitalization</span><h3>ฟื้นฟูชนบท</h3></div>
+        <div class="ghead"><span class="gicon">&#127969;</span><span class="glabel">แกนที่ 2 &middot; Rural Revitalization</span><h3 data-k="s1.g2">ฟื้นฟูชนบท</h3></div>
         <div class="gbody">
           <div class="acc">
-            <button class="acc-head"><span class="an">3</span><span class="atitle">โครงสร้างพื้นฐานควบคู่เศรษฐกิจชุมชน</span><span class="chev">&#8964;</span></button>
-            <div class="acc-body"><div class="inner"><span class="ex">ตัวอย่างประกอบ</span><ul>
-              <li><b>ลงทุนโครงสร้างพื้นฐาน</b> ถนน รถไฟความเร็วสูง โลจิสติกส์ อินเทอร์เน็ต</li>
-              <li><b>พัฒนาที่อยู่อาศัย</b> ลดช่องว่างรายได้เมือง&ndash;ชนบท (2.34 : 1 ในปี 2024)</li>
-              <li><b>บริหารด้วยข้อมูล</b> แพลตฟอร์ม 善治美 บน WeChat + ตำบลโบราณ SANHE ระดับ 5A</li></ul></div></div>
+            <button class="acc-head"><span class="an">3</span><span class="atitle" data-k="s1.a3t">โครงสร้างพื้นฐานควบคู่เศรษฐกิจชุมชน</span><span class="chev">&#8964;</span></button>
+            <div class="acc-body"><div class="inner" data-k="s1.a3b"><span class="ex"></span><ul>
+              <span class="chip">ลงทุน</span><span class="chip">พัฒนา</span><span class="chip">ข้อมูล</span><ul style="margin-top:8px"></ul>
+              <li><b>ลงทุนโครงสร้างพื้นฐาน</b>  &mdash; ถนน รถไฟ โลจิสติกส์ อินเทอร์เน็ต</li>
+              <li><b>พัฒนาที่อยู่อาศัย</b> &mdash; ลดช่องว่างรายได้เมือง&ndash;ชนบท (2.34 : 1 ในปี 2024)</li>
+              <li><b>บริหารด้วยข้อมูล</b> &mdash; แพลตฟอร์ม 善治美 บน WeChat</li></ul></div></div>
           </div>
           <div class="acc">
-            <button class="acc-head"><span class="an">4</span><span class="atitle">เศรษฐกิจสร้างสรรค์และวัฒนธรรม IP</span><span class="chev">&#8964;</span></button>
-            <div class="acc-body"><div class="inner"><span class="ex">ตัวอย่างประกอบ</span><ul>
+            <button class="acc-head"><span class="an">4</span><span class="atitle" data-k="s1.a4t">เศรษฐกิจสร้างสรรค์และวัฒนธรรม IP</span><span class="chev">&#8964;</span></button>
+            <div class="acc-body"><div class="inner" data-k="s1.a4b"><span class="ex"></span><ul>
+              <span class="chip">สร้างสรรค์</span><span class="chip">วัฒนธรรม</span><span class="chip">IP</span><ul style="margin-top:8px"></ul>
               <li><b>ภูมิปัญญาจับต้องไม่ได้</b> เช่น การทำรอยพิมพ์ศิลาจารึก</li>
               <li><b>สินทรัพย์วัฒนธรรม</b> หอฟ้าเทียนถาน พระราชวังฤดูร้อน กำแพงเมืองจีน</li>
               <li><b>อัตลักษณ์เมือง</b> เทวรูปกวนอูยุ่นเฉิง &middot; มาสคอตสินค้าเกษตร</li></ul></div></div>
@@ -450,65 +492,52 @@ figure figcaption b{color:var(--ink);font-weight:500}
 <!-- SECTION 2 -->
 <section class="section" id="s2">
   <div class="wrap reveal">
-    <span class="kicker">ส่วนที่ 2 &middot; Food Security &amp; Five-Year Plans</span>
-    <h2><span class="num">02</span> ความมั่นคงทางอาหาร: ความสำเร็จที่สร้างจากแผน 5 ปีต่อเนื่อง</h2>
-    <p class="sub">สำหรับประเทศที่ต้องเลี้ยงประชากรเกือบหนึ่งในห้าของโลกด้วยพื้นที่เพาะปลูกจำกัด ความมั่นคงทางอาหารคือ &ldquo;เส้นตายที่ต่อรองไม่ได้&rdquo; และจีนพิสูจน์ว่าหัวใจของความสำเร็จคือ <b>ความต่อเนื่องของแผน 5 ปี</b> ที่สะสมมากว่า 70 ปี</p>
-    <p>ภายใต้แนวคิด <b>&ldquo;ซันหนง&rdquo; (三农)</b> ที่มัดรวมเกษตรกร เกษตรกรรม และชนบทเข้าด้วยกัน จีนวางความมั่นคงทางอาหารเป็นวาระความมั่นคงระดับชาติ ผลลัพธ์ปรากฏชัดในปี 2024 เมื่อ <b>ผลผลิตธัญพืชของจีนทะลุ 700 ล้านตันเป็นครั้งแรกในประวัติศาสตร์</b><a href="https://en.humanrights.cn/2025/02/27/0c6e686f91eb417083fd7ea68ce56de3.html">[อ้างอิง]</a><cite>turn5search15</cite></p>
+    <span class="kicker" data-k="s2.k">ส่วนที่ 2 &middot; Food Security &amp; Five-Year Plans</span>
+    <h2><span class="num">02</span> <span data-k="s2.h">ความมั่นคงทางอาหาร</span></h2>
+    <p class="sub" data-k="s2.sub0">ความสำเร็จที่สร้างจากความต่อเนื่องของแผน 5 ปี</p>
+    <p class="sub" data-k="s2.sub">สำหรับประเทศที่ต้องเลี้ยงประชากรเกือบ <b>หนึ่งในห้าของโลก</b> ด้วยพื้นที่เพาะปลูกจำกัด ความมั่นคงทางอาหารคือ &ldquo;เส้นตายที่ต่อรองไม่ได้&rdquo; และจีนพิสูจน์ว่าหัวใจของความสำเร็จคือ <b>ความต่อเนื่องของแผน 5 ปี</b> ที่สะสมมากว่า 70 ปี ภายใต้แนวคิด <b>&ldquo;ซันหนง&rdquo; (三农)</b> ที่มัดรวมเกษตรกร เกษตรกรรม และชนบทเข้าด้วยกัน</p>
 
-    <h3>เปรียบเทียบ จีน &ndash; ไทย &ndash; ญี่ปุ่น: น้ำหนักเศรษฐกิจ vs การจัดสรรงบ</h3>
-    <div class="bench reveal">
-      <h4>&#128202; สัดส่วนภาคเกษตรใน GDP เทียบกับสัดส่วนในงบประมาณรายจ่ายภาครัฐ (ปี 2024)</h4>
-      <table class="btab">
-        <thead><tr><th>ประเทศ</th><th>ใน GDP</th><th>ในงบประมาณ</th><th>ดัชนีความเข้มข้น</th></tr></thead>
-        <tbody>
-          <tr><td><b>&#127471;&#127477; ญี่ปุ่น</b></td><td>1.0%</td><td>2.0%</td><td><span class="pill hi">2.00 เท่า</span></td></tr>
-          <tr><td><b>&#127464;&#127475; จีน</b></td><td>6.8%</td><td>9.5%</td><td><span class="pill mid">1.40 เท่า</span></td></tr>
-          <tr class="hlrow"><td><b>&#127481;&#127469; ไทย</b></td><td>8.7%</td><td>3.4%</td><td><span class="pill lo">0.39 เท่า</span></td></tr>
-        </tbody>
-      </table>
-      <p class="bnote">ดัชนีความเข้มข้น = สัดส่วนงบประมาณ &divide; สัดส่วน GDP &mdash; ค่า &gt; 1 หมายถึงรัฐจัดสรรงบให้เกษตร <b>มากกว่า</b> น้ำหนักทางเศรษฐกิจของภาคเกษตรเอง</p>
-      <p class="src" style="margin-top:10px">ที่มา: ธนาคารโลก (สัดส่วนเกษตรใน GDP ปี 2024)<cite>turn5search6</cite><cite>turn6search2</cite><cite>turn6search7</cite>; กระทรวงการคลังจีน<cite>turn5search7</cite>; พ.ร.บ.งบประมาณรายจ่ายฯ พ.ศ. 2567<cite>turn7search30</cite>; MAFF ญี่ปุ่น<cite>turn6search22</cite></p>
-    </div>
-
-    <div class="callout blue">
-      <span class="tag">&#128161; ข้อค้นพบสำคัญเชิงนโยบาย</span>
-      <p>ไทยเป็นประเทศที่ <b>ภาคเกษตรมีน้ำหนักทางเศรษฐกิจสูงที่สุดในสามประเทศ (8.7% ของ GDP)</b> แต่กลับ <b>ได้รับการจัดสรรงบประมาณต่ำที่สุดเมื่อเทียบกับน้ำหนักนั้น (0.39 เท่า)</b> ขณะที่ญี่ปุ่นซึ่งเกษตรมีสัดส่วนเพียง 1% ของ GDP กลับลงทุนเข้มข้นถึง 2 เท่า และจีนลงทุน 1.4 เท่า &mdash; สะท้อนว่าทั้งจีนและญี่ปุ่นมองเกษตรเป็น <b>&ldquo;ความมั่นคง&rdquo;</b> ไม่ใช่เพียง <b>&ldquo;ภาคเศรษฐกิจ&rdquo;</b></p>
-    </div>
-
-    <h3>มุมมองจากวงวิชาการจีน: &ldquo;ยังสนับสนุนน้อยเกินไป&rdquo;</h3>
-    <p>สิ่งที่น่าสนใจและอาจสวนทางกับความคาดหมายคือ ระหว่างการอบรมและแลกเปลี่ยนกับคณาจารย์ด้านเกษตรของจีน <b>มุมมองที่ได้รับฟังคือจีนยัง &ldquo;ให้การสนับสนุนภาคเกษตรน้อยเกินไป&rdquo;</b> เมื่อเทียบกับภารกิจที่ภาคเกษตรต้องแบกรับ ทั้งความมั่นคงทางอาหารของประชากร 1,400 ล้านคน การดูแลเกษตรกรรายย่อยจำนวนมหาศาล และการลดความเหลื่อมล้ำเมือง&ndash;ชนบท</p>
-    <div class="callout gold">
-      <span class="tag">เหตุผลเบื้องหลังมุมมองนี้</span>
-      <p><b>1) ฐานเกษตรกรที่ใหญ่มาก</b> &mdash; งบที่ดูสูงในภาพรวมเมื่อเฉลี่ยต่อเกษตรกรหลายร้อยล้านคนแล้วกลับน้อยมากต่อหัว<br>
-      <b>2) เทียบกับเพื่อนบ้านเอเชียตะวันออก</b> &mdash; ญี่ปุ่นและเกาหลีใต้มีระดับการคุ้มครองและอุดหนุนเกษตรกรสูงกว่าจีนอย่างมีนัยสำคัญ ซึ่งเป็นข้อเปรียบเทียบที่นักวิชาการจีนมักหยิบยกขึ้นมา<cite>turn8search4</cite><br>
-      <b>3) ภารกิจที่เพิ่มขึ้น</b> &mdash; แผนฉบับที่ 15 เพิ่มโจทย์ใหม่ทั้งเกษตรอัจฉริยะ AI และการเปลี่ยนผ่านสีเขียว โดยที่ทรัพยากรยังต้องแบ่งไปดูแลภารกิจเดิม</p>
-    </div>
-    <div class="callout">
-      <span class="tag">&#9888; หมายเหตุเชิงข้อมูลและการตรวจสอบ</span>
-      <p>มุมมอง &ldquo;สนับสนุนน้อยไป&rdquo; ข้างต้นเป็นความเห็นเชิงวิชาการที่ได้รับฟังระหว่างการศึกษาดูงาน มิใช่จุดยืนทางการของรัฐบาลจีน ผู้ที่ต้องการตัวเลขเชิงประจักษ์ควรอ้างอิง <b>ดัชนี Producer Support Estimate (PSE)</b> ของ OECD ซึ่งวัดการสนับสนุนเกษตรกรเป็นสัดส่วนของรายรับฟาร์ม<cite>turn8search1</cite><cite>turn8search2</cite><br>
-      อนึ่ง ตัวเลข <b>&ldquo;13%&rdquo;</b> ที่มักถูกอ้างถึงสำหรับจีน แท้จริงคือ <b>อัตราการเติบโต</b> ของรายจ่ายด้านเกษตร (โต 13.1% ในไตรมาสแรกปี 2024) มิใช่สัดส่วนของงบประมาณ<cite>turn5search8</cite> และหากใช้นิยามกว้าง &ldquo;เกษตรและอุตสาหกรรมเกี่ยวเนื่อง&rdquo; สัดส่วนของจีนจะอยู่ที่ 15.29% ของ GDP<cite>turn5search1</cite></p>
-    </div>
-
-    <h3>วิวัฒนาการแผน 5 ปีด้านเกษตรของจีน</h3>
+    <h3 data-k="s2.h3a">วิวัฒนาการแผน 5 ปีด้านเกษตรของจีน</h3>
     <div class="timeline">
       <div class="tl-track"></div>
-      <div class="tl-item"><div class="tl-dot">1</div><div class="tl-card"><span class="yr">ค.ศ. 1953&ndash;1957 &middot; ฉบับที่ 1</span><b>จุดเริ่มต้น: วางรากฐานการเกษตร</b><p>เริ่มใช้กลไกแผน 5 ปี วางรากฐานการผลิตอาหารและการรวมกลุ่มเกษตร เพื่อเลี้ยงประชากรและสร้างเสถียรภาพหลังก่อตั้งสาธารณรัฐ</p></div></div>
-      <div class="tl-item"><div class="tl-dot">&hellip;</div><div class="tl-card"><span class="yr">ค.ศ. 1958&ndash;2015 &middot; ฉบับที่ 2&ndash;12</span><b>สะสมประสบการณ์กว่าครึ่งศตวรรษ</b><p>ผ่านการปฏิรูปที่ดิน การเปิดประเทศ และการปฏิรูปเศรษฐกิจ เปลี่ยนจาก &ldquo;ผลิตให้พอกิน&rdquo; สู่ &ldquo;ผลิตเชิงพาณิชย์&rdquo;</p></div></div>
-      <div class="tl-item"><div class="tl-dot">13</div><div class="tl-card"><span class="yr">ค.ศ. 2016&ndash;2020 &middot; ฉบับที่ 13</span><b>ยกระดับคุณภาพและความปลอดภัยอาหาร</b><p>เน้นคุณภาพสินค้าเกษตรและมาตรฐานความปลอดภัย เปลี่ยนโจทย์จาก &ldquo;ปริมาณ&rdquo; สู่ &ldquo;คุณภาพ&rdquo; ปิดท้ายด้วยการประกาศชัยชนะเหนือความยากจนขั้นรุนแรงปลายปี 2020</p></div></div>
-      <div class="tl-item"><div class="tl-dot">14</div><div class="tl-card"><span class="yr">ค.ศ. 2021&ndash;2025 &middot; ฉบับที่ 14</span><b>ฟื้นฟูชนบทและลดความเหลื่อมล้ำ</b><p>ผลลัพธ์คือรายได้สุทธิต่อหัวของชาวชนบทปี 2024 แตะ 23,119 หยวน โต 6.3% และช่องว่างรายได้เมือง-ชนบทแคบลงเหลือ 2.34 : 1<cite>turn5search15</cite></p></div></div>
-      <div class="tl-item hl"><div class="tl-dot">15</div><div class="tl-card"><span class="yr">ค.ศ. 2026&ndash;2030 &middot; ฉบับที่ 15 (ปัจจุบัน)</span><b>เกษตรกรรมอัจฉริยะเพื่อความมั่นคงระยะยาว</b><p>ผลักดันเกษตรอัจฉริยะด้วย AI, โดรน และ Big Data พร้อมตั้ง <b>เป้าผลิตธัญพืชราว 725 ล้านตันภายในปี 2030</b> และยกอัตราตรวจผ่านความปลอดภัยอาหารไม่ต่ำกว่า 98%<cite>turn5search33</cite></p></div></div>
+      <div class="tl-item"><div class="tl-dot">1</div><div class="tl-card"><span class="yr">ค.ศ. 1953&ndash;1957 &middot; ฉบับที่ 1</span><b data-k="tl1b">จุดเริ่มต้น: วางรากฐานการเกษตร</b><p>เริ่มใช้กลไกแผน 5 ปี วางรากฐานการผลิตอาหารและการรวมกลุ่มเกษตร เพื่อเลี้ยงประชากรและสร้างเสถียรภาพหลังก่อตั้งสาธารณรัฐ</p></div></div>
+      <div class="tl-item"><div class="tl-dot">&hellip;</div><div class="tl-card"><span class="yr">ค.ศ. 1958&ndash;2015 &middot; ฉบับที่ 2&ndash;12</span><b data-k="tl2b">สะสมประสบการณ์กว่าครึ่งศตวรรษ</b><p>ผ่านการปฏิรูปที่ดิน การเปิดประเทศ และการปฏิรูปเศรษฐกิจ เปลี่ยนจาก &ldquo;ผลิตให้พอกิน&rdquo; สู่ &ldquo;ผลิตเชิงพาณิชย์&rdquo;</p></div></div>
+      <div class="tl-item"><div class="tl-dot">13</div><div class="tl-card"><span class="yr">ค.ศ. 2016&ndash;2020 &middot; ฉบับที่ 13</span><b data-k="tl3b">ยกระดับคุณภาพและความปลอดภัยอาหาร</b><p>เน้นคุณภาพสินค้าเกษตรและมาตรฐานความปลอดภัย เปลี่ยนโจทย์จาก &ldquo;ปริมาณ&rdquo; สู่ &ldquo;คุณภาพ&rdquo; ปิดท้ายด้วยการประกาศชัยชนะเหนือความยากจนขั้นรุนแรงปลายปี 2020</p></div></div>
+      <div class="tl-item"><div class="tl-dot">14</div><div class="tl-card"><span class="yr">ค.ศ. 2021&ndash;2025 &middot; ฉบับที่ 14</span><b data-k="tl4b">ฟื้นฟูชนบทและลดความเหลื่อมล้ำ</b><p>ผลลัพธ์คือรายได้สุทธิต่อหัวของชาวชนบทปี 2024 แตะ 23,119 หยวน โต 6.3% และช่องว่างรายได้เมือง-ชนบทแคบลงเหลือ 2.34 : 1<a class="refl" href="#ref7">[7]</a></p></div></div>
+      <div class="tl-item hl"><div class="tl-dot">15</div><div class="tl-card"><span class="yr">ค.ศ. 2026&ndash;2030 &middot; ฉบับที่ 15 (ปัจจุบัน)</span><b data-k="tl5b">เกษตรกรรมอัจฉริยะเพื่อความมั่นคงระยะยาว</b><p>ผลักดันเกษตรอัจฉริยะด้วย AI, โดรน และ Big Data พร้อมตั้ง <b>เป้าผลิตธัญพืชราว 725 ล้านตันภายในปี 2030</b><a class="refl" href="#ref8">[8]</a> และยกอัตราตรวจผ่านความปลอดภัยอาหารไม่ต่ำกว่า 98%</p></div></div>
     </div>
 
     <div class="stats">
-      <div class="stat"><b><span class="count" data-to="700">700</span>+ ล้านตัน</b><span>ผลผลิตธัญพืชปี 2024</span></div>
-      <div class="stat"><b><span class="count" data-to="725">725</span> ล้านตัน</b><span>เป้าหมายปี 2030</span></div>
-      <div class="stat"><b><span class="count" data-to="2.34" data-dec="2">2.34</span> : 1</b><span>ช่องว่างรายได้เมือง-ชนบท</span></div>
-      <div class="stat"><b><span class="count" data-to="23119">23119</span> หยวน</b><span>รายได้/หัว ชาวชนบท (2024)</span></div>
+      <div class="stat"><span class="slabel">ผลผลิตธัญพืชปี 2024<a class="refl" href="#ref7">[7]</a></span><b>700+</b><span data-k="u.mt">ล้านตัน</span></div>
+      <div class="stat"><span class="slabel">เป้าหมายปี 2030<a class="refl" href="#ref8">[8]</a></span><b>725</b><span>ล้านตัน</span></div>
+      <div class="stat"><span class="slabel">ช่องว่างรายได้เมือง-ชนบท<a class="refl" href="#ref7">[7]</a></span><b>2.34:1</b><span data-k="u.x">เท่า</span></div>
+      <div class="stat"><span class="slabel">รายได้/หัว ชาวชนบท (2024)<a class="refl" href="#ref7">[7]</a></span><b>23,119</b><span data-k="u.y">หยวน</span></div>
+    </div>
+    
+        <h3 data-k="s2.h3b">เปรียบเทียบ จีน &ndash; ไทย &ndash; ญี่ปุ่น: น้ำหนักเศรษฐกิจ vs การจัดสรรงบ</h3>
+    <div class="bench reveal">
+      <h4 data-k="bench.h">&#128202; สัดส่วนภาคเกษตรใน GDP เทียบกับสัดส่วนในงบประมาณรายจ่ายภาครัฐ (ปี 2024)</h4>
+      <table class="btab">
+        <thead><tr><th data-k="bh1">ประเทศ</th><th data-k="bh2">ใน GDP</th><th data-k="bh3">ในงบประมาณ</th><th data-k="bh4">ดัชนีความเข้มข้น</th></tr></thead>
+        <tbody>
+          <tr><td><b>&#127471;&#127477; <span data-k="c.jp">ญี่ปุ่น</span></b></td><td>1.0%</td><td>2.0%</td><td><span class="pill hi">2.00 เท่า</span></td></tr>
+          <tr><td><b>&#127464;&#127475; <span data-k="c.cn">จีน</span></b></td><td>6.8%</td><td>9.5%</td><td><span class="pill mid">1.40 เท่า</span></td></tr>
+          <tr class="hlrow"><td><b>&#127481;&#127469; <span data-k="c.th">ไทย</span></b></td><td>8.7%</td><td>3.4%</td><td><span class="pill lo">0.39 เท่า</span></td></tr>
+        </tbody>
+      </table>
+      <p class="bnote" data-k="bench.n">ดัชนีความเข้มข้น = สัดส่วนงบประมาณ &divide; สัดส่วน GDP &mdash; ค่า &gt; 1 หมายถึงรัฐจัดสรรงบให้เกษตร <b>มากกว่า</b> น้ำหนักทางเศรษฐกิจของภาคเกษตรเอง</p>
+      <p class="src" style="margin-top:10px" data-k="bench.s">ที่มา: ธนาคารโลก<a class="refl" href="#ref1">[1]</a><a class="refl" href="#ref2">[2]</a><a class="refl" href="#ref3">[3]</a> &middot; สำนักงานสถิติแห่งชาติจีน<a class="refl" href="#ref4">[4]</a> &middot; กระทรวงการคลังจีน<a class="refl" href="#ref9">[9]</a> &middot; พระราชบัญญัติงบประมาณรายจ่ายประจำปีงบประมาณ พ.ศ. 2567<a class="refl" href="#ref5">[5]</a> &middot; กระทรวงเกษตร ป่าไม้และประมงญี่ปุ่น<a class="refl" href="#ref6">[6]</a></p>
     </div>
 
+    <div class="callout blue">
+      <span class="tag" data-k="s2.c1t">&#128161; ข้อค้นพบสำคัญเชิงนโยบาย</span>
+      <p data-k="s2.c1p">ไทยเป็นประเทศที่ <b>ภาคเกษตรมีน้ำหนักทางเศรษฐกิจสูงที่สุดในสามประเทศ (8.7% ของ GDP)</b> แต่กลับ <b>ได้รับการจัดสรรงบประมาณต่ำที่สุดเมื่อเทียบกับน้ำหนักนั้น (0.39 เท่า)</b> ขณะที่ญี่ปุ่นซึ่งเกษตรมีสัดส่วนเพียง 1% ของ GDP กลับลงทุนเข้มข้นถึง 2 เท่า และจีนลงทุน 1.4 เท่า &mdash; สะท้อนว่าทั้งจีนและญี่ปุ่นมองเกษตรเป็น <b>&ldquo;ความมั่นคง&rdquo;</b> ไม่ใช่เพียง <b>&ldquo;ภาคเศรษฐกิจ&rdquo;</b></p>
+    </div>
+
+    <h3 data-k="s2.h3c">ความท้าทายที่ยังเหลืออยู่ของจีน</h3>
     <div class="callout">
-      <span class="tag">ปิดท้าย &middot; ความท้าทายที่ยังเหลืออยู่</span>
-      <p><b>การขยายตัวของเมืองและความเหลื่อมล้ำ</b> ยังหนักหน่วง เมืองและอุตสาหกรรมดูดกลืนแรงงานหนุ่มสาว ทำให้พื้นที่เพาะปลูกลดลงและเกิด &ldquo;หมู่บ้านกลวง&rdquo; แม้ช่องว่างรายได้จะแคบลงเหลือ 2.34 เท่า แต่ก็ยังสูงเมื่อเทียบกับประเทศพัฒนาแล้ว นี่คือ &ldquo;โจทย์&rdquo; ที่แผนฉบับ 13&ndash;15 พยายามตอบ และเราได้เห็นผลลัพธ์จริงในภาคสนาม (ส่วนที่ 3)<cite>turn5search15</cite></p>
+      <span class="tag" data-k="s2.c4t">การขยายตัวของเมืองและความเหลื่อมล้ำ</span>
+      <p data-k="s2.c4p"><b></b>เมื่อภาคอุตสาหกรรมเติบโตและกระบวนการพัฒนาเมืองเร่งตัวขึ้น คนรุ่นใหม่จำนวนมากย้ายออกจากชนบทเข้าสู่เมืองเพื่อแสวงหาโอกาสทางรายได้ การศึกษา และคุณภาพชีวิตที่ดีกว่า ผลที่ตามมาคือภาคเกษตรและพื้นที่ชนบทเผชิญภาวะขาดแคลนแรงงานและการพัฒนาที่ล้าหลัง จนช่องว่างรายได้ระหว่างเมืองกับชนบทขยายกว้างขึ้น จึงกลายเป็น &ldquo;โจทย์สำคัญ&rdquo; ที่แผนฉบับ 13&ndash;15 ของจีนมุ่งแก้ไขอย่างต่อเนื่อง และเราได้เห็นผลลัพธ์ความพยายามในแก้ปัญหาจากการได้ลงพื้นที่จริง</p>
     </div>
   </div>
 </section>
@@ -516,119 +545,123 @@ figure figcaption b{color:var(--ink);font-weight:500}
 <!-- SECTION 3 -->
 <section class="section" id="s3">
   <div class="wrap-wide reveal">
-    <span class="kicker">ส่วนที่ 3 &middot; From Plan to Field</span>
-    <h2><span class="num">03</span> จากแผนสู่พื้นที่จริง: แนวทางและผลลัพธ์</h2>
-    <p class="sub">แผนฉบับที่ 13&ndash;15 มิได้อยู่แค่บนกระดาษ จาก 16 หลักสูตรและ 14 จุดศึกษาดูงาน เราได้เห็นผลลัพธ์ที่จับต้องได้ผ่านสองแกนที่แยกกันชัดเจนแต่ทำงานร่วมกัน</p>
+    <span class="kicker" data-k="s3.k">ส่วนที่ 3 &middot; From Plan to Field</span>
+    <h2><span class="num">03</span> <span data-k="s3.h">จากแผนสู่พื้นที่จริง: แนวทางและผลลัพธ์</span></h2>
+    <p class="sub" data-k="s3.sub">แผนฉบับที่ 13&ndash;15 มิได้อยู่แค่บนกระดาษ จาก 16 หลักสูตรและ 14 จุดศึกษาดูงาน เราได้เห็นผลลัพธ์ที่จับต้องได้</p>
 
     <div class="axis agri">
       <div class="axis-head">
         <span class="aic">&#127806;</span>
-        <span class="atx"><span class="alab">แกนที่ 1 &middot; Agricultural Upgrading</span><h3>ยกระดับภาคเกษตร</h3></span>
-        <span class="aplan">สานต่อแผนฉบับที่ 13 &amp; 15</span>
+        <span class="atx"><span class="alab">Agricultural Upgrading</span><h3 data-k="s3.ax1">ยกระดับภาคเกษตร</h3></span>
+        <span class="aplan" data-k="s3.pl1">สานต่อแผนฉบับที่ 13 &amp; 15</span>
       </div>
       <div class="axis-body">
         <div class="subgrid">
           <div class="subcard">
-            <div class="sctop"><span class="sc-no">1.1</span><h4>วิสัยทัศน์ระดับชาติ: งานวิจัยที่ใช้จริง</h4></div>
+            <div class="sctop"><span class="sc-no">1.1</span><h4 data-k="s3.c1h">วิสัยทัศน์ระดับชาติ: งานวิจัยที่ใช้จริง</h4></div>
             <div class="scbody">
-              <p>สอดคล้องกับ <b>แผนฉบับที่ 15</b> ที่เน้นเกษตรอัจฉริยะ <b>มหาวิทยาลัยเกษตรศาสตร์อานฮุย</b> ตั้ง <b>&ldquo;สถานีทดลองครบวงจร&rdquo;</b> ลงในพื้นที่จริงที่อำเภอหลูเจียง ยึดสูตร <b>&ldquo;พื้นที่ + ภาครัฐ + มหาวิทยาลัย&rdquo;</b> คณาจารย์ทำงานเคียงข้างเกษตรกร<cite>turn4search43</cite></p>
-              <p style="margin-bottom:0;font-size:13.5px;color:#6a6256"><b>ผลลัพธ์:</b> เกษตรกรชนบทเข้าถึงผลิตภาพที่เคยกระจุกในเมือง ช่องว่างโอกาสแคบลงจากต้นทาง</p>
+              <p data-k="s3.c1p1">สอดคล้องกับ <b>แผนฉบับที่ 15</b> ที่เน้นเกษตรอัจฉริยะ <b>มหาวิทยาลัยเกษตรศาสตร์อานฮุย</b> ตั้ง <b>&ldquo;สถานีทดลองครบวงจร&rdquo;</b> ลงในพื้นที่จริง ยึดสูตร <b>&ldquo;พื้นที่ + ภาครัฐ + มหาวิทยาลัย&rdquo;</b> คณาจารย์ทำงานเคียงข้างเกษตรกร</p>
+              <p style="margin-bottom:0;font-size:13.5px;color:#6a6256"><span data-k="s3.c1p2"><b>ผลลัพธ์:</b> เกษตรกรชนบทเข้าถึงผลิตภาพที่เคยกระจุกในเมือง ช่องว่างโอกาสแคบลงจากต้นทาง</span></p>
             </div>
             <div class="scimg"><img src="yuan_longping.jpg" alt="หยวน หลงผิง บิดาแห่งข้าวลูกผสม ขณะทำงานวิจัยในปี 1962" loading="lazy"></div>
-            <div class="sccap"><b>หยวน หลงผิง (袁隆平) &middot; ภาพปี 1962</b> &mdash; &ldquo;บิดาแห่งข้าวลูกผสม&rdquo; ผู้พัฒนาพันธุ์ข้าวลูกผสมที่ช่วยยกระดับผลผลิตและความมั่นคงทางอาหารของจีน เป็นต้นแบบของปณิธาน &ldquo;งานวิจัยต้องลงสู่แปลงจริง&rdquo; ที่ยังส่งอิทธิพลถึงระบบวิจัยเกษตรจีนปัจจุบัน <span style="font-size:11.5px">(ภาพ: สาธารณสมบัติ ผ่าน Wikipedia)</span></div>
+            <div class="sccap" data-k="s3.cap1"><b>หยวน หลงผิง (袁隆平) &middot; ภาพปี 1962</b> &mdash; &ldquo;บิดาแห่งข้าวลูกผสม&rdquo; ผู้พัฒนาพันธุ์ข้าวลูกผสมที่ช่วยยกระดับผลผลิตและความมั่นคงทางอาหารของจีน เป็นต้นแบบของปณิธาน &ldquo;งานวิจัยต้องลงสู่แปลงจริง&rdquo; ที่ยังส่งอิทธิพลถึงระบบวิจัยเกษตรจีนปัจจุบัน <span style="font-size:11.5px">(ภาพ: Wikipedia)</span><a class="refl" href="#ref14">[14]</a><a class="refl" href="#ref15">[15]</a></div>
           </div>
 
           <div class="subcard">
-            <div class="sctop"><span class="sc-no">1.2</span><h4>สร้างมูลค่าเพิ่มตลอดห่วงโซ่ครบวงจร</h4></div>
+            <div class="sctop"><span class="sc-no">1.2</span><h4 data-k="s3.c2h">สร้างมูลค่าเพิ่มตลอดห่วงโซ่ครบวงจร</h4></div>
             <div class="scbody">
-              <div class="minichain">
+              <div class="minichain" data-k="s3.chain">
                 <div class="mcrow"><span class="mn up">ต้นน้ำ</span><span>โรงเรือน เครื่องจักร เกษตรสีเขียว AI &mdash; <b>ฐานผักหลิวอีเผิน</b> เหอเฝย</span></div>
-                <div class="mcrow"><span class="mn mid">กลางน้ำ</span><span>ชา <b>น้ำผลไม้ NFC</b> ไวน์ &mdash; <b>ชานซี เกรทริท ไวน์รี</b> โดย <b>รัฐร่วมลงทุนราว 48%</b></span></div>
-                <div class="mcrow"><span class="mn down">ปลายน้ำ</span><span>ส่งออก + <b>Live Commerce</b> บน Pinduoduo, JD, WeChat &mdash; <b>เฟิงไห่ฟรุต</b></span></div>
+                <div class="mcrow"><span class="mn mid">กลางน้ำ</span><span>อุตสาหกรรมคัดแยกแปรรูปผลไม้ ชา น้ำผลไม้ NFC ไวน์ </span></div>
+                <div class="mcrow"><span class="mn down">ปลายน้ำ</span><span>ส่งออก + <b>Live Commerce</b> บน Pinduoduo, JD, WeChat </span></div>
               </div>
-              <p style="margin-bottom:0;font-size:13.5px;color:#6a6256">จุดเด่นคือการเชื่อม &ldquo;โรงงานแปรรูป&rdquo; เข้ากับ &ldquo;ห้องไลฟ์สด&rdquo; ในพื้นที่เดียวกัน ทำให้ผลผลิตเดินทางจากไร่ถึงผู้บริโภคโดยตรง<cite>turn4search43</cite></p>
+              <p style="margin-bottom:0;font-size:13.5px;color:#6a6256"></p>
             </div>
             <div class="scimg"><img src="nfc_live.jpg" alt="การไลฟ์สดขายน้ำผลไม้ NFC ผ่านแพลตฟอร์มออนไลน์ในห้องสตูดิโอฟื้นฟูชนบท" loading="lazy"></div>
-            <div class="sccap"><b>ห้องไลฟ์สดขายน้ำผลไม้ 100% NFC</b> &mdash; สตูดิโอ Live Commerce ในพื้นที่ชนบท ขายน้ำผลไม้ <b>Not From Concentrate</b> ที่แปรรูปจากผลผลิตท้องถิ่น พร้อมฉากหลังธีมสวนผลไม้ ตัวอย่างการใช้แพลตฟอร์มดิจิทัลยกระดับ &ldquo;ปลายน้ำ&rdquo; ของห่วงโซ่มูลค่า</div>
+            <div class="sccap" data-k="s3.cap2"><b>ห้องไลฟ์สดขายน้ำผลไม้ 100% NFC</b> &mdash; สตูดิโอ Live Commerce ในพื้นที่ชนบท ขายน้ำผลไม้ <b>Not From Concentrate</b> ที่แปรรูปจากผลผลิตท้องถิ่น พร้อมฉากหลังธีมสวนผลไม้ ตัวอย่างการใช้แพลตฟอร์มดิจิทัลยกระดับ &ldquo;ปลายน้ำ&rdquo; ของห่วงโซ่มูลค่า</div>
           </div>
 
           <div class="subcard">
-            <div class="sctop"><span class="sc-no">1.3</span><h4>ยกเกษตรสู่เศรษฐกิจเชิงท่องเที่ยวด้วยแบรนด์และมาสคอต</h4></div>
+            <div class="sctop"><span class="sc-no">1.3</span><h4 data-k="s3.c3h">ยกเกษตรสู่เศรษฐกิจเชิงท่องเที่ยวด้วยแบรนด์และมาสคอต</h4></div>
             <div class="scbody">
-              <p>จีนไม่หยุดที่การขายผลผลิต แต่สร้าง <b>&ldquo;ตัวตน&rdquo; ให้สินค้าเกษตร</b> ผ่านมาสคอตและการออกแบบเชิงสร้างสรรค์ ทำให้พิพิธภัณฑ์และศูนย์เรียนรู้ทางการเกษตรกลายเป็นจุดหมายท่องเที่ยวที่ดึงดูดครอบครัวและคนรุ่นใหม่</p>
+              <p data-k="s3.c3p">จีนไม่หยุดที่การขายผลผลิต แต่สร้าง <b>&ldquo;ตัวตน&rdquo; ให้สินค้าเกษตร</b> ผ่านมาสคอตและการออกแบบเชิงสร้างสรรค์ ทำให้พิพิธภัณฑ์และศูนย์เรียนรู้ทางการเกษตรกลายเป็นจุดหมายท่องเที่ยวที่ดึงดูดครอบครัวและคนรุ่นใหม่</p>
             </div>
             <div class="scimg"><img src="mascot.jpg" alt="มาสคอตสินค้าเกษตรของยุ่นเฉิง ตั้งเรียงหน้ากำแพงศิลาจารึก" loading="lazy"></div>
-            <div class="sccap"><b>มาสคอตสินค้าเกษตร &middot; ยุ่นเฉิง ซานซี</b> &mdash; แปลงผลผลิตหลักของท้องถิ่น (แอปเปิ้ล ข้าวโพด ผักกาด ถั่ว) ให้เป็นตัวละครที่จดจำได้ ตั้งหน้ากำแพงศิลาจารึกซึ่งเชื่อมภูมิปัญญาดั้งเดิมกับการตลาดสมัยใหม่</div>
+            <div class="sccap" data-k="s3.cap3"><b>มาสคอตสินค้าเกษตร &middot; ยุ่นเฉิง ซานซี</b> &mdash; แปลงผลผลิตหลักของท้องถิ่น (แอปเปิ้ล ข้าวโพด ผักกาด ถั่ว) ให้เป็นตัวละครที่จดจำได้ ตั้งหน้ากำแพงศิลาจารึกซึ่งเชื่อมภูมิปัญญาดั้งเดิมกับการตลาดสมัยใหม่</div>
           </div>
         </div>
+          <div class="callout blue">
+            <span class="tag" data-k="s3.c7t">กลไกสำคัญ &ldquo;รัฐร่วมลงทุน&rdquo;</span>
+            <p data-k="s3.c7p">ตัวอย่างกิจการแปรรูปแอปเปิ้ลและน้ำผลไม้เข้มข้นที่ยุ่นเฉิง <b>รัฐร่วมลงทุนราว 48%</b> &mdash; หากรัฐไม่ร่วมลงทุน เอกชนจะไม่คุ้มที่จะตั้งโรงงานในพื้นที่ห่างไกล ซึ่งการลงทุนโรงงานแปรรูปเหล่านี้ช่วยยกระดับสินค้าเกษตรและเพิ่มกลไกรับซื้อสินค้าเกษตรในราคาสูงขึ้นผ่านการอุดหนุนของรัฐ นอกจากนี้เมื่อธุรกิจอยู่ตัวแล้วรัฐจึงค่อยถอนทุนคืน<a class="refl" href="#ref16">[16]</a></p>
+          </div>
       </div>
     </div>
 
     <div class="axis rural">
       <div class="axis-head">
         <span class="aic">&#127969;</span>
-        <span class="atx"><span class="alab">แกนที่ 2 &middot; Rural Revitalization</span><h3>ฟื้นฟูชนบท</h3></span>
-        <span class="aplan">สานต่อแผนฉบับที่ 14</span>
+        <span class="atx"><span class="alab">Rural Revitalization</span><h3 data-k="s3.ax2">ฟื้นฟูชนบท</h3></span>
+        <span class="aplan" data-k="s3.pl2">สานต่อแผนฉบับที่ 14</span>
       </div>
       <div class="axis-body">
         <div class="subgrid">
           <div class="subcard">
-            <div class="sctop"><span class="sc-no">2.1</span><h4>ยกระดับหมู่บ้านสู่แหล่งท่องเที่ยวเกษตร-วัฒนธรรม</h4></div>
+            <div class="sctop"><span class="sc-no">2.1</span><h4 data-k="s3.c4h">ยกระดับหมู่บ้านสู่แหล่งท่องเที่ยวเกษตร-วัฒนธรรม</h4></div>
             <div class="scbody">
-              <p>ตรงกับหัวใจของ <b>แผนฉบับที่ 14</b> จีนลงทุนถนน รถไฟความเร็วสูง โลจิสติกส์ และอินเทอร์เน็ต พร้อมพัฒนาที่อยู่อาศัย และยกระดับหมู่บ้านเป็นแหล่งท่องเที่ยวระดับ 5A</p>
-              <p style="margin-bottom:0;font-size:13.5px;color:#6a6256"><b>ผลลัพธ์:</b> เมื่อชนบทมีโครงสร้างพื้นฐานและรายได้จากท่องเที่ยว &ldquo;แรงผลัก&rdquo; ให้คนหนุ่มสาวทิ้งบ้านก็ลดลง<cite>turn5search15</cite></p>
+              <p data-k="s3.c4p1">ตรงกับหัวใจของ <b>แผนฉบับที่ 14</b> จีนลงทุนถนน รถไฟความเร็วสูง โลจิสติกส์ และอินเทอร์เน็ต พร้อมพัฒนาที่อยู่อาศัย และยกระดับหมู่บ้านเป็นแหล่งท่องเที่ยวระดับ 5A</p>
+              <p style="margin-bottom:0;font-size:13.5px;color:#6a6256" data-k="s3.c4p2"><b>ผลลัพธ์:</b> เมื่อชนบทมีโครงสร้างพื้นฐานและรายได้จากท่องเที่ยว &ldquo;แรงผลัก&rdquo; ให้คนหนุ่มสาวทิ้งบ้านก็ลดลง</p>
             </div>
             <div class="scimg"><img src="sanhe.jpg" alt="ตำบลโบราณซานเหอ อำเภอเฝยซี เมืองเหอเฝย มณฑลอานฮุย" loading="lazy"></div>
-            <div class="sccap"><b>ตำบลโบราณซานเหอ (SANHE) &middot; เฝยซี อานฮุย</b> &mdash; แหล่งท่องเที่ยวระดับ 5A ภายใต้แนวคิด &ldquo;สร้างเมืองให้น่าอยู่และอยู่ได้จริง สร้างอาชีพและรายได้ให้คนในพื้นที่&rdquo;<cite>turn4search43</cite></div>
+            <div class="sccap" data-k="s3.cap4"><b>เมืองโบราณซานเหอ (SANHE) &middot; เฝยซี อานฮุย</b> &mdash; แหล่งท่องเที่ยวระดับ 5A<a class="refl" href="#ref13">[13]</a> ภายใต้แนวคิด &ldquo;สร้างเมืองให้น่าอยู่และอยู่ได้จริง สร้างอาชีพและรายได้ให้คนในพื้นที่&rdquo;</div>
           </div>
 
           <div class="subcard">
-            <div class="sctop"><span class="sc-no">2.2</span><h4>การพัฒนาเมือง: พื้นที่สาธารณะยกระดับคุณภาพชีวิต</h4></div>
+            <div class="sctop"><span class="sc-no">2.2</span><h4 data-k="s3.c5h">การพัฒนาเมือง: พื้นที่สาธารณะยกระดับคุณภาพชีวิต</h4></div>
             <div class="scbody">
-              <p>การพัฒนาเมืองของจีนไม่ได้วัดจากตึกสูง แต่วัดจาก <b>พื้นที่สีเขียวและพื้นที่สาธารณะคุณภาพสูง</b> ที่ออกแบบอย่างมีเอกลักษณ์</p>
-              <p style="margin-bottom:0;font-size:13.5px;color:#6a6256">เมืองเหอเฝยลงทุนกับสวนสาธารณะและภูมิสถาปัตย์ระดับนิทรรศการ เพื่อสร้างภาพลักษณ์เมืองน่าอยู่ ซึ่งเป็นปัจจัยดึงดูดบุคลากรรุ่นใหม่ให้อยู่ในพื้นที่</p>
+              <p data-k="s3.c5p1">การพัฒนาเมืองของจีนไม่ได้วัดจากตึกสูง แต่วัดจาก <b>พื้นที่สีเขียวและพื้นที่สาธารณะคุณภาพสูง</b> ที่ออกแบบอย่างมีเอกลักษณ์</p>
+              <p style="margin-bottom:0;font-size:13.5px;color:#6a6256" data-k="s3.c5p2">เมืองเหอเฝยลงทุนกับสวนสาธารณะและภูมิสถาปัตย์ระดับนิทรรศการ เพื่อสร้างภาพลักษณ์เมืองน่าอยู่ ซึ่งเป็นปัจจัยดึงดูดบุคลากรรุ่นใหม่ให้อยู่ในพื้นที่</p>
             </div>
             <div class="scimg"><img src="anhui.jpg" alt="หอชมวิวรูปเห็ดเรืองแสงยามค่ำ งานสวนพฤกษศาสตร์เมืองเหอเฝย" loading="lazy"></div>
-            <div class="sccap"><b>Hefei Garden Expo &middot; เหอเฝย อานฮุย</b> &mdash; หอชมวิวร่วมสมัยเรืองแสงยามค่ำคืน สร้างแลนด์มาร์กใหม่ที่เป็นทั้งพื้นที่พักผ่อนของประชาชนและจุดหมายท่องเที่ยว</div>
+            <div class="sccap" data-k="s3.cap5"><b>Hefei Garden Expo &middot; เหอเฝย อานฮุย</b> &mdash; หอชมวิวร่วมสมัยเรืองแสงยามค่ำคืน สร้างแลนด์มาร์กใหม่ที่เป็นทั้งพื้นที่พักผ่อนของประชาชนและจุดหมายท่องเที่ยว</div>
           </div>
 
           <div class="subcard">
-            <div class="sctop"><span class="sc-no">2.3</span><h4>สร้างอัตลักษณ์ให้เมืองด้วยทุนวัฒนธรรม</h4></div>
+            <div class="sctop"><span class="sc-no">2.3</span><h4 data-k="s3.c6h">สร้างอัตลักษณ์ให้เมืองด้วยทุนวัฒนธรรม</h4></div>
             <div class="scbody">
-              <p>ยุ่นเฉิงเลือกใช้ <b>&ldquo;กวนอู&rdquo; (กวนกง)</b> บุคคลในประวัติศาสตร์ที่ถือกำเนิดในพื้นที่ เป็นแกนกลางของอัตลักษณ์เมือง สร้างเทวรูปขนาดมหึมาบนเขาเป็นสัญลักษณ์ที่มองเห็นแต่ไกล</p>
-              <p style="margin-bottom:0;font-size:13.5px;color:#6a6256">เปลี่ยนเมืองอุตสาหกรรมเกษตรให้เป็นจุดหมายเชิงวัฒนธรรมและศรัทธาที่ดึงดูดนักท่องเที่ยวทั่วโลก รวมถึงชาวไทยเชื้อสายจีน</p>
+              <p data-k="s3.c6p1">ยุ่นเฉิงเลือกใช้ <b>&ldquo;กวนอู&rdquo;</b> บุคคลในประวัติศาสตร์ที่ถือกำเนิดในพื้นที่ เป็นแกนกลางของอัตลักษณ์เมือง สร้างเทวรูปขนาดมหึมาบนเขาเป็นสัญลักษณ์ที่มองเห็นแต่ไกล</p>
+              <p style="margin-bottom:0;font-size:13.5px;color:#6a6256" data-k="s3.c6p2">เปลี่ยนเมืองอุตสาหกรรมเกษตรให้เป็นจุดหมายเชิงวัฒนธรรมและศรัทธาที่ดึงดูดนักท่องเที่ยวทั่วโลก รวมถึงชาวไทยเชื้อสายจีน</p>
             </div>
             <div class="scimg"><img src="yuncheng.jpg" alt="เทวรูปกวนอูขนาดใหญ่บนภูเขา เมืองยุ่นเฉิง มณฑลซานซี" loading="lazy"></div>
-            <div class="sccap"><b>เทวรูปกวนอู (Guandi Sacred Statue) &middot; ยุ่นเฉิง ซานซี</b> &mdash; ใช้ทุนวัฒนธรรมและบุคคลสำคัญทางประวัติศาสตร์สร้าง &ldquo;แบรนด์เมือง&rdquo; ที่จดจำได้ระดับสากล</div>
+            <div class="sccap" data-k="s3.cap6"><b>เทวรูปกวนอู (Guandi Sacred Statue) &middot; ยุ่นเฉิง ซานซี</b> &mdash; ใช้ทุนวัฒนธรรมและบุคคลสำคัญทางประวัติศาสตร์สร้าง &ldquo;แบรนด์เมือง&rdquo; ที่จดจำได้ระดับสากล</div>
           </div>
         </div>
 
-        <div class="rowlabel">2.4 &middot; บริหารหมู่บ้านด้วยข้อมูล</div>
-        <p>หัวใจของการฟื้นฟูชนบทยุคใหม่คือ <b>&ldquo;ตัดสินใจบนข้อมูล&rdquo;</b> ที่ <b>หมู่บ้านซีเว่ย (西碃村)</b> เมืองยุ่นเฉิง เราได้เห็น <b>mini program &ldquo;善治美&rdquo;</b> ที่พัฒนาโดยมูลนิธิ Tencent ทำงานบน WeChat เพื่อสื่อสาร รับเรื่องร้องเรียน ใช้ระบบสะสมแต้ม (积分制) และติดตามการพัฒนาระดับหมู่บ้านอย่างโปร่งใส<cite>turn4search43</cite></p>
+        <div class="rowlabel" data-k="s3.rl1">2.4 &middot; บริหารหมู่บ้านด้วยข้อมูล</div>
+        <p data-k="s3.p24">หัวใจของการฟื้นฟูชนบทยุคใหม่คือ <b>&ldquo;ตัดสินใจบนข้อมูล&rdquo;</b> ที่ <b>หมู่บ้านซีเว่ย (西碃村)</b> เมืองยุ่นเฉิง เราได้เห็น <b>mini program &ldquo;善治美&rdquo;</b> ที่พัฒนาโดยมูลนิธิ Tencent ทำงานบน WeChat เพื่อสื่อสาร รับเรื่องร้องเรียน ใช้ระบบสะสมแต้ม (积分制) และติดตามการพัฒนาระดับหมู่บ้านอย่างโปร่งใส<a class="refl" href="#ref16">[16]</a></p>
         <div class="wechat reveal">
-          <div class="phone"><img src="data:image/jpeg;base64,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" alt="หน้าจอ mini program 善治美 บน WeChat แสดงข้อมูลหมู่บ้านซีเว่ย"></div>
+          <div class="phone"><img src="wechat_village.jpg" alt="หน้าจอ mini program 善治美 บน WeChat แสดงข้อมูลหมู่บ้านซีเว่ย"></div>
           <div class="wechat-info">
             <span class="wtag">&#128241; WeChat Mini Program &middot; Tencent Foundation</span>
             <div class="zh">善治美</div>
-            <h3>แพลตฟอร์มบริหารหมู่บ้านอัจฉริยะ</h3>
-            <p>จากหน้าจอจริง: <b>หมู่บ้านซีเว่ย (西碃村)</b> ตำบลฝานชุน เมืองเหอจิน ยุ่นเฉิง มณฑลซานซี &mdash; หมู่บ้านระดับ <b>&ldquo;5 ดาว&rdquo;</b> ที่รวมศูนย์บริการประชาชน (我为群众办实事), ห้องรับเรื่องจากเลขาธิการพรรค (书记会客厅), ระบบสะสมแต้ม (积分制) และเวทีชาวบ้าน (村民说事) ไว้บนแอปเดียว</p>
+            <h3 data-k="s3.wh">แพลตฟอร์มบริหารหมู่บ้านอัจฉริยะ</h3>
+            <p data-k="s3.wp">จากหน้าจอจริง: <b>หมู่บ้านซีเว่ย (西碃村)</b> ตำบลฝานชุน เมืองเหอจิน ยุ่นเฉิง มณฑลซานซี &mdash; หมู่บ้านระดับ <b>&ldquo;5 ดาว&rdquo;</b> ที่รวมศูนย์บริการประชาชน (我为群众办实事), ห้องรับเรื่องจากเลขาธิการพรรค (书记会客厅), ระบบสะสมแต้ม (积分制) และเวทีชาวบ้าน (村民说事) ไว้บนแอปเดียว</p>
             <div class="wstats">
-              <div class="w"><b>1,405</b><span>ผู้ใช้ที่รับรองในหมู่บ้าน</span></div>
-              <div class="w"><b>18,000+</b><span>รายการกิจกรรมชุมชน</span></div>
-              <div class="w"><b>5 &#9733;</b><span>ระดับหมู่บ้านต้นแบบ</span></div>
+              <div class="w"><b>1,405</b><span data-k="s3.w1">ผู้ใช้ที่รับรองในหมู่บ้าน</span></div>
+              <div class="w"><b>18,000+</b><span data-k="s3.w2">รายการกิจกรรมชุมชน</span></div>
+              <div class="w"><b>86,000+</b><span data-k="s3.w3">หมู่บ้านบนแพลตฟอร์ม</span></div>
             </div>
           </div>
         </div>
 
-        <div class="rowlabel">2.5 &middot; วัฒนธรรมที่จับต้องไม่ได้: จากมรดกสู่เศรษฐกิจสร้างสรรค์</div>
-        <p>จีนแปลง <b>มรดกทางวัฒนธรรมที่จับต้องไม่ได้</b> ให้เป็นสินทรัพย์เศรษฐกิจอย่างเป็นระบบ ผ่านหลักสูตร &ldquo;จากผลิตภัณฑ์พื้นเมืองสู่วัฒนธรรม IP&rdquo; และภูมิปัญญาการทำ <b>รอยพิมพ์ศิลาจารึก</b> ขณะที่มรดกโลกทางสถาปัตยกรรมถูกบริหารจัดการให้เป็นทั้งแหล่งเรียนรู้ พื้นที่พักผ่อนของคนเมือง และเครื่องยนต์เศรษฐกิจท่องเที่ยวไปพร้อมกัน<cite>turn4search43</cite></p>
+        <div class="rowlabel" data-k="s3.rl2">2.5 &middot; วัฒนธรรมที่จับต้องไม่ได้: จากมรดกสู่เศรษฐกิจสร้างสรรค์</div>
+        <p data-k="s3.p25">จีนแปลง <b>มรดกทางวัฒนธรรมที่จับต้องไม่ได้</b> ให้เป็นสินทรัพย์เศรษฐกิจอย่างเป็นระบบ ผ่านหลักสูตร &ldquo;จากผลิตภัณฑ์พื้นเมืองสู่วัฒนธรรม IP&rdquo; และภูมิปัญญาการทำ <b>รอยพิมพ์ศิลาจารึก</b> ขณะที่มรดกโลกทางสถาปัตยกรรมถูกบริหารจัดการให้เป็นทั้งแหล่งเรียนรู้ พื้นที่พักผ่อนของคนเมือง และเครื่องยนต์เศรษฐกิจท่องเที่ยวไปพร้อมกัน</p>
         <div class="gallery">
           <figure><div class="figwrap"><img src="temple_heaven.jpg" alt="หอฟ้าเทียนถาน กรุงปักกิ่ง" loading="lazy"></div>
-            <figcaption><b>หอฟ้าเทียนถาน (Temple of Heaven)</b> &mdash; มรดกโลกที่เป็นทั้งพื้นที่พักผ่อนของชาวปักกิ่งและแหล่งท่องเที่ยวระดับโลก</figcaption></figure>
+            <figcaption data-k="s3.g1"><b>หอฟ้าเทียนถาน (Temple of Heaven)</b> &mdash; มรดกโลกที่เป็นทั้งพื้นที่พักผ่อนของชาวปักกิ่งและแหล่งท่องเที่ยวระดับโลก</figcaption></figure>
           <figure><div class="figwrap"><img src="summer_palace.jpg" alt="พระราชวังฤดูร้อน กรุงปักกิ่ง" loading="lazy"></div>
-            <figcaption><b>พระราชวังฤดูร้อน (Summer Palace)</b> &mdash; ต้นแบบการอนุรักษ์ภูมิสถาปัตย์และงานช่างชั้นสูงให้คงคุณค่าเดิมอย่างครบถ้วน</figcaption></figure>
+            <figcaption data-k="s3.g2"><b>พระราชวังฤดูร้อน (Summer Palace)</b> &mdash; ต้นแบบการอนุรักษ์ภูมิสถาปัตย์และงานช่างชั้นสูงให้คงคุณค่าเดิมอย่างครบถ้วน</figcaption></figure>
           <figure><div class="figwrap"><img src="great_wall.jpg" alt="กำแพงเมืองจีนช่วงจูยงกวน" loading="lazy"></div>
-            <figcaption><b>กำแพงเมืองจีน ช่วงจูยงกวน</b> &mdash; &ldquo;แม่เหล็ก&rdquo; ทางการท่องเที่ยวที่กระจายรายได้สู่ชุมชนโดยรอบ</figcaption></figure>
+            <figcaption data-k="s3.g3"><b>กำแพงเมืองจีน ช่วงจูยงกวน</b> &mdash; &ldquo;แม่เหล็ก&rdquo; ทางการท่องเที่ยวที่กระจายรายได้สู่ชุมชนโดยรอบ</figcaption></figure>
         </div>
       </div>
     </div>
@@ -638,19 +671,19 @@ figure figcaption b{color:var(--ink);font-weight:500}
 <!-- SECTION 4 -->
 <section class="section" id="s4">
   <div class="wrap-wide reveal">
-    <span class="kicker">ส่วนที่ 4 &middot; Trade &amp; Cooperation</span>
-    <h2><span class="num">04</span> จีนอยากได้อะไรจากไทย และไทยได้อะไรจากจีน</h2>
-    <p class="sub">ความสัมพันธ์เกษตรจีน-ไทยไม่ใช่การแข่งขัน แต่เป็นการเติมเต็มกันแบบ <b>&ldquo;เขตร้อน-เขตอบอุ่น&rdquo;</b> &mdash; จีนต้องการรสชาติของเขตร้อน ส่วนไทยต้องการเทคโนโลยีและตลาดขนาดมหึมา</p>
+    <span class="kicker" data-k="s4.k">ส่วนที่ 4 &middot; Trade &amp; Cooperation</span>
+    <h2><span class="num">04</span> <span data-k="s4.h">จีนอยากได้อะไรจากไทย และไทยได้อะไรจากจีน</span></h2>
+    <p class="sub" data-k="s4.sub">ความสัมพันธ์เกษตรจีน-ไทยไม่ใช่การแข่งขัน แต่เป็นการเติมเต็มกันแบบ <b>&ldquo;เขตร้อน-เขตอบอุ่น&rdquo;</b> &mdash; จีนต้องการรสชาติของเขตร้อน ส่วนไทยต้องการเทคโนโลยีและตลาดขนาดใหญ่</p>
 
     <!-- FLOW EXCHANGE -->
     <div class="flowx">
       <div class="fx from-th">
         <span class="fxtag">&#127481;&#127469; ไทย &rarr; จีน &#127464;&#127475;</span>
-        <h4>จีนได้จากไทย</h4>
+        <h4 data-k="s4.fh1">จีนได้จากไทย</h4>
         <ul class="fxlist">
           <li data-i="&#129386;"><span class="txt"><b>ผลไม้เมืองร้อน</b><span>ทุเรียน ลำไย มังคุด มะพร้าว มะม่วง</span></span></li>
           <li data-i="&#127834;"><span class="txt"><b>สินค้าเกษตรคุณภาพสูง</b><span>ข้าวหอมมะลิ ที่จีนมองเป็นสินค้าพรีเมียม</span></span></li>
-          <li data-i="&#127807;"><span class="txt"><b>วัตถุดิบห่วงโซ่อุตสาหกรรม</b><span>มันสำปะหลัง แป้ง ยางพารา</span></span></li>
+          <li data-i="&#127807;"><span class="txt"><b>วัตถุดิบห่วงโซ่อุตสาหกรรม</b><span>มันสำปะหลัง ยางพารา</span></span></li>
         </ul>
       </div>
       <div class="fxmid" aria-hidden="true">
@@ -660,7 +693,7 @@ figure figcaption b{color:var(--ink);font-weight:500}
       </div>
       <div class="fx from-cn">
         <span class="fxtag">&#127464;&#127475; จีน &rarr; ไทย &#127481;&#127469;</span>
-        <h4>ไทยได้จากจีน</h4>
+        <h4 data-k="s4.fh2">ไทยได้จากจีน</h4>
         <ul class="fxlist">
           <li data-i="&#128668;"><span class="txt"><b>เครื่องจักรกลการเกษตร</b><span>ต้นทุนเข้าถึงได้ ลดการพึ่งพาแรงงาน</span></span></li>
           <li data-i="&#128241;"><span class="txt"><b>เทคโนโลยีและเกษตรอัจฉริยะ</b><span>IoT โดรน เซนเซอร์ ระบบข้อมูล</span></span></li>
@@ -673,20 +706,20 @@ figure figcaption b{color:var(--ink);font-weight:500}
     <div class="chartcard reveal">
       <div class="chead">
         <div>
-          <span class="clabel">中泰进出口贸易额趋势图</span>
-          <h4>แนวโน้มมูลค่าการค้าระหว่างประเทศของจีนและไทย</h4>
-          <p class="csub">หน่วย: ร้อยล้านดอลลาร์สหรัฐ (亿美元) &middot; ปี 2015&ndash;2025</p>
+          <span class="clabel" data-k="s4.clabel">แนวโน้มมูลค่าการค้าระหว่างประเทศของไทยและจีน</span>
+          <h4>中泰进出口贸易额趋势图</h4>
+          <p class="csub" data-k="s4.csub">หน่วย: ร้อยล้านดอลลาร์สหรัฐ (亿美元) &middot; ปี 2015&ndash;2025</p>
         </div>
         <div class="cmodes" id="cmodes">
-          <button class="on" data-m="bar">แท่งคู่</button>
-          <button data-m="line">เส้นแนวโน้ม</button>
-          <button data-m="gap">ดุลการค้า</button>
+          <button class="on" data-m="bar" data-k="cm1">กราฟแท่ง</button>
+          <button data-m="line" data-k="cm2">เส้นแนวโน้ม</button>
+          <button data-m="gap" data-k="cm3">ดุลการค้า</button>
         </div>
       </div>
 
       <div class="clegend" id="clegend">
-        <button class="lg on" data-s="cn"><i style="background:#2f5d3a"></i> ไทยนำเข้าจากจีน</button>
-        <button class="lg on" data-s="th"><i style="background:#d2702c"></i> ไทยส่งออกไปจีน</button>
+        <button class="lg on" data-s="cn"><i style="background:#2f5d3a"></i> <span data-k="lg1">ไทยนำเข้าจากจีน</span></button>
+        <button class="lg on" data-s="th"><i style="background:#d2702c"></i> <span data-k="lg2">ไทยส่งออกไปจีน</span></button>
       </div>
 
       <div class="cwrap">
@@ -695,52 +728,66 @@ figure figcaption b{color:var(--ink);font-weight:500}
       </div>
 
       <div class="cstats">
-        <div class="cs"><b id="csA">&mdash;</b><span>ไทยนำเข้าจากจีน ปี 2025</span></div>
-        <div class="cs"><b id="csB">&mdash;</b><span>ไทยส่งออกไปจีน ปี 2025</span></div>
-        <div class="cs warn"><b id="csC">&mdash;</b><span>ไทยขาดดุลการค้า ปี 2025</span></div>
-        <div class="cs"><b id="csD">&mdash;</b><span>ไทยนำเข้าจากจีน โต 2015&rarr;2025</span></div>
+        <div class="cs"><b id="csA">&mdash;</b><span data-k="cs1">ไทยนำเข้าจากจีน ปี 2025</span></div>
+        <div class="cs"><b id="csB">&mdash;</b><span data-k="cs2">ไทยส่งออกไปจีน ปี 2025</span></div>
+        <div class="cs warn"><b id="csC">&mdash;</b><span data-k="cs3">ไทยขาดดุลการค้า ปี 2025</span></div>
+        <div class="cs"><b id="csD">&mdash;</b><span data-k="cs4">ไทยนำเข้าจากจีน โต 2015&rarr;2025</span></div>
       </div>
-      <p class="bnote">&#128073; ชี้หรือแตะที่แต่ละปีเพื่อดูตัวเลข &middot; คลิกที่คำอธิบายสีเพื่อซ่อน/แสดงชุดข้อมูล &middot; สลับมุมมองด้วยปุ่มด้านบน</p>
-      <p class="src" style="margin-top:6px">ที่มา: เอกสารประกอบการบรรยาย &ldquo;การค้าสินค้าเกษตรจีน-ไทย&rdquo; ระหว่างการศึกษาดูงาน<cite>turn4search43</cite></p>
+      <p class="src" style="margin-top:6px" data-k="s4.cs">ที่มา: เอกสารประกอบการบรรยาย &ldquo;การค้าสินค้าเกษตรจีน-ไทย&rdquo; ระหว่างการศึกษาดูงาน<a class="refl" href="#ref16">[16]</a> &mdash; สอดคล้องกับสถิติศุลกากรจีน ปี 2024 ที่ 133.98 พันล้านดอลลาร์สหรัฐ<a class="refl" href="#ref9">[9]</a> และปี 2025 ที่ราว 153 พันล้านดอลลาร์สหรัฐ<a class="refl" href="#ref11">[11]</a></p>
     </div>
 
     <div class="callout blue">
-      <span class="tag">&#128200; อ่านกราฟอย่างไร</span>
-      <p>ตลอดช่วงปี 2015&ndash;2019 การค้าสองทางเกือบ <b>สมดุลกัน</b> แต่หลังปี 2021 เส้นทางเริ่มแยกจากกันอย่างชัดเจน &mdash; <b>มูลค่าที่ไทยนำเข้าจากจีนพุ่งขึ้นต่อเนื่องจนแตะกว่า 1,000 ร้อยล้านดอลลาร์สหรัฐในปี 2025</b> ขณะที่มูลค่าที่ <b>ไทยส่งออกไปจีนกลับทรงตัวและย่อลง</b> หลังปี 2021 ผลคือ <b>ไทยขาดดุลการค้ากับจีนถ่างกว้างขึ้นเรื่อย ๆ</b> ซึ่งเป็นสัญญาณเชิงโครงสร้างที่ไทยควรจับตา</p>
+      <span class="tag" data-k="s4.c1t">&#128200; อ่านกราฟอย่างไร</span>
+      <p data-k="s4.c1p">ตลอดช่วงปี 2015&ndash;2019 การค้าสองทางเกือบ <b>สมดุลกัน</b> แต่หลังปี 2021 เส้นทางเริ่มแยกจากกันอย่างชัดเจน &mdash; <b>มูลค่าที่ไทยนำเข้าจากจีนพุ่งขึ้นต่อเนื่องจนแตะกว่า 1,000 ร้อยล้านดอลลาร์สหรัฐในปี 2025</b> ขณะที่มูลค่าที่ <b>ไทยส่งออกไปจีนกลับทรงตัวและย่อลง</b> หลังปี 2021 ผลคือ <b>ไทยขาดดุลการค้ากับจีนมากขึ้นเรื่อย ๆ</b> ซึ่งเป็นสัญญาณเชิงโครงสร้างที่ไทยควรจับตา</p>
     </div>
 
-    <p>เฉพาะด้านเกษตร ความสัมพันธ์ยังเติบโตแข็งแรง จีนเป็นคู่ค้ารายใหญ่ที่สุดของไทยติดต่อกัน 13 ปี และการนำเข้าสินค้าเกษตรของจีนจากไทยเพิ่มจาก <b>5,561 ล้านดอลลาร์สหรัฐ (2018) เป็น 10,821 ล้านดอลลาร์สหรัฐ (2025)</b> เกือบเท่าตัวในเวลาเพียง 7 ปี<a href="https://www.thaipr.net/en/finance_en/3739218">[อ้างอิง]</a><cite>turn1search24</cite></p>
+    <h3 data-k="s4.h3">การค้าสินค้าเกษตรไทย-จีน</h3>
+    <p data-k="s4.p1">จีนเป็นคู่ค้ารายใหญ่ที่สุดของไทย<b>ต่อเนื่องเกินกว่า 10 ปี</b> และไทยเป็นแหล่งนำเข้าสินค้าเกษตรอันดับ 1 ของจีนในอาเซียน โดยการนำเข้าสินค้าเกษตรของจีนจากไทยเพิ่มจาก <b>5,561 ล้านดอลลาร์สหรัฐ (2018) เป็น 10,821 ล้านดอลลาร์สหรัฐ (2025)</b> เกือบเท่าตัวในเวลาเพียง 7 ปี<a class="refl" href="#ref10">[10]</a></p>
 
     <div class="stats">
-      <div class="stat"><b><span class="count" data-to="13">13</span> ปี</b><span>จีนเป็นคู่ค้าอันดับ 1 ของไทย</span></div>
-      <div class="stat"><b>$<span class="count" data-to="10.8" data-dec="1">10.8</span>B</b><span>จีนนำเข้าเกษตรจากไทย (2025)</span></div>
-      <div class="stat"><b><span class="count" data-to="57">57</span>%</b><span>ส่วนแบ่งทุเรียนไทยในตลาดจีน</span></div>
-      <div class="stat"><b>~<span class="count" data-to="130">130</span>,000 ล้านบาท</b><span>มูลค่าส่งออกทุเรียนไทย/ปี</span></div>
+      <div class="stat"><span class="slabel" data-k="s4.s1">จีนเป็นคู่ค้าอันดับ 1 ของไทย</span><b>10+</b><span data-k="s4.s1u">ปี ต่อเนื่อง</span></div>
+      <div class="stat"><span class="slabel" data-k="s4.s2">จีนนำเข้าเกษตรจากไทย (2025)</span><b>10.8</b><span data-k="s4.s2u">พันล้านดอลลาร์สหรัฐฯ</span></div>
+      <div class="stat"><span class="slabel" data-k="s4.s3">ส่วนแบ่งทุเรียนไทยในตลาดจีน</span><b>57%</b><span></span></div>
+      <div class="stat"><span class="slabel" data-k="s4.s4">มูลค่าส่งออกทุเรียนไทย/ปี</span><b>1.3</b><span data-k="s4.s4u">แสนล้านบาท</span></div>
     </div>
-    <p class="src">ที่มา: CIIE (2569)<cite>turn1search24</cite>; กระทรวงเกษตรและสหกรณ์ (2569)<cite>turn1search23</cite></p>
 
-    <div class="callout"><span class="tag">บทเรียนสำหรับผู้ส่งออกไทย</span><p>การรักษาตลาดจีนไม่ได้อยู่ที่ปริมาณ แต่อยู่ที่ <b>คุณภาพและความสอดคล้องกับมาตรฐาน</b> จีนยกระดับการตรวจสารตกค้าง สี Basic Yellow 2 (BY2) และแคดเมียม โดยกรมวิชาการเกษตรต้องเตรียมห้องปฏิบัติการอย่างน้อย 5 แห่ง การลงทุนในระบบตรวจสอบย้อนกลับและการรับรอง GAP จึงเป็น &ldquo;ค่าผ่านประตู&rdquo; สู่ตลาด 1,400 ล้านคน<cite>turn1search23</cite></p></div>
+    <p class="src" data-k="s4.s5">ที่มา: China International Import Expo<a class="refl" href="#ref10">[10]</a> &middot; กระทรวงเกษตรและสหกรณ์<a class="refl" href="#ref12">[12]</a></p>
+
+    <h3 data-k="s4.h4">บทเรียนสำหรับผู้ส่งออกไทย</h3>
+    <div class="callout"><span class="tag" data-k="s4.c2t">มาตรฐาน คุณภาพ และการขนส่ง</span><p data-k="s4.c2p"><b>เป็นสิ่งสำคัญในการรักษาตลาดจีน ไม่ได้อยู่ที่ปริมาณ</b> ยกตัวอย่างกรณีจีนยกระดับการตรวจสารตกค้าง สี Basic Yellow 2 (BY2) และแคดเมียม<a class="refl" href="#ref12">[12]</a></p></div>
   </div>
 </section>
 
 <!-- SECTION 5 -->
 <section class="section" id="s5">
   <div class="wrap reveal">
-    <span class="kicker">ส่วนที่ 5 &middot; Insights &amp; Reflection</span>
-    <h2><span class="num">05</span> ข้อคิดและข้อสังเกต</h2>
-    <p class="sub">เรียนรู้จากจีนมิใช่การลอกแบบ แต่คือการคัดกรองว่าอะไรใช้ได้ อะไรต้องระวัง &mdash; เลือกดูทีละหัวข้อ</p>
+    <span class="kicker" data-k="s5.k">ส่วนที่ 5 &middot; Insights &amp; Reflection</span>
+    <h2><span class="num">05</span> <span data-k="s5.h">ข้อคิดและข้อสังเกต</span></h2>
+    <p class="sub" data-k="s5.sub">เรียนรู้จากจีนมิใช่การลอกแบบ แต่คือการคัดกรองว่าอะไรใช้ได้ อะไรต้องระวัง &mdash; เลือกดูทีละหัวข้อ</p>
 
     <div class="tabs" id="tabs">
-      <button class="on" data-t="t1">&#9989; ไทยใช้ได้</button>
-      <button data-t="t2">&#9888;&#65039; ความเสี่ยงของโมเดลจีน</button>
-      <button data-t="t3">&#127919; ข้อเสนอเชิงนโยบาย</button>
-      <button data-t="t4">&#128172; ความประทับใจ</button>
+      <button class="on" data-t="t1" data-k="tab1">&#9888;&#65039; ข้อสังเกต</button>
+      <button data-t="t2" data-k="tab2">&#9989; ขยายผลในไทย</button>
+      <button data-t="t3" data-k="tab3">&#128172; ความประทับใจ</button>
     </div>
 
-    <div class="tabpane on" id="t1">
-      <span class="panehead">&#9989; แนวทางที่ไทยประยุกต์ใช้ได้</span>
-      <p>ไทยมี <b>&ldquo;ฐาน&rdquo; ที่ดีอยู่แล้ว</b> หลายกรณีศึกษาพิสูจน์ว่าโมเดลแบบจีนใช้ได้ในบริบทไทย สิ่งที่ขาดคือการ <b>ขยายผลเชิงระบบ</b> ไม่ใช่การเริ่มจากศูนย์</p>
-      <div class="mini">
+    <div class="tabpane" id="t1">
+      <span class="panehead" data-k="ph1">&#9888;&#65039; ความเสี่ยงและข้อจำกัดของโมเดลจีน</span>
+      <p data-k="s5.t1p">เพื่อความสมดุลของการวิเคราะห์ ต้องยอมรับว่า <b>โมเดลจีนมีต้นทุนและความเสี่ยงที่ซ่อนอยู่</b> ซึ่งไทยควรพิจารณาก่อนนำมาใช้</p>
+      <div class="mini" data-k="s5.t1m">
+        <div class="minicard warn"><b>&#128181; หนี้ของรัฐบาลท้องถิ่น</b><span>การลงทุนโครงสร้างพื้นฐานขนานใหญ่ส่วนมากอาศัยการกู้ยืมผ่านกลไกการเงินท้องถิ่น ก่อหนี้สะสมที่เป็นความเสี่ยงเชิงระบบต่อเสถียรภาพการคลังของจีนในระยะยาว</span></div>
+        <div class="minicard warn"><b>&#128202; ความยั่งยืนทางการคลัง</b><span>การที่รัฐร่วมลงทุนและรับซื้อผลผลิตสูงกว่าราคาตลาดต้องใช้งบประมาณต่อเนื่อง หากเศรษฐกิจชะลอตัวหรือรายได้ภาษีลดลง กลไกนี้อาจไม่ยั่งยืนและบิดเบือนราคาตลาด</span></div>
+        <div class="minicard warn"><b>&#128116; สังคมสูงวัยในชนบท</b><span>แม้ฟื้นฟูชนบทสำเร็จในเชิงกายภาพ แต่แรงงานหนุ่มสาวยังไหลเข้าเมือง ทำให้ชนบทจีนเผชิญภาวะสูงวัยรุนแรง ซึ่งจำกัดศักยภาพการผลิตในระยะยาว</span></div>
+        <div class="minicard warn"><b>&#128274; ความเป็นส่วนตัวของข้อมูล</b><span>แพลตฟอร์มบริหารหมู่บ้านมีมิติการควบคุมทางสังคม (เช่น ระบบให้คะแนนพฤติกรรม) ที่อาจขัดกับบรรทัดฐานด้านสิทธิและความเป็นส่วนตัวของไทย</span></div>
+        <div class="minicard warn"><b>&#127963;&#65039; การรวมศูนย์และที่ดิน</b><span>จีนสั่งการบนลงล่างได้รวดเร็ว และที่ดินเกษตรเป็นกรรมสิทธิ์ส่วนรวมของหมู่บ้าน ทำให้รวมแปลงง่าย &mdash; ต่างจากไทยที่เป็นกรรมสิทธิ์เอกชนและต้องอาศัยความยินยอมของชุมชน</span></div>
+        <div class="minicard warn"><b>&#8987; ความต่อเนื่องเชิงนโยบาย</b><span>ระบบจีนเอื้อต่อนโยบาย 20&ndash;30 ปี ไทยจึงต้องออกแบบกลไกเชิงสถาบัน (กฎหมาย/แผนแม่บท) ที่ยึดโยงข้ามรัฐบาลแทนการพึ่งพาความต่อเนื่องทางการเมือง</span></div>
+      </div>
+    </div>
+
+      <div class="tabpane on" id="t2">
+      <span class="panehead" data-k="ph2">&#9989; แนวทางที่ไทยประยุกต์ใช้ได้</span>
+      <p data-k="s5.t2p">ไทยมี <b>&ldquo;ฐาน&rdquo; ที่ดีอยู่แล้ว</b> หลายกรณีศึกษาพิสูจน์ว่าโมเดลแบบจีนใช้ได้ในบริบทไทย สิ่งที่ขาดคือการ <b>ขยายผลเชิงระบบ</b> ไม่ใช่การเริ่มจากศูนย์</p>
+      <div class="mini" data-k="s5.t2m">
         <div class="minicard th"><b>&#127794; โครงการหลวง</b><span>ต้นแบบที่ครบทั้งห่วงโซ่ ตั้งแต่วิจัยพันธุ์ ส่งเสริมเกษตรกรบนที่สูง แปรรูป จนถึงแบรนด์ &ldquo;ดอยคำ&rdquo; &mdash; เทียบได้กับโมเดล &ldquo;พื้นที่ + รัฐ + วิจัย&rdquo; ของอานฮุย</span></div>
         <div class="minicard th"><b>&#9749; วิสาหกิจชุมชนกาแฟภาคเหนือ</b><span>กาแฟอะราบิกาจากดอยช้าง ดอยตุง และแม่ฮ่องสอน ยกระดับจากเมล็ดดิบสู่แบรนด์ระดับสากล พร้อมท่องเที่ยวเชิงเกษตร &mdash; ตรงกับโมเดลไร่องุ่น-โรงไวน์ของยุ่นเฉิง</span></div>
         <div class="minicard th"><b>&#127890; OTOP ที่ต่อยอดสำเร็จ</b><span>ผ้าไหม เครื่องปั้นดินเผา และอาหารแปรรูปหลายรายก้าวสู่ตลาดส่งออก &mdash; แต่ยังขาดการเชื่อมกับ &ldquo;วัฒนธรรม IP&rdquo; และแพลตฟอร์มดิจิทัลอย่างเป็นระบบเหมือนจีน</span></div>
@@ -750,71 +797,83 @@ figure figcaption b{color:var(--ink);font-weight:500}
       </div>
     </div>
 
-    <div class="tabpane" id="t2">
-      <span class="panehead">&#9888;&#65039; ความเสี่ยงและข้อจำกัดของโมเดลจีน</span>
-      <p>เพื่อความสมดุลของการวิเคราะห์ ต้องยอมรับว่า <b>โมเดลจีนมีต้นทุนและความเสี่ยงที่ซ่อนอยู่</b> ซึ่งไทยควรพิจารณาก่อนนำมาใช้</p>
-      <div class="mini">
-        <div class="minicard warn"><b>&#128181; หนี้ของรัฐบาลท้องถิ่น</b><span>การลงทุนโครงสร้างพื้นฐานขนานใหญ่ส่วนมากอาศัยการกู้ยืมผ่านกลไกการเงินท้องถิ่น ก่อหนี้สะสมที่เป็นความเสี่ยงเชิงระบบต่อเสถียรภาพการคลังของจีนในระยะยาว</span></div>
-        <div class="minicard warn"><b>&#128202; ความยั่งยืนทางการคลังของการอุดหนุน</b><span>การที่รัฐร่วมลงทุนและรับซื้อผลผลิตสูงกว่าราคาตลาดต้องใช้งบประมาณต่อเนื่อง หากเศรษฐกิจชะลอตัวหรือรายได้ภาษีลดลง กลไกนี้อาจไม่ยั่งยืนและบิดเบือนราคาตลาด</span></div>
-        <div class="minicard warn"><b>&#128116; สังคมสูงวัยในชนบท</b><span>แม้ฟื้นฟูชนบทสำเร็จในเชิงกายภาพ แต่แรงงานหนุ่มสาวยังไหลเข้าเมือง ทำให้ชนบทจีนเผชิญภาวะสูงวัยรุนแรงกว่าเมือง ซึ่งจำกัดศักยภาพการผลิตในระยะยาว</span></div>
-        <div class="minicard warn"><b>&#127963;&#65039; การรวมศูนย์และที่ดิน</b><span>จีนสั่งการบนลงล่างได้รวดเร็ว และที่ดินเกษตรเป็นกรรมสิทธิ์ส่วนรวมของหมู่บ้าน ทำให้รวมแปลงง่าย &mdash; ต่างจากไทยที่เป็นกรรมสิทธิ์เอกชนและต้องอาศัยความยินยอมของชุมชน</span></div>
-        <div class="minicard warn"><b>&#128274; ความเป็นส่วนตัวของข้อมูล</b><span>แพลตฟอร์มบริหารหมู่บ้านมีมิติการควบคุมทางสังคม (เช่น ระบบให้คะแนนพฤติกรรม) ที่อาจขัดกับบรรทัดฐานด้านสิทธิและความเป็นส่วนตัวของไทย</span></div>
-        <div class="minicard warn"><b>&#8987; ความต่อเนื่องเชิงนโยบาย</b><span>ระบบจีนเอื้อต่อนโยบาย 20&ndash;30 ปี ไทยจึงต้องออกแบบกลไกเชิงสถาบัน (กฎหมาย/แผนแม่บท) ที่ยึดโยงข้ามรัฐบาลแทนการพึ่งพาความต่อเนื่องทางการเมือง</span></div>
-      </div>
-    </div>
 
     <div class="tabpane" id="t3">
-      <span class="panehead">&#127919; ข้อเสนอเชิงนโยบาย</span>
-      <div class="callout gold"><span class="tag">ข้อเสนอเชิงนโยบาย 4 ข้อ</span>
-        <p><b>1) วางกรอบ &ldquo;ชนบทไทย&rdquo; เป็นวาระข้ามรัฐบาล</b> ผ่านแผนแม่บทที่มีเป้าหมายผูกพันและตัวชี้วัดชัดเจน<br>
-        <b>2) สร้างคลัสเตอร์ห่วงโซ่มูลค่าเกษตรระดับจังหวัด</b> เชื่อมเกษตรกร&ndash;โรงงานแปรรูป&ndash;แบรนด์&ndash;ตลาด ในพื้นที่เดียว<br>
-        <b>3) ตั้งกลไก &ldquo;มหาวิทยาลัยเพื่อชนบท&rdquo;</b> ผูกงบวิจัยกับผลลัพธ์ในพื้นที่จริง<br>
-        <b>4) ทบทวนสัดส่วนงบประมาณภาคเกษตร</b> ให้สอดคล้องกับน้ำหนักทางเศรษฐกิจ (ปัจจุบันไทยลงทุนเพียง 0.39 เท่าของสัดส่วน GDP ขณะที่จีน 1.4 เท่า และญี่ปุ่น 2.0 เท่า)</p></div>
-      <div class="callout blue"><span class="tag">สิ่งที่ควรเติมเพื่อให้ข้อเสนอตัดสินใจได้</span>
-        <p>ประมาณการงบลงทุนเบื้องต้น จำนวนเกษตรกรที่ได้ประโยชน์ ระยะเวลาคืนทุน และ KPI ที่วัดได้ เช่น สัดส่วนผลผลิตที่ผ่านการแปรรูปในจังหวัด และจำนวนงานวิจัยที่ถูกนำไปใช้เชิงพาณิชย์ พร้อมกรอบเวลา 3/5/10 ปี</p></div>
-    </div>
-
-    <div class="tabpane" id="t4">
-      <span class="panehead">&#128172; ความประทับใจ</span>
+      <span class="panehead" data-k="ph3">&#128172; ความประทับใจ</span>
       <div class="reflect">
-        <div class="rtext">
-          <p>พ้นจากตัวเลขและนโยบาย สิ่งที่ประทับใจที่สุดคือ <b>ความเป็นระเบียบ</b> และ <b>ระบบขนส่งที่เชื่อมโอกาส</b> รถไฟความเร็วสูงที่ตรงเวลาถึงระดับนาทีทำให้เข้าใจว่าโครงสร้างพื้นฐานที่ดีมิใช่เพียงพาหนะ แต่คือ <b>&ldquo;นโยบายกระจายความเจริญ&rdquo;</b> ที่จับต้องได้ &mdash; เมื่อชนบทเดินทางถึงเมืองได้ใน 1&ndash;2 ชั่วโมง เส้นแบ่งเมือง-ชนบทก็จางลง</p>
+        <div class="rtext" data-k="s5.t3p">
+          <p>พ้นจากตัวเลขและนโยบาย สิ่งที่ประทับใจที่สุดคือ <b>ความเป็นระเบียบ บ้านเมืองสะอาด</b> และ <b>ระบบขนส่งสาธารณะที่เชื่อมโอกาส</b> รถเมล์ รถไฟ เครื่องบิน ฯลฯ ทำให้เข้าใจว่าโครงสร้างพื้นฐานที่ดีมิใช่เพียงพาหนะ แต่คือ <b>&ldquo;นโยบายกระจายความเจริญ&rdquo;</b> ที่จับต้องได้ &mdash; เมื่อชนบทเดินทางถึงเมืองได้ไม่ยาก&ndash;เส้นแบ่งเมือง-ชนบทก็จางลง</p>
           <p>ขณะเดียวกันจีนก็ <b>ก้าวไปข้างหน้าโดยไม่ทิ้งรากของตนเอง</b> แม้แต่การติดอักษร <b>福 กลับหัว</b> ก็แฝงคำอวยพร &ldquo;福到了&rdquo; ว่าโชคดีได้มาถึงบ้านแล้ว</p>
           <p>และเหนือสิ่งอื่นใดคือ <b>ความสัมพันธ์ไทย-จีน</b> ที่อบอุ่นเกินคาด ตลอดหนึ่งเดือนของการศึกษาดูงาน เราได้รับการต้อนรับด้วยมิตรไมตรีที่จริงใจจากทุกหน่วยงาน สะท้อนสายสัมพันธ์ที่หยั่งรากลึกระหว่างสองประเทศ</p>
         </div>
         <figure class="rfig">
           <div class="figwrap"><img src="thai_pavillion.jpg" alt="ศาลาไทย-จีน ในกรุงปักกิ่ง" loading="lazy"></div>
-          <figcaption><b>ศาลาไทย-จีน (China-Thailand Friendship Pavilion) &middot; กรุงปักกิ่ง</b> &mdash; สถาปัตยกรรมไทยแท้กลางกรุงปักกิ่ง สัญลักษณ์ของสายสัมพันธ์ &ldquo;จีน-ไทยพี่น้องกัน&rdquo; (中泰一家亲)</figcaption>
+          <figcaption data-k="s5.t3cap"><b>ศาลาไทย-จีน (China-Thailand Friendship Pavilion) &middot; กรุงปักกิ่ง</b> &mdash; สถาปัตยกรรมไทยแท้กลางกรุงปักกิ่ง สัญลักษณ์ของสายสัมพันธ์ &ldquo;จีน-ไทยพี่น้องกัน&rdquo; (中泰一家亲)</figcaption>
         </figure>
       </div>
-      <div class="quote"><blockquote>&ldquo;เราไม่ได้ไปจีนเพื่อกลับมาเป็นจีน แต่ไปเพื่อกลับมาเข้าใจว่า ชนบทที่เข้มแข็งคือรากฐานของประเทศที่มั่นคง &mdash; และรากนั้น ไทยก็ปลูกได้ในแบบของเราเอง&rdquo;</blockquote><cite>บทสรุปข้อคิด ณ ปลายการเดินทาง กรกฎาคม 2569</cite></div>
+      <div class="quote"><blockquote data-k="s5.q">&ldquo;เราไม่ได้ไปจีนเพื่อกลับมาเป็นจีน แต่ไปเพื่อกลับมาเข้าใจว่า ชนบทที่เข้มแข็งคือรากฐานของประเทศที่มั่นคง &mdash; และประเทศไทยก็จำเป็นต้องสร้างรากฐานในแบบของเราเอง&rdquo;</blockquote><cite data-k="s5.qc">บทสรุปข้อคิด ณ ปลายการเดินทาง กรกฎาคม 2569</cite></div>
     </div>
   </div>
 </section>
 
 <section class="deliverables">
   <div class="wrap reveal">
-    <span class="kicker">ภาคผนวก &middot; Deliverables</span>
-    <h2>องค์ประกอบการส่งมอบ</h2>
-    <div class="card"><h4>1 &middot; โครงสร้างเว็บไซต์</h4><p>Hero (minimal art) &rarr; ส่วนที่ 1 บทเรียนสำคัญ &rarr; ส่วนที่ 2 ความมั่นคงอาหาร &amp; เปรียบเทียบ จีน-ไทย-ญี่ปุ่น &rarr; ส่วนที่ 3 จากแผนสู่พื้นที่จริง (2 แกน &middot; การ์ด 3 คอลัมน์) &rarr; ส่วนที่ 4 จีน-ไทย &rarr; ส่วนที่ 5 ข้อคิดและข้อสังเกต (แบบแท็บ) &rarr; ภาคผนวก</p></div>
-    <div class="card"><h4>2 &middot; ไฟล์ภาพที่ใช้ (วางไว้โฟลเดอร์เดียวกับไฟล์ HTML)</h4>
-      <p><code>yuan_longping.jpg</code> <code>nfc_live.jpg</code> <code>mascot.jpg</code> <code>sanhe.jpg</code> <code>anhui.jpg</code> <code>yuncheng.jpg</code> <code>temple_heaven.jpg</code> <code>summer_palace.jpg</code> <code>great_wall.jpg</code> <code>thai_pavillion.jpg</code> </p><p style="margin-top:8px;font-size:13.5px">หมายเหตุ: ภาพหน้าจอ <b>善治美</b> ถูกฝังอยู่ในไฟล์ HTML โดยตรง (base64) จึงแสดงผลได้เสมอแม้ไม่มีไฟล์ภาพภายนอก</p></div>
-    <div class="card"><h4>3 &middot; Meta Description</h4><p><code>รายงานผลการศึกษาดูงานการพัฒนาชนบทและเกษตรสมัยใหม่ของจีน ณ ปักกิ่ง ยุ่นเฉิง (ซานซี) และเหอเฝย (อานฮุย) ถอดบทเรียนนโยบายซันหนง วิวัฒนาการแผน 5 ปี เปรียบเทียบจีน-ไทย-ญี่ปุ่น และข้อเสนอเชิงนโยบายสำหรับการพัฒนาชนบทไทย</code></p></div>
-    <div class="card"><h4>4 &middot; แหล่งอ้างอิงหลักที่ตรวจสอบแล้ว</h4>
-      <ul>
-        <li>ธนาคารโลก &mdash; สัดส่วนเกษตรใน GDP ปี 2024: จีน 6.8% / ไทย 8.7% / ญี่ปุ่น 1.0%</li>
-        <li>กระทรวงการคลังจีน &mdash; รายจ่ายเกษตร/ป่าไม้/ชลประทาน 2.71 จาก 28.46 ล้านล้านหยวน</li>
-        <li>พ.ร.บ.งบประมาณรายจ่ายประจำปี พ.ศ. 2567 &mdash; วงเงินรวม 3.48 ล้านล้านบาท</li>
-        <li>MAFF ญี่ปุ่น &mdash; งบ 2.2686 ล้านล้านเยน จากงบบัญชีทั่วไป 112.07 ล้านล้านเยน</li>
-        <li>สภาแห่งรัฐจีน &mdash; แผน 5 ปี ฉบับที่ 15 เป้าธัญพืช 725 ล้านตันภายในปี 2030</li>
-        <li>OECD &mdash; กรอบดัชนี Producer Support Estimate (PSE)</li>
-        <li>ภาพหยวน หลงผิง: สาธารณสมบัติ ผ่าน Wikipedia</li>
-      </ul></div>
+    <span class="kicker" data-k="ap.k">ภาคผนวก &middot; References</span>
+    <div class="card">
+      <h4 data-k="ap.h">&#128214; รายการอ้างอิง</h4>
+
+      <span class="bibhead" data-k="bh.a">สถิติและข้อมูลทางการ</span>
+      <ol class="biblist">
+        <li id="ref1"><span data-k="r1">ธนาคารโลก. (2568). <span class="bt">Agriculture, forestry, and fishing, value added (% of GDP) &ndash; China</span>. World Bank Open Data.</span>
+          <br><a href="https://data.worldbank.org/indicator/NV.AGR.TOTL.ZS?locations=CN" target="_blank" rel="noopener">https://data.worldbank.org/indicator/NV.AGR.TOTL.ZS?locations=CN</a></li>
+        <li id="ref2"><span data-k="r2">ธนาคารโลก. (2568). <span class="bt">Agriculture, forestry, and fishing, value added (% of GDP) &ndash; Thailand</span>. World Bank Open Data.</span>
+          <br><a href="https://data.worldbank.org/indicator/NV.AGR.TOTL.ZS?locations=TH" target="_blank" rel="noopener">https://data.worldbank.org/indicator/NV.AGR.TOTL.ZS?locations=TH</a></li>
+        <li id="ref3"><span data-k="r3">ธนาคารโลก. (2568). <span class="bt">Agriculture, forestry, and fishing, value added (% of GDP) &ndash; Japan</span>. World Bank Open Data.</span>
+          <br><a href="https://data.worldbank.org/indicator/NV.AGR.TOTL.ZS?locations=JP" target="_blank" rel="noopener">https://data.worldbank.org/indicator/NV.AGR.TOTL.ZS?locations=JP</a></li>
+        <li id="ref4"><span data-k="r4">สำนักงานสถิติแห่งชาติจีน. (2568, 31 ธันวาคม). <span class="bt">Value Added of China&rsquo;s Agriculture and Related Industries Takes up 15.29% of GDP in 2024</span>.</span>
+          <br><a href="https://www.stats.gov.cn/english/PressRelease/202512/t20251231_1962219.html" target="_blank" rel="noopener">https://www.stats.gov.cn/english/PressRelease/202512/t20251231_1962219.html</a></li>
+        <li id="ref5"><span data-k="r5">ราชกิจจานุเบกษา. (2567, 25 เมษายน). <span class="bt">พระราชบัญญัติงบประมาณรายจ่ายประจำปีงบประมาณ พ.ศ. 2567</span>.</span>
+          <br><a href="https://ratchakitcha.soc.go.th/documents/25841.pdf" target="_blank" rel="noopener">https://ratchakitcha.soc.go.th/documents/25841.pdf</a></li>
+        <li id="ref6"><span data-k="r6">Agrifood Japan. (2567, 23 มกราคม). <span class="bt">FY2024 MAFF&rsquo;s Budget Increases for the First Time in Four Years to 2.2686 Trillion Yen</span>.</span>
+          <br><a href="https://agrifoodjapan.wordpress.com/2024/01/23/fy2024-maffs-budget-increases-for-the-first-time-in-four-years-to-2-2686-trillion-yen/" target="_blank" rel="noopener">https://agrifoodjapan.wordpress.com/2024/01/23/fy2024-maffs-budget&hellip;</a></li>
+        <li id="ref7"><span data-k="r7">สำนักงานคณะกรรมการการเงินและเศรษฐกิจส่วนกลาง สาธารณรัฐประชาชนจีน. (2568, 27 กุมภาพันธ์). <span class="bt">Per capita disposable income of China&rsquo;s rural residents reaches $3,185 in 2024</span>. China Human Rights.</span>
+          <br><a href="https://en.humanrights.cn/2025/02/27/0c6e686f91eb417083fd7ea68ce56de3.html" target="_blank" rel="noopener">https://en.humanrights.cn/2025/02/27/0c6e686f91eb417083fd7ea68ce56de3.html</a></li>
+        <li id="ref8"><span data-k="r8">สภาแห่งรัฐ สาธารณรัฐประชาชนจีน. (2569, 2 มิถุนายน). <span class="bt">China issues 5-year plan for agricultural, rural modernization</span>. Xinhua.</span>
+          <br><a href="https://english.www.gov.cn/policies/latestreleases/202606/02/content_WS6a1ecf59c6d00ca5f9a0b5dc.html" target="_blank" rel="noopener">https://english.www.gov.cn/policies/latestreleases/202606/02/content_WS6a1ecf59c6d00ca5f9a0b5dc.html</a></li>
+      </ol>
+
+      <span class="bibhead" data-k="bh.b">การค้าและความร่วมมือไทย-จีน</span>
+      <ol class="biblist" style="counter-reset:bib 8">
+        <li id="ref9"><span data-k="r9">Blooming Global. (2568, 10 กุมภาพันธ์). <span class="bt">China Customs Signs Cooperation Agreements with Thai Counterparts</span>. (อ้างอิงข้อมูลศุลกากรจีน GACC)</span>
+          <br><a href="https://www.bloominglobal.com/media/detail/china-customs-signs-cooperation-agreements-with-thai-counterparts" target="_blank" rel="noopener">https://www.bloominglobal.com/media/detail/china-customs-signs-cooperation-agreements-with-thai-counterparts</a></li>
+        <li id="ref10"><span data-k="r10">China International Import Expo. (2569, 10 กรกฎาคม). <span class="bt">A Little Durian Tells the Story of China&ndash;Thailand Agricultural Ties</span>. ThaiPR.NET.</span>
+          <br><a href="https://www.thaipr.net/en/finance_en/3739218" target="_blank" rel="noopener">https://www.thaipr.net/en/finance_en/3739218</a></li>
+        <li id="ref11"><span data-k="r11">Zhou, C. (2569, 24 พฤษภาคม). <span class="bt">The Dragon Meets the Elephant: Thailand and China&rsquo;s Business Relationship in 2026</span>. Thailand Business News.</span>
+          <br><a href="https://www.thailand-business-news.com/china/307605-the-dragon-meets-the-elephant-thailand-and-chinas-business-relationship-in-2026" target="_blank" rel="noopener">https://www.thailand-business-news.com/china/307605-the-dragon-meets-the-elephant&hellip;</a></li>
+        <li id="ref12"><span data-k="r12">Thai Times. (2569). <span class="bt">Thailand Enhances Quality Assurance for Durian Exports to China</span>. (อ้างอิงกระทรวงเกษตรและสหกรณ์)</span>
+          <br><a href="https://thaitimes.com/thailand-enhances-quality-assurance-for-durian-exports-to-china" target="_blank" rel="noopener">https://thaitimes.com/thailand-enhances-quality-assurance-for-durian-exports-to-china</a></li>
+      </ol>
+
+      <span class="bibhead" data-k="bh.c">วัฒนธรรม บุคคล และกรอบวิเคราะห์</span>
+      <ol class="biblist" style="counter-reset:bib 12">
+        <li id="ref13"><span data-k="r13">LoongWander. (2569, 18 กรกฎาคม). <span class="bt">Sanhe Ancient Town Scenic Area &ndash; 5A Millennium Water Town Huizhou Architecture</span>.</span>
+          <br><a href="https://www.loongwander.com/en-US/article/sanhe-ancient-town-scenic-area-in-hefei-city" target="_blank" rel="noopener">https://www.loongwander.com/en-US/article/sanhe-ancient-town-scenic-area-in-hefei-city</a></li>
+        <li id="ref14"><span data-k="r14">Wikipedia. <span class="bt">Yuan Longping</span>.</span>
+          <br><a href="https://en.wikipedia.org/wiki/Yuan_Longping" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Yuan_Longping</a></li>
+        <li id="ref15"><span data-k="r15">รัฐบาลมณฑลหูหนาน. (2564, 22 พฤษภาคม). <span class="bt">&ldquo;Father of Hybrid Rice&rdquo; Yuan Longping</span>. Xinhua.</span>
+          <br><a href="https://enghunan.gov.cn/hneng/AboutHunan/HistoryCulture/Celebrities/202105/t20210522_19354135.html" target="_blank" rel="noopener">https://enghunan.gov.cn/hneng/AboutHunan/HistoryCulture/Celebrities/202105/t20210522_19354135.html</a></li>
+      </ol>
+
+      <span class="bibhead" data-k="bh.d">ข้อมูลปฐมภูมิ</span>
+      <ol class="biblist" style="counter-reset:bib 15">
+        <li id="ref16"><span data-k="r16">เอกสารประกอบการบรรยาย การศึกษาดูงานภาคสนาม และภาพถ่ายหน้าจอแอปพลิเคชัน. (2569, 6&ndash;28 กรกฎาคม). <span class="bt">โครงการสัมมนาการพัฒนาชนบทของประเทศไทย</span>. จัดโดยกระทรวงเกษตรและกิจการชนบทแห่งสาธารณรัฐประชาชนจีน ณ กรุงปักกิ่ง เมืองยุ่นเฉิง (มณฑลซานซี) และเมืองเหอเฝย (มณฑลอานฮุย).</span></li>
+      </ol>
+    </div>
   </div>
 </section>
 
 <footer class="sitefooter">
-  รายงานผลการเดินทางและศึกษาดูงาน &middot; โครงการสัมมนาการพัฒนาชนบทของประเทศไทย จัดโดยกระทรวงเกษตรและกิจการชนบทของจีน<br>6&ndash;28 กรกฎาคม 2569 &middot; ปักกิ่ง &middot; ยุ่นเฉิง (ซานซี) &middot; เหอเฝย (อานฮุย)
+  <span data-k="foot">รายงานผลการเดินทางและศึกษาดูงาน &middot; โครงการสัมมนาการพัฒนาชนบทของประเทศไทย จัดโดยกระทรวงเกษตรและกิจการชนบทของจีน<br>6&ndash;28 กรกฎาคม 2569 &middot; ปักกิ่ง &middot; ยุ่นเฉิง (ซานซี) &middot; เหอเฝย (อานฮุย)</span>
 </footer>
 
 <script>
@@ -888,6 +947,7 @@ figure figcaption b{color:var(--ink);font-weight:500}
     var W=860,H=400,mL=58,mR=18,mT=18,mB=54;
     var pw=W-mL-mR, ph=H-mT-mB;
     var mode='bar', show={cn:true,th:true};
+    function L(t,e){return (window.__LANG==='en')?e:t;}
 
     function maxY(){
       var v=[0];
@@ -917,7 +977,7 @@ figure figcaption b{color:var(--ink);font-weight:500}
         t.textContent=(rv<0?'\u2212':'')+Math.abs(rv); svg.appendChild(t);
       }
       var ax=el('text',{x:mL-10,y:mT-4,'text-anchor':'end','font-size':11,fill:'#b0a897','font-family':'Kanit,sans-serif'});
-      ax.textContent='亿美元'; svg.appendChild(ax);
+      ax.textContent=L('亿美元','100M USD'); svg.appendChild(ax);
 
       for(i=0;i<years.length;i++){
         var tx=el('text',{x:X(i),y:H-mB+22,'text-anchor':'middle','font-size':12,fill:'#6a6256','font-family':'Kanit,sans-serif'});
@@ -994,10 +1054,10 @@ figure figcaption b{color:var(--ink);font-weight:500}
       var i=+ (ev.target.getAttribute('data-i'));
       if(isNaN(i)) return;
       var d=th[i]-cn[i];
-      var html='<span class="ty">ปี '+years[i]+'</span>';
-      html+='<div class="tr"><span><i style="background:'+C_CN+'"></i>ไทยนำเข้าจากจีน</span><b>'+cn[i].toLocaleString()+'</b></div>';
-      html+='<div class="tr"><span><i style="background:'+C_TH+'"></i>ไทยส่งออกไปจีน</span><b>'+th[i].toLocaleString()+'</b></div>';
-      html+='<div class="tg">'+(d<0?'ไทยขาดดุล \u2212':'ไทยเกินดุล +')+Math.abs(d).toLocaleString()+' (亿美元)</div>';
+      var html='<span class="ty">'+L('ปี ','Year ')+years[i]+'</span>';
+      html+='<div class="tr"><span><i style="background:'+C_CN+'"></i>'+L('ไทยนำเข้าจากจีน','Imports from China')+'</span><b>'+cn[i].toLocaleString()+'</b></div>';
+      html+='<div class="tr"><span><i style="background:'+C_TH+'"></i>'+L('ไทยส่งออกไปจีน','Exports to China')+'</span><b>'+th[i].toLocaleString()+'</b></div>';
+      html+='<div class="tg">'+(d<0?L('ไทยขาดดุล \u2212','Deficit \u2212'):L('ไทยเกินดุล +','Surplus +'))+Math.abs(d).toLocaleString()+' (亿美元)</div>';
       tip.innerHTML=html; tip.hidden=false;
       var rect=svg.getBoundingClientRect(), scale=rect.width/W;
       tip.style.left=(X(i)*scale)+'px';
@@ -1023,6 +1083,7 @@ figure figcaption b{color:var(--ink);font-weight:500}
     document.getElementById('csC').textContent=(gap<0?'\u2212':'+')+Math.abs(gap).toLocaleString();
     document.getElementById('csD').textContent='+'+Math.round((cn[last]/cn[0]-1)*100)+'%';
 
+    window.__redrawChart=function(){ hide(); draw(); };
     var started=false;
     function boot(){ if(started) return; started=true; draw(); }
     if('IntersectionObserver' in window){
@@ -1044,5 +1105,200 @@ figure figcaption b{color:var(--ink);font-weight:500}
   });
 })();
 </script>
+
+<script>
+/* ============ ENGLISH DICTIONARY ============ */
+var EN={
+"brand":"Study Visit Report &middot; China 2026",
+"nav1":"Key Lessons","nav2":"Food Security","nav3":"Results in the Field","nav4":"Thailand-China","nav5":"Insights",
+"hero.eyebrow":"Study Visit &middot; 6&ndash;28 July 2026",
+"hero.h1":"Rural Development and Modern Agriculture",
+"hero.lede":"Lessons from Beijing, Yuncheng and Hefei &mdash; one month travelling from the capital to model villages, decoding why China places the countryside and agriculture at the centre of its national strategy.",
+"hm1":"days","hm2":"provinces","hm3":"courses","hm4":"site visits",
+"toc1":"Key Lessons from China","toc2":"Food Security and the Five-Year Plans","toc3":"From Plan to Field","toc4":"Thailand-China Trade","toc5":"Insights and Observations",
+
+"s1.k":"Part 1 &middot; Key Takeaways","s1.h":"Key Lessons from China",
+"s1.sub":"<b>&ldquo;Agricultural upgrading&rdquo;</b>, which raises productivity and adds value to produce, and <b>&ldquo;rural revitalization&rdquo;</b>, which makes communities liveable and attractive while creating jobs and income locally &mdash; two dimensions of success that reinforce one another.",
+"s1.g1":"Agricultural Upgrading",
+"s1.a1t":"National vision translated into policy and research",
+"s1.a1b":"<span class=\"chip\">Farmers</span><span class=\"chip\">Agriculture</span><span class=\"chip\">Countryside</span><ul style=\"margin-top:8px\"><li><b>&ldquo;San Nong&rdquo;</b> &mdash; a national agenda for over 20 years</li><li><b>Agriculture as security</b> &mdash; food security set as a national target</li><li><b>Research that is used</b> &mdash; the &ldquo;locality + government + university&rdquo; formula</li></ul>",
+"s1.a2t":"Creating value across the entire supply chain",
+"s1.a2b":"<span class=\"chip\">Upstream</span><span class=\"chip\">Midstream</span><span class=\"chip\">Downstream</span><ul style=\"margin-top:8px\"><li><b>Upstream</b> &mdash; greenhouse farming, machinery, green agriculture and AI</li><li><b>Midstream</b> &mdash; processing of tea, NFC juice and wine</li><li><b>Downstream</b> &mdash; exports, supply chains and digital platforms</li></ul>",
+"s1.g2":"Rural Revitalization",
+"s1.a3t":"Infrastructure alongside the community economy",
+"s1.a3b":"<span class=\"chip\">Invest</span><span class=\"chip\">Develop</span><span class=\"chip\">Data</span><ul style=\"margin-top:8px\"><li><b>Infrastructure investment</b> &mdash; roads, rail, logistics, internet</li><li><b>Housing development</b> &mdash; narrowing the urban&ndash;rural income gap (2.34 : 1 in 2024)</li><li><b>Data-driven governance</b> &mdash; the 善治美 platform on WeChat</li></ul>",
+"s1.a4t":"Creative economy and cultural IP",
+"s1.a4b":"<span class=\"chip\">Creative</span><span class=\"chip\">Culture</span><span class=\"chip\">IP</span><ul style=\"margin-top:8px\"><li><b>Intangible heritage</b> such as stone-rubbing craftsmanship</li><li><b>Cultural assets</b> &mdash; Temple of Heaven, Summer Palace, Great Wall</li><li><b>City identity</b> &mdash; the Guandi statue in Yuncheng and agricultural mascots</li></ul>",
+
+"s2.k":"Part 2 &middot; Food Security &amp; Five-Year Plans","s2.h":"Food Security",
+"s2.sub0":"Success built on the continuity of the Five-Year Plans",
+"s2.sub":"For a country feeding nearly <b>one-fifth of the world&rsquo;s population</b> on limited arable land, food security is a non-negotiable imperative. China demonstrates that the heart of its success lies in <b>the continuity of its Five-Year Plans</b>, accumulated over more than 70 years, under the concept of <b>&ldquo;San Nong&rdquo; (三农)</b>, which binds together farmers, agriculture and the countryside.",
+"s2.p1":"Under the concept of <b>&ldquo;San Nong&rdquo; (三农)</b>, which binds together farmers, agriculture and the countryside.",
+"s2.h3a":"Evolution of China&rsquo;s Agricultural Five-Year Plans",
+"tl1b":"Origins: laying the agricultural foundation",
+"tl2b":"Over half a century of accumulated experience",
+"tl3b":"Raising quality and food safety",
+"tl4b":"Rural revitalization and reducing inequality",
+"tl5b":"Smart agriculture for long-term security",
+"u.mt":"million tonnes","u.x":"ratio","u.y":"yuan",
+"s2.h3b":"China &ndash; Thailand &ndash; Japan: Economic Weight vs Budget Allocation",
+"bench.h":"&#128202; Agriculture&rsquo;s share of GDP compared with its share of government expenditure (2024)",
+"bh1":"Country","bh2":"Share of GDP","bh3":"Share of budget","bh4":"Investment intensity",
+"c.jp":"Japan","c.cn":"China","c.th":"Thailand",
+"bench.n":"Investment intensity = share of budget &divide; share of GDP &mdash; a value &gt; 1 means the state allocates <b>more</b> to agriculture than its economic weight.",
+"s2.c1t":"&#128161; Key policy finding",
+"s2.c1p":"Thailand is the country where <b>agriculture carries the greatest economic weight among the three (8.7% of GDP)</b>, yet it <b>receives the lowest budget allocation relative to that weight (0.39&times;)</b>. Japan, where agriculture accounts for just 1% of GDP, invests at twice that weight, and China at 1.4&times; &mdash; reflecting that both China and Japan view agriculture as <b>&ldquo;security&rdquo;</b> rather than merely <b>&ldquo;an economic sector&rdquo;</b>.",
+"s2.h3c":"Challenges That Remain for China",
+"s2.c4t":"Urbanisation and inequality",
+"s2.c4p":"As industry expanded and urbanisation accelerated, large numbers of young people left the countryside for cities in pursuit of income, education and a better quality of life. The consequence was labour shortage and lagging development in agriculture and rural areas, with the urban&ndash;rural income gap widening to 2.34 times. This became the <b>central challenge</b> that China&rsquo;s 13th&ndash;15th Plans have sought to address continuously &mdash; and we witnessed the results of those efforts through field visits.",
+
+"s3.k":"Part 3 &middot; From Plan to Field","s3.h":"From Plan to Field: Approaches and Results",
+"s3.sub":"The 13th&ndash;15th Plans are not confined to paper. Across 16 courses and 14 site visits, we saw tangible results.",
+"s3.ax1":"Agricultural Upgrading","s3.pl1":"Continuing the 13th &amp; 15th Plans",
+"s3.c1h":"National vision: research that is actually used",
+"s3.c1p1":"In line with the <b>15th Plan</b> emphasis on smart agriculture, <b>Anhui Agricultural University</b> established a <b>&ldquo;comprehensive experimental station&rdquo;</b> on the ground, applying the <b>&ldquo;locality + government + university&rdquo;</b> formula, with faculty working alongside farmers",
+"s3.c1p2":"<b>Result:</b> rural farmers gain access to productivity once concentrated in cities, narrowing the opportunity gap at its source.",
+"s3.cap1":"<b>Yuan Longping (袁隆平) &middot; photographed in 1962</b> &mdash; the &ldquo;Father of Hybrid Rice&rdquo;, who developed hybrid rice varieties that raised yields and strengthened China&rsquo;s food security, embodying the principle that &ldquo;research must reach the real field&rdquo;, an influence still felt in China&rsquo;s agricultural research system today. <span style=\"font-size:11.5px\">(Image: Wikipedia)</span><a class=\"refl\" href=\"#ref14\">[14]</a><a class=\"refl\" href=\"#ref15\">[15]</a>",
+"s3.c2h":"Creating value across the entire supply chain",
+"s3.chain":"<div class=\"mcrow\"><span class=\"mn up\">Upstream</span><span>Greenhouses, machinery, green agriculture, AI &mdash; <b>Liuyipen vegetable base</b>, Hefei</span></div><div class=\"mcrow\"><span class=\"mn mid\">Midstream</span><span>Fruit sorting and processing industries, tea, NFC juice, wine</span></div><div class=\"mcrow\"><span class=\"mn down\">Downstream</span><span>Exports plus <b>live commerce</b> on Pinduoduo, JD and WeChat</span></div>",
+"s3.cap2":"<b>Live-streaming studio selling 100% NFC juice</b> &mdash; a live commerce studio in a rural area selling <b>Not From Concentrate</b> juice processed from local produce, with an orchard-themed backdrop; an example of using digital platforms to upgrade the &ldquo;downstream&rdquo; end of the value chain.",
+"s3.c3h":"Elevating agriculture into a tourism economy through branding and mascots",
+"s3.c3p":"China does not stop at selling produce but builds <b>an identity for agricultural goods</b> through mascots and creative design, turning agricultural museums and learning centres into tourist destinations that attract families and younger generations.",
+"s3.cap3":"<b>Agricultural product mascots &middot; Yuncheng, Shanxi</b> &mdash; transforming key local produce (apples, maize, cabbage, beans) into memorable characters, displayed before a stone-inscription wall that links traditional wisdom with modern marketing.",
+"s3.c7t":"A key mechanism: &ldquo;state co-investment&rdquo;",
+"s3.c7p":"In the apple and concentrated juice processing businesses at Yuncheng, <b>the state co-invests around 48%</b> &mdash; without state participation, private firms would find it unviable to build plants in remote areas. These processing investments upgrade agricultural produce and strengthen procurement at higher prices through state support. Once the business becomes self-sustaining, the state withdraws its capital.",
+"s3.ax2":"Rural Revitalization","s3.pl2":"Continuing the 14th Plan",
+"s3.c4h":"Elevating villages into agri-cultural tourism destinations",
+"s3.c4p1":"At the heart of the <b>14th Plan</b>, China invested in roads, high-speed rail, logistics and internet, alongside housing development, and elevated villages into 5A-rated tourist destinations",
+"s3.c4p2":"<b>Result:</b> when the countryside gains infrastructure and tourism income, the &ldquo;push factor&rdquo; driving young people to leave home diminishes",
+"s3.cap4":"<b>SANHE Ancient Town &middot; Feixi, Anhui</b> &mdash; a 5A-rated destination built on the principle of &ldquo;making the town liveable and genuinely habitable, creating jobs and income for local people&rdquo;.",
+"s3.c5h":"Urban development: public space as a tool for quality of life",
+"s3.c5p1":"China&rsquo;s urban development is measured not by tall buildings but by <b>high-quality green and public spaces</b> designed with distinctive character.",
+"s3.c5p2":"Hefei invested in parks and exhibition-grade landscape architecture to build the image of a liveable city &mdash; a factor in attracting young talent to remain in the area.",
+"s3.cap5":"<b>Hefei Garden Expo &middot; Hefei, Anhui</b> &mdash; a contemporary observation tower glowing at night, creating a new landmark that serves as both public recreation space and tourist destination.",
+"s3.c6h":"Building city identity through cultural capital",
+"s3.c6p1":"Yuncheng chose <b>Guan Yu</b>, a historical figure born in the area, as the core of its city identity, erecting a colossal statue on the hillside as a symbol visible from afar.",
+"s3.c6p2":"This transformed an agro-industrial city into a cultural and devotional destination attracting visitors worldwide, including Thais of Chinese descent.",
+"s3.cap6":"<b>Guandi Sacred Statue &middot; Yuncheng, Shanxi</b> &mdash; using cultural capital and a major historical figure to build an internationally recognisable &ldquo;city brand&rdquo;.",
+"s3.rl1":"2.4 &middot; Data-driven village governance",
+"s3.p24":"The core of modern rural revitalization is <b>&ldquo;deciding on data&rdquo;</b>. At <b>Xiwei Village (西碃村)</b> in Yuncheng, we saw the <b>&ldquo;善治美&rdquo; mini program</b> developed by the Tencent Foundation, operating on WeChat for communication, receiving complaints, running a points system (积分制) and transparently tracking village-level development<a class=\"refl\" href=\"#ref16\">[16]</a>",
+"s3.wh":"Smart village governance platform",
+"s3.wp":"From the actual screen: <b>Xiwei Village (西碃村)</b>, Fancun Town, Hejin City, Yuncheng, Shanxi Province &mdash; a <b>&ldquo;five-star&rdquo;</b> village combining a citizen service centre (我为群众办实事), the party secretary&rsquo;s reception room (书记会客厅), a points system (积分制) and a villagers&rsquo; forum (村民说事) in a single app.",
+"s3.w1":"verified village users","s3.w2":"community activity records","s3.w3":"villages on the platform",
+"s3.rl2":"2.5 &middot; Intangible culture: from heritage to creative economy",
+"s3.p25":"China systematically converts <b>intangible cultural heritage</b> into economic assets through courses such as &ldquo;from local products to cultural IP&rdquo; and the craft of <b>stone rubbing</b>, while architectural world heritage is managed simultaneously as a learning resource, urban recreation space and tourism engine<a class=\"refl\" href=\"#ref16\">[16]</a>",
+"s3.g1":"<b>Temple of Heaven</b> &mdash; a World Heritage site serving as both recreation space for Beijing residents and a world-class tourist attraction.",
+"s3.g2":"<b>Summer Palace</b> &mdash; a model for conserving landscape architecture and master craftsmanship in full original value.",
+"s3.g3":"<b>Great Wall, Juyongguan section</b> &mdash; a tourism &ldquo;magnet&rdquo; distributing income to surrounding communities.",
+
+"s4.k":"Part 4 &middot; Trade &amp; Cooperation","s4.h":"What China Wants from Thailand, and What Thailand Gains from China",
+"s4.sub":"China&ndash;Thailand agricultural relations are not competitive but complementary in a <b>&ldquo;tropical&ndash;temperate&rdquo;</b> pattern &mdash; China seeks tropical flavours, while Thailand seeks technology and a vast market.",
+"s4.fh1":"What China gains from Thailand","s4.fh2":"What Thailand gains from China",
+"s4.clabel":"Trends in Thailand&ndash;China International Trade Value",
+"s4.csub":"Unit: hundred million USD (亿美元) &middot; 2015&ndash;2025",
+"cm1":"Bar chart","cm2":"Trend lines","cm3":"Trade balance",
+"lg1":"Thailand&rsquo;s imports from China","lg2":"Thailand&rsquo;s exports to China",
+"cs1":"Imports from China, 2025","cs2":"Exports to China, 2025","cs3":"Thailand&rsquo;s trade deficit, 2025","cs4":"Growth in imports 2015&rarr;2025",
+"s4.c1t":"&#128200; How to read the chart",
+"s4.c1p":"Throughout 2015&ndash;2019 two-way trade was nearly <b>balanced</b>, but after 2021 the paths diverged sharply &mdash; <b>the value Thailand imports from China surged continuously to exceed 1,000 hundred-million USD in 2025</b>, while the value <b>Thailand exports to China plateaued and declined</b>. The result is <b>a steadily widening Thai trade deficit with China</b>, a structural signal Thailand should monitor.",
+"s4.h3":"Thailand&ndash;China Agricultural Trade",
+"s4.s1":"China as Thailand&rsquo;s top trading partner","s4.s1u":"consecutive years",
+"s4.s2":"China&rsquo;s agricultural imports from Thailand (2025)","s4.s2u":"billion US dollars",
+"s4.s3":"Thai durian share of China&rsquo;s market","s4.s4":"Thai durian export value per year","s4.s4u":"hundred billion baht",
+"s4.h4":"Lessons for Thai exporters",
+"s4.c2t":"Standards, quality and logistics",
+"s4.c2p":"<b>These are essential to holding the Chinese market &mdash; it is not about volume.</b> A case in point is China&rsquo;s tightened testing for residues, Basic Yellow 2 (BY2) dye and cadmium<a class=\"refl\" href=\"#ref12\">[12]</a>",
+
+"s5.k":"Part 5 &middot; Insights &amp; Reflection","s5.h":"Insights and Observations",
+"s5.sub":"Learning from China is not about copying, but about discerning what works and what to watch out for &mdash; select a topic below.",
+"tab1":"&#9888;&#65039; Observations","tab2":"&#9989; Scaling in Thailand","tab3":"&#128172; Reflections",
+"ph1":"&#9888;&#65039; Risks and limitations of the China model",
+"s5.t1p":"For analytical balance, it must be acknowledged that <b>the Chinese model carries hidden costs and risks</b> that Thailand should weigh before adoption.",
+"s5.t1m":"<div class=\"minicard warn\"><b>&#128181; Local government debt</b><span>Large-scale infrastructure investment relies substantially on borrowing through local financing vehicles, accumulating debt that poses systemic risk to China&rsquo;s long-term fiscal stability</span></div><div class=\"minicard warn\"><b>&#128202; Fiscal sustainability</b><span>State co-investment and above-market procurement require continuous budget. Should the economy slow or tax revenue fall, the mechanism may prove unsustainable and distort market prices</span></div><div class=\"minicard warn\"><b>&#128116; Rural ageing</b><span>Although revitalization succeeded physically, young labour continues flowing to cities, leaving rural China severely aged, which constrains long-term productive capacity</span></div><div class=\"minicard warn\"><b>&#128274; Data privacy</b><span>Village governance platforms carry a dimension of social control (such as behavioural scoring) that may conflict with Thai norms on rights and privacy</span></div><div class=\"minicard warn\"><b>&#127963;&#65039; Centralisation and land tenure</b><span>China can direct policy top-down rapidly, and agricultural land is collectively owned by villages, making consolidation straightforward &mdash; unlike Thailand&rsquo;s private ownership requiring community consent</span></div><div class=\"minicard warn\"><b>&#8987; Policy continuity</b><span>The Chinese system accommodates 20&ndash;30 year policies. Thailand must instead design institutional mechanisms (legislation and master plans) that bind across successive governments</span></div>",
+"ph2":"&#9989; Approaches Thailand can apply",
+"s5.t2p":"Thailand already has <b>a solid foundation</b>. Several case studies prove the Chinese model works in the Thai context. What is missing is <b>systematic scaling</b>, not starting from zero.",
+"s5.t2m":"<div class=\"minicard th\"><b>&#127794; The Royal Project</b><span>A complete value chain model, from varietal research and highland farmer support to processing and the &ldquo;Doi Kham&rdquo; brand &mdash; comparable to Anhui&rsquo;s &ldquo;locality + government + research&rdquo; model</span></div><div class=\"minicard th\"><b>&#9749; Northern coffee community enterprises</b><span>Arabica coffee from Doi Chang, Doi Tung and Mae Hong Son has moved from raw beans to internationally recognised brands with agri-tourism &mdash; matching the Yuncheng vineyard-winery model</span></div><div class=\"minicard th\"><b>&#127890; Successfully scaled OTOP products</b><span>Silk, ceramics and processed foods have reached export markets &mdash; but still lack systematic linkage to &ldquo;cultural IP&rdquo; and digital platforms as in China</span></div><div class=\"minicard th\"><b>&#127963;&#65039; Universities working on the ground</b><span>Thailand has agricultural and Rajabhat universities in every region; establishing &ldquo;experimental stations and transfer centres&rdquo; on the Anhui model would immediately convert research into farmer income</span></div><div class=\"minicard th\"><b>&#128250; Live commerce for agricultural goods</b><span>Live-streaming studios in production areas, as in China, can be applied to Thai produce via TikTok and Shopee Live to cut intermediaries and build community brands</span></div><div class=\"minicard th\"><b>&#127981; State co-investment in processing plants</b><span>The &ldquo;co-invest then divest&rdquo; mechanism addresses private reluctance to invest in remote areas where early returns are low</span></div>",
+"ph3":"&#128172; Reflections",
+"s5.t3p":"<p>Beyond figures and policy, what impressed most was the <b>orderliness and cleanliness of the cities</b> and the <b>public transport system that connects opportunity</b> &mdash; buses, trains, aircraft and more. It made clear that good infrastructure is not merely a vehicle but a tangible <b>&ldquo;policy for distributing prosperity&rdquo;</b> &mdash; when the countryside can reach the city without difficulty, the urban&ndash;rural divide fades.</p><p>At the same time, China <b>moves forward without abandoning its roots</b>. Even the custom of hanging the character <b>福 upside down</b> carries the blessing &ldquo;福到了&rdquo; &mdash; that fortune has arrived at the home.</p><p>Above all was the <b>warmth of Thai&ndash;Chinese relations</b>, which exceeded expectation. Throughout the month-long study visit we were received with genuine friendship by every organisation, reflecting a deeply rooted bond between the two countries.</p>",
+"s5.t3cap":"<b>China-Thailand Friendship Pavilion &middot; Beijing</b> &mdash; authentic Thai architecture in the heart of Beijing, a symbol of the bond expressed as &ldquo;China and Thailand are one family&rdquo; (中泰一家亲).",
+"s5.q":"&ldquo;We did not go to China to come back as China, but to come back understanding that a strong countryside is the foundation of a stable nation &mdash; and Thailand too must build that foundation in its own way.&rdquo;",
+"s5.qc":"Concluding reflection at the end of the journey, July 2026",
+
+"ap.k":"Appendix &middot; References","ap.h":"&#128214; References",
+"bh.a":"Official statistics and data","bh.b":"Thailand&ndash;China trade and cooperation","bh.c":"Culture, figures and analytical frameworks","bh.d":"Primary sources",
+"r1":"World Bank. (2025). <span class=\"bt\">Agriculture, forestry, and fishing, value added (% of GDP) &ndash; China</span>. World Bank Open Data.",
+"r2":"World Bank. (2025). <span class=\"bt\">Agriculture, forestry, and fishing, value added (% of GDP) &ndash; Thailand</span>. World Bank Open Data.",
+"r3":"World Bank. (2025). <span class=\"bt\">Agriculture, forestry, and fishing, value added (% of GDP) &ndash; Japan</span>. World Bank Open Data.",
+"r4":"National Bureau of Statistics of China. (2025, December 31). <span class=\"bt\">Value Added of China&rsquo;s Agriculture and Related Industries Takes up 15.29% of GDP in 2024</span>.",
+"r5":"Royal Thai Government Gazette. (2024, April 25). <span class=\"bt\">Annual Budget Expenditure Act for Fiscal Year B.E. 2567 (2024)</span>.",
+"r6":"Agrifood Japan. (2024, January 23). <span class=\"bt\">FY2024 MAFF&rsquo;s Budget Increases for the First Time in Four Years to 2.2686 Trillion Yen</span>.",
+"r7":"Office of the Central Committee for Financial and Economic Affairs, People&rsquo;s Republic of China. (2025, February 27). <span class=\"bt\">Per capita disposable income of China&rsquo;s rural residents reaches $3,185 in 2024</span>. China Human Rights.",
+"r8":"State Council of the People&rsquo;s Republic of China. (2026, June 2). <span class=\"bt\">China issues 5-year plan for agricultural, rural modernization</span>. Xinhua.",
+"r9":"Blooming Global. (2025, February 10). <span class=\"bt\">China Customs Signs Cooperation Agreements with Thai Counterparts</span>. (citing GACC data)",
+"r10":"China International Import Expo. (2026, July 10). <span class=\"bt\">A Little Durian Tells the Story of China&ndash;Thailand Agricultural Ties</span>. ThaiPR.NET.",
+"r11":"Zhou, C. (2026, May 24). <span class=\"bt\">The Dragon Meets the Elephant: Thailand and China&rsquo;s Business Relationship in 2026</span>. Thailand Business News.",
+"r12":"Thai Times. (2026). <span class=\"bt\">Thailand Enhances Quality Assurance for Durian Exports to China</span>. (citing the Ministry of Agriculture and Cooperatives)",
+"r13":"LoongWander. (2026, July 18). <span class=\"bt\">Sanhe Ancient Town Scenic Area &ndash; 5A Millennium Water Town Huizhou Architecture</span>.",
+"r14":"Wikipedia. <span class=\"bt\">Yuan Longping</span>.",
+"r15":"Hunan Provincial Government. (2021, May 22). <span class=\"bt\">&ldquo;Father of Hybrid Rice&rdquo; Yuan Longping</span>. Xinhua.",
+"r16":"Lecture materials, field study visits and application screenshots. (2026, 6&ndash;28 July). <span class=\"bt\">Seminar Programme on Rural Development for Thailand</span>. Organised by the Ministry of Agriculture and Rural Affairs of the People&rsquo;s Republic of China, in Beijing, Yuncheng (Shanxi Province) and Hefei (Anhui Province).",
+"foot":"Travel and Study Visit Report &middot; Seminar Programme on Rural Development for Thailand, organised by the Ministry of Agriculture and Rural Affairs of China<br>6&ndash;28 July 2026 &middot; Beijing &middot; Yuncheng (Shanxi) &middot; Hefei (Anhui)"
+};
+
+/* ---- expand citation placeholders inside EN ---- */
+(function(){
+  function refs(){var a=arguments,s='';for(var i=0;i<a.length;i++){s+='<a class="refl" href="#ref'+a[i]+'">['+a[i]+']</a>';}return s;}
+  var M={"__R7__":refs(7),"__R8__":refs(8),"__R123__":refs(1,2,3),"__R4__":refs(4),
+    "__R9__":refs(9),"__R5__":refs(5),"__R6__":refs(6),"__R1617__":refs(16,17),
+    "__R18__":refs(16),"__R1415__":refs(14,15),"__R13__":refs(13),"__R10__":refs(10),
+    "__R11__":refs(11),"__R12__":refs(12)};
+  EN["bench.s"]="Sources: World Bank"+refs(1,2,3)+" &middot; National Bureau of Statistics of China"+refs(4)
+    +" &middot; Ministry of Finance of China"+refs(9)+" &middot; Annual Budget Expenditure Act B.E. 2567"+refs(5)
+    +" &middot; Japan Ministry of Agriculture, Forestry and Fisheries"+refs(6);
+  EN["s4.cs"]="Source: lecture materials on &ldquo;China&ndash;Thailand agricultural trade&rdquo; from the study visit"+refs(16)
+    +" &mdash; consistent with Chinese customs statistics of USD 133.98 billion in 2024"+refs(9)
+    +" and approximately USD 153 billion in 2025"+refs(11);
+  EN["s4.p1"]="China has been Thailand&rsquo;s largest trading partner <b>for more than 10 consecutive years</b>, and Thailand is China&rsquo;s largest source of agricultural imports within ASEAN. China&rsquo;s agricultural imports from Thailand rose from <b>USD 5.561 billion (2018) to USD 10.821 billion (2025)</b>, nearly doubling in just seven years"+refs(10);
+  EN["s4.s5"]="Sources: China International Import Expo"+refs(10)+" &middot; Ministry of Agriculture and Cooperatives"+refs(12);
+  EN["tl4p"]="";
+})();
+
+/* ============ LANGUAGE ENGINE ============ */
+(function(){
+  var TH={}, nodes=document.querySelectorAll('[data-k]');
+  for(var i=0;i<nodes.length;i++) TH[nodes[i].getAttribute('data-k')]=nodes[i].innerHTML;
+
+  function apply(lang){
+    var dict=(lang==='en')?EN:TH;
+    for(var j=0;j<nodes.length;j++){
+      var k=nodes[j].getAttribute('data-k');
+      if(dict[k]!==undefined && dict[k]!=='') nodes[j].innerHTML=dict[k];
+      else if(lang==='th' && TH[k]!==undefined) nodes[j].innerHTML=TH[k];
+    }
+    document.documentElement.setAttribute('lang',lang);
+    window.__LANG=lang;
+    try{localStorage.setItem('rp_lang',lang);}catch(e){}
+    if(window.__redrawChart) window.__redrawChart();
+  }
+
+  var lt=document.getElementById('langtog');
+  if(!lt) return;
+  lt.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    lt.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on');
+    apply(b.getAttribute('data-lang'));
+  });
+  try{
+    if(localStorage.getItem('rp_lang')==='en'){
+      lt.querySelectorAll('button').forEach(function(x){
+        x.classList.toggle('on', x.getAttribute('data-lang')==='en');
+      });
+      apply('en');
+    }
+  }catch(e){}
+})();
+</script>
+
 </body>
 </html>
