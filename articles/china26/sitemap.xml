@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://jpnick.github.io/articles/china26/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+
+    <xhtml:link rel="alternate" hreflang="th" href="https://jpnick.github.io/articles/china26/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jpnick.github.io/articles/china26/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jpnick.github.io/articles/china26/"/>
+
+    <image:image>
+      <image:loc>https://jpnick.github.io/articles/china26/sanhe.jpg</image:loc>
+      <image:title>เมืองโบราณซานเหอ (SANHE Ancient Town) มณฑลอานฮุย</image:title>
+      <image:caption>แหล่งท่องเที่ยวระดับ 5A ต้นแบบการยกระดับหมู่บ้านสู่แหล่งท่องเที่ยวเกษตร-วัฒนธรรม</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jpnick.github.io/articles/china26/yuan_longping.jpg</image:loc>
+      <image:title>หยวน หลงผิง บิดาแห่งข้าวลูกผสม</image:title>
+      <image:caption>ผู้พัฒนาพันธุ์ข้าวลูกผสมที่ยกระดับความมั่นคงทางอาหารของจีน</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jpnick.github.io/articles/china26/nfc_live.jpg</image:loc>
+      <image:title>ห้องไลฟ์สดขายน้ำผลไม้ NFC ในพื้นที่ชนบท</image:title>
+      <image:caption>ตัวอย่างการใช้แพลตฟอร์มดิจิทัลยกระดับปลายน้ำของห่วงโซ่มูลค่าเกษตร</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jpnick.github.io/articles/china26/wechat_village.jpg</image:loc>
+      <image:title>แพลตฟอร์ม 善治美 บริหารหมู่บ้านบน WeChat</image:title>
+      <image:caption>ระบบบริหารหมู่บ้านด้วยข้อมูล หมู่บ้านซีเว่ย เมืองยุ่นเฉิง มณฑลซานซี</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jpnick.github.io/articles/china26/mascot.jpg</image:loc>
+      <image:title>มาสคอตสินค้าเกษตร เมืองยุ่นเฉิง มณฑลซานซี</image:title>
+      <image:caption>การสร้างแบรนด์สินค้าเกษตรด้วยมาสคอตและการออกแบบเชิงสร้างสรรค์</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jpnick.github.io/articles/china26/yuncheng.jpg</image:loc>
+      <image:title>เทวรูปกวนอู เมืองยุ่นเฉิง มณฑลซานซี</image:title>
+      <image:caption>การใช้ทุนวัฒนธรรมสร้างอัตลักษณ์และแบรนด์เมือง</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jpnick.github.io/articles/china26/anhui.jpg</image:loc>
+      <image:title>Hefei Garden Expo เมืองเหอเฝย มณฑลอานฮุย</image:title>
+      <image:caption>การพัฒนาเมืองด้วยพื้นที่สาธารณะและภูมิสถาปัตย์คุณภาพสูง</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jpnick.github.io/articles/china26/thai_pavillion.jpg</image:loc>
+      <image:title>ศาลาไทย-จีน กรุงปักกิ่ง</image:title>
+      <image:caption>สัญลักษณ์ความสัมพันธ์ไทย-จีน จีน-ไทยพี่น้องกัน</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jpnick.github.io/articles/china26/temple_heaven.jpg</image:loc>
+      <image:title>หอฟ้าเทียนถาน กรุงปักกิ่ง</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://jpnick.github.io/articles/china26/summer_palace.jpg</image:loc>
+      <image:title>พระราชวังฤดูร้อน กรุงปักกิ่ง</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://jpnick.github.io/articles/china26/great_wall.jpg</image:loc>
+      <image:title>กำแพงเมืองจีน ช่วงจูยงกวน</image:title>
+    </image:image>
+  </url>
+
+</urlset>
