@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="th">
+<head>
+<script>if (localStorage.getItem('theme') === 'dark') { document.documentElement.classList.add('dark'); }</script><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="จิรวัฒน์ ภู่งาม (นิกส์) นักวิเคราะห์อาวุโส ธนาคารแห่งประเทศไทย เศรษฐกรและนักวิเคราะห์ข้อมูล ด้านการวิจัยเศรษฐกิจ นโยบายสาธารณะ วิทยาการข้อมูล และเศรษฐกิจภูมิภาค" name="description"/>
+<title>จิรวัฒน์ ภู่งาม | เศรษฐกร นักวิเคราะห์ข้อมูล และนักวิจัย</title>
+<link href="https://jpnick.github.io/th/" rel="canonical"/>
+<link href="https://jpnick.github.io/" hreflang="en" rel="alternate"/>
+<link href="https://jpnick.github.io/th/" hreflang="th" rel="alternate"/>
+<link href="https://jpnick.github.io/" hreflang="x-default" rel="alternate"/>
+<meta content="index, follow" name="robots"/>
+<meta content="Jirawat Poongam (จิรวัฒน์ ภู่งาม)" name="author"/>
+<meta content="profile" property="og:type"/>
+<meta content="จิรวัฒน์ ภู่งาม | เศรษฐกร นักวิเคราะห์ข้อมูล และนักวิจัย" property="og:title"/>
+<meta content="จิรวัฒน์ ภู่งาม (นิกส์) นักวิเคราะห์อาวุโส ธนาคารแห่งประเทศไทย เศรษฐกรและนักวิเคราะห์ข้อมูล ด้านการวิจัยเศรษฐกิจ นโยบายสาธารณะ วิทยาการข้อมูล และเศรษฐกิจภูมิภาค" property="og:description"/>
+<meta content="https://jpnick.github.io/th/" property="og:url"/>
+<meta content="https://jpnick.github.io/me.jpg" property="og:image"/>
+<meta content="th_TH" property="og:locale"/>
+<meta content="en_US" property="og:locale:alternate"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "จิรวัฒน์ ภู่งาม",
+  "alternateName": [
+    "Jirawat Poongam",
+    "จิรวัฒน์ ภู่งาม (นิกส์)",
+    "Jirawat Poongam (NICK)"
+  ],
+  "jobTitle": "นักวิเคราะห์อาวุโส",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "ธนาคารแห่งประเทศไทย"
+  },
+  "url": "https://jpnick.github.io/th/",
+  "image": "https://jpnick.github.io/me.jpg",
+  "sameAs": [
+    "https://linkedin.com/in/jirawatp",
+    "https://github.com/jpnick"
+  ]
+}
+</script>
+<!-- Fonts: Inter and Kanit -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Kanit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Icons: FontAwesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        kanit: ['Kanit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #334155;
+            background-color: #f8fafc;
+            transition: font-family 0.3s ease;
+        }
+
+        /* Thai Font Support */
+        body.lang-th {
+            font-family: 'Kanit', sans-serif;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+
+        /* Nav active state transition */
+        .nav-link {
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-link.active {
+            background-color: #e0f2fe;
+            color: #0284c7;
+            font-weight: 600;
+            border-right: 3px solid #0284c7;
+        }
+
+        /* Tab active state */
+        .tab-btn.active {
+            border-bottom-color: #0ea5e9;
+            color: #0ea5e9;
+        }
+        
+        /* Fade in animation for tabs */
+        .fade-in {
+            animation: fadeIn 0.3s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    
+        /* Modern minimal article cards */
+        .article-grid { display:grid; grid-template-columns:repeat(1,minmax(0,1fr)); gap:1rem; }
+        @media (min-width:768px){ .article-grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
+        .article-card { position:relative; display:flex; flex-direction:column; min-height:250px; padding:1.5rem; background:rgba(255,255,255,.9); border:1px solid #e2e8f0; border-radius:1rem; box-shadow:0 1px 2px rgba(15,23,42,.03); transition:.25s ease; }
+        .article-card:hover { transform:translateY(-3px); border-color:#bae6fd; box-shadow:0 16px 34px rgba(15,23,42,.08); }
+        .article-meta { display:flex; justify-content:space-between; gap:.75rem; margin-bottom:1.25rem; }
+        .article-tag { font-size:.68rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#0369a1; }
+        .article-date { font-size:.75rem; color:#94a3b8; white-space:nowrap; }
+        .article-title { font-size:1.08rem; line-height:1.55; font-weight:600; color:#1e293b; }
+        .article-title a:hover { color:#0284c7; }
+        .article-source { margin-top:.65rem; font-size:.78rem; color:#64748b; }
+        .article-footer { display:flex; justify-content:space-between; margin-top:auto; padding-top:1.25rem; border-top:1px solid #f1f5f9; font-size:.75rem; }
+        .article-link { display:inline-flex; align-items:center; gap:.4rem; color:#0284c7; font-weight:600; }
+
+        /* Thai always uses Kanit, including English UI mode */
+        .thai-text, :lang(th) { font-family:'Kanit',sans-serif !important; }
+
+        /* Tabs wrap naturally and never create a horizontal scrollbar */
+        .tab-nav-wrap { display:flex; flex-wrap:wrap; gap:.25rem 1.25rem; }
+        .tab-nav-wrap > button { white-space:normal !important; }
+
+        /* Compact icon controls */
+        .icon-control { display:inline-flex; align-items:center; justify-content:center; width:2.25rem; height:2.25rem; border-radius:.65rem; color:#64748b; transition:.2s ease; }
+        .icon-control:hover { color:#0284c7; background:#f0f9ff; }
+        .lang-icon-label { font-size:.72rem; font-weight:700; letter-spacing:.02em; }
+
+        /* Dark theme */
+        html.dark body { color:#cbd5e1; background:#0b1120; }
+        html.dark #sidebar, html.dark .mobile-header { background:#0f172a; border-color:#1e293b; }
+        html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark .text-slate-800 { color:#f1f5f9 !important; }
+        html.dark .text-slate-600, html.dark .text-slate-500 { color:#94a3b8 !important; }
+        html.dark .border-gray-100, html.dark .border-gray-200, html.dark .border-gray-300 { border-color:#1e293b !important; }
+        html.dark .bg-white, html.dark .article-card { background:#0f172a !important; }
+        html.dark .bg-slate-50 { background:#111c31 !important; }
+        html.dark .hover\:bg-slate-50:hover, html.dark .hover\:bg-gray-50:hover { background:#172033 !important; }
+        html.dark .article-card { border-color:#26344b; box-shadow:none; }
+        html.dark .article-title, html.dark .article-title a { color:#e2e8f0; }
+        html.dark .article-footer { border-color:#1e293b; }
+        html.dark .nav-link.active { background:#082f49; color:#38bdf8; }
+        html.dark .icon-control { color:#cbd5e1; }
+        html.dark .icon-control:hover { color:#7dd3fc; background:#172033; }
+</style>
+</link></link></link></link></head>
+<body class="antialiased flex h-screen overflow-hidden lang-th">
+<!-- Mobile Header & Menu Toggle -->
+<div class="md:hidden fixed top-0 w-full bg-white border-b border-gray-200 z-50 flex justify-between items-center p-4 mobile-header">
+<div class="flex items-center gap-3 min-w-0"><img alt="Profile" class="w-9 h-9 rounded-full object-cover border border-slate-200 shadow-sm shrink-0" onerror="this.src='https://placehold.co/96x96/0ea5e9/ffffff?text=JP'" src="../me.jpg"/><span class="font-semibold text-sm sm:text-base text-slate-800 truncate" data-i18n="name">จิรวัฒน์ ภู่งาม (นิกส์)</span></div>
+<div class="flex items-center space-x-4">
+<button aria-label="Toggle day and night mode" class="icon-control" id="mobile-theme-btn" title="Toggle day/night" type="button"><i class="fas fa-moon"></i></button><button class="icon-control lang-icon-label" id="mobile-lang-btn">EN</button>
+<button class="text-slate-600 focus:outline-none" id="mobile-menu-btn">
+<i class="fas fa-bars text-xl"></i>
+</button>
+</div>
+</div>
+<!-- Sidebar Navigation -->
+<aside class="w-64 bg-white border-r border-gray-200 h-full flex flex-col fixed md:relative z-40 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out mt-14 md:mt-0 pt-4 md:pt-0" id="sidebar">
+<div class="p-8 flex flex-col items-center border-b border-gray-100">
+<img alt="Profile" class="w-32 h-32 rounded-full object-cover shadow-md mb-4 border-4 border-brand-50" onerror="this.src='https://placehold.co/400x400/0ea5e9/ffffff?text=JP'" src="../me.jpg"/>
+<h1 class="text-xl font-bold text-slate-800 text-center" data-i18n="name">จิรวัฒน์ ภู่งาม (นิกส์)</h1>
+<p class="text-sm text-slate-500 text-center mt-1" data-i18n="subtitle">เศรษฐกร | นักสำรวจ</p>
+</div>
+<nav class="flex-1 overflow-y-auto py-4">
+<ul class="space-y-1">
+<li>
+<a class="nav-link block px-8 py-3 text-slate-600 hover:bg-slate-50 hover:text-brand-600" href="#about">
+<i class="fas fa-user w-6 text-center mr-2"></i> <span data-i18n="nav-about">เกี่ยวกับฉัน</span>
+</a>
+</li>
+<li>
+<a class="nav-link block px-8 py-3 text-slate-600 hover:bg-slate-50 hover:text-brand-600" href="#projects">
+<i class="fas fa-briefcase w-6 text-center mr-2"></i> <span data-i18n="nav-projects">ผลงาน &amp; โปรเจกต์</span>
+</a>
+</li>
+<li>
+<a class="nav-link block px-8 py-3 text-slate-600 hover:bg-slate-50 hover:text-brand-600" href="#teaching">
+<i class="fas fa-chalkboard-teacher w-6 text-center mr-2"></i> <span data-i18n="nav-teaching">การสอน &amp; บรรยาย</span>
+</a>
+</li>
+<li>
+<a class="nav-link block px-8 py-3 text-slate-600 hover:bg-slate-50 hover:text-brand-600" href="#travel">
+<i class="fas fa-globe-americas w-6 text-center mr-2"></i> <span data-i18n="nav-travel">บล็อกท่องเที่ยว</span>
+</a>
+</li>
+</ul>
+</nav>
+<div class="p-6 border-t border-gray-100 flex justify-center items-center space-x-4"><button aria-label="Toggle day and night mode" class="icon-control" id="theme-toggle-btn" title="Toggle day/night" type="button"><i class="fas fa-moon"></i></button><button aria-label="Switch language" class="icon-control" id="lang-toggle-btn" title="Switch language" type="button"><i class="fas fa-language"></i></button>
+<a class="icon-control" href="https://linkedin.com/in/jirawatp" rel="noopener noreferrer" target="_blank"><i class="fab fa-linkedin text-xl"></i></a>
+<a class="icon-control" href="https://github.com/jpnick" rel="noopener noreferrer" target="_blank"><i class="fab fa-github text-xl"></i></a>
+</div>
+</aside>
+<!-- Overlay for mobile sidebar -->
+<div class="fixed inset-0 bg-slate-900 bg-opacity-50 z-30 hidden md:hidden" id="sidebar-overlay"></div>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto h-full scroll-smooth pt-16 md:pt-0" id="main-content">
+<div class="max-w-4xl mx-auto px-6 py-12 md:px-12 md:py-20 space-y-24">
+<section class="scroll-mt-20" id="about">
+<h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-6 tracking-tight" data-i18n="about-title">เกี่ยวกับฉัน</h2>
+<div class="prose prose-lg prose-slate max-w-none text-slate-600 space-y-6">
+<p class="leading-relaxed" data-i18n="about-p1">นักวิเคราะห์อาวุโส (Senior Analyst) ที่ธนาคารแห่งประเทศไทย มุ่งเน้นการประยุกต์ใช้วิทยาการข้อมูลกับนโยบายสาธารณะและการวิจัยทางเศรษฐกิจ เชี่ยวชาญการใช้เศรษฐมิติ การเรียนรู้เชิงลึก (Deep Learning) และการวิเคราะห์ข้อมูลเชิงพื้นที่ (Geospatial analysis) เพื่อขับเคลื่อนการตัดสินใจเชิงนโยบาย</p>
+<p class="leading-relaxed" data-i18n="about-p2">ออกไปสำรวจเส้นทางธรรมชาติใหม่ๆ เมื่อว่างงาน</p>
+<div class="mt-8 bg-white rounded-xl shadow-sm border border-gray-200 p-6 flex flex-wrap gap-4">
+<a class="inline-flex items-center px-4 py-2 bg-brand-50 text-brand-700 rounded-lg hover:bg-brand-100 transition" href="mailto:jirawat.p@outlook.com">
+<i class="fas fa-envelope mr-2"></i> <span data-i18n="btn-email">อีเมล</span>
+</a>
+<a class="inline-flex items-center px-4 py-2 border border-gray-300 text-slate-700 rounded-lg hover:bg-gray-50 transition" href="../cv.html">
+<i class="fas fa-file-alt mr-2"></i> <span data-i18n="btn-resume">ประวัติ</span>
+</a>
+</div>
+</div>
+</section>
+<section class="scroll-mt-20" id="projects">
+<h2 class="text-3xl font-bold text-slate-800 mb-8 tracking-tight" data-i18n="projects-title">ผลงาน</h2>
+<!-- Custom Tab Navigation -->
+<div class="border-b border-gray-200 mb-8">
+<nav aria-label="Tabs" class="-mb-px tab-nav-wrap">
+<button class="tab-btn active border-brand-500 text-brand-600 py-4 px-1 border-b-2 font-medium text-sm md:text-base" id="btn-pubs-tab" onclick="switchTab('pubs-tab')">
+<span data-i18n="tab-pubs">รายงาน</span>
+</button>
+<button class="tab-btn border-transparent text-slate-500 hover:text-slate-700 hover:border-gray-300 py-4 px-1 border-b-2 font-medium text-sm md:text-base" id="btn-articles-tab" onclick="switchTab('articles-tab')">
+<span data-i18n="tab-articles">บทความ</span>
+</button>
+<button class="tab-btn border-transparent text-slate-500 hover:text-slate-700 hover:border-gray-300 py-4 px-1 border-b-2 font-medium text-sm md:text-base" id="btn-featured-tab" onclick="switchTab('featured-tab')">
+<span data-i18n="tab-projects">โปรเจกต์</span>
+</button>
+</nav>
+</div>
+<!-- Tab Contents -->
+<div class="tab-content hidden fade-in" id="featured-tab">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Project Card 1 -->
+<div class="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col h-full md:col-span-2 lg:col-span-1">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-xl font-bold text-slate-800"><a class="hover:text-brand-600" href="#">Provincial public data</a></h3>
+<span class="bg-green-100 text-green-700 text-xs font-semibold px-2.5 py-0.5 rounded animate-pulse">In Progress</span>
+</div>
+<p class="text-sm font-medium text-brand-600 mb-3"><i class="fas fa-database mr-1"></i> Data Engineering &amp; Analysis</p>
+<p class="text-slate-600 text-sm mb-6 flex-grow">
+                                A comprehensive data pipeline initiative to collect, clean, and visualize provincial-level public data for accessible economic and demographic insights.
+                            </p>
+<div class="flex flex-wrap gap-2 mt-auto">
+<span class="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded border border-blue-100">Python</span>
+<span class="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded border border-blue-100">Pandas</span>
+<span class="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded border border-blue-100">Geospatial</span>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-content block fade-in" id="pubs-tab">
+<div class="bg-white rounded-xl border border-gray-200 p-0 overflow-hidden">
+<ul class="divide-y divide-gray-200">
+<li class="p-6 hover:bg-slate-50 transition">
+<a class="block group" href="https://jpnick.github.io/myanmar/" rel="noopener noreferrer" target="_blank">
+<div class="flex items-start justify-between">
+<h4 class="text-lg font-bold text-slate-800 group-hover:text-brand-600 transition mb-1">
+                                            Mapping Myanmar's Post-Coup Illicit Economies via Nighttime Lights
+                                        </h4>
+<i class="fas fa-external-link-alt text-slate-400 group-hover:text-brand-600 text-xs ml-2 mt-1"></i>
+</div>
+<p class="text-sm text-brand-600 font-medium mb-2"><i class="fas fa-satellite mr-1"></i> Research &amp; Remote Sensing</p>
+<p class="text-slate-600 text-sm">An empirical study mapping changes in Myanmar's post-coup illicit economic activities using nighttime lights satellite imagery.</p>
+</a>
+</li>
+<li class="p-6 hover:bg-slate-50 transition">
+<a class="block group" href="https://jpnick.github.io/haze/" rel="noopener noreferrer" target="_blank">
+<div class="flex items-start justify-between">
+<h4 class="text-lg font-bold text-slate-800 group-hover:text-brand-600 transition mb-1">
+                                            The Impact of Transboundary Haze on Lung Cancer Mortality in Thailand
+                                        </h4>
+<i class="fas fa-external-link-alt text-slate-400 group-hover:text-brand-600 text-xs ml-2 mt-1"></i>
+</div>
+<p class="text-sm text-brand-600 font-medium mb-2"><i class="fas fa-smog mr-1"></i> Environmental Economics &amp; Public Health</p>
+<p class="text-slate-600 text-sm">An econometric analysis examining the public health consequences and long-term lung cancer mortality costs driven by transboundary air pollution across Thai provinces.</p>
+</a>
+</li>
+<li class="p-6 hover:bg-slate-50 transition">
+<a class="block group" href="https://digital.library.tu.ac.th/tu_dc/frontend/Info/item/dc:93819" rel="noopener noreferrer" target="_blank">
+<div class="flex items-start justify-between">
+<h4 class="text-lg font-bold text-slate-800 group-hover:text-brand-600 transition mb-1" data-i18n="pub-3-title">การพยากรณ์ผลิตภัณฑ์มวลรวมภายในประเทศของไทยในระยะสั้นด้วยแบบจำลอง Bridge</h4>
+<i class="fas fa-external-link-alt text-slate-400 group-hover:text-brand-600 text-xs ml-2 mt-1"></i>
+</div>
+<p class="text-sm text-brand-600 font-medium mb-2"><i class="fas fa-chart-line mr-1"></i> Macroeconometrics &amp; Forecasting</p>
+<p class="text-slate-600 text-sm">A study on short-term forecasting of Thailand's Gross Domestic Product (GDP) using Bridge models with monthly indicator variables.</p>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- Articles Tab -->
+<div class="tab-content hidden fade-in" id="articles-tab">
+<div class="article-grid"><div class="article-card"><div class="article-meta"><span class="article-tag">Research &amp; Policy</span><time class="article-date">Sep 2026</time></div><h3 class="article-title"><a class="thai-text" href="https://jpnick.github.io/articles/china26/" lang="th" rel="noopener noreferrer" target="_blank">การพัฒนาชนบทและเกษตรสมัยใหม่ของจีน</a></h3><p class="article-source">JP-NICK</p><div class="article-footer"><span class="text-slate-400"><i class="far fa-file-lines mr-1"></i> Article</span><a class="article-link" href="https://jpnick.github.io/articles/china26/" rel="noopener noreferrer" target="_blank"><span data-i18n="read-more">อ่านเพิ่มเติม</span><i class="fas fa-arrow-up-right-from-square text-[10px]"></i></a></div></div><div class="article-card"><div class="article-meta"><span class="article-tag">Trade &amp; Commerce</span><time class="article-date">Apr 2026</time></div><h3 class="article-title"><a class="thai-text" href="https://thaipublica.org/2026/04/setthakittiddin16-northern-border-trade-shifting-balance/" lang="th" rel="noopener noreferrer" target="_blank">การค้าชายแดนภาคเหนือกำลังเปลี่ยนสมดุล</a></h3><p class="article-source">ThaiPublica</p><div class="article-footer"><span class="text-slate-400"><i class="far fa-file-lines mr-1"></i> Article</span><a class="article-link" href="https://thaipublica.org/2026/04/setthakittiddin16-northern-border-trade-shifting-balance/" rel="noopener noreferrer" target="_blank"><span data-i18n="read-more">อ่านเพิ่มเติม</span><i class="fas fa-arrow-up-right-from-square text-[10px]"></i></a></div></div><div class="article-card"><div class="article-meta"><span class="article-tag">Economics &amp; Education</span><time class="article-date">Mar 2026</time></div><h3 class="article-title"><a href="https://www.econ.cmu.ac.th/th/event-news/a1235d1a-439e-4ad6-ba58-e52052b02b8f" rel="noopener noreferrer" target="_blank">Macro Holiday 2026: “π (Pi) Day – Inflation Beyond the Classroom”</a></h3><p class="article-source">Faculty of Economics, Chiang Mai University</p><div class="article-footer"><span class="text-slate-400"><i class="far fa-file-lines mr-1"></i> Article</span><a class="article-link" href="https://www.econ.cmu.ac.th/th/event-news/a1235d1a-439e-4ad6-ba58-e52052b02b8f" rel="noopener noreferrer" target="_blank"><span data-i18n="read-more">อ่านเพิ่มเติม</span><i class="fas fa-arrow-up-right-from-square text-[10px]"></i></a></div></div><div class="article-card"><div class="article-meta"><span class="article-tag">Regional Economics</span><time class="article-date">Oct 2023</time></div><h3 class="article-title"><a class="thai-text" href="https://www.bot.or.th/th/research-and-publications/articles-and-publications/articles/regional-articles/reg-article-2023-10-09.html" lang="th" rel="noopener noreferrer" target="_blank">URBANIZATION การขยายตัวของเมืองในภูมิภาค</a></h3><p class="article-source">Bank of Thailand</p><div class="article-footer"><span class="text-slate-400"><i class="far fa-file-lines mr-1"></i> Article</span><a class="article-link" href="https://www.bot.or.th/th/research-and-publications/articles-and-publications/articles/regional-articles/reg-article-2023-10-09.html" rel="noopener noreferrer" target="_blank"><span data-i18n="read-more">อ่านเพิ่มเติม</span><i class="fas fa-arrow-up-right-from-square text-[10px]"></i></a></div></div><div class="article-card"><div class="article-meta"><span class="article-tag">Public Policy</span><time class="article-date">Sep 2021</time></div><h3 class="article-title"><a class="thai-text" href="https://www.bot.or.th/th/research-and-publications/articles-and-publications/articles/regional-articles/reg-article-2021-09.html" lang="th" rel="noopener noreferrer" target="_blank">ลดความเหลื่อมล้ำบ้านเกิดด้วย Hometown Tax</a></h3><p class="article-source">Bank of Thailand</p><div class="article-footer"><span class="text-slate-400"><i class="far fa-file-lines mr-1"></i> Article</span><a class="article-link" href="https://www.bot.or.th/th/research-and-publications/articles-and-publications/articles/regional-articles/reg-article-2021-09.html" rel="noopener noreferrer" target="_blank"><span data-i18n="read-more">อ่านเพิ่มเติม</span><i class="fas fa-arrow-up-right-from-square text-[10px]"></i></a></div></div><div class="article-card"><div class="article-meta"><span class="article-tag">Data Visualization</span><time class="article-date">Oct 2020</time></div><h3 class="article-title"><a class="thai-text" href="https://thaipublica.org/2020/10/bot-data-viz-art03-corporate-convergence/" lang="th" rel="noopener noreferrer" target="_blank">โครงการ BOT Data Viz Art สื่อสารแบบใหม่: “Corporate Convergence” เปิดภาพโครงสร้างธุรกิจไทย "กระจุก-กระจาย" รายภูมิภาค</a></h3><p class="article-source">ThaiPublica</p><div class="article-footer"><span class="text-slate-400"><i class="far fa-file-lines mr-1"></i> Article</span><a class="article-link" href="https://thaipublica.org/2020/10/bot-data-viz-art03-corporate-convergence/" rel="noopener noreferrer" target="_blank"><span data-i18n="read-more">อ่านเพิ่มเติม</span><i class="fas fa-arrow-up-right-from-square text-[10px]"></i></a></div></div></div>
+</div>
+</section>
+<!-- Lectures & Teaching Section -->
+<section class="scroll-mt-20" id="teaching">
+<h2 class="text-3xl font-bold text-slate-800 mb-4 tracking-tight" data-i18n="teaching-title">การสอน &amp; บรรยาย</h2>
+<p class="text-slate-600 mb-8 text-lg" data-i18n="teaching-desc">I enjoy sharing knowledge and have had the opportunity to teach or speak at various events.</p>
+<div class="space-y-6">
+<div class="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-lg transition-all duration-300">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<span class="inline-block bg-purple-50 text-purple-700 text-xs font-semibold px-2.5 py-1 rounded mb-2">
+<i class="fas fa-university mr-1"></i> Faculty of Arts, Silpakorn University
+                                </span>
+<h3 class="text-xl font-bold text-slate-800 hover:text-brand-600 transition mb-2">
+<a href="https://jpnick.github.io/finance/" rel="noopener noreferrer" target="_blank">
+                                        Economics of Finance and Corporate Finance
+                                    </a>
+</h3>
+<p class="text-slate-600 text-sm">
+                                    Course materials, lecture notes, and topics covering financial economics, asset valuation, capital structure, and corporate finance decision-making.
+                                </p>
+</div>
+<div class="shrink-0">
+<a class="inline-flex items-center px-4 py-2 bg-brand-50 text-brand-700 rounded-lg hover:bg-brand-100 font-medium text-sm transition" href="https://jpnick.github.io/finance/" rel="noopener noreferrer" target="_blank">
+<i class="fas fa-external-link-alt mr-2"></i> View Course
+                                </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="scroll-mt-20" id="travel">
+<h2 class="text-3xl font-bold text-slate-800 mb-4 tracking-tight" data-i18n="travel-title">บล็อกท่องเที่ยว</h2>
+<p class="text-slate-600 mb-8 text-lg" data-i18n="travel-desc">Exploring the world provides new perspectives. Here are some highlights from my recent trips.</p>
+<!-- Travel Subsections / Country Navigation Filter -->
+<div class="border-b border-gray-200 mb-8">
+<nav aria-label="Travel Regions" class="-mb-px tab-nav-wrap">
+<button class="travel-tab-btn active border-brand-500 text-brand-600 py-3 px-1 border-b-2 font-medium text-sm md:text-base transition-all" id="btn-travel-japan" onclick="filterTravel('japan')">
+<i class="fas fa-torii-gate mr-1.5"></i><span data-i18n="travel-tab-japan">ญี่ปุ่น</span>
+</button>
+<button class="travel-tab-btn border-transparent text-slate-500 hover:text-slate-700 hover:border-gray-300 py-3 px-1 border-b-2 font-medium text-sm md:text-base transition-all" id="btn-travel-europe" onclick="filterTravel('europe')">
+<i class="fas fa-landmark mr-1.5"></i><span data-i18n="travel-tab-europe">ยุโรป</span>
+</button>
+<button class="travel-tab-btn border-transparent text-slate-500 hover:text-slate-700 hover:border-gray-300 py-3 px-1 border-b-2 font-medium text-sm md:text-base transition-all" id="btn-travel-america" onclick="filterTravel('america')">
+<i class="fas fa-mountain mr-1.5"></i><span data-i18n="travel-tab-america">อเมริกา</span>
+</button>
+<button class="travel-tab-btn border-transparent text-slate-500 hover:text-slate-700 hover:border-gray-300 py-3 px-1 border-b-2 font-medium text-sm md:text-base transition-all" id="btn-travel-asia" onclick="filterTravel('asia')">
+<i class="fas fa-synagogue mr-1.5"></i><span data-i18n="travel-tab-asia">เอเชีย</span>
+</button>
+</nav>
+</div>
+<div class="space-y-12" id="travel-posts-container">
+<!-- Blog Post - Japan -->
+<article class="travel-post group fade-in" data-region="japan">
+<div class="flex flex-col md:flex-row gap-6 items-start">
+<div class="w-full md:w-1/3 shrink-0 overflow-hidden rounded-xl">
+<img alt="Kyoto" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-500" src="https://placehold.co/600x400/94a3b8/ffffff?text=Kyoto+Japan"/>
+</div>
+<div class="w-full md:w-2/3">
+<span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded tracking-wider uppercase"><i class="fas fa-map-marker-alt mr-1"></i> Kyoto, Japan</span>
+<h3 class="text-2xl font-bold text-slate-800 mt-2 mb-2 group-hover:text-brand-600 transition">Autumn in the Historic Capital</h3>
+<p class="text-xs text-slate-400 mb-4 font-mono"><i class="far fa-calendar-alt mr-1"></i> Visited: November 2025</p>
+<p class="text-slate-600 mb-4">
+                                    Visiting the Fushimi Inari Shrine early in the morning before the crowds arrived was a surreal experience. The hike up the mountain offered beautiful views. Trying authentic matcha and local street food at the Nishiki Market was definitely a culinary highlight.
+                                </p>
+<blockquote class="border-l-4 border-brand-400 bg-brand-50 p-4 rounded-r-lg text-brand-900 text-sm italic">
+                                    "There is a palpable sense of peace walking through paths that have been tread upon for centuries."
+                                </blockquote>
+</div>
+</div>
+</article>
+<!-- Blog Post - Europe -->
+<article class="travel-post group fade-in hidden" data-region="europe">
+<div class="flex flex-col md:flex-row gap-6 items-start">
+<div class="w-full md:w-1/3 shrink-0 overflow-hidden rounded-xl">
+<img alt="Central Europe" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-500" src="https://placehold.co/600x400/0ea5e9/ffffff?text=Central+Europe"/>
+</div>
+<div class="w-full md:w-2/3">
+<span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded tracking-wider uppercase"><i class="fas fa-map-marker-alt mr-1"></i> Central Europe</span>
+<h3 class="text-2xl font-bold text-slate-800 mt-2 mb-2 group-hover:text-brand-600 transition">From Budapest to the Matterhorn</h3>
+<p class="text-xs text-slate-400 mb-4 font-mono"><i class="far fa-calendar-alt mr-1"></i> Visited: August 2025</p>
+<p class="text-slate-600 mb-4">
+                                    A memorable journey stretching from the historic thermal baths and stunning architecture of Budapest, through the heart of Europe, culminating in the breathtaking alpine vistas beneath the iconic Matterhorn in Zermatt.
+                                </p>
+</div>
+</div>
+</article>
+<!-- Blog Post - America -->
+<article class="travel-post group fade-in hidden" data-region="america">
+<div class="flex flex-col md:flex-row gap-6 items-start">
+<div class="w-full md:w-1/3 shrink-0 overflow-hidden rounded-xl">
+<img alt="Hawaii" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-500" src="https://placehold.co/600x400/64748b/ffffff?text=Hawaii"/>
+</div>
+<div class="w-full md:w-2/3">
+<span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded tracking-wider uppercase"><i class="fas fa-map-marker-alt mr-1"></i> Hawaii, USA</span>
+<h3 class="text-2xl font-bold text-slate-800 mt-2 mb-2 group-hover:text-brand-600 transition">Aloha Spirit and Volcanic Landscapes</h3>
+<p class="text-xs text-slate-400 mb-4 font-mono"><i class="far fa-calendar-alt mr-1"></i> Visited: January 2024</p>
+<p class="text-slate-600 mb-4">
+                                    Our journey to Hawaii was a breathtaking exploration of contrasts. From the moment we landed, the warm embrace of the "Aloha spirit" was palpable—a genuine hospitality deeply rooted in native culture. We spent our days navigating the diverse microclimates of the islands, venturing from lush, cascading waterfalls to the stark, lunar-like landscapes of Hawaiʻi Volcanoes National Park.
+                                </p>
+<p class="text-slate-600 mb-4">
+                                    Standing near the smoking caldera of Kīlauea and feeling the raw, geological power of the earth was a humbling experience that puts human existence into perspective.
+                                </p>
+<blockquote class="border-l-4 border-brand-400 bg-brand-50 p-4 rounded-r-lg text-brand-900 text-sm italic">
+                                    "The Aloha spirit isn't just a greeting; it's a way of living in harmony with people and the powerful land that shapes them."
+                                </blockquote>
+</div>
+</div>
+</article>
+<!-- Blog Post - Asia -->
+<article class="travel-post group fade-in hidden" data-region="asia">
+<div class="flex flex-col md:flex-row gap-6 items-start">
+<div class="w-full md:w-1/3 shrink-0 overflow-hidden rounded-xl">
+<img alt="Beijing" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-500" src="https://placehold.co/600x400/0284c7/ffffff?text=Beijing"/>
+</div>
+<div class="w-full md:w-2/3">
+<span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded tracking-wider uppercase"><i class="fas fa-map-marker-alt mr-1"></i> Beijing, China</span>
+<h3 class="text-2xl font-bold text-slate-800 mt-2 mb-2 group-hover:text-brand-600 transition">Ancient History in a Modern Metropolis</h3>
+<p class="text-xs text-slate-400 mb-4 font-mono"><i class="far fa-calendar-alt mr-1"></i> Visited: November 2024</p>
+<p class="text-slate-600 mb-4">
+                                    Beijing offers a dizzying blend of ancient history and rapid modernization. Standing at the center of the city, the Forbidden City proved to be an architectural marvel of staggering proportions. Wandering through its endless courtyards and intricate wooden pavilions felt like stepping back into the Ming and Qing dynasties.
+                                </p>
+<p class="text-slate-600 mb-4">
+                                    Equally unforgettable was the hike along the Mutianyu section of the Great Wall. Tracing the stone pathways as they snaked across the jagged ridges of the mountains in the crisp autumn air was a bucket-list moment that photos simply cannot do justice.
+                                </p>
+<blockquote class="border-l-4 border-brand-400 bg-brand-50 p-4 rounded-r-lg text-brand-900 text-sm italic">
+                                    "To climb the Great Wall is to feel the immense weight of centuries of history beneath your feet."
+                                </blockquote>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Footer -->
+<footer class="pt-12 pb-8 border-t border-gray-200 mt-12">
+<p class="text-center text-slate-500 text-sm">
+<span data-i18n="footer-text">ขอบคุณที่เยี่ยมชมเว็บไซต์ของฉัน! หากคุณต้องการร่วมงานกันหรือแค่ทักทาย อย่าลังเลที่จะติดต่อมา</span><br/>
+                    © 2026 จิรวัฒน์ ภู่งาม (นิกส์) สงวนลิขสิทธิ์
+                </p>
+</footer>
+</div>
+</main>
+<script>
+        // Tab Switching Logic for Projects Section
+        function switchTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('block');
+            });
+            
+            // Remove active state from all tab buttons
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('active', 'border-brand-500', 'text-brand-600');
+                el.classList.add('border-transparent', 'text-slate-500');
+            });
+
+            // Show selected tab content
+            const targetContent = document.getElementById(tabId);
+            if (targetContent) {
+                targetContent.classList.remove('hidden');
+                targetContent.classList.add('block');
+            }
+
+            // Set active state on clicked button
+            const targetBtn = document.getElementById('btn-' + tabId);
+            if (targetBtn) {
+                targetBtn.classList.remove('border-transparent', 'text-slate-500');
+                targetBtn.classList.add('active', 'border-brand-500', 'text-brand-600');
+            }
+        }
+
+        // Initialize first tab as active explicitly on load just to be safe
+        window.addEventListener('DOMContentLoaded', () => {
+            switchTab('pubs-tab');
+            filterTravel('japan');
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function toggleMenu() {
+            const isClosed = sidebar.classList.contains('-translate-x-full');
+            if (isClosed) {
+                sidebar.classList.remove('-translate-x-full');
+                sidebarOverlay.classList.remove('hidden');
+            } else {
+                sidebar.classList.add('-translate-x-full');
+                sidebarOverlay.classList.add('hidden');
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        sidebarOverlay.addEventListener('click', toggleMenu);
+        
+        // Close menu when a link is clicked on mobile
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768) { // md breakpoint
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Internationalization (i18n) Logic
+        const translations = {
+            en: {
+                "name": "Jirawat Poongam (NICK)",
+                "subtitle": "Economist | Explorer",
+                "nav-about": "About",
+                "nav-projects": "Work & Projects",
+                "nav-teaching": "Lectures",
+                "nav-travel": "Travel Blog",
+                "about-title": "About Me",
+                "about-p1": "Senior Analyst at the Bank of Thailand with a focus on applying data science to public policy and economic research. Expert in utilizing Econometrics, Deep Learning, and Geospatial analysis to drive evidence-based decision-making.",
+                "about-p2": "When I'm not working, you can find me exploring new trails.",
+                "btn-email": "Email",
+                "btn-resume": "Resume",
+                "projects-title": "Work & Projects",
+                "tab-projects": "Projects",
+                "tab-pubs": "Reports",
+                "tab-articles": "Articles",
+                "pub-3-title": "Nowcasting Thailand's GDP using Bridge Equation",
+                "read-more": "Read More",
+                "article-1-desc": "An in-depth guide on designing resilient ETL pipelines using modern open-source architecture.",
+                "article-2-desc": "Exploring active learning techniques to increase student engagement in technical subjects.",
+                "teaching-title": "Lectures & Teaching",
+                "teaching-desc": "",
+                "topics-covered": "Topics Covered",
+                "link-slides": "Slides (PDF)",
+                "link-repo": "Code Repo",
+                "link-video": "Video Recording",
+                "link-notes": "Notes",
+                "travel-title": "Travel Blog",
+                "travel-desc": "",
+                "travel-tab-japan": "Japan",
+                "travel-tab-europe": "Europe",
+                "travel-tab-america": "America",
+                "travel-tab-asia": "Asia",
+                "footer-text": "Thank you for visiting my site! Feel free to reach out if you'd like to collaborate or just say hi.",
+                "lang-btn-text": "Switch to Thai",
+                "mobile-lang-btn": "TH"
+            },
+            th: {
+                "name": "จิรวัฒน์ ภู่งาม (นิกส์)",
+                "subtitle": "เศรษฐกร | นักสำรวจ",
+                "nav-about": "เกี่ยวกับฉัน",
+                "nav-projects": "ผลงาน & โปรเจกต์",
+                "nav-teaching": "การสอน & บรรยาย",
+                "nav-travel": "บล็อกท่องเที่ยว",
+                "about-title": "เกี่ยวกับฉัน",
+                "about-p1": "นักวิเคราะห์อาวุโส (Senior Analyst) ที่ธนาคารแห่งประเทศไทย มุ่งเน้นการประยุกต์ใช้วิทยาการข้อมูลกับนโยบายสาธารณะและการวิจัยทางเศรษฐกิจ เชี่ยวชาญการใช้เศรษฐมิติ การเรียนรู้เชิงลึก (Deep Learning) และการวิเคราะห์ข้อมูลเชิงพื้นที่ (Geospatial analysis) เพื่อขับเคลื่อนการตัดสินใจเชิงนโยบาย",
+                "about-p2": "ออกไปสำรวจเส้นทางธรรมชาติใหม่ๆ เมื่อว่างงาน",
+                "btn-email": "อีเมล",
+                "btn-resume": "ประวัติ",
+                "projects-title": "ผลงาน",
+                "tab-projects": "โปรเจกต์",
+                "tab-pubs": "รายงาน",
+                "tab-articles": "บทความ",
+                "pub-3-title": "การพยากรณ์ผลิตภัณฑ์มวลรวมภายในประเทศของไทยในระยะสั้นด้วยแบบจำลอง Bridge",
+                "read-more": "อ่านเพิ่มเติม",
+                "article-1-desc": "คู่มือเชิงลึกเกี่ยวกับการออกแบบ ETL Pipeline ที่แข็งแกร่งโดยใช้สถาปัตยกรรมโอเพ่นซอร์สสมัยใหม่",
+                "article-2-desc": "การสำรวจเทคนิคการเรียนรู้แบบมีส่วนร่วมเพื่อเพิ่มความสนใจของนักเรียนในวิชาทางเทคนิค",
+                "teaching-title": "การสอน & บรรยาย",
+                "teaching-desc": "",
+                "topics-covered": "หัวข้อที่ครอบคลุม",
+                "link-slides": "สไลด์ (PDF)",
+                "link-repo": "คลังโค้ด",
+                "link-video": "บันทึกวิดีโอ",
+                "link-notes": "บันทึกย่อ",
+                "travel-title": "บล็อกท่องเที่ยว",
+                "travel-desc": "",
+                "travel-tab-japan": "ญี่ปุ่น",
+                "travel-tab-europe": "ยุโรป",
+                "travel-tab-america": "อเมริกา",
+                "travel-tab-asia": "เอเชีย",
+                "footer-text": "ขอบคุณที่เยี่ยมชมเว็บไซต์ของฉัน! หากคุณต้องการร่วมงานกันหรือแค่ทักทาย อย่าลังเลที่จะติดต่อมา",
+                "lang-btn-text": "Switch to English",
+                "mobile-lang-btn": "EN"
+            }
+        };
+
+        // Filter Travel Posts by Region
+        function filterTravel(region) {
+            document.querySelectorAll('.travel-tab-btn').forEach(btn => {
+                btn.classList.remove('active', 'border-brand-500', 'text-brand-600');
+                btn.classList.add('border-transparent', 'text-slate-500');
+            });
+
+            const activeBtn = document.getElementById('btn-travel-' + region);
+            if (activeBtn) {
+                activeBtn.classList.remove('border-transparent', 'text-slate-500');
+                activeBtn.classList.add('active', 'border-brand-500', 'text-brand-600');
+            }
+
+            const posts = document.querySelectorAll('.travel-post');
+            const dividers = document.querySelectorAll('.travel-divider');
+
+            posts.forEach(post => {
+                if (post.getAttribute('data-region') === region) {
+                    post.classList.remove('hidden');
+                } else {
+                    post.classList.add('hidden');
+                }
+            });
+
+            dividers.forEach(div => {
+                div.classList.add('hidden'); // Always hide dividers when viewing a single region
+            });
+        }
+
+        function toggleLanguage() {
+            const target = document.documentElement.lang === 'th' ? '/' : '/th/';
+            window.location.href = target + window.location.hash;
+        }
+
+        document.getElementById('lang-toggle-btn').addEventListener('click', toggleLanguage);
+        document.getElementById('mobile-lang-btn').addEventListener('click', toggleLanguage);
+
+    </script>
+<script>
+function updateThemeIcons(){
+ const dark=document.documentElement.classList.contains('dark');
+ document.querySelectorAll('#theme-toggle-btn, #mobile-theme-btn').forEach(b=>{const i=b.querySelector('i'); if(i)i.className=dark?'fas fa-sun':'fas fa-moon'; b.title=dark?'Switch to day mode':'Switch to night mode';});
+}
+function toggleTheme(){
+ document.documentElement.classList.toggle('dark');
+ localStorage.setItem('theme',document.documentElement.classList.contains('dark')?'dark':'light');
+ updateThemeIcons();
+}
+document.getElementById('theme-toggle-btn').addEventListener('click',toggleTheme);
+document.getElementById('mobile-theme-btn').addEventListener('click',toggleTheme);
+updateThemeIcons();
+</script></body>
+</html>
