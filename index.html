@@ -4,11 +4,44 @@
 <head>
 <script>if (localStorage.getItem('theme') === 'dark') { document.documentElement.classList.add('dark'); }</script><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta name="description"
-        content="Jirawat Poongam — economist and data analyst working on economic research, public policy, data science, regional economics, and applied research.">
-<link rel="canonical" href="https://jpnick.github.io/">
-<meta name="robots" content="index, follow">
+<meta name="description" content="Jirawat Poongam (NICK) — Senior Analyst at the Bank of Thailand. Economist and data analyst working on economic research, public policy, data science and regional economics.">
 <title>Jirawat Poongam | Economist, Data Analyst and Researcher</title>
+<link rel="canonical" href="https://jpnick.github.io/">
+<link rel="alternate" hreflang="en" href="https://jpnick.github.io/">
+<link rel="alternate" hreflang="th" href="https://jpnick.github.io/th/">
+<link rel="alternate" hreflang="x-default" href="https://jpnick.github.io/">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Jirawat Poongam (จิรวัฒน์ ภู่งาม)">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Jirawat Poongam | Economist, Data Analyst and Researcher">
+<meta property="og:description" content="Jirawat Poongam (NICK) — Senior Analyst at the Bank of Thailand. Economist and data analyst working on economic research, public policy, data science and regional economics.">
+<meta property="og:url" content="https://jpnick.github.io/">
+<meta property="og:image" content="https://jpnick.github.io/me.jpg">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="th_TH">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jirawat Poongam",
+  "alternateName": [
+    "จิรวัฒน์ ภู่งาม",
+    "Nick Jirawat Poongam",
+    "Jirawat Poongam (NICK)"
+  ],
+  "jobTitle": "Senior Analyst",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Bank of Thailand"
+  },
+  "url": "https://jpnick.github.io/",
+  "image": "https://jpnick.github.io/me.jpg",
+  "sameAs": [
+    "https://linkedin.com/in/jirawatp",
+    "https://github.com/jpnick"
+  ]
+}
+</script>
 <!-- Fonts: Inter and Kanit -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -605,33 +638,9 @@
             });
         }
 
-        let currentLang = 'en';
-
         function toggleLanguage() {
-            currentLang = currentLang === 'en' ? 'th' : 'en';
-            
-            // Toggle body class for font family
-            if (currentLang === 'th') {
-                document.body.classList.add('lang-th');
-            } else {
-                document.body.classList.remove('lang-th');
-            }
-
-            // Update texts based on data-i18n attribute
-            document.querySelectorAll('[data-i18n]').forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                if (translations[currentLang][key]) {
-                    // Use innerHTML to preserve bold tags in translations
-                    element.innerHTML = translations[currentLang][key];
-                }
-            });
-
-            // Update button texts specifically
-            const langBtnText = document.getElementById('lang-btn-text');
-            if(langBtnText) langBtnText.textContent = translations[currentLang]['lang-btn-text'];
-            
-            const mobileLangBtn = document.getElementById('mobile-lang-btn');
-            if(mobileLangBtn) mobileLangBtn.textContent = translations[currentLang]['mobile-lang-btn'];
+            const target = document.documentElement.lang === 'th' ? '/' : '/th/';
+            window.location.href = target + window.location.hash;
         }
 
         document.getElementById('lang-toggle-btn').addEventListener('click', toggleLanguage);
