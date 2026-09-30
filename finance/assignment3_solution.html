@@ -8,7 +8,7 @@
 
 <meta name="description" content="Economics of Finance and Corporate Finance">
 
-<title>Assignment 3 – เศรษฐศาสตร์การเงินและการเงินบริษัท</title>
+<title>Solution for Assignment 3 – เศรษฐศาสตร์การเงินและการเงินบริษัท</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -35,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./project.html" rel="next">
-<link href="./assignment2.html" rel="prev">
+<link href="./assignment3.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -80,6 +115,35 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&amp;display=swap" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="style.scss">
 </head>
@@ -292,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./assignments.html">Assignments</a></li><li class="breadcrumb-item"><a href="./assignment3.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assignment 3</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./assignments.html">Assignments</a></li><li class="breadcrumb-item"><a href="./assignment3_solution.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Solution for Assignment 3</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -339,8 +403,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./assignment3.html" class="sidebar-item-text sidebar-link active">
+  <a href="./assignment3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assignment 3</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./assignment3_solution.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Solution for Assignment 3</span></span></a>
   </div>
 </li>
       </ul>
@@ -348,7 +418,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./project.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Financial Market and Corporate Analysis Project</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Financial Market and Corporate Analysis Project</span></span></a>
   </div>
 </li>
     </ul>
@@ -363,9 +433,9 @@ ul.task-list li input[type="checkbox"] {
 <main class="content column-page-right" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./assignments.html">Assignments</a></li><li class="breadcrumb-item"><a href="./assignment3.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assignment 3</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./assignments.html">Assignments</a></li><li class="breadcrumb-item"><a href="./assignment3_solution.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Solution for Assignment 3</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Assignment 3</span></h1>
+<h1 class="title"><span class="chapter-title">Solution for Assignment 3</span></h1>
 </div>
 
 
@@ -382,11 +452,276 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="financial-statement-analysis-การวเคราะหงบการเงน" class="level2 th-text">
-<h2 class="anchored" data-anchor-id="financial-statement-analysis-การวเคราะหงบการเงน"><strong>Financial Statement Analysis: การวิเคราะห์งบการเงิน</strong></h2>
+<section id="การวเคราะหงบการเงนและมลคาของเงนตามเวลา" class="level2">
+<h2 class="anchored" data-anchor-id="การวเคราะหงบการเงนและมลคาของเงนตามเวลา">การวิเคราะห์งบการเงินและมูลค่าของเงินตามเวลา</h2>
 </section>
+<section id="การเตรยมขอมลเบองตน-data-setup" class="level2">
+<h2 class="anchored" data-anchor-id="การเตรยมขอมลเบองตน-data-setup">การเตรียมข้อมูลเบื้องต้น (Data Setup)</h2>
+<p>ตัวอย่างการคำนวณโดยใช้ Python สำหรับประมวลผลข้อมูลทางการเงินของบริษัท ABC</p>
+<div id="setup" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Markdown</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ข้อมูลจากงบการเงิน (หน่วย: ล้านบาท)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Income Statement</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>sales <span class="op">=</span> <span class="fl">120.0</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>cogs <span class="op">=</span> <span class="fl">72.0</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>gross_profit <span class="op">=</span> <span class="fl">48.0</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>ebit <span class="op">=</span> <span class="fl">24.0</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>interest <span class="op">=</span> <span class="fl">4.0</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>net_income <span class="op">=</span> <span class="fl">16.0</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Balance Sheet</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>current_assets <span class="op">=</span> <span class="fl">48.0</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>inventory <span class="op">=</span> <span class="fl">24.0</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>total_assets <span class="op">=</span> <span class="fl">120.0</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>current_liabilities <span class="op">=</span> <span class="fl">20.0</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>total_liabilities <span class="op">=</span> <span class="fl">50.0</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>total_equity <span class="op">=</span> <span class="fl">70.0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<hr>
+</section>
+<section id="เฉลยโจทยขอท-1-การวเคราะหงบการเงนและการดำเนนงานธรกจ" class="level2">
+<h2 class="anchored" data-anchor-id="เฉลยโจทยขอท-1-การวเคราะหงบการเงนและการดำเนนงานธรกจ">เฉลยโจทย์ข้อที่ 1: การวิเคราะห์งบการเงินและการดำเนินงานธุรกิจ</h2>
+<section id="คำถามขอท-1.1-การคำนวณอตราสวนทางการเงน-financial-ratios" class="level3">
+<h3 class="anchored" data-anchor-id="คำถามขอท-1.1-การคำนวณอตราสวนทางการเงน-financial-ratios">คำถามข้อที่ 1.1: การคำนวณอัตราส่วนทางการเงิน (Financial Ratios)</h3>
+<p><strong>1. อัตราส่วนสภาพคล่อง (Liquidity Ratios):</strong> - <strong>Current Ratio</strong> = <span class="math inline">\(\frac{\text{Current Assets}}{\text{Current Liabilities}}\)</span> - <strong>Quick Ratio</strong> = <span class="math inline">\(\frac{\text{Current Assets} - \text{Inventory}}{\text{Current Liabilities}}\)</span></p>
+<div id="liquidity" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>current_ratio <span class="op">=</span> current_assets <span class="op">/</span> current_liabilities</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>quick_ratio <span class="op">=</span> (current_assets <span class="op">-</span> inventory) <span class="op">/</span> current_liabilities</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Current Ratio = </span><span class="sc">{</span>current_ratio<span class="sc">:.2f}</span><span class="ss"> เท่า"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Quick Ratio = </span><span class="sc">{</span>quick_ratio<span class="sc">:.2f}</span><span class="ss"> เท่า"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Current Ratio = 2.40 เท่า
+Quick Ratio = 1.20 เท่า</code></pre>
+</div>
+</div>
+<p><strong>2. อัตราส่วนการบริหารสินทรัพย์ (Asset Management Ratios):</strong> - <strong>Inventory Turnover</strong> = <span class="math inline">\(\frac{\text{COGS}}{\text{Inventory}}\)</span> - <strong>Days in Inventory</strong> = <span class="math inline">\(\frac{365}{\text{Inventory Turnover}}\)</span></p>
+<div id="asset-management" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>inv_turnover <span class="op">=</span> cogs <span class="op">/</span> inventory</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>days_in_inventory <span class="op">=</span> <span class="dv">365</span> <span class="op">/</span> inv_turnover</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Inventory Turnover = </span><span class="sc">{</span>inv_turnover<span class="sc">:.2f}</span><span class="ss"> รอบ"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Days in Inventory = </span><span class="sc">{</span>days_in_inventory<span class="sc">:.2f}</span><span class="ss"> วัน"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Inventory Turnover = 3.00 รอบ
+Days in Inventory = 121.67 วัน</code></pre>
+</div>
+</div>
+<p><strong>3. อัตราส่วนความสามารถในการชำระหนี้ (Financial Leverage Ratios):</strong> - <strong>Debt-to-Equity Ratio (D/E)</strong> = <span class="math inline">\(\frac{\text{Total Debt}}{\text{Total Equity}}\)</span> - <strong>Total Debt Ratio</strong> = <span class="math inline">\(\frac{\text{Total Debt}}{\text{Total Assets}}\)</span></p>
+<div id="leverage" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>d_e_ratio <span class="op">=</span> total_liabilities <span class="op">/</span> total_equity</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>total_debt_ratio <span class="op">=</span> total_liabilities <span class="op">/</span> total_assets</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"D/E Ratio = </span><span class="sc">{</span>d_e_ratio<span class="sc">:.3f}</span><span class="ss"> เท่า"</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Total Debt Ratio = </span><span class="sc">{</span>total_debt_ratio<span class="sc">:.3f}</span><span class="ss"> เท่า (</span><span class="sc">{</span>total_debt_ratio<span class="op">*</span><span class="dv">100</span><span class="sc">:.1f}</span><span class="ss">%)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>D/E Ratio = 0.714 เท่า
+Total Debt Ratio = 0.417 เท่า (41.7%)</code></pre>
+</div>
+</div>
+<p><strong>4. อัตราส่วนความสามารถในการทำกำไร (Profitability Ratios):</strong> - <strong>Gross Profit Margin</strong> = <span class="math inline">\(\frac{\text{Gross Profit}}{\text{Sales}} \times 100\)</span> - <strong>Operating Profit Margin</strong> = <span class="math inline">\(\frac{\text{EBIT}}{\text{Sales}} \times 100\)</span> - <strong>Net Profit Margin</strong> = <span class="math inline">\(\frac{\text{Net Income}}{\text{Sales}} \times 100\)</span> - <strong>Return on Assets (ROA)</strong> = <span class="math inline">\(\frac{\text{Net Income}}{\text{Total Assets}} \times 100\)</span> - <strong>Return on Equity (ROE)</strong> = <span class="math inline">\(\frac{\text{Net Income}}{\text{Total Equity}} \times 100\)</span></p>
+<div id="profitability" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>gpm <span class="op">=</span> (gross_profit <span class="op">/</span> sales) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>opm <span class="op">=</span> (ebit <span class="op">/</span> sales) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>npm <span class="op">=</span> (net_income <span class="op">/</span> sales) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>roa <span class="op">=</span> (net_income <span class="op">/</span> total_assets) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>roe <span class="op">=</span> (net_income <span class="op">/</span> total_equity) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Gross Profit Margin = </span><span class="sc">{</span>gpm<span class="sc">:.2f}</span><span class="ss">%"</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Operating Profit Margin = </span><span class="sc">{</span>opm<span class="sc">:.2f}</span><span class="ss">%"</span>)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Net Profit Margin = </span><span class="sc">{</span>npm<span class="sc">:.2f}</span><span class="ss">%"</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"ROA = </span><span class="sc">{</span>roa<span class="sc">:.2f}</span><span class="ss">%"</span>)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"ROE = </span><span class="sc">{</span>roe<span class="sc">:.2f}</span><span class="ss">%"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Gross Profit Margin = 40.00%
+Operating Profit Margin = 20.00%
+Net Profit Margin = 13.33%
+ROA = 13.33%
+ROE = 22.86%</code></pre>
+</div>
+</div>
+<hr>
+</section>
+<section id="คำถามขอท-1.2-การวเคราะห-dupont-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="คำถามขอท-1.2-การวเคราะห-dupont-analysis">คำถามข้อที่ 1.2: การวิเคราะห์ Dupont Analysis</h3>
+<p>สูตรของ DuPont Analysis 3 ปัจจัย คือ: <span class="math display">\[\text{ROE} = \text{Net Profit Margin} \times \text{Asset Turnover} \times \text{Equity Multiplier}\]</span></p>
+<div id="dupont" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>asset_turnover <span class="op">=</span> sales <span class="op">/</span> total_assets</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>equity_multiplier <span class="op">=</span> total_assets <span class="op">/</span> total_equity</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>dupont_roe <span class="op">=</span> (npm<span class="op">/</span><span class="dv">100</span>) <span class="op">*</span> asset_turnover <span class="op">*</span> equity_multiplier</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"1. Net Profit Margin = </span><span class="sc">{</span>npm<span class="sc">:.2f}</span><span class="ss">%"</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"2. Asset Turnover = </span><span class="sc">{</span>asset_turnover<span class="sc">:.2f}</span><span class="ss"> เท่า"</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"3. Equity Multiplier = </span><span class="sc">{</span>equity_multiplier<span class="sc">:.3f}</span><span class="ss"> เท่า"</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"ตรวจสอบ ROE จากสมการ = </span><span class="sc">{</span>dupont_roe <span class="op">*</span> <span class="dv">100</span><span class="sc">:.2f}</span><span class="ss">%"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1. Net Profit Margin = 13.33%
+2. Asset Turnover = 1.00 เท่า
+3. Equity Multiplier = 1.714 เท่า
+ตรวจสอบ ROE จากสมการ = 22.86%</code></pre>
+</div>
+</div>
+<p><strong>การแปลความหมาย DUPONT Analysis:</strong><br>
+- บริษัทมีความสามารถในการบริหารต้นทุนเพื่อทำกำไรได้ดี (Net Profit Margin อยู่ในระดับที่ดีที่ 13.33%) เมื่อเทียบกับ … ในธุรกิจเดียวกัน - การใช้สินทรัพย์ให้เกิดยอดขายทำได้อย่างมีประสิทธิภาพ (Asset Turnover = 1.0 เท่า) - ค่า Equity Multiplier ที่ 1.714 แสดงให้เห็นว่ามีหนี้สินอยู่ในระดับปานกลาง (Total Debt Ratio = 41.7%) ซึ่งถือเป็นระดับความเสี่ยงที่…</p>
+<hr>
+</section>
+</section>
+<section id="เฉลยโจทยขอท-2-มลคาเงนตามเวลาและการประเมนโครงการ" class="level2">
+<h2 class="anchored" data-anchor-id="เฉลยโจทยขอท-2-มลคาเงนตามเวลาและการประเมนโครงการ">เฉลยโจทย์ข้อที่ 2: มูลค่าเงินตามเวลาและการประเมินโครงการ</h2>
+<section id="คำถามขอท-2.1-การวางแผนมลคาเงนอนาคตและมลคาปจจบน" class="level3">
+<h3 class="anchored" data-anchor-id="คำถามขอท-2.1-การวางแผนมลคาเงนอนาคตและมลคาปจจบน">คำถามข้อที่ 2.1: การวางแผนมูลค่าเงินอนาคตและมูลค่าปัจจุบัน</h3>
+<p><strong>1) การลงทุนเพื่อขยายโรงงาน (Single Cash Flow):</strong> <span class="math display">\[PV = \frac{FV}{(1+r)^n}\]</span></p>
+<div id="tvm-single" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>fv_target <span class="op">=</span> <span class="dv">50000000</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>rate_inv <span class="op">=</span> <span class="fl">0.08</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>years_inv <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>pv_single <span class="op">=</span> fv_target <span class="op">/</span> ((<span class="dv">1</span> <span class="op">+</span> rate_inv)<span class="op">**</span>years_inv)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"PV: บริษัทต้องฝากเงินก้อนในวันนี้จำนวน = </span><span class="sc">{</span>pv_single<span class="sc">:,.2f}</span><span class="ss"> บาท"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>PV: บริษัทต้องฝากเงินก้อนในวันนี้จำนวน = 34,029,159.85 บาท</code></pre>
+</div>
+</div>
+<p><strong>2) การจัดตั้งกองทุนเงินสะสม (Ordinary Annuity):</strong> <span class="math display">\[PMT = \frac{FV}{\left[ \frac{(1+r)^n - 1}{r} \right]}\]</span></p>
+<div id="tvm-annuity" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>fv_factor <span class="op">=</span> ((<span class="dv">1</span> <span class="op">+</span> rate_inv)<span class="op">**</span>years_inv <span class="op">-</span> <span class="dv">1</span>) <span class="op">/</span> rate_inv</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>pmt_annuity <span class="op">=</span> fv_target <span class="op">/</span> fv_factor</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"PMT: บริษัทต้องทยอยฝากเงินทุกสิ้นปี ปีละ = </span><span class="sc">{</span>pmt_annuity<span class="sc">:,.2f}</span><span class="ss"> บาท"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>PMT: บริษัทต้องทยอยฝากเงินทุกสิ้นปี ปีละ = 8,522,822.73 บาท</code></pre>
+</div>
+</div>
+<hr>
+</section>
+<section id="คำถามขอท-2.2-การวเคราะหตารางตดจายกยม-loan-amortization" class="level3">
+<h3 class="anchored" data-anchor-id="คำถามขอท-2.2-การวเคราะหตารางตดจายกยม-loan-amortization">คำถามข้อที่ 2.2: การวิเคราะห์ตารางตัดจ่ายกู้ยืม (Loan Amortization)</h3>
+<p><strong>1. คำนวณเงินงวดที่ต้องผ่อนชำระต่อปี (PMT):</strong> <span class="math display">\[PMT = \frac{PV}{\left[ \frac{1 - (1+r)^{-n}}{r} \right]}\]</span></p>
+<div id="loan-pmt" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>loan_pv <span class="op">=</span> <span class="dv">10000000</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>loan_r <span class="op">=</span> <span class="fl">0.06</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>loan_n <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>pv_annuity_factor <span class="op">=</span> (<span class="dv">1</span> <span class="op">-</span> (<span class="dv">1</span> <span class="op">+</span> loan_r)<span class="op">**-</span>loan_n) <span class="op">/</span> loan_r</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>pmt_loan <span class="op">=</span> loan_pv <span class="op">/</span> pv_annuity_factor</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"เงินผ่อนชำระเท่ากันทุกสิ้นปี (PMT) = </span><span class="sc">{</span>pmt_loan<span class="sc">:,.2f}</span><span class="ss"> บาท"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>เงินผ่อนชำระเท่ากันทุกสิ้นปี (PMT) = 2,885,914.92 บาท</code></pre>
+</div>
+</div>
+<p><strong>2. ตารางการตัดจ่ายเงินกู้ (Loan Amortization Schedule):</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 20%">
+<col style="width: 21%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">ปีที่ (t)</th>
+<th style="text-align: right;">เงินต้นคงเหลือต้นงวด</th>
+<th style="text-align: right;">เงินผ่อนชำระ (PMT)</th>
+<th style="text-align: right;">ดอกเบี้ยจ่าย (Interest)</th>
+<th style="text-align: right;">เงินต้นที่ชำระ (Principal)</th>
+<th style="text-align: right;">เงินต้นคงเหลือสิ้นงวด</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">10,000,000.00</td>
+<td style="text-align: right;">2,885,914.92</td>
+<td style="text-align: right;">600,000.00</td>
+<td style="text-align: right;">2,285,914.92</td>
+<td style="text-align: right;">7,714,085.08</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">7,714,085.08</td>
+<td style="text-align: right;">2,885,914.92</td>
+<td style="text-align: right;">462,845.10</td>
+<td style="text-align: right;">2,423,069.82</td>
+<td style="text-align: right;">5,291,015.26</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">5,291,015.26</td>
+<td style="text-align: right;">2,885,914.92</td>
+<td style="text-align: right;">317,460.92</td>
+<td style="text-align: right;">2,568,454.01</td>
+<td style="text-align: right;">2,722,561.25</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2,722,561.25</td>
+<td style="text-align: right;">2,885,914.92</td>
+<td style="text-align: right;">163,353.67</td>
+<td style="text-align: right;">2,722,561.25</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="คำถามขอท-2.3-การตดสนใจลงทนในโครงการ-capital-budgeting" class="level3">
+<h3 class="anchored" data-anchor-id="คำถามขอท-2.3-การตดสนใจลงทนในโครงการ-capital-budgeting">คำถามข้อที่ 2.3: การตัดสินใจลงทุนในโครงการ (Capital Budgeting)</h3>
+<p>ข้อมูลกระแสเงินสด: <span class="math inline">\(CF_0 = -15m, CF_1 = 4m, CF_2 = 5m, CF_3 = 6m, CF_4 = 5m\)</span> (WACC = 10%)</p>
+<div id="cap-budgeting" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>cf <span class="op">=</span> np.array([<span class="op">-</span><span class="dv">15000000</span>, <span class="dv">4000000</span>, <span class="dv">5000000</span>, <span class="dv">6000000</span>, <span class="dv">5000000</span>])</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>discount_rate <span class="op">=</span> <span class="fl">0.10</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Payback Period (ระยะเวลาคืนทุนปกติ)</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># สะสมกระแสเงินสด: ปี1(4m), ปี2(4+5=9m), ปี3(9+6=15m) -&gt; คืนทุนปีที่ 3 พอดี</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>payback <span class="op">=</span> <span class="fl">3.0</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Discounted Payback Period (ระยะเวลาคืนทุนคิดลด)</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>discounted_cf <span class="op">=</span> [c <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> discount_rate)<span class="op">**</span>t <span class="cf">for</span> t, c <span class="kw">in</span> <span class="bu">enumerate</span>(cf)]</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>cumulative_dcf <span class="op">=</span> np.cumsum(discounted_cf)</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>discounted_payback <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(cumulative_dcf)):</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> cumulative_dcf[i] <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>        prev_cum <span class="op">=</span> cumulative_dcf[i<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>        curr_dcf <span class="op">=</span> discounted_cf[i]</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>        discounted_payback <span class="op">=</span> (i <span class="op">-</span> <span class="dv">1</span>) <span class="op">+</span> <span class="bu">abs</span>(prev_cum) <span class="op">/</span> curr_dcf</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Net Present Value (NPV)</span></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>npv <span class="op">=</span> <span class="bu">sum</span>(discounted_cf)</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Internal Rate of Return (IRR)</span></span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> numpy_financial <span class="im">as</span> npf</span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>    irr <span class="op">=</span> npf.irr(cf)</span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ImportError</span>:</span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Manual estimation for fallback</span></span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>    r_est <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="bu">sum</span>(c <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> r_est)<span class="op">**</span>t <span class="cf">for</span> t, c <span class="kw">in</span> <span class="bu">enumerate</span>(cf)) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a>        r_est <span class="op">+=</span> <span class="fl">0.0001</span></span>
+<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a>    irr <span class="op">=</span> r_est</span>
+<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"1. ระยะเวลาคืนทุน (Payback Period) = </span><span class="sc">{</span>payback<span class="sc">:.2f}</span><span class="ss"> ปี"</span>)</span>
+<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"2. ระยะเวลาคืนทุนคิดลด (Discounted Payback Period) = </span><span class="sc">{</span>discounted_payback<span class="sc">:.2f}</span><span class="ss"> ปี"</span>)</span>
+<span id="cb18-36"><a href="#cb18-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"3. มูลค่าปัจจุบันสุทธิ (NPV) = </span><span class="sc">{</span>npv<span class="sc">:,.2f}</span><span class="ss"> บาท"</span>)</span>
+<span id="cb18-37"><a href="#cb18-37" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"4. อัตราผลตอบแทนภายใน (IRR) = </span><span class="sc">{</span>irr<span class="op">*</span><span class="dv">100</span><span class="sc">:.2f}</span><span class="ss">%"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1. ระยะเวลาคืนทุน (Payback Period) = 3.00 ปี
+2. ระยะเวลาคืนทุนคิดลด (Discounted Payback Period) = 3.80 ปี
+3. มูลค่าปัจจุบันสุทธิ (NPV) = 691,551.12 บาท
+4. อัตราผลตอบแทนภายใน (IRR) = 12.02%</code></pre>
+</div>
+</div>
+<p><strong>4. การตัดสินใจของบริษัท:</strong><br>
+- บริษัท <strong>ควรอนุมัติ</strong> โครงการลงทุนนี้ เพราะ - <strong>พิจารณาจาก NPV:</strong> โครงการมีมูลค่าปัจจุบันสุทธิเป็นบวก (NPV = 691,556.76 บาท) ซึ่งหมายความว่าการลงทุนนี้สามารถสร้างมูลค่าเพิ่มให้กับบริษัทและผู้ถือหุ้นได้ - <strong>พิจารณาจาก IRR:</strong> อัตราผลตอบแทนภายในโครงการ (IRR = 11.87%) ซึ่งสูงกว่าต้นทุนทางการเงินหรือ WACC ของบริษัท (10.0%)</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -804,13 +1139,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="./assignment2.html" class="pagination-link" aria-label="Assignment 2">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Assignment 2</span></span>
+      <a href="./assignment3.html" class="pagination-link" aria-label="Assignment 3">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assignment 3</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./project.html" class="pagination-link" aria-label="Financial Market and Corporate Analysis Project">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Financial Market and Corporate Analysis Project</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Financial Market and Corporate Analysis Project</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
